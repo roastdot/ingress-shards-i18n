@@ -10,10 +10,10 @@ jobs:
     build_preview:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@v6
 
             - name: Set up Python
-              uses: actions/setup-python@v5
+              uses: actions/setup-python@v6
               with:
                   python-version: "3.11"
                   cache: "pip"
@@ -24,14 +24,14 @@ jobs:
                   pip install --prefer-binary -r requirements.txt
 
             - name: Cache Geocode Database
-              uses: actions/cache@v4
+              uses: actions/cache@v5
               with:
                   path: cache.sqlite
                   key: geocode-cache-${{ hashFiles('conf/series_metadata.json', 'conf/event_blueprints.json') }}
                   restore-keys: |
                       geocode-cache-
 
-            - uses: actions/setup-node@v4
+            - uses: actions/setup-node@v6
               with:
                   node-version: "lts/*"
                   cache: "npm"
@@ -47,7 +47,7 @@ jobs:
                   APP_VERSION=$LATEST_VERSION npm run build
 
             - name: Upload Processed Data Artifact
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-artifact@v7
               with:
                   name: processed-data
                   path: gen/processed_series_data.json
@@ -57,7 +57,7 @@ jobs:
               run: echo "branch=${GITHUB_REF_NAME//\//-}" >> $GITHUB_OUTPUT
 
             - name: Upload Preview Artifact
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-artifact@v7
               with:
                   name: preview-${{ steps.sanitize.outputs.branch }}
                   path: "./dist"
@@ -67,9 +67,9 @@ jobs:
         needs: [build_preview]
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@v6
 
-            - uses: actions/setup-node@v4
+            - uses: actions/setup-node@v6
               with:
                   node-version: "lts/*"
                   cache: "npm"
@@ -78,7 +78,7 @@ jobs:
               run: npm install
 
             - name: Download Processed Data Artifact
-              uses: actions/download-artifact@v4
+              uses: actions/download-artifact@v8
               with:
                   name: processed-data
                   path: gen
