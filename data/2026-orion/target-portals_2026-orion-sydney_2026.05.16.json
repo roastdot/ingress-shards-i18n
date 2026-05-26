@@ -1,0 +1,665 @@
+{
+  "siteId": "2026-orion-sydney",
+  "artifact": [
+    {
+      "id": "targetres",
+      "name": "Target RES",
+      "target": [
+        {
+          "portalInfo": {
+            "title": "One Way Jesus Mural",
+            "latE6": -33887731,
+            "lngE6": 151209312
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778904120000
+        },
+        {
+          "portalInfo": {
+            "title": "Caged Boy",
+            "latE6": -33885948,
+            "lngE6": 151217226
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778904120000
+        },
+        {
+          "portalInfo": {
+            "title": "Village Voices",
+            "latE6": -33890026,
+            "lngE6": 151213154
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778904120000
+        },
+        {
+          "portalInfo": {
+            "title": "Love Fully Devine Flowers",
+            "latE6": -33874777,
+            "lngE6": 151215791
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778904120000
+        },
+        {
+          "portalInfo": {
+            "title": "Calais Deviations",
+            "latE6": -33875464,
+            "lngE6": 151212487
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778904120000
+        },
+        {
+          "portalInfo": {
+            "title": "The Sandwich Shop",
+            "latE6": -33881193,
+            "lngE6": 151209216
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778904120000
+        },
+        {
+          "portalInfo": {
+            "title": "Self Realization Fellowship Sydney Centre",
+            "latE6": -33885315,
+            "lngE6": 151208695
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778905920000
+        },
+        {
+          "portalInfo": {
+            "title": "Museum Liverpool Street Information Board",
+            "latE6": -33876875,
+            "lngE6": 151209653
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778905920000
+        },
+        {
+          "portalInfo": {
+            "title": "Porteno Mural",
+            "latE6": -33890490,
+            "lngE6": 151210288
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778905920000
+        },
+        {
+          "portalInfo": {
+            "title": "Parkham Street Reserve",
+            "latE6": -33890434,
+            "lngE6": 151216623
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778905920000
+        },
+        {
+          "portalInfo": {
+            "title": "Birt Memorial Tablet",
+            "latE6": -33877150,
+            "lngE6": 151216882
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778905920000
+        },
+        {
+          "portalInfo": {
+            "title": "Sydney Unitarian Church",
+            "latE6": -33876098,
+            "lngE6": 151213202
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778905920000
+        },
+        {
+          "portalInfo": {
+            "title": "Australian Chinese Community Association",
+            "latE6": -33880319,
+            "lngE6": 151210234
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778907720000
+        },
+        {
+          "portalInfo": {
+            "title": "Thurlstane Historic Foundation Plaque",
+            "latE6": -33874861,
+            "lngE6": 151215336
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778907720000
+        },
+        {
+          "portalInfo": {
+            "title": "Australian Museum",
+            "latE6": -33874184,
+            "lngE6": 151212652
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778907720000
+        },
+        {
+          "portalInfo": {
+            "title": "Cricketers Arms",
+            "latE6": -33885759,
+            "lngE6": 151217192
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778907720000
+        },
+        {
+          "portalInfo": {
+            "title": "J. Clare Heritage Building",
+            "latE6": -33888746,
+            "lngE6": 151213444
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778907720000
+        },
+        {
+          "portalInfo": {
+            "title": "Double Marz Graffiti",
+            "latE6": -33888873,
+            "lngE6": 151210219
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778907720000
+        },
+        {
+          "portalInfo": {
+            "title": "The Salvation Army Territorial Headquarters & Sydney Congress Hall",
+            "latE6": -33877562,
+            "lngE6": 151209502
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778909520000
+        },
+        {
+          "portalInfo": {
+            "title": "ACON Opening Plaque",
+            "latE6": -33886090,
+            "lngE6": 151208382
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778909520000
+        },
+        {
+          "portalInfo": {
+            "title": "O'Brien Lane Reserve",
+            "latE6": -33876326,
+            "lngE6": 151217596
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778909520000
+        },
+        {
+          "portalInfo": {
+            "title": "Outdoor Ping Pong Table",
+            "latE6": -33888701,
+            "lngE6": 151211389
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778909520000
+        },
+        {
+          "portalInfo": {
+            "title": "Catholic Bible School",
+            "latE6": -33876145,
+            "lngE6": 151214358
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778909520000
+        },
+        {
+          "portalInfo": {
+            "title": "Dreary Sunman",
+            "latE6": -33890079,
+            "lngE6": 151216227
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778909520000
+        },
+        {
+          "portalInfo": {
+            "title": "Aunty Three",
+            "latE6": -33879767,
+            "lngE6": 151209383
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778911320000
+        },
+        {
+          "portalInfo": {
+            "title": "The Opera Centre",
+            "latE6": -33888551,
+            "lngE6": 151208508
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778911320000
+        },
+        {
+          "portalInfo": {
+            "title": "Former Surry Hills Post Office",
+            "latE6": -33890204,
+            "lngE6": 151212887
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778911320000
+        },
+        {
+          "portalInfo": {
+            "title": "Playing at the Water Fountain",
+            "latE6": -33874696,
+            "lngE6": 151212581
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778911320000
+        },
+        {
+          "portalInfo": {
+            "title": "Arthur St to Moore Park North Footbridge",
+            "latE6": -33888538,
+            "lngE6": 151217291
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778911320000
+        },
+        {
+          "portalInfo": {
+            "title": "Antique Printing Presses",
+            "latE6": -33875389,
+            "lngE6": 151215975
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778911320000
+        },
+        {
+          "portalInfo": {
+            "title": "St Paul's Catholic Chapel",
+            "latE6": -33875556,
+            "lngE6": 151213340
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778913120000
+        },
+        {
+          "portalInfo": {
+            "title": "The Metters Building History Plaque",
+            "latE6": -33878001,
+            "lngE6": 151209468
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778913120000
+        },
+        {
+          "portalInfo": {
+            "title": "Albert Sloss Reserve",
+            "latE6": -33878118,
+            "lngE6": 151216248
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778913120000
+        },
+        {
+          "portalInfo": {
+            "title": "Surry Hills Wimbo Park Information Map",
+            "latE6": -33889696,
+            "lngE6": 151215103
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778913120000
+        },
+        {
+          "portalInfo": {
+            "title": "Slice #3 - Sculpture by David Ball (2017)",
+            "latE6": -33886340,
+            "lngE6": 151208460
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778913120000
+        },
+        {
+          "portalInfo": {
+            "title": "Eddie Ward Park Plaque",
+            "latE6": -33888828,
+            "lngE6": 151211126
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1778913120000
+        }
+      ]
+    },
+    {
+      "id": "targetenl",
+      "name": "Target ENL",
+      "target": [
+        {
+          "portalInfo": {
+            "title": "Blue Angel",
+            "latE6": -33877635,
+            "lngE6": 151216402
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778904120000
+        },
+        {
+          "portalInfo": {
+            "title": "Bakery Historic Oven",
+            "latE6": -33889213,
+            "lngE6": 151216393
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778904120000
+        },
+        {
+          "portalInfo": {
+            "title": "My Sweet Memory Mural",
+            "latE6": -33886043,
+            "lngE6": 151208443
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778904120000
+        },
+        {
+          "portalInfo": {
+            "title": "Colourful Mural",
+            "latE6": -33888927,
+            "lngE6": 151210551
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778904120000
+        },
+        {
+          "portalInfo": {
+            "title": "1892 Night Parrot Door",
+            "latE6": -33874084,
+            "lngE6": 151213990
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778904120000
+        },
+        {
+          "portalInfo": {
+            "title": "There Is No Darkness",
+            "latE6": -33877437,
+            "lngE6": 151210865
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778904120000
+        },
+        {
+          "portalInfo": {
+            "title": "Olive Batty Plaque",
+            "latE6": -33886093,
+            "lngE6": 151216875
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778905920000
+        },
+        {
+          "portalInfo": {
+            "title": "Surry Hills Hotel",
+            "latE6": -33879870,
+            "lngE6": 151209200
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778905920000
+        },
+        {
+          "portalInfo": {
+            "title": "Old Police Station",
+            "latE6": -33891014,
+            "lngE6": 151214562
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778905920000
+        },
+        {
+          "portalInfo": {
+            "title": "Mungo Child's Footprints",
+            "latE6": -33873928,
+            "lngE6": 151212906
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778905920000
+        },
+        {
+          "portalInfo": {
+            "title": "Presbyterian Church 1856",
+            "latE6": -33876178,
+            "lngE6": 151216923
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778905920000
+        },
+        {
+          "portalInfo": {
+            "title": "Cat Face Mural",
+            "latE6": -33887670,
+            "lngE6": 151208928
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778905920000
+        },
+        {
+          "portalInfo": {
+            "title": "Australia Council for the Arts",
+            "latE6": -33885398,
+            "lngE6": 151208290
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778907720000
+        },
+        {
+          "portalInfo": {
+            "title": "Albert Sloss Reserve Playground",
+            "latE6": -33877677,
+            "lngE6": 151216996
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778907720000
+        },
+        {
+          "portalInfo": {
+            "title": "Belford Companies Memorial Plaque",
+            "latE6": -33876209,
+            "lngE6": 151214821
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778907720000
+        },
+        {
+          "portalInfo": {
+            "title": "Sprouting Tree Door",
+            "latE6": -33878189,
+            "lngE6": 151209850
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778907720000
+        },
+        {
+          "portalInfo": {
+            "title": "John Northcott Place Plaque",
+            "latE6": -33888909,
+            "lngE6": 151210889
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778907720000
+        },
+        {
+          "portalInfo": {
+            "title": "The Wimbo Paddock Mural",
+            "latE6": -33889750,
+            "lngE6": 151215410
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778907720000
+        },
+        {
+          "portalInfo": {
+            "title": "Art Equals Adventure",
+            "latE6": -33884854,
+            "lngE6": 151217768
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778909520000
+        },
+        {
+          "portalInfo": {
+            "title": "Hyde Park 1930 – Sydney Heritage Walk",
+            "latE6": -33873836,
+            "lngE6": 151212671
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778909520000
+        },
+        {
+          "portalInfo": {
+            "title": "Carriage Room Entrance Elk",
+            "latE6": -33874342,
+            "lngE6": 151215660
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778909520000
+        },
+        {
+          "portalInfo": {
+            "title": "Edible Outdoor Rooms",
+            "latE6": -33879956,
+            "lngE6": 151210174
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778909520000
+        },
+        {
+          "portalInfo": {
+            "title": "Wild Horse Guitars",
+            "latE6": -33887697,
+            "lngE6": 151208550
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778909520000
+        },
+        {
+          "portalInfo": {
+            "title": "What Bird is That?",
+            "latE6": -33890055,
+            "lngE6": 151214111
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778909520000
+        },
+        {
+          "portalInfo": {
+            "title": "Nithsdale Lane Mural",
+            "latE6": -33878155,
+            "lngE6": 151209599
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778911320000
+        },
+        {
+          "portalInfo": {
+            "title": "Wolf Graffiti Mural",
+            "latE6": -33890409,
+            "lngE6": 151216853
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778911320000
+        },
+        {
+          "portalInfo": {
+            "title": "Palmer Street Art",
+            "latE6": -33878023,
+            "lngE6": 151216580
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778911320000
+        },
+        {
+          "portalInfo": {
+            "title": "Yurong Street Reserve",
+            "latE6": -33875766,
+            "lngE6": 151214092
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778911320000
+        },
+        {
+          "portalInfo": {
+            "title": "Evening Star Hotel",
+            "latE6": -33885183,
+            "lngE6": 151208305
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778911320000
+        },
+        {
+          "portalInfo": {
+            "title": "The Sydney County Council Substation No.901",
+            "latE6": -33889096,
+            "lngE6": 151211163
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778911320000
+        },
+        {
+          "portalInfo": {
+            "title": "Crisp Lady Mural",
+            "latE6": -33885562,
+            "lngE6": 151217271
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778913120000
+        },
+        {
+          "portalInfo": {
+            "title": "Pullman Resort Rainbow Pathway",
+            "latE6": -33876176,
+            "lngE6": 151212389
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778913120000
+        },
+        {
+          "portalInfo": {
+            "title": "Single Origin Roasters",
+            "latE6": -33881134,
+            "lngE6": 151209683
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778913120000
+        },
+        {
+          "portalInfo": {
+            "title": "Rogue Moped Mural",
+            "latE6": -33888868,
+            "lngE6": 151213607
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778913120000
+        },
+        {
+          "portalInfo": {
+            "title": "You are on Gadigal Land",
+            "latE6": -33874647,
+            "lngE6": 151216686
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778913120000
+        },
+        {
+          "portalInfo": {
+            "title": "Inside The Cinema Mural",
+            "latE6": -33887540,
+            "lngE6": 151209310
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1778913120000
+        }
+      ]
+    }
+  ]
+}
