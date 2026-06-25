@@ -6,1831 +6,2136 @@
       "title": "Banco Interbank",
       "lat": -12.124438,
       "lng": -77.029536,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1586ab857ef834798a42620e5d816a8b.16"
     },
     {
       "title": "Scotiabank",
       "lat": -12.123674,
       "lng": -77.029526,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "98a95feeea30350db16bf74d895fc4e1.16"
     },
     {
       "title": "La Nueva Columna Sin Fin",
       "lat": -12.12283,
       "lng": -77.030533,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "91f3ee1cc5bd46ed840e83cd6a7ce96c.16"
     },
     {
       "title": "Monumento \"Umbral\"",
       "lat": -12.122039,
       "lng": -77.030138,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1642366aae3d4b97873301f4d15062b6.16"
     },
     {
       "title": "Mural abstracto",
       "lat": -12.125349,
       "lng": -77.024812,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "77117a538d56455ba612627e8126e8f6.16"
     },
     {
       "title": "Montalvo",
       "lat": -12.121362,
       "lng": -77.036837,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "eb796205422f3dd0bcd0db388033885e.16"
     },
     {
       "title": "Rutina Cafe",
       "lat": -12.122391,
       "lng": -77.03494,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1ff9ae5d62be4037aa6958e72c7ebef2.16"
     },
     {
       "title": "Downtown",
       "lat": -12.123724,
       "lng": -77.030685,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d8eb0c61b3284a19b893f36872cfede3.16"
     },
     {
       "title": "Universitas Studiorum Piurensis",
       "lat": -12.120178,
       "lng": -77.030307,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "80bb92a9634c42fab5f72a310b92d247.16"
     },
     {
       "title": "Estatua De León",
       "lat": -12.119016,
       "lng": -77.029362,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ddccde22906c43c79e0beac7f73cc94f.16"
     },
     {
       "title": "Placa Obra Realizada Miraflores",
       "lat": -12.124432,
       "lng": -77.033063,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "cdbcbfc5235b4adfaf91643bad7a6193.16"
     },
     {
       "title": "Universidad de Piura",
       "lat": -12.118818,
       "lng": -77.031328,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "5aafdf0da2e8371dabcc2b0ab94c50a4.16"
     },
     {
       "title": "Universidad Científica del Sur",
       "lat": -12.12123,
       "lng": -77.025808,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "917646682dc4321584e3b976d8d60dcb.16"
     },
     {
       "title": "Templo de Shiva",
       "lat": -12.121167,
       "lng": -77.039241,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e83636102d5d450789bd06f9a84cfeab.16"
     },
     {
       "title": "Parque del Malecon de Miraflores",
       "lat": -12.124232,
       "lng": -77.037759,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3550a95e4bb744efbc9200efa5102c70.16"
     },
     {
       "title": "Graffiti Nuestras Raíces",
       "lat": -12.122517,
       "lng": -77.029347,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "925c4926059a4124bc63f47d021f0673.16"
     },
     {
       "title": "Pájaro Astral",
       "lat": -12.120837,
       "lng": -77.027638,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2707cf8e68ea3a70aad7826d3a10dc01.16"
     },
     {
       "title": "Busto A Benavides",
       "lat": -12.120612,
       "lng": -77.029539,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8d850f3116dd4d3f91feca616fbd0e3d.16"
     },
     {
       "title": "Sala Luis Miróquesada",
       "lat": -12.122157,
       "lng": -77.029209,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "288ca0ce5ae7408e8e6a979c44b9c5a7.16"
     },
     {
       "title": "Supermercado Vivanda - Benavides",
       "lat": -12.124645,
       "lng": -77.028156,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "512c13e7c73d3dd5a40a18ab0832e8e8.16"
     },
     {
       "title": "Laberinto para niños",
       "lat": -12.124616,
       "lng": -77.038144,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3445c790b5e14b9e8f478f17cf9ad845.16"
     },
     {
       "title": "IPAD Miraflores",
       "lat": -12.125046,
       "lng": -77.02548,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c8497c805c5f41deb05a10b298ac2607.16"
     },
     {
       "title": "RESTAURANTE DELFINO MAR",
       "lat": -12.123408,
       "lng": -77.03679,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "566c7d4e1f773bb89e2e81e7546a84de.16"
     },
     {
       "title": "Buda Sukha",
       "lat": -12.117654,
       "lng": -77.035613,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c6f8f7ba6fcf4cc58dfc998aeb0baa91.16"
     },
     {
       "title": "Mural de Infantes Mirando el Cielo",
       "lat": -12.121539,
       "lng": -77.027412,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3b36bfb19bdd3e32a949554375c2c463.16"
     },
     {
       "title": "Banco Banbif",
       "lat": -12.124763,
       "lng": -77.029544,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2212c7646e0431b69f47bedf8c7283bc.16"
     },
     {
       "title": "Crepier",
       "lat": -12.122789,
       "lng": -77.029212,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ab9bd50dff59391b96785d7f51206b31.16"
     },
     {
       "title": "Banderas Hotel Sol de Oro",
       "lat": -12.125243,
       "lng": -77.03119,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b7c1e002b4b837f7973221457dce30a4.16"
     },
     {
       "title": "Iglesia Jesucristo De Los Santos De Los Ultimos Días",
       "lat": -12.120761,
       "lng": -77.039066,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0052c789f38d434892b537be5681c540.16"
     },
     {
       "title": "Graffiti - Beer Pong Peru",
       "lat": -12.119592,
       "lng": -77.036809,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ba51617181cc38fdadaf0a04d6ab65cc.16"
     },
     {
       "title": "Juego Del Parque Del Amor",
       "lat": -12.123643,
       "lng": -77.039203,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f96f71f17a184425886a5b2b915c1717.16"
     },
     {
       "title": "Edificio Ceam",
       "lat": -12.125295,
       "lng": -77.025363,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ee59bd8c781f4f43a37a209cb4cc0205.16"
     },
     {
       "title": "Graffiti Estamos Contigo Perú",
       "lat": -12.119999,
       "lng": -77.026832,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "61d5733673214ed6bd5d0e815bf26037.16"
     },
     {
       "title": "Thani Huasi",
       "lat": -12.119965,
       "lng": -77.027108,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "02f50ee772ab4e60a7ec7463012cd488.16"
     },
     {
       "title": "Supermercado Wong",
       "lat": -12.123078,
       "lng": -77.032031,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "86403b8a6c923c3593578f670e4a1d76.16"
     },
     {
       "title": "Zub Café",
       "lat": -12.123122,
       "lng": -77.02759,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1f4194d9150f382a84911e9645149af3.16"
     },
     {
       "title": "Panchita",
       "lat": -12.11788,
       "lng": -77.031217,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f11a921f9f4a3697a7212e9bbf0f8583.16"
     },
     {
       "title": "Retablo Ayacuchano",
       "lat": -12.121166,
       "lng": -77.029984,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6e7143d6466e38c59d654fc9bf820ae3.16"
     },
     {
       "title": "Mural Del Tumi",
       "lat": -12.123949,
       "lng": -77.026811,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fedfe21c20054d06b92cb2b14ee91b7c.16"
     },
     {
       "title": "Atlantic City",
       "lat": -12.124758,
       "lng": -77.028683,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e4b7742a782443a88fe51d9f6861765a.16"
     },
     {
       "title": "Centro comercial El Paseo",
       "lat": -12.121802,
       "lng": -77.027411,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f4b45b873fcc320595dd258da7a86de7.16"
     },
     {
       "title": "StarBucks",
       "lat": -12.122466,
       "lng": -77.029015,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f5cc3765573f318a9a08049b33f2e6a0.16"
     },
     {
       "title": "Cruz Del Buen Comer",
       "lat": -12.1228,
       "lng": -77.02662,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a0d91b78b331444d81001bd771d70801.16"
     },
     {
       "title": "Siete Astas de Bandera",
       "lat": -12.122285,
       "lng": -77.039537,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9a75339b15e3461597b320f9b583fd00.16"
     },
     {
       "title": "Entrada al Parque Central",
       "lat": -12.122324,
       "lng": -77.031023,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "064cf33cf89a4ac59cf7253663c617b1.16"
     },
     {
       "title": "Embajada de Canadá",
       "lat": -12.120759,
       "lng": -77.035894,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bfb8890c851a46ad947d52eb9ca4363d.16"
     },
     {
       "title": "Mass - minimarket",
       "lat": -12.11876,
       "lng": -77.033651,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "50a0a52901d53fa0a782841a30ddd6b5.16"
     },
     {
       "title": "Mural Dj",
       "lat": -12.12183,
       "lng": -77.028764,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a8cff4e7428543998951db678d83ed5b.16"
     },
     {
       "title": "Barletto Caffe",
       "lat": -12.117097,
       "lng": -77.0304,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7150a0d2be28341d924e2af63e66a444.16"
     },
     {
       "title": "Las Cremoladas",
       "lat": -12.125506,
       "lng": -77.035819,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "636e1f4063d63c75842ed4d23d9cd790.16"
     },
     {
       "title": "Fiesta",
       "lat": -12.124597,
       "lng": -77.027817,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fcdbe00b5e294be7bacd59726b0d98e1.16"
     },
     {
       "title": "Tupac",
       "lat": -12.119991,
       "lng": -77.027728,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "002b1713a48434cebae2494be610e629.16"
     },
     {
       "title": "Mural Cóndor Protector",
       "lat": -12.120355,
       "lng": -77.027282,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9e1aee8ad3d03dc285daa2b94d59233b.16"
     },
     {
       "title": "Colibris",
       "lat": -12.121076,
       "lng": -77.038979,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "51c308b5fdb14b56af80e5e3e0391752.16"
     },
     {
       "title": "Mardigras",
       "lat": -12.12504,
       "lng": -77.029487,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "52aa2c94b2d5489fabe8d54950b82411.16"
     },
     {
       "title": "Hostal Golden Dreams",
       "lat": -12.120097,
       "lng": -77.037839,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7c1fce54d6833d3b982ca5c72c13b141.16"
     },
     {
       "title": "Pasteleria Les Gourmands",
       "lat": -12.12594,
       "lng": -77.027104,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ec005251822c32d794f5edc1b7b422f8.16"
     },
     {
       "title": "Mural Gigante Vertical",
       "lat": -12.1227,
       "lng": -77.031336,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1f08af665708437ba524982235fdb33f.16"
     },
     {
       "title": "María Rostworowski",
       "lat": -12.123219,
       "lng": -77.027252,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b4897ee1756c40509ea66317fcc9a93f.16"
     },
     {
       "title": "Café Sama",
       "lat": -12.122288,
       "lng": -77.026779,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6d3f7291b534370ba4617ef471f589db.16"
     },
     {
       "title": "Pileta del Parque Kennedy",
       "lat": -12.121442,
       "lng": -77.029081,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "21e7718c2c094173b7129323c6a9d6d5.16"
     },
     {
       "title": "Bata",
       "lat": -12.123963,
       "lng": -77.029386,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "cc7de5c68d224d14bf261ca0ead42a69.16"
     },
     {
       "title": "Brujas de Cachiche",
       "lat": -12.123071,
       "lng": -77.036119,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "173e06385fae46efa015826f670ccc6c.16"
     },
     {
       "title": "Valentini - cafe - pizzeria",
       "lat": -12.119338,
       "lng": -77.034373,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3ee7082592053e12b8b7973872d67340.16"
     },
     {
       "title": "Placa Estacionamientos Subterráneos",
       "lat": -12.121438,
       "lng": -77.029847,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1b67af67537b3ef19d649a3330835e7b.16"
     },
     {
       "title": "Einstein sobre ruedas",
       "lat": -12.121856,
       "lng": -77.031928,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a7931daa9bb243619dbead0738b3f990.16"
     },
     {
       "title": "Don Belisario",
       "lat": -12.124891,
       "lng": -77.027741,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ed33f90c31d545ccb1f25da1465f0743.16"
     },
     {
       "title": "Gatos sabios",
       "lat": -12.12544,
       "lng": -77.030997,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "47b5f675755842ccadd1a67610c80532.16"
     },
     {
       "title": "Observador de Aves y Plantas",
       "lat": -12.120391,
       "lng": -77.038853,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7ca32e83cfdc48d5b30637b9957ea057.16"
     },
     {
       "title": "Café Piñeiros",
       "lat": -12.122713,
       "lng": -77.027751,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3e57d5c6f8c93d6480e29f0c32f62786.16"
     },
     {
       "title": "Restaurante Maido",
       "lat": -12.125446,
       "lng": -77.030566,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b887c3d864d13c9b9843b2ea6533deff.16"
     },
     {
       "title": "El Sillar",
       "lat": -12.117696,
       "lng": -77.030376,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "14b940f90942357f8434b6f056180d16.16"
     },
     {
       "title": "Las Tejas",
       "lat": -12.122459,
       "lng": -77.027425,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9af86349e83c3980a872d86274ef5641.16"
     },
     {
       "title": "Busto John F. Kennedy",
       "lat": -12.122049,
       "lng": -77.030787,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fc62080f1b89414aac572de3f3bcfd99.16"
     },
     {
       "title": "Parque 7 De Junio",
       "lat": -12.120367,
       "lng": -77.02964,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "74448dc1c35d4f28bf8491e3700db218.16"
     },
     {
       "title": "Embajada de Brasil en Lima",
       "lat": -12.118256,
       "lng": -77.037273,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2c5d0042ae70362882b30f69688f812a.16"
     },
     {
       "title": "Virgen De La Hostia",
       "lat": -12.120111,
       "lng": -77.032148,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "61c94233b21343acaa9dfca82e0be3eb.16"
     },
     {
       "title": "Cinco Astas de Banderas",
       "lat": -12.119189,
       "lng": -77.036758,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "90c77838df644020a6c32e6ecbc24e10.16"
     },
     {
       "title": "El Caballo De Agua",
       "lat": -12.119289,
       "lng": -77.036999,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0bf10904a9a3449399ad384fda2b216e.16"
     },
     {
       "title": "Monumento Tarata",
       "lat": -12.123568,
       "lng": -77.028563,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "99381c383b4f4edca056a6bb6a8e672e.16"
     },
     {
       "title": "Capilla Jesús Hostia",
       "lat": -12.119884,
       "lng": -77.032048,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e8146d8b90cf49bfa17091f9dc17bce1.16"
     },
     {
       "title": "Libreria Zeta, pasión por la Lectura",
       "lat": -12.117674,
       "lng": -77.037123,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "79de24ff2b763b5099229da473e2fc07.16"
     },
     {
       "title": "No Me Veas",
       "lat": -12.120083,
       "lng": -77.036805,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a3065632e568432fb3df14e4f04651e2.16"
     },
     {
       "title": "Chili's",
       "lat": -12.119452,
       "lng": -77.031828,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "da7f9910250f4530a496fa42874cd8f1.16"
     },
     {
       "title": "Wahios",
       "lat": -12.122048,
       "lng": -77.031802,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0114f2c75c3a3e1ebef266c817e544c2.16"
     },
     {
       "title": "Hotel Radisson",
       "lat": -12.125373,
       "lng": -77.03291,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "5c075fec9b804e16923a1a403e184d04.16"
     },
     {
       "title": "Restaurante - Cevicheria “El Rincon Del Bigote”",
       "lat": -12.121297,
       "lng": -77.035253,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bc0eae73deca3f6890cfc732aec03ab3.16"
     },
     {
       "title": "Totem Nazca",
       "lat": -12.119762,
       "lng": -77.037152,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "328aef5232204abea2051d858a1e063a.16"
     },
     {
       "title": "Puente Peatonal del malecón",
       "lat": -12.124543,
       "lng": -77.032885,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "286961b5014d4ba1929e22c0fd42de38.11"
     },
     {
       "title": "Veredas que guian",
       "lat": -12.122211,
       "lng": -77.029601,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8110dd5b9d533322b6b65d549f09cbfb.16"
     },
     {
       "title": "XFly Training Studio",
       "lat": -12.120085,
       "lng": -77.036238,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "71ad811e80d436279d4cd6f4f3bcf9fe.16"
     },
     {
       "title": "Porras Barrenechea",
       "lat": -12.122015,
       "lng": -77.029521,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6073afa91bd14b708341202ced74ceeb.16"
     },
     {
       "title": "Titulo Nobiliario",
       "lat": -12.121809,
       "lng": -77.026861,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "40bd3330f8c84f8ca924bc587bb74e33.16"
     },
     {
       "title": "Teatro Británico",
       "lat": -12.123166,
       "lng": -77.032944,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "57990f1254a7443fb09db7d03fe14127.11"
     },
     {
       "title": "Tambo",
       "lat": -12.121619,
       "lng": -77.028804,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "dadc4a14c41c365287a0e6d1b15460b0.16"
     },
     {
       "title": "Graffiti Se Tu Mismo",
       "lat": -12.120467,
       "lng": -77.027595,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7c04248ce8eb49bfa75f08875077f565.16"
     },
     {
       "title": "Embajada De Brasil",
       "lat": -12.118881,
       "lng": -77.037633,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "65d7e5c6cb224cce8ae271f187763157.16"
     },
     {
       "title": "Escultura de Fierro en Edificio Pardo",
       "lat": -12.119252,
       "lng": -77.033614,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7b4d504682804bf0937c99bc14a246ea.16"
     },
     {
       "title": "Grafiti Torito de Pucara",
       "lat": -12.121529,
       "lng": -77.033771,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "663846e7a64544fea9857a3caa6505f4.16"
     },
     {
       "title": "KFC Miraflores",
       "lat": -12.117545,
       "lng": -77.036838,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "07c4de668beb4acc9e490180fa8138af.16"
     },
     {
       "title": "Mural de las aves",
       "lat": -12.12323,
       "lng": -77.0257,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "86823a07b58039aeb1140f9686423228.16"
     },
     {
       "title": "Plaza De Ajedrez",
       "lat": -12.120244,
       "lng": -77.030064,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4412d44186254f95867e2bd465a21ec0.16"
     },
     {
       "title": "Kaldis",
       "lat": -12.124293,
       "lng": -77.034033,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3341310ecf8a3638a2f8ffe662e63519.16"
     },
     {
       "title": "Euroidiomas",
       "lat": -12.119718,
       "lng": -77.032954,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1ecfc6f676ff43ee8b0a7eb4faa388ad.16"
     },
     {
       "title": "Enmascarados",
       "lat": -12.122134,
       "lng": -77.03269,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "36d8708ec9283d8391296b2035afd73c.16"
     },
     {
       "title": "Alma Bar Restaurante",
       "lat": -12.1222,
       "lng": -77.026508,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8bea409ebc433d01a531c837b11db632.16"
     },
     {
       "title": "Amantes Mural",
       "lat": -12.12505,
       "lng": -77.031635,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3e36fbf38ab94c86ac1bfa149768486f.16"
     },
     {
       "title": "Mural de Hombre y las Manos",
       "lat": -12.117653,
       "lng": -77.032521,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e77e940ca95f4a789b2de86118f2084e.16"
     },
     {
       "title": "Gato Rosado",
       "lat": -12.121406,
       "lng": -77.037887,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "66364ffc0a7240e2ac434f8dd98395c4.16"
     },
     {
       "title": "Kulka Grafitti",
       "lat": -12.12226,
       "lng": -77.032228,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a8efa25519474219a69c37b10201aab1.16"
     },
     {
       "title": "Manolo Café",
       "lat": -12.123047,
       "lng": -77.029287,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "900552b51ac743479a4ce3c2fb713842.16"
     },
     {
       "title": "Chifa Xin Wha",
       "lat": -12.119706,
       "lng": -77.034703,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2a444ffb6862398bbf92e57cba95588b.16"
     },
     {
       "title": "ALFRESCO",
       "lat": -12.12418,
       "lng": -77.033071,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fd5ec087f2004870a7c32448e3874cf0.16"
     },
     {
       "title": "Charlot",
       "lat": -12.125667,
       "lng": -77.027826,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "22298d9fe9cc36fdb92a9577bae03fae.16"
     },
     {
       "title": "Don Belisario",
       "lat": -12.122202,
       "lng": -77.028907,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fe954d21b3cf3fd99f8cad5d3b155543.16"
     },
     {
       "title": "Colegio Químico Farmacéutico del Perú",
       "lat": -12.117026,
       "lng": -77.034323,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9cb6a886853f3357a4cba9c576afe37a.16"
     },
     {
       "title": "Tazon Pileta",
       "lat": -12.119272,
       "lng": -77.03729,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d952224d57bc4ed49670ee3e9eb6fd94.16"
     },
     {
       "title": "Pizza Papa John's Miraflores",
       "lat": -12.116991,
       "lng": -77.036825,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4f86953d26e6494aadef66777687f741.16"
     },
     {
       "title": "Hotel Crowne Plaza Lima",
       "lat": -12.124726,
       "lng": -77.030183,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0f9943e527e648068332adcd4f79398c.16"
     },
     {
       "title": "Mosaico De La Virgen",
       "lat": -12.124611,
       "lng": -77.027108,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bbf0502cfff34ebb8cb406a5841f7787.16"
     },
     {
       "title": "Asta de Banderas - Parque Kennedy",
       "lat": -12.121538,
       "lng": -77.029349,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c25c509281234f36990990bfd87de60d.16"
     },
     {
       "title": "Mini gym del malecon",
       "lat": -12.124299,
       "lng": -77.0389,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c8ee23b14e454caea5f241651ae2288e.16"
     },
     {
       "title": "Vacas Sobre La Puerta",
       "lat": -12.121187,
       "lng": -77.034511,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "dd5cbd33f38d41599054fa65ec0dcae3.16"
     },
     {
       "title": "Ancla De La Marina",
       "lat": -12.123255,
       "lng": -77.039774,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c0f4cd9ef66e48b6aebf0c854615ce38.16"
     },
     {
       "title": "Mural - Embajada de Brasil",
       "lat": -12.118888,
       "lng": -77.037423,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "37ec11b7d2cb37d88783919de561c2f8.16"
     },
     {
       "title": "La Castellana",
       "lat": -12.123847,
       "lng": -77.025964,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "14e36e6a3192446a8428c2da5f457279.16"
     },
     {
       "title": "Juegos Infantiles Kennedy",
       "lat": -12.121502,
       "lng": -77.030487,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "42eacf0293084a50934c044bff970753.16"
     },
     {
       "title": "Smart Fit",
       "lat": -12.124233,
       "lng": -77.029842,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "680c0d4ed2c33714abeae00f12c8a29d.16"
     },
     {
       "title": "Mural de La Abuela",
       "lat": -12.120793,
       "lng": -77.038237,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7d333ca662364c16b355d147f4fcc5d1.16"
     },
     {
       "title": "Quíntuple Asta de Bandera",
       "lat": -12.11852,
       "lng": -77.030243,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "64fbc53ad9793dd5a439de2f3abcfda7.16"
     },
     {
       "title": "Estatua Antonio Cisneros",
       "lat": -12.124106,
       "lng": -77.039157,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b68c716d200b485dae59f3e4407323f9.16"
     },
     {
       "title": "Fuente De La Vida Eterna",
       "lat": -12.124958,
       "lng": -77.037662,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "933bb2e35e644ce486b5e19f6a1c2ae2.16"
     },
     {
       "title": "Escultura africana \"Te Tumbo La Moto\"",
       "lat": -12.1205,
       "lng": -77.036807,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "47fa007deea24111b94adba6d5c3cf68.16"
     },
     {
       "title": "Sanguchería El Chinito - Miraflores",
       "lat": -12.12243,
       "lng": -77.02581,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "93268deaff683774b3b447c1205267a2.16"
     },
     {
       "title": "Hotel Estelar de Miraflores",
       "lat": -12.124384,
       "lng": -77.029158,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "22ebe522588e49c3854ef2c54360e0ae.11"
     },
     {
       "title": "Mural del Schlaraffenland",
       "lat": -12.120881,
       "lng": -77.027292,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0eeca4b6846747f09daf62cd23f23f44.16"
     },
     {
       "title": "Mapa turístico de Miraflores",
       "lat": -12.121289,
       "lng": -77.029708,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "cd2625209bfd385fb64a2e1612674335.16"
     },
     {
       "title": "Timón Marítimo Astracto",
       "lat": -12.124806,
       "lng": -77.032246,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0405d7ee78114368ac4813b295444449.16"
     },
     {
       "title": "Estacion",
       "lat": -12.11943,
       "lng": -77.039911,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a43b6cc0d8633c7a8157355ac20e5095.16"
     },
     {
       "title": "Ceramica Shipiba",
       "lat": -12.121786,
       "lng": -77.030659,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bc96a866fa5d4b1995d9f5a5b928c3cf.16"
     },
     {
       "title": "Museo Casa Inclan",
       "lat": -12.116888,
       "lng": -77.03124,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "98b7d3ff6e674014ade7679bcd588519.16"
     },
     {
       "title": "Pesimo Graffiti",
       "lat": -12.119805,
       "lng": -77.028525,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "aaf7cf171ce84cd2ac46095e53ab020b.16"
     },
     {
       "title": "Gruta De La Virgen",
       "lat": -12.121681,
       "lng": -77.0298,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0e1d604bd00c41e5b5197a3675ea1ad8.16"
     },
     {
       "title": "Leoparado Alado",
       "lat": -12.11734,
       "lng": -77.03891,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ff258f37e8ee387ba1ee22d859ae6204.16"
     },
     {
       "title": "KOJI - Conina Nikkei",
       "lat": -12.117835,
       "lng": -77.035392,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "054a90df340b3634aaf247983d61be07.16"
     },
     {
       "title": "Homenaje a la memoria del Gran Mariscal del Perú - Mariano Necochea",
       "lat": -12.119005,
       "lng": -77.0298,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b4d0bc939d0c4ce9bd02e2593d134e9e.16"
     },
     {
       "title": "Aves",
       "lat": -12.118428,
       "lng": -77.039624,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "969bf4bd141d3aad9d8b3a261b571b5e.16"
     },
     {
       "title": "Placa De Inauguración De Elementos Lumínicos",
       "lat": -12.120225,
       "lng": -77.029879,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3d65d15721a842469debc20bdee52ecf.16"
     },
     {
       "title": "Tropicana",
       "lat": -12.12341,
       "lng": -77.026962,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9deaee102aa5431da9bf938d1e4952a1.16"
     },
     {
       "title": "Cuádruple Asta de Banderas",
       "lat": -12.117126,
       "lng": -77.032541,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "01c310be7480454db096dfa0e17197f9.16"
     },
     {
       "title": "Edificio Entel",
       "lat": -12.122294,
       "lng": -77.028616,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "da595acc511034979817bf1c92f864a4.16"
     },
     {
       "title": "San Antonio De Padua",
       "lat": -12.121748,
       "lng": -77.029598,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ae578d9ce82a4463a41825f6f15ed238.16"
     },
     {
       "title": "Centro Cultural Ricardo Palma",
       "lat": -12.125524,
       "lng": -77.029532,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "90d9ae3ee0ab472c911808d7549931f8.16"
     },
     {
       "title": "Adidas de Espinar",
       "lat": -12.117098,
       "lng": -77.037245,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2181222acc6330c8873f51fe4d03c441.16"
     },
     {
       "title": "Busto De Emelio Placencia",
       "lat": -12.121293,
       "lng": -77.029468,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c648aa02a9e340238af410e26d53cbe6.16"
     },
     {
       "title": "Mis Costillitas",
       "lat": -12.120146,
       "lng": -77.034377,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "78473bb70d9f496a827342d30af68a21.16"
     },
     {
       "title": "Cascada Atlantic City",
       "lat": -12.124758,
       "lng": -77.02891,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "5d1259bd4fe24bf3b282e2e20e977be5.16"
     },
     {
       "title": "Pórtico a la Macarena",
       "lat": -12.124248,
       "lng": -77.026882,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4f7e7fc607a54b529ec4d6efd1d6c5eb.16"
     },
     {
       "title": "Edificio BBVA Continental",
       "lat": -12.123614,
       "lng": -77.029082,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d580943bcfe2476e8d6674f8938cc1b8.16"
     },
     {
       "title": "Centro De Convenciones Maria Angola",
       "lat": -12.123623,
       "lng": -77.026731,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b50e4e8e278c41bfa6e92541ad90763e.16"
     },
     {
       "title": "Jovenes Peruanos",
       "lat": -12.124155,
       "lng": -77.038211,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bbd16ab2c4474f588e555afdd151cda0.16"
     },
     {
       "title": "Fenix",
       "lat": -12.121181,
       "lng": -77.037912,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "16304bb6e1fd4aef9dda530a8e8a6744.16"
     },
     {
       "title": "Fuente De Granito",
       "lat": -12.125119,
       "lng": -77.037854,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "030b74e3c8244559815b10b3bb9fb9b8.16"
     },
     {
       "title": "Universidad de Piura",
       "lat": -12.120588,
       "lng": -77.031921,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "eb629cace98f45658dbcdb01483c3327.16"
     },
     {
       "title": "Iglesia Virgen La Milagrosa",
       "lat": -12.12153,
       "lng": -77.029596,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "601668b3d93d4b11948d084284561484.16"
     },
     {
       "title": "Placa Aquamarina",
       "lat": -12.125587,
       "lng": -77.033116,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "84cb6b3d6bdc4813b49ff22a4f505ac8.16"
     },
     {
       "title": "Pizza Hut",
       "lat": -12.11982,
       "lng": -77.028809,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "860c766e1f413c888d96d2a9c2905633.16"
     },
     {
       "title": "Corriente Alterna - Portada Neo-Inca",
       "lat": -12.122551,
       "lng": -77.039636,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "5d153b7473bf4c08844b3c1870a84e05.16"
     },
     {
       "title": "Jokers Casino",
       "lat": -12.118912,
       "lng": -77.032891,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b73a97f438843962b0fb2d790497d5fe.16"
     },
     {
       "title": "Cervecería del Valle Sagrado",
       "lat": -12.123515,
       "lng": -77.025713,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ff154dbcf11c3558ac1bbb04c3a2af56.16"
     },
     {
       "title": "Chica Tattoo",
       "lat": -12.123156,
       "lng": -77.031687,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7424b33b1be8405391121f3b51441778.16"
     },
     {
       "title": "El Tomate Loco",
       "lat": -12.116972,
       "lng": -77.035323,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "53802b496298362686d6901526ed8f34.16"
     },
     {
       "title": "Mural de Oso de Anteojos",
       "lat": -12.119522,
       "lng": -77.030332,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7afeed6ffe7c4726b24336e8e19b7449.16"
     },
     {
       "title": "Teatro Julieta",
       "lat": -12.122949,
       "lng": -77.030888,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e7a9fbb882c542a59521edb390de745e.16"
     },
     {
       "title": "Ciclovía Abus",
       "lat": -12.117287,
       "lng": -77.037833,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3ba8cf2c406c358185a9fff4d877d136.16"
     },
     {
       "title": "Enamorados Recogiendo Agua",
       "lat": -12.123575,
       "lng": -77.030361,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7f2f4a5d9d8e41b09bfcc80bbf2c4fe4.16"
     },
     {
       "title": "Iglesia Metodista de Miraflores",
       "lat": -12.124943,
       "lng": -77.025832,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1bbba8ccb3bd4365b8f5dd459ba4e881.16"
     },
     {
       "title": "Placa Remodelación Del Pasaje Porta",
       "lat": -12.12268,
       "lng": -77.030809,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3f6beec239133a5dbd12d0c1a6a7438d.16"
     },
     {
       "title": "Mural de Gatos",
       "lat": -12.11698,
       "lng": -77.038112,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fbf6f1bf75d049318625a964fab2482b.16"
     },
     {
       "title": "Tribunal Fiscal",
       "lat": -12.122674,
       "lng": -77.02818,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "cb82590d1494387587348523ff77c143.16"
     },
     {
       "title": "Torito De Pucará",
       "lat": -12.120192,
       "lng": -77.029342,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4f49c1e1d37f4a8aa537c11cb834207d.16"
     },
     {
       "title": "Mini Pileta",
       "lat": -12.12046,
       "lng": -77.028852,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2a40a6bef93d47b08b6c08992921e659.16"
     },
     {
       "title": "Astas de Banderas",
       "lat": -12.118724,
       "lng": -77.032529,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "dc52ab6bcd7b45b395b115e27efbb898.16"
     },
     {
       "title": "Mural Persa",
       "lat": -12.121565,
       "lng": -77.033395,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "63528da7b48b4e2ab1f755ba1bba516e.16"
     },
     {
       "title": "Torre De Los Duendes",
       "lat": -12.124632,
       "lng": -77.027307,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "611cef25fd21461093ed57bd0438697d.16"
     },
     {
       "title": "Carreta Antigua",
       "lat": -12.120472,
       "lng": -77.028292,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "62a67187b4814110a5507d2f6b60a5ce.16"
     },
     {
       "title": "Alameda Jorge Chavez",
       "lat": -12.120893,
       "lng": -77.036943,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e2e683cc95274cc0a3f69ebb8dd2723e.16"
     },
     {
       "title": "La Esquina Winebar",
       "lat": -12.119978,
       "lng": -77.039358,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "10ddb14b3be733bb9d961874d033a5e7.16"
     },
     {
       "title": "Star Wars Perú",
       "lat": -12.122202,
       "lng": -77.031354,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "319a71ba31a531209e33e7a209722f35.16"
     },
     {
       "title": "Coronel Francisco Bolognesi",
       "lat": -12.123441,
       "lng": -77.035877,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "75110b733a7a47e183e1cc0d5ee2419e.16"
     },
     {
       "title": "Banco BCP",
       "lat": -12.123138,
       "lng": -77.029017,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4f2b859d3a2d33199fc70c47171875f9.16"
     },
     {
       "title": "Sanguchisimo",
       "lat": -12.121075,
       "lng": -77.028817,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7e998eb1f7b43a67990e938c51bcd563.16"
     },
     {
       "title": "Arma Ambev",
       "lat": -12.121156,
       "lng": -77.03071,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "eb8785ea798146b587fd7c33df0a91af.16"
     },
     {
       "title": "Parque Raúl Porras Barranechea",
       "lat": -12.122184,
       "lng": -77.029397,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7681c6c0dc7849589d9766df75b961cc.16"
     },
     {
       "title": "Mural Niño Y Perro Peruano",
       "lat": -12.1225,
       "lng": -77.030306,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a22d2d3b608d42cba9592acee4d04a57.16"
     },
     {
       "title": "352 Gastrobar",
       "lat": -12.122435,
       "lng": -77.027176,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d8386416051f3fe09e6a8b75d0cdfa72.16"
     },
     {
       "title": "teatro de Lucía centro cultural artistico fundado por una familia de artistas con el unico fin difundir cultura",
       "lat": -12.12295,
       "lng": -77.032884,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0f711688db0e387e81640df4eaebbb0f.16"
     },
     {
       "title": "León multicolor",
       "lat": -12.117448,
       "lng": -77.033616,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c214a7d20410375aa8a836ac7028daa4.16"
     },
     {
       "title": "Centolla - Makis",
       "lat": -12.118465,
       "lng": -77.035772,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "70abc479af3930e793c73a158570e52e.16"
     },
     {
       "title": "Madre tierra",
       "lat": -12.123956,
       "lng": -77.031508,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "85e1e17ff2fb4cc9ba7fe91ae30552d4.16"
     },
     {
       "title": "Triple asta de banderas",
       "lat": -12.118024,
       "lng": -77.036545,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "11daf5e10d4a483cbcc6aad7a4d82d41.16"
     },
     {
       "title": "Pileta St Tropez",
       "lat": -12.123819,
       "lng": -77.032305,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7f8f22ce02af4aa4a9b25a68d5e4d3f4.16"
     },
     {
       "title": "Busto de Augusto Tamayo Vargas",
       "lat": -12.125859,
       "lng": -77.036669,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e61a4355166b492ab78d734df5194496.16"
     },
     {
       "title": "UNFV - FOPCAA",
       "lat": -12.12222,
       "lng": -77.038276,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4bb72133fd8d4e2f92b75faba464252a.16"
     },
     {
       "title": "BODEGA CAM",
       "lat": -12.123391,
       "lng": -77.037026,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7d00b0267b1a3bb0be29e9a456a9d4a4.16"
     },
     {
       "title": "Mural Baking",
       "lat": -12.116865,
       "lng": -77.030328,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4990439ae76f4600aad964a4ab4eedf9.16"
     },
     {
       "title": "KFC",
       "lat": -12.12132,
       "lng": -77.028793,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a5edfdc5a9cc3593b4ec3ee81bec6ae4.16"
     },
     {
       "title": "Sakana Restorante",
       "lat": -12.120062,
       "lng": -77.035174,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6072ee3deb534cad9c7ce59d2107cb2d.16"
     },
     {
       "title": "Bola Bailarina",
       "lat": -12.121129,
       "lng": -77.034723,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6135717f58334285854311b7a0682b0e.16"
     },
     {
       "title": "Pequeño Vikingo",
       "lat": -12.123974,
       "lng": -77.027136,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "24fd0d53fbe24dc1a7227ab9dcbbb4a9.16"
     },
     {
       "title": "Chola Peruana",
       "lat": -12.120103,
       "lng": -77.028244,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "475a4c7e2cb34e33acaf3105464b0fd2.16"
     },
     {
       "title": "El Virrey",
       "lat": -12.123762,
       "lng": -77.036053,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6f45c638e04a4ae39227472a864e9386.16"
     },
     {
       "title": "Mural Mujer de la Sierra",
       "lat": -12.123896,
       "lng": -77.027763,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c0cf7c072657476fb8bef15798285be0.16"
     },
     {
       "title": "Chifa Cristal",
       "lat": -12.120278,
       "lng": -77.034079,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "318f3603435b3224868c679b013c214f.16"
     },
     {
       "title": "Mural Tapada Limeña",
       "lat": -12.125812,
       "lng": -77.030495,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d86f8e024c49471991d4ebc3e2768652.16"
     },
     {
       "title": "Grafitti Calavera Enamorada",
       "lat": -12.119903,
       "lng": -77.026557,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "713c6fac073a4a62b00f56521d50a8a6.16"
     },
     {
       "title": "Mural Gigante \"La Olla\"",
       "lat": -12.125804,
       "lng": -77.029403,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a47b251ee98847a2bf8e8402d778c5b3.16"
     },
     {
       "title": "El Cubo Rojo Graffiti",
       "lat": -12.124258,
       "lng": -77.031613,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b41405c54ee24a0e870703c865f99000.16"
     },
     {
       "title": "Galerias Multicentro",
       "lat": -12.120857,
       "lng": -77.028786,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7017cb0e13f03d0ab47bd3405dfe0b10.16"
     },
     {
       "title": "Riqueza peruana",
       "lat": -12.121538,
       "lng": -77.031873,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "cdb107c68d9f3b58a722cbb31a284c93.16"
     },
     {
       "title": "Smoking Shop",
       "lat": -12.122766,
       "lng": -77.029763,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0992eb27033f4dacb0c58b8ff9afe108.16"
     },
     {
       "title": "Chifa Fu Jou",
       "lat": -12.117946,
       "lng": -77.032773,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9281728b89413f5eb0fa80a8c1686e19.16"
     },
     {
       "title": "Listo",
       "lat": -12.123236,
       "lng": -77.028718,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f17681503d943825a70f3bbb7ac96fdd.16"
     },
     {
       "title": "Alameda Pardo",
       "lat": -12.119072,
       "lng": -77.038218,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a6de2dd0499e482b91987655566edc71.16"
     },
     {
       "title": "Restaurante Chifa Welcome",
       "lat": -12.117917,
       "lng": -77.034918,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "04494a21af5b37cdb0023e3168cde192.16"
     },
     {
       "title": "Restaurante Massala",
       "lat": -12.120293,
       "lng": -77.035735,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "5727a767e45938beb444b27ed0c5b6da.16"
     },
     {
       "title": "Virgen Miraflorina",
       "lat": -12.119721,
       "lng": -77.032268,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "830f0680654f445c89cb0b3897734eaf.16"
     },
     {
       "title": "Plazuela Bajada Balta",
       "lat": -12.125175,
       "lng": -77.033902,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e142a8bd5dd74c8c8a55959432b271eb.16"
     },
     {
       "title": "Los Rostros Del Saber",
       "lat": -12.124089,
       "lng": -77.030756,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6a9d64d80ae146baaaf61a0db1a974b0.16"
     },
     {
       "title": "Trattoria Dei Prati",
       "lat": -12.121336,
       "lng": -77.027225,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "55b9be7b4743381cb6fd21caa6b46915.16"
     },
     {
       "title": "Placa Parque Antonio Raimondi",
       "lat": -12.12514,
       "lng": -77.037587,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "56177e05688448d19183f34cdfd2cc73.16"
     },
     {
       "title": "Cocina Andina",
       "lat": -12.121904,
       "lng": -77.027653,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d924abc2bd1e49d781b60270e76b175a.16"
     },
     {
       "title": "Les Gourmands",
       "lat": -12.122113,
       "lng": -77.032895,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "66bbb2ba85863673a4a662e39ab9c3cf.16"
     },
     {
       "title": "Memoria Luis Benjamin",
       "lat": -12.12588,
       "lng": -77.03696,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1fc862b3cc2e4c0c920d819ee5fd62ef.16"
     },
     {
       "title": "Parroquia Alemana",
       "lat": -12.118287,
       "lng": -77.030864,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "dc89e195eaa74659882ad3a7bd897d11.16"
     },
     {
       "title": "Lobo by Seimiek",
       "lat": -12.12548,
       "lng": -77.028751,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c734f7c9e81f4c81b162cd8410a0646b.16"
     },
     {
       "title": "Municipalidad De Miraflores",
       "lat": -12.121735,
       "lng": -77.029161,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a9a1943745da41c19955286c6dcf2c07.16"
     },
     {
       "title": "Rata Jonas del 2004",
       "lat": -12.122995,
       "lng": -77.028416,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "76a3034fe8454f4fa80c4150b97798c8.16"
     },
     {
       "title": "Anfiteatro Chabuca Granda",
       "lat": -12.12096,
       "lng": -77.029567,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "5c75c774bf5f403dab303c1b54227455.16"
     },
     {
       "title": "Pájaro Metálico",
       "lat": -12.123743,
       "lng": -77.032525,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f60234b25f0b4134a31b61700a161fde.11"
     },
     {
       "title": "Entrada al Parque Kennedy",
       "lat": -12.119766,
       "lng": -77.029189,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "af64ca5b47704d9489d3d12ba07b6259.11"
     },
     {
       "title": "Titan Gym",
       "lat": -12.122664,
       "lng": -77.028733,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "5bc121261be43bb9b2e23ab7ebfc21ae.16"
     },
     {
       "title": "BODEGA NAKAMOTO",
       "lat": -12.119951,
       "lng": -77.03907,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2168e7f855523d3da85d9d450703279a.16"
     },
     {
       "title": "Banco \"Alfin\"",
       "lat": -12.12406,
       "lng": -77.029114,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1d953677326b32c9bffe0dbd3384bb01.16"
     },
     {
       "title": "Mural \"Scooters\"",
       "lat": -12.117225,
       "lng": -77.035871,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bf99d53f934042339a120849ed9baeaf.16"
     },
     {
       "title": "SUBWAY - Pardo, Miraflores",
       "lat": -12.119218,
       "lng": -77.03523,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "107b122b1f4231fa9b1002937f09cb19.16"
     },
     {
       "title": "RENIEC",
       "lat": -12.122506,
       "lng": -77.028537,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ea797a99731e314ab8484b8bc7cabe54.16"
     },
     {
       "title": "Asfixia",
       "lat": -12.125264,
       "lng": -77.029511,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2df3bbdaec4d4d148bacc9ca3ed3fb0f.16"
     },
     {
       "title": "CICR",
       "lat": -12.122715,
       "lng": -77.036856,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c35913243cf5369f8d47c126bc72641d.16"
     },
     {
       "title": "Parque 7 De Junio",
       "lat": -12.121111,
       "lng": -77.029297,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "284ab68dc3bf4a7699e85e1b649608dd.16"
     },
     {
       "title": "Farmacia Mifarma - Av Pardo",
       "lat": -12.118849,
       "lng": -77.03491,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "581d2955992c3512b06340308ad0abc8.16"
     },
     {
       "title": "De la selva su encanto",
       "lat": -12.124848,
       "lng": -77.026586,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4760219335663980ba8b5ba317a3abb0.16"
     },
     {
       "title": "Restaurante CostAzul",
       "lat": -12.120211,
       "lng": -77.038908,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "09dc3ebfb0324128b30704282297cd41.16"
     },
     {
       "title": "Pelirroja",
       "lat": -12.120269,
       "lng": -77.035204,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "91692e7276f54a8781f064f097779c02.16"
     },
     {
       "title": "Cibertec Miraflores",
       "lat": -12.122251,
       "lng": -77.028307,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "73f3baf2aa9f4d67baed9cbb8623102c.16"
     },
     {
       "title": "Mandala",
       "lat": -12.117764,
       "lng": -77.03886,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c11a8b8418624214a3527b5891422b0a.16"
     },
     {
       "title": "Ciclistas",
       "lat": -12.12336,
       "lng": -77.033775,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6d802b71a769418caa82122fd254d18b.16"
     },
     {
       "title": "Mural Nazca",
       "lat": -12.12,
       "lng": -77.037162,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d45a209c9f48458483a76f1937c274ab.16"
     },
     {
       "title": "Hombre Echado Grafitti Larco",
       "lat": -12.125315,
       "lng": -77.029295,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4d7ef3ef18f5405ab1b9f377e901ea59.16"
     },
     {
       "title": "El Parque del Amor",
       "lat": -12.126822,
       "lng": -77.036562,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3af384a0a0704df7a8f18965f0a7e2a6.12"
     },
     {
       "title": "Mural Mujer y Corazon",
       "lat": -12.126971,
       "lng": -77.029675,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "365b263901053971baee51c29f9dd4ec.16"
     },
     {
       "title": "Te Quiero Té",
       "lat": -12.127289,
       "lng": -77.028776,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3bbd3a1f69a9425ea6018b6940bd30f0.16"
     },
     {
       "title": "Rotary Club De Miraflores",
       "lat": -12.126938,
       "lng": -77.035905,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e2b5de88e806463cafc5b190e8544be1.16"
     },
     {
       "title": "Casino La Hacienda",
       "lat": -12.126769,
       "lng": -77.0295,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "33485f91d4a846f9ad06ccef336d4e08.16"
     },
     {
       "title": "restaurante CHé CHá",
       "lat": -12.127421,
       "lng": -77.028351,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "371947e2999d423184db1767e767bfdb.16"
     },
     {
       "title": "Pileta Del Hotel San Martin",
       "lat": -12.126505,
       "lng": -77.028286,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fb25f55266654a0bb6a899e0164ddcea.16"
     },
     {
       "title": "iShop Larco",
       "lat": -12.126683,
       "lng": -77.029634,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "54657a32fcf2472b8f951f0ac00ec888.16"
     },
     {
       "title": "La Picaroneria Tradicion Popular",
       "lat": -12.127892,
       "lng": -77.029298,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1d85d9095c4c32acacddeccd69c395af.16"
     },
     {
       "title": "Mural Rick & Morty",
       "lat": -12.12698,
       "lng": -77.029018,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4d1c31ef0b284165bdc77b90a0490366.16"
     },
     {
       "title": "Club Terrazas",
       "lat": -12.126184,
       "lng": -77.03371,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "37862f60575f44e88cf92d44fd08508b.16"
     },
     {
       "title": "Teatro Larco",
       "lat": -12.128056,
       "lng": -77.029725,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "17a0aa96139542368732671b4b034c96.16"
     },
     {
       "title": "la Madre Teresa del Sagrado Corazón",
       "lat": -12.126169,
       "lng": -77.03638,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "44ee3fef72cc41b28accda81db197962.11"
     },
     {
       "title": "Street Art By Conrad Migue",
       "lat": -12.127561,
       "lng": -77.029989,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "302270e9c76f4f37842464ad80703e40.16"
     },
     {
       "title": "Heart Of Cupid",
       "lat": -12.126453,
       "lng": -77.036363,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2db28fd6ee704966b51b3388df654659.16"
     },
     {
       "title": "Street Art Colon/Manco capac",
       "lat": -12.127204,
       "lng": -77.030928,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7df6e5d0c4b849d599d0e90c500aa8a2.16"
     },
     {
       "title": "Domo Da Praia Lam",
       "lat": -12.126378,
       "lng": -77.036677,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "52ed39db22534d8bb9d99c6be7a84081.16"
     },
     {
       "title": "Grafiti Vallejo",
       "lat": -12.127009,
       "lng": -77.031057,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c177cbde46ef4c6fa825bded55d0be37.16"
     },
     {
       "title": "El Parrillón",
       "lat": -12.128167,
       "lng": -77.026139,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "380240bec37732ecaca4e89a40d62bba.16"
     },
     {
       "title": "Hotel Leon de Oro",
       "lat": -12.127266,
       "lng": -77.027133,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "845af87c2d7b3716b91b1bc8c6b57c68.16"
     },
     {
       "title": "Carda",
       "lat": -12.125967,
       "lng": -77.031401,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1d7178abc6f64f5ebd0eb105500eb42e.16"
     },
     {
       "title": "Pastelería Vekia",
       "lat": -12.127551,
       "lng": -77.024331,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0b717103ff633d6fb46d854cf205459f.16"
     },
     {
       "title": "Parque Del Amor En Miraflores",
       "lat": -12.126808,
       "lng": -77.036321,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "493fc689e1bb46ffbaa4662d637c57ff.16"
     },
     {
       "title": "Placa Puente Villena Rey",
       "lat": -12.127111,
       "lng": -77.036036,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0cc85771df17459dab16190558027fd3.16"
     },
     {
       "title": "Street art In Garage Door",
       "lat": -12.127443,
       "lng": -77.030182,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c79b1ef645b44364887f07d9a554d365.16"
     },
     {
       "title": "El Trébol De Miraflores",
       "lat": -12.127025,
       "lng": -77.036523,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d48770cb662643a3bdee13f1786b4157.16"
     },
     {
       "title": "Magma",
       "lat": -12.126129,
       "lng": -77.029362,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3fc53d7e74414c0c86d9a0e4055a7307.16"
     },
     {
       "title": "Sol 4 Ojos",
       "lat": -12.126684,
       "lng": -77.027993,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "71c00658507c3b53a930717b48f1d573.16"
     },
     {
       "title": "Mini Parque Grau",
       "lat": -12.126191,
       "lng": -77.034835,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "44772ea60b3a426bbdc2c4504cf7a24f.16"
     },
     {
       "title": "Mercado San Martín",
       "lat": -12.126021,
       "lng": -77.029813,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0ed3ae72213935c0b41edb97f1a70d7a.16"
     },
     {
       "title": "Avenida Reducto",
       "lat": -12.128156,
       "lng": -77.024227,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "17c3820a8a723a92a103c65d12d8479c.16"
     },
     {
       "title": "Hotel Jose Antonio",
       "lat": -12.126454,
       "lng": -77.030827,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "540b98fe98de3fddb7ebc9cd4bb056bf.16"
     },
     {
       "title": "Parque Juan Carosio",
       "lat": -12.126908,
       "lng": -77.035127,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c008946765e745fd9151eeded081608a.16"
     },
     {
       "title": "Puente De Bajada Intihuatana",
       "lat": -12.127196,
       "lng": -77.034882,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "12dfdcd27b6a4f129440c3a5421ac9d2.16"
     },
     {
       "title": "Asientos Públicos",
       "lat": -12.118869,
       "lng": -77.041812,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9488d2c73e2c300baade85707759eeb5.16"
     },
     {
       "title": "Grafiti Mujer Andina",
       "lat": -12.11691,
       "lng": -77.041781,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b2ae6d3126e041b6b655719229f4438b.16"
     },
     {
       "title": "Parque Julio Ramón Ribeyro",
       "lat": -12.11901,
       "lng": -77.040067,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8388e6157ef4494587696e1807805ae0.16"
     },
     {
       "title": "Cancha De Tenis",
       "lat": -12.122062,
       "lng": -77.040837,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "901b98748d044b18945009378ac0238a.16"
     },
     {
       "title": "Esculturas arrodilladas",
       "lat": -12.118208,
       "lng": -77.041165,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e9c2b3774104460fb06d6f06f7e5d762.16"
     },
     {
       "title": "Porcus",
       "lat": -12.119752,
       "lng": -77.04108,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9f19968cb6893f38a79f393b3eafaeba.16"
     },
     {
       "title": "Jose Quiñones Gonzalez",
       "lat": -12.1204,
       "lng": -77.041582,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bf80c4cc6477434b9514675a99c8d596.16"
     },
     {
       "title": "CHIFA",
       "lat": -12.119372,
       "lng": -77.040579,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0966c8cddf933614835a2a26b160da74.16"
     },
     {
       "title": "Grafitti Paseo Bicicletas",
       "lat": -12.116995,
       "lng": -77.041143,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "687207236a174e3bbe7a6ffb5ad194b1.16"
     },
     {
       "title": "Centro De Tenis De Miraflores",
       "lat": -12.122612,
       "lng": -77.040386,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bba6ed72e32c46d4802d753bd4d2242d.16"
     },
     {
       "title": "Renan Elias Olivera",
       "lat": -12.12018,
       "lng": -77.041424,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "81c9d01615c1412ea2d54df716184172.16"
     },
     {
       "title": "Familia De Belen",
       "lat": -12.120014,
       "lng": -77.040964,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4296f720e9e14eceb5dae7a9ffc17a95.16"
     }
   ]
 }

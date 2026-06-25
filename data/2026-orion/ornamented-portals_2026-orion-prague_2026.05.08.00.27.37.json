@@ -6,4453 +6,5195 @@
       "title": "Hlavy na věži",
       "lat": 50.08843,
       "lng": 14.416224,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e01cd09160fe4de0b59920c7c338e58f.16"
     },
     {
       "title": "Teufelsfratze",
       "lat": 50.084255,
       "lng": 14.413548,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "937a1ecf03e04eb5aafb9891573f5e6b.16"
     },
     {
       "title": "Prague Beer Museum",
       "lat": 50.085004,
       "lng": 14.414053,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a41b6be1cfa347f98dc8c97065bb347a.16"
     },
     {
       "title": "Myslbekova busta",
       "lat": 50.084958,
       "lng": 14.413917,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d02be50f48c1429180181a78036b2f09.16"
     },
     {
       "title": "Věrni Zůstaneme",
       "lat": 50.088965,
       "lng": 14.415826,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "95e129d43cdd466c9638dc35d1ddda95.16"
     },
     {
       "title": "Jan Palach",
       "lat": 50.089164,
       "lng": 14.415949,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1f0c7a79fc1e4d83a63b13884c5bbe74.16"
     },
     {
       "title": "1 Or 2 Or 3",
       "lat": 50.08915,
       "lng": 14.435044,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "38985990a80f4371b96cc8a978ee1ba1.16"
     },
     {
       "title": "Sedící Muž",
       "lat": 50.084611,
       "lng": 14.414915,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ab8c66b7078a4a4986e307130edf8545.12"
     },
     {
       "title": "Antičtí milenci",
       "lat": 50.087358,
       "lng": 14.414956,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7420831079ae467f9066dfb4dbb9f0dd.16"
     },
     {
       "title": "Ulysse",
       "lat": 50.083563,
       "lng": 14.421279,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4a0bfe7aa439462385d5e4249e657372.16"
     },
     {
       "title": "Stavovské Divadlo",
       "lat": 50.08588,
       "lng": 14.423434,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "32b61b050e0a3c088b8e0e95370bd60b.16"
     },
     {
       "title": "Spier Guy High",
       "lat": 50.086032,
       "lng": 14.422652,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "dd87714137364210a708176d251296f0.16"
     },
     {
       "title": "Alois Senefelder",
       "lat": 50.084302,
       "lng": 14.421514,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e1229df055464d7ca172da3012ed3ab4.16"
     },
     {
       "title": "Market Fresque",
       "lat": 50.084706,
       "lng": 14.421118,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3eb2c1eb9b9943f5a6bc062b5dfe3b6a.16"
     },
     {
       "title": "Galerie Vavryš",
       "lat": 50.084291,
       "lng": 14.420871,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a209b12092f24c38bc90124fc7d1d49d.16"
     },
     {
       "title": "Život na vesnici",
       "lat": 50.083918,
       "lng": 14.428164,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2d85369d33d644b38d800db55b1430b1.16"
     },
     {
       "title": "Deer Rezistance",
       "lat": 50.08406,
       "lng": 14.427892,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4cede53641b04ab4a41b9dfcc72cf044.16"
     },
     {
       "title": "Rohový dům s prosklenými balkóny",
       "lat": 50.083696,
       "lng": 14.428222,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8b1d6acc6daa44628e4599157397a05e.16"
     },
     {
       "title": "Zlate W",
       "lat": 50.084869,
       "lng": 14.421325,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8436ffc002c04d1eabe4fef35180d678.16"
     },
     {
       "title": "Amphora",
       "lat": 50.084158,
       "lng": 14.428536,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3ec89b3eeb0749afb9b833ac8feb5b7d.16"
     },
     {
       "title": "Erb",
       "lat": 50.084061,
       "lng": 14.428823,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "5a4f277ba0ee4c2fab0187c01d2ce29f.16"
     },
     {
       "title": "Immeuble Ocre",
       "lat": 50.084568,
       "lng": 14.429122,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "62f6b201fa2543d7943c3cc4d392b0da.16"
     },
     {
       "title": "The Arch and Fountain",
       "lat": 50.086254,
       "lng": 14.423699,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "23015b6ce8db4bd4860ce3442481feac.12"
     },
     {
       "title": "Černá Panna Maria na domě v Perlové",
       "lat": 50.083806,
       "lng": 14.420759,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "af4b4e00f9944822b06f7b10aa9649f7.16"
     },
     {
       "title": "Two Headed Bird Sign",
       "lat": 50.084078,
       "lng": 14.421099,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "da16932194da4596b5061e907536b3a5.16"
     },
     {
       "title": "Madarke Kulturni stredisko - Magyar Kulturális Központ",
       "lat": 50.084602,
       "lng": 14.421595,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e2213d1d412a36baad4a95481e8875d6.16"
     },
     {
       "title": "Dům U Zlatého Kříže Memorial",
       "lat": 50.084149,
       "lng": 14.420407,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "32b373ba0e274e7aa91dd3b77a75970c.16"
     },
     {
       "title": "Mucha museum",
       "lat": 50.084236,
       "lng": 14.427696,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1fa8f0b2d03a4ea788e51667559c4ea3.16"
     },
     {
       "title": "Muž držící lampu",
       "lat": 50.084376,
       "lng": 14.427463,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ab7941e9240b4e66b2f011aef26824a8.16"
     },
     {
       "title": "Muro pintado en el patio de un",
       "lat": 50.084188,
       "lng": 14.42728,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2af1f7db27f241b6a7352154c9dc0b96.12"
     },
     {
       "title": "Myslbek OC",
       "lat": 50.085664,
       "lng": 14.425531,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "5d49fbe04d8543fdaf41f79b6c8284dc.16"
     },
     {
       "title": "Central Post Office",
       "lat": 50.083323,
       "lng": 14.427685,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "15d2ce6741894669a43ba6b50d540af3.16"
     },
     {
       "title": "Děti u okna",
       "lat": 50.083571,
       "lng": 14.427647,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "323ab285f57942bcb44e9ea310a10b15.16"
     },
     {
       "title": "Anna Chromy in Memory of W. A.",
       "lat": 50.085784,
       "lng": 14.423178,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "db85335fbbb747758a6b541ade33e704.12"
     },
     {
       "title": "Vyzdoba Sporitelny",
       "lat": 50.085192,
       "lng": 14.421712,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "610d30bd039042ec91ac6b4ab27fb3d8.16"
     },
     {
       "title": "Platýz - Odpočívající",
       "lat": 50.083182,
       "lng": 14.420396,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d8d56b96603e4a2888438d775f89421b.11"
     },
     {
       "title": "Ehrwürdiger Balken",
       "lat": 50.085887,
       "lng": 14.423758,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "11ae1db42b81444dbc0aed87ad58223b.16"
     },
     {
       "title": "Standing Woman Sculpture",
       "lat": 50.083627,
       "lng": 14.426992,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7834acc48e9d4bf9a36108e183b90abd.16"
     },
     {
       "title": "U Prvni Reduty",
       "lat": 50.090602,
       "lng": 14.418158,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0de93d206aa341b78ddfb8b28bba0484.16"
     },
     {
       "title": "Prvni Americo-Ceska Pojistovna",
       "lat": 50.090965,
       "lng": 14.418194,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9941e520272746a3a1a7dcb355a79024.16"
     },
     {
       "title": "Rotunda sv. Kříže",
       "lat": 50.082777,
       "lng": 14.414721,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "53500fa6f21048e686c92d54687a4cbf.11"
     },
     {
       "title": "Fontana S Hlavou",
       "lat": 50.082753,
       "lng": 14.415042,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9a0dcd7c89334efda3f369e243edbc4f.16"
     },
     {
       "title": "Industrial home sign 1890",
       "lat": 50.082983,
       "lng": 14.414623,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "80552b01fa624e539d1fd48df7dd0700.16"
     },
     {
       "title": "Čajovna U Zlatého Kohouta",
       "lat": 50.084435,
       "lng": 14.419626,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "35fc12d9239041688a21c0a717991cbb.16"
     },
     {
       "title": "Erb",
       "lat": 50.084375,
       "lng": 14.419929,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "dda4924d410747a882ccb51289997b39.16"
     },
     {
       "title": "Art On The Wall",
       "lat": 50.084701,
       "lng": 14.419862,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "aa02ff71c3a749789f9540c49a5643fe.16"
     },
     {
       "title": "Cosi Pod Voknem",
       "lat": 50.082892,
       "lng": 14.419655,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9bd100f65f2d422ba64b7df4c158d7df.16"
     },
     {
       "title": "Brokoff Belly Umelec",
       "lat": 50.083117,
       "lng": 14.419992,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e34cbcf3a98347fda3a14332e1ae81be.16"
     },
     {
       "title": "Socha na kostele sv. Martina",
       "lat": 50.083117,
       "lng": 14.419683,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d34a7cbd252b49319d8be2c062fd0451.12"
     },
     {
       "title": "Kašna Uhelný Trh",
       "lat": 50.083904,
       "lng": 14.420379,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0b7c152ca9c54e3195bcea37336df6b5.16"
     },
     {
       "title": "Atlas, Skořepka",
       "lat": 50.083673,
       "lng": 14.420037,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "53fcec617b2c4ef881306502347c27d2.12"
     },
     {
       "title": "Lion",
       "lat": 50.082659,
       "lng": 14.414212,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "47b0d2c71a3b49f7acd2b4c59774ab8e.16"
     },
     {
       "title": "Lamentující žena",
       "lat": 50.083249,
       "lng": 14.414363,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "54f0a324cd854acc8abd2a816854ddaa.16"
     },
     {
       "title": "Staroměstské náměstí",
       "lat": 50.087451,
       "lng": 14.420671,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0bd94fac5de84105b6eef6e7e1639ad9.12"
     },
     {
       "title": "Pamětní deska Pražského povstání",
       "lat": 50.087222,
       "lng": 14.420687,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3dc55f13561a3ef5900ed1f28935656b.16"
     },
     {
       "title": "Artur Gorgey",
       "lat": 50.086044,
       "lng": 14.421114,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "62257c896ec34d75a853158b17024444.16"
     },
     {
       "title": "Mordujace Sie Szczeniaki",
       "lat": 50.086154,
       "lng": 14.420461,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2aa42397f4c942168b9212520bb2aca1.16"
     },
     {
       "title": "Golden Angel",
       "lat": 50.086487,
       "lng": 14.420607,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "985c8a2f7ee047848037d0b174fe1fdd.12"
     },
     {
       "title": "Staroměstská radnice",
       "lat": 50.086875,
       "lng": 14.420465,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bfc4ebcab6b347ceb1fa4149d07651a2.12"
     },
     {
       "title": "Zdobená fasáda",
       "lat": 50.084069,
       "lng": 14.420739,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a7e8b180de7d486387c1d2ac1fdb2a85.16"
     },
     {
       "title": "F. Liszt",
       "lat": 50.083408,
       "lng": 14.420087,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "cf4e9432f416473d8542805db47ec06f.16"
     },
     {
       "title": "Street Art Cat 2",
       "lat": 50.083582,
       "lng": 14.420289,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a92e004233504599bf3a0e000f3a2dd6.16"
     },
     {
       "title": "Liliova Karlova Corner",
       "lat": 50.086106,
       "lng": 14.416193,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "07d0efd4baa743848e838ffa17ae2851.16"
     },
     {
       "title": "Katedrála svatého Klimenta Praha",
       "lat": 50.086289,
       "lng": 14.416074,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d159446bd8de3404904464823398178f.16"
     },
     {
       "title": "Marionettentheater",
       "lat": 50.086067,
       "lng": 14.415806,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "274d84c06ed14080ba568085a6c8c190.12"
     },
     {
       "title": "3 Zdobeny Okna",
       "lat": 50.084598,
       "lng": 14.420684,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ebf3c704e3c94fcda47b2174925a4759.16"
     },
     {
       "title": "U Medvídků, penzion",
       "lat": 50.082984,
       "lng": 14.41876,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3cee93df9b2d4210848b76cacae57bc4.16"
     },
     {
       "title": "U Medvídků",
       "lat": 50.082789,
       "lng": 14.418886,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7b842a9df2294595abded722b048e072.16"
     },
     {
       "title": "Wall Art",
       "lat": 50.08257,
       "lng": 14.419243,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fae681380d9a4ca5bea6345f0104cc4c.16"
     },
     {
       "title": "Vlašská kaple Nanebevzetí Panny Marie",
       "lat": 50.086161,
       "lng": 14.415533,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e0c017b1245f390db200dcc3ed5a19d1.16"
     },
     {
       "title": "Divadlo Lucie Bílé",
       "lat": 50.085869,
       "lng": 14.41513,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2d9edbcbce2e3efdbd1231ac06adbdcf.16"
     },
     {
       "title": "Plaque",
       "lat": 50.084899,
       "lng": 14.421002,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c4c89acef9244cfba3e8fe25d56c0fb5.16"
     },
     {
       "title": "Atlasove",
       "lat": 50.085304,
       "lng": 14.421411,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "723107796da84f6d91269da96e474ab1.16"
     },
     {
       "title": "Marcus Marci",
       "lat": 50.085751,
       "lng": 14.420703,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "caeee5abf3da40859108c48d7741c1ad.16"
     },
     {
       "title": "Kachny",
       "lat": 50.08543,
       "lng": 14.420939,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f4e6830060ee4cd98c418eb5bf80760f.16"
     },
     {
       "title": "Vyznamne Osobnosti",
       "lat": 50.08417,
       "lng": 14.419985,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0d67b5592a8a45afbaffd60e6d3fad02.16"
     },
     {
       "title": "Pavel Josef Šafařík, Staré Město",
       "lat": 50.08613,
       "lng": 14.416531,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "dffbfa7a58dc4855a72af1e2627007b5.16"
     },
     {
       "title": "Staroměstský orloj",
       "lat": 50.087042,
       "lng": 14.420705,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d37d5c47154b40d7a72efcf329c9c81c.12"
     },
     {
       "title": "Stylový dům",
       "lat": 50.086517,
       "lng": 14.420187,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c524379a25864ad8856fb04eb34526b4.16"
     },
     {
       "title": "Kostel sv. Jindřicha a sv. Kunhůty",
       "lat": 50.084789,
       "lng": 14.430226,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0791b474217947f79ea255d00784fa12.11"
     },
     {
       "title": "Na pamět Josefa Hory",
       "lat": 50.083054,
       "lng": 14.426846,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "cc0369a852cf36f4a7781b7adc5d8236.16"
     },
     {
       "title": "Pošťák na římse",
       "lat": 50.083236,
       "lng": 14.427133,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "97ee0e8386ac4afb85ba4242261f9675.16"
     },
     {
       "title": "Pamětní deska Padlým",
       "lat": 50.083402,
       "lng": 14.427398,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f470a74bf4e04c33a7778dbf2e15a2b8.16"
     },
     {
       "title": "Egon Erwin Kisch, Nové Město",
       "lat": 50.08443,
       "lng": 14.427151,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c6cf93e855364a99a88705eea0fabff4.16"
     },
     {
       "title": "Wiehlův dům",
       "lat": 50.081964,
       "lng": 14.426071,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "759dfb061377439e9da87c04be6f8d36.16"
     },
     {
       "title": "Golden Prague Medailon",
       "lat": 50.085374,
       "lng": 14.422698,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "48f8759faede4331a435a2abc0b65a09.16"
     },
     {
       "title": "Faraon",
       "lat": 50.088995,
       "lng": 14.428998,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d21aa870dcbf4ee5b602ae97e2c074cf.16"
     },
     {
       "title": "Sculpture \"Night And Day\"",
       "lat": 50.088106,
       "lng": 14.423559,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6e19692f619d424fb1d54770eb2b626b.16"
     },
     {
       "title": "Ulice Celetná",
       "lat": 50.087241,
       "lng": 14.4261,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b87c88999cf54149ac93bb14b2eb1046.12"
     },
     {
       "title": "Pussycat",
       "lat": 50.089788,
       "lng": 14.422423,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fba5294a98c64f9e93b77c72df28a886.16"
     },
     {
       "title": "Youngsters At 36",
       "lat": 50.090402,
       "lng": 14.425562,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a4e8d0cca6b44128843c9d1cad792a37.16"
     },
     {
       "title": "Angels on the Gate",
       "lat": 50.089329,
       "lng": 14.431237,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "05ada004ed59469096fa90e5e17d42a8.11"
     },
     {
       "title": "Gestin Centrum",
       "lat": 50.088994,
       "lng": 14.43122,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b1e94341c0ae4a9eb81ff091a8152c18.16"
     },
     {
       "title": "Socha ženy",
       "lat": 50.085801,
       "lng": 14.428839,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6c553bc9c5624e98a994b5f72b9892ce.16"
     },
     {
       "title": "Hermes Lion",
       "lat": 50.089051,
       "lng": 14.419812,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "144a8424b783431692d46abfbd80603b.16"
     },
     {
       "title": "David Černý - Viselec | 1997",
       "lat": 50.084292,
       "lng": 14.418248,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "546e89bf7a81408c84a8e4f2b229d061.12"
     },
     {
       "title": "Three Faces",
       "lat": 50.084652,
       "lng": 14.418994,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f01b8c5ea78d4720bc2a9b321fd8a312.16"
     },
     {
       "title": "Sad Man's Tongue",
       "lat": 50.083479,
       "lng": 14.416098,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "837f1b55b93730cc84159b7b05bf2bf1.16"
     },
     {
       "title": "Sadman",
       "lat": 50.084974,
       "lng": 14.416471,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "12333813bd19465fbe285cc3ab1e9e56.16"
     },
     {
       "title": "Little Guy",
       "lat": 50.085055,
       "lng": 14.415142,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c4b90da18b674c51a2afa5f1a6ce991d.16"
     },
     {
       "title": "Hlava",
       "lat": 50.083632,
       "lng": 14.415231,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ddc9a90af58343fa9ddc5838eca1e913.16"
     },
     {
       "title": "Kostel svatého Jiljí Praha",
       "lat": 50.08508,
       "lng": 14.418518,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "149df572d2283a65b168b06fcb12b76b.16"
     },
     {
       "title": "JedenPiecCztery",
       "lat": 50.086086,
       "lng": 14.418253,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "583a3e92b939439d93820ee1fbaa155e.16"
     },
     {
       "title": "Maly dům Rožmberský",
       "lat": 50.084855,
       "lng": 14.420156,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4234ca81a06441e19e5ce135cd732d10.16"
     },
     {
       "title": "Románské sloupy, Staré město",
       "lat": 50.082488,
       "lng": 14.414652,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e18eddecddb245d98a61adb2d4108694.16"
     },
     {
       "title": "Decorated Gate",
       "lat": 50.085905,
       "lng": 14.420274,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f38ef2ad29d7405087bc5d72c36fb2bb.16"
     },
     {
       "title": "Alter Eingang",
       "lat": 50.088283,
       "lng": 14.41991,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8e61da5bb9e54d439745bb1202b2d16d.16"
     },
     {
       "title": "Havelske Trziste",
       "lat": 50.085107,
       "lng": 14.421458,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "95eb228365524a1e9d0afaa22fdead13.16"
     },
     {
       "title": "Dedecek Hribecek",
       "lat": 50.082712,
       "lng": 14.415341,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0d98cd86d20d4085b1a57d61e10d3e09.16"
     },
     {
       "title": "Pitko",
       "lat": 50.082497,
       "lng": 14.415222,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "81bdbfb1739140e787500ccb1c4e9d0b.16"
     },
     {
       "title": "Domovní znamení Kalicha",
       "lat": 50.083805,
       "lng": 14.415529,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8e6e3f2c8278439ca7a4b932933fe09d.16"
     },
     {
       "title": "Svatý Jan Konviktský",
       "lat": 50.083371,
       "lng": 14.41637,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bbb1455a994d4e4da0436d859a30a30f.16"
     },
     {
       "title": "Central Archive, Husova St., P",
       "lat": 50.086158,
       "lng": 14.417858,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9b956e4b9cfe42d5821e97d5aac7dca5.12"
     },
     {
       "title": "Arnošt Lustig",
       "lat": 50.08714,
       "lng": 14.418947,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8258de82ed3649f1acfa90387bb0a17c.16"
     },
     {
       "title": "Historical building - U Závoje",
       "lat": 50.085633,
       "lng": 14.421826,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "cc3677b6a7b33cbe8d37d5c689e9d5a2.16"
     },
     {
       "title": "Antica Figura",
       "lat": 50.086453,
       "lng": 14.416453,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d28899a587c9488bbf7368de5cb3e22d.16"
     },
     {
       "title": "The Reading Child",
       "lat": 50.086433,
       "lng": 14.416089,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fdd2795e029a4d508ab72b593d22e8c3.11"
     },
     {
       "title": "Da qualche parte a Stare Mesto",
       "lat": 50.085289,
       "lng": 14.415822,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3b2a160111244b0f9f4d4f2bd5c6d87c.12"
     },
     {
       "title": "Obří hrozny",
       "lat": 50.086238,
       "lng": 14.422673,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "de5e893fdfa7412cbd56141886505a38.16"
     },
     {
       "title": "U Bileho Jelinka",
       "lat": 50.08438,
       "lng": 14.415121,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a7a98d6246ce4fbebcf1856f3118cbb5.16"
     },
     {
       "title": "Malovaná tržnice",
       "lat": 50.083998,
       "lng": 14.421901,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2582575cd29d430584e7ee810cec7ea7.16"
     },
     {
       "title": "1458 F. Vilon",
       "lat": 50.082997,
       "lng": 14.415535,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f447a5640ae54bd6a209476e11e733c3.16"
     },
     {
       "title": "Kaja Saudek Muzeum",
       "lat": 50.083424,
       "lng": 14.422147,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a4e5c8b8ba6546c9817d615af92d9a7d.16"
     },
     {
       "title": "Three Friends",
       "lat": 50.081528,
       "lng": 14.414131,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f6737c6a111a4e5d97bdf0024c79f2fe.16"
     },
     {
       "title": "Music Club Vagon + Metro Theatre",
       "lat": 50.082177,
       "lng": 14.418128,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8adcfa3cddb14018b6f544d721b5bc47.16"
     },
     {
       "title": "Palác Krosínova",
       "lat": 50.082132,
       "lng": 14.415231,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "31e3f61ac75a42d5912fdcb7bca5ebf4.16"
     },
     {
       "title": "Hotel Thalia",
       "lat": 50.081813,
       "lng": 14.416485,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "aef8466141c34b94895b5a58216aec66.16"
     },
     {
       "title": "Brick Museum",
       "lat": 50.082596,
       "lng": 14.419562,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d6af4a13252946e4b64feae50a76b45e.16"
     },
     {
       "title": "Dimitr Blagoev",
       "lat": 50.083672,
       "lng": 14.41473,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "13376c93b0e542c5873fef01f71a2337.16"
     },
     {
       "title": "Strážná věž (1232)",
       "lat": 50.08221,
       "lng": 14.416477,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2962d8bd33a14edeb850316ecf3f831c.16"
     },
     {
       "title": "Flower Alternative Sculpture",
       "lat": 50.083441,
       "lng": 14.413827,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "456dd4813715492a828590aabffaa18e.16"
     },
     {
       "title": "Busta Krista, Krocínova",
       "lat": 50.082051,
       "lng": 14.414696,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "854ab4f233594106b3bc4fd3d6070327.16"
     },
     {
       "title": "Three Enemies",
       "lat": 50.081523,
       "lng": 14.414598,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a60392968c3c4ddc85d8450e3bde1112.16"
     },
     {
       "title": "Ing. Václav Šaffránek",
       "lat": 50.081943,
       "lng": 14.416017,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f14def110a3e318bb43f46c9cd98676d.16"
     },
     {
       "title": "Sova",
       "lat": 50.082719,
       "lng": 14.420387,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "324317e5fd894edfac00e697b2dba3c5.16"
     },
     {
       "title": "Dvorana Knihovny Akademie věd",
       "lat": 50.081889,
       "lng": 14.414309,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8585c0f923704f7b952673a1ff213be8.16"
     },
     {
       "title": "Ozdobny vjezd",
       "lat": 50.082453,
       "lng": 14.416341,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d06d6b4adec142faaf205cf46fbbce6a.16"
     },
     {
       "title": "Národní Třída, Nové Město",
       "lat": 50.081518,
       "lng": 14.415034,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4bf98db04633481ebbbc6d48557d63c9.12"
     },
     {
       "title": "Memorial to WW2 resistance members Sonnevend",
       "lat": 50.083666,
       "lng": 14.417078,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9ad3a5434d073c3f98d5b6e0cf3f9194.16"
     },
     {
       "title": "Sad Face",
       "lat": 50.081804,
       "lng": 14.415394,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "01f9ecd63f6e4740a50130582b274e8c.16"
     },
     {
       "title": "Konvikt Pivnice",
       "lat": 50.083282,
       "lng": 14.417922,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2f9d1c2adf224890aa673e78e481bee1.16"
     },
     {
       "title": "Staromestske Opevneni",
       "lat": 50.082449,
       "lng": 14.41739,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3599e7142bab4c24a1ad73cc9c390777.11"
     },
     {
       "title": "Palác Ara",
       "lat": 50.083212,
       "lng": 14.421835,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "5122b9a45ef64178b452d7da799794a8.16"
     },
     {
       "title": "Pamatnik Ceskoslovenske Lidobrany",
       "lat": 50.082777,
       "lng": 14.417376,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "892be69c6c98441faa6d452c66a5208d.16"
     },
     {
       "title": "Ritter Fassade",
       "lat": 50.083967,
       "lng": 14.41861,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6f3244555d8a43e886b0461d5473b1e8.16"
     },
     {
       "title": "Krannerova kašna, Staré Město",
       "lat": 50.082974,
       "lng": 14.413545,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "91023de9b527444cbfb523750a9979f6.12"
     },
     {
       "title": "Red statues",
       "lat": 50.083546,
       "lng": 14.422357,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b2def53bdc90471ebb4150ee74c3af31.16"
     },
     {
       "title": "Nibirus Kriegsbären",
       "lat": 50.08304,
       "lng": 14.421514,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "835b98ed6234485997e44edd0a8777a3.16"
     },
     {
       "title": "Vojta Náprstek",
       "lat": 50.084046,
       "lng": 14.416666,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a287f9e2c1074d53b0cfc0f756cae5dc.12"
     },
     {
       "title": "Two statues on the wall",
       "lat": 50.082342,
       "lng": 14.418627,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7448e842973448b388a6ec4a4e33f4ff.16"
     },
     {
       "title": "100. Výročí Vojty Náprstka Memorial",
       "lat": 50.083966,
       "lng": 14.416304,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b1d9dfcdb80e45fc871915666d215bb2.16"
     },
     {
       "title": "Divadlo Viola",
       "lat": 50.081556,
       "lng": 14.415327,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0e08c586de594c6cac9dcaa7bc9efc04.16"
     },
     {
       "title": "Ornament nad Dvermi",
       "lat": 50.083502,
       "lng": 14.416898,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f158fa2fab8b444394925f1d2f3e2e4a.16"
     },
     {
       "title": "Denim",
       "lat": 50.083767,
       "lng": 14.417559,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0bf5b91366904539b23d1508891ce7db.16"
     },
     {
       "title": "Zdobená římsa Smetanovo nábřeží",
       "lat": 50.082028,
       "lng": 14.413225,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "26f3fc190ce23ece93540044012efc20.16"
     },
     {
       "title": "Totem",
       "lat": 50.083973,
       "lng": 14.415885,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e7db5470170e4e1da1e55bb21428a8ae.16"
     },
     {
       "title": "Bartolomějská Věž",
       "lat": 50.083215,
       "lng": 14.417231,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0b4ba4f11c384c7da7f6d30115fa98fc.16"
     },
     {
       "title": "Hypnose Doors",
       "lat": 50.082764,
       "lng": 14.42085,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bc28b9212ac346008b0915c416abafb3.16"
     },
     {
       "title": "Angel",
       "lat": 50.083992,
       "lng": 14.414259,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fee0b23facc949869f54d345b688d990.16"
     },
     {
       "title": "F.Topič",
       "lat": 50.081599,
       "lng": 14.415686,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d0a35b04f32431568afd8f37725df32b.16"
     },
     {
       "title": "Kavárna Slavia",
       "lat": 50.081507,
       "lng": 14.413187,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "613023806873482fa563a7f3fdb764dd.16"
     },
     {
       "title": "Tlusté Děti",
       "lat": 50.082104,
       "lng": 14.417692,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "39619c8498244742b2f42dd6c1c6ce75.16"
     },
     {
       "title": "Zdobienia Na Kamienicy",
       "lat": 50.083499,
       "lng": 14.414466,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "662bcf0735714961bfc400a21817e47d.16"
     },
     {
       "title": "Národní filmový archiv",
       "lat": 50.083338,
       "lng": 14.418435,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b23472eef25c43eea6b0f517c7052f6f.16"
     },
     {
       "title": "Film and TV School",
       "lat": 50.081723,
       "lng": 14.41315,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a168c13650244f76befbb3715572f6ee.16"
     },
     {
       "title": "Historisches Wohnhaus",
       "lat": 50.082176,
       "lng": 14.415597,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c86892a85369443aadcf0cc4753c9cb2.16"
     },
     {
       "title": "Pamiątka Karolina Svetla",
       "lat": 50.083779,
       "lng": 14.414346,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "42b864bc1d3648f8a081c6b3dc0e9df8.16"
     },
     {
       "title": "Madona Na Perštýně",
       "lat": 50.083812,
       "lng": 14.419308,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ec42f4a111cb488880b5da28c8147eef.16"
     },
     {
       "title": "Sherlock`s Bar",
       "lat": 50.083065,
       "lng": 14.417596,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0eb591b790b2491f980b4241dc914bcd.16"
     },
     {
       "title": "Dům",
       "lat": 50.083174,
       "lng": 14.413981,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "dec79a61f59440a3b364dd65543035a5.16"
     },
     {
       "title": "Železná lilie",
       "lat": 50.083032,
       "lng": 14.420635,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6729320c5d9e446599e2e3b8fda5248d.16"
     },
     {
       "title": "Jezulátko ve střešním výklenku",
       "lat": 50.090571,
       "lng": 14.420379,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "daeabedb514e3dc480464a465604c144.16"
     },
     {
       "title": "Kostel svatého Ducha",
       "lat": 50.090038,
       "lng": 14.420101,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a355aa1afc0e4288bebcde01fcbae2f6.16"
     },
     {
       "title": "Kostel sv. Haštala, Staré Město",
       "lat": 50.091228,
       "lng": 14.424391,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "741c71e7a35e48c099eab5ff5ea51e07.11"
     },
     {
       "title": "1915 Children",
       "lat": 50.090975,
       "lng": 14.423968,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8231ab0fbc5c433a8c9b5b0b9181deab.16"
     },
     {
       "title": "Golem Statue",
       "lat": 50.09101,
       "lng": 14.424783,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e81c5069e7634747a1862b267ed0afaa.16"
     },
     {
       "title": "Got Wood",
       "lat": 50.088083,
       "lng": 14.413955,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "468e474545f940a9996877d51c95155b.16"
     },
     {
       "title": "Svatý s hvězdami",
       "lat": 50.087863,
       "lng": 14.413829,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "cbebead27ae14c41a86c084484f9fdc1.16"
     },
     {
       "title": "Rytířský řád Křižovníků S Červenou Hvězdou",
       "lat": 50.087447,
       "lng": 14.414423,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "505b36a790f1495aa515338667ca842f.16"
     },
     {
       "title": "Czerwone Symbole",
       "lat": 50.08739,
       "lng": 14.414086,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9dca951c22e2441caf75257362056fe4.16"
     },
     {
       "title": "Dekorace na Pouliční Lampě",
       "lat": 50.089514,
       "lng": 14.415771,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6e5500ae541049239c7ad0c9326a832a.16"
     },
     {
       "title": "Strážící lev",
       "lat": 50.089734,
       "lng": 14.415814,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a0073490ce0d4625a3992e72b3920963.12"
     },
     {
       "title": "Rudolfinum's Sky",
       "lat": 50.089687,
       "lng": 14.415332,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "aeed38a27b1243879f9763a7476d4b5d.16"
     },
     {
       "title": "Alšovo Nábřeží",
       "lat": 50.087614,
       "lng": 14.413866,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "58a4ed6fbd1a4bfd990cd8a634b9b835.16"
     },
     {
       "title": "Náměstí Jana Palacha",
       "lat": 50.088788,
       "lng": 14.414064,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e26da1fdbf5547158c7f7a4bac90186c.12"
     },
     {
       "title": "Zlatý anděl",
       "lat": 50.089393,
       "lng": 14.415488,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "571d34d0f88e406d968c4c1ee2c898cd.16"
     },
     {
       "title": "Socha Josefa Mánesa",
       "lat": 50.089698,
       "lng": 14.414441,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6c9cfb8c629440d3b7634bb4560e910d.12"
     },
     {
       "title": "Wireframed Balcony",
       "lat": 50.090494,
       "lng": 14.423371,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f62eebf45f414126a58c1e6599131b03.16"
     },
     {
       "title": "Květinové Hodiny",
       "lat": 50.090638,
       "lng": 14.423657,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bfee550ad8814de4b1879d602088c85c.16"
     },
     {
       "title": "Pražská secese 1908",
       "lat": 50.088346,
       "lng": 14.416549,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7ed58dc590f84be184094db71b5df8b3.16"
     },
     {
       "title": "Odnowiona Kamienica",
       "lat": 50.088539,
       "lng": 14.416844,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9ec5021c2e5644adb5fe1216ef7c377a.16"
     },
     {
       "title": "U DVOU STITU",
       "lat": 50.088586,
       "lng": 14.416558,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8a7f5367b2a842d28034b2fdf925fa28.16"
     },
     {
       "title": "Lvi chránící střechu",
       "lat": 50.088067,
       "lng": 14.421007,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a24e973f29c444a990813f1b938736e2.12"
     },
     {
       "title": "Dionysos (Bacchus)",
       "lat": 50.088045,
       "lng": 14.42046,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c1ad7f9e2aa04aeb8b9954efbdad1157.12"
     },
     {
       "title": "Statue de lettres à Prague",
       "lat": 50.08807,
       "lng": 14.421508,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fc0f2ad0c9f94e329c056a1d8880b86b.12"
     },
     {
       "title": "Otakar Mařák",
       "lat": 50.088835,
       "lng": 14.419876,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "5d13270ff846484da5831e5a0df8f20e.16"
     },
     {
       "title": "Fancy entrance portal",
       "lat": 50.088221,
       "lng": 14.421164,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "07ab807bb6464335ade325be8eb6bcb5.16"
     },
     {
       "title": "Dům s vojáky Havlíčkova",
       "lat": 50.089452,
       "lng": 14.432329,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c1cb62bc93ed46d1ad8ef1d62d7ddaea.16"
     },
     {
       "title": "Josef Kajetán Tyl",
       "lat": 50.088393,
       "lng": 14.429239,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a6375a1ea8624156a96b272519ea60f3.16"
     },
     {
       "title": "Dům U zeleného stolu",
       "lat": 50.090782,
       "lng": 14.426464,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "390b981ddd2c3ab4a6aac6b6d0054adf.16"
     },
     {
       "title": "místo narození J. Heyrovského",
       "lat": 50.088607,
       "lng": 14.415677,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "be4e8a45eec64c29a02fbbb355d7ed48.12"
     },
     {
       "title": "Statue on the Wall",
       "lat": 50.08818,
       "lng": 14.415537,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "eea1a0b2c803492ba70f50cc4e0943ea.16"
     },
     {
       "title": "Divadlo Na Rejdišti",
       "lat": 50.090866,
       "lng": 14.415563,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1e4bbe8bbe3b4cbba5941bb3492bf709.16"
     },
     {
       "title": "Fontána",
       "lat": 50.089132,
       "lng": 14.41417,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "04df5a1bbaea4c93972fb23bda474ca5.16"
     },
     {
       "title": "The Old New Synagogue",
       "lat": 50.090039,
       "lng": 14.418444,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7ac8885b738b4efcb28185b41a24c642.16"
     },
     {
       "title": "Neptune Statue-Prague",
       "lat": 50.087265,
       "lng": 14.422426,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "dc528304c6404b9bbc436dbf81772ac1.12"
     },
     {
       "title": "Fountain",
       "lat": 50.087874,
       "lng": 14.420183,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "001a0b8e1d95431eb13adc59a48312fa.16"
     },
     {
       "title": "Historical building with czech lion ornament",
       "lat": 50.087097,
       "lng": 14.419318,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9366c80e45cf3b3499b26458ee2a380e.16"
     },
     {
       "title": "Praha matka měst",
       "lat": 50.087739,
       "lng": 14.418986,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1dc1d3a9d5d7467b952c01e5844f2166.16"
     },
     {
       "title": "Dračí hlava",
       "lat": 50.090731,
       "lng": 14.422612,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "055d40b9a97e411093003d44370ec886.16"
     },
     {
       "title": "Franz Kafka",
       "lat": 50.08782,
       "lng": 14.41924,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b87c6172460b48daa5374bce85c918e7.12"
     },
     {
       "title": "Zlatá Hlava",
       "lat": 50.088035,
       "lng": 14.41882,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d5a8453b300a4906b2a6cb1d4c73f0a3.16"
     },
     {
       "title": "Head Of The Dragons",
       "lat": 50.088563,
       "lng": 14.423546,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "44ee2e66943e49f5a4d6134458ccfccd.16"
     },
     {
       "title": "Kostel sv. Jakuba",
       "lat": 50.088316,
       "lng": 14.424595,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4e46ec1cdcf44847a2e75af94699fbbf.16"
     },
     {
       "title": "Sedící andělé",
       "lat": 50.088344,
       "lng": 14.420188,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8f136602288f4fb1ac85b5dbdeb829a7.16"
     },
     {
       "title": "Battle Of Dukla Pass Memorial Plaque",
       "lat": 50.087751,
       "lng": 14.421506,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "226fcbc3770c4d56a44505c3b161bec4.16"
     },
     {
       "title": "Pařížská, Prague",
       "lat": 50.088652,
       "lng": 14.419915,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e19ac6ba733440eda80c949af48a6631.12"
     },
     {
       "title": "Harpy Nest",
       "lat": 50.090299,
       "lng": 14.422872,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e56e4242d8e04e7489fec6d86473a5a4.16"
     },
     {
       "title": "Babka na rohu",
       "lat": 50.087443,
       "lng": 14.418939,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6555d4f04a254241ab1dfd5343d0fa0c.16"
     },
     {
       "title": "Secesní malby ve Valentinské",
       "lat": 50.08808,
       "lng": 14.416406,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d3eb7eef0640414e8263b64a2420690f.16"
     },
     {
       "title": "Bridge Art",
       "lat": 50.087627,
       "lng": 14.418766,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "65409d47069741febd0808af04b88dfb.16"
     },
     {
       "title": "Balkon",
       "lat": 50.088789,
       "lng": 14.421679,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c7e421d38ec6424898454eb93a002cba.16"
     },
     {
       "title": "Římskokatolická farnost Matky Boží před Týnem",
       "lat": 50.087824,
       "lng": 14.422784,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2b14d75d02f64d90b57d163d17b0f2c9.11"
     },
     {
       "title": "Josef Bučil",
       "lat": 50.086376,
       "lng": 14.428968,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8edfd5ecab8649ae9961bd25169e739d.16"
     },
     {
       "title": "Konektor Place",
       "lat": 50.088721,
       "lng": 14.428282,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "12024c1b1ffc4831bcb557f129e19997.16"
     },
     {
       "title": "Klášter Kapucínu",
       "lat": 50.088868,
       "lng": 14.429829,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6a873ee99a6d448681b6156f34593dce.16"
     },
     {
       "title": "Slovanský dům",
       "lat": 50.086413,
       "lng": 14.427243,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "62a90e2c10e542ebba03545507214577.16"
     },
     {
       "title": "Česká Národní Banka",
       "lat": 50.087008,
       "lng": 14.428395,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0fa71fce71ea4889bb3989559641a7c1.12"
     },
     {
       "title": "Busta Jan Kotěra",
       "lat": 50.088747,
       "lng": 14.414492,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "47d7e8bf23ae49c4939c298297dd225e.16"
     },
     {
       "title": "Dům u Mušketýrů",
       "lat": 50.089853,
       "lng": 14.420018,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a753f4199d5a4a8b95b573c07ea1c4bf.16"
     },
     {
       "title": "Pinkasova Synagoga",
       "lat": 50.089364,
       "lng": 14.416862,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0eeabf59576431d1be7c82501e2064ff.16"
     },
     {
       "title": "Statue",
       "lat": 50.090311,
       "lng": 14.418692,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9aef6f786f8941829ddc7a3830dffd88.12"
     },
     {
       "title": "Template",
       "lat": 50.09035,
       "lng": 14.418206,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "40cd5c369d964ab6923d6d98b1e00bf1.16"
     },
     {
       "title": "The Jewish Primary Scool (1920-1945)",
       "lat": 50.088575,
       "lng": 14.419172,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a9d5b50296114647a252414ae637fe34.16"
     },
     {
       "title": "Castle",
       "lat": 50.08904,
       "lng": 14.416263,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ddfdeb9b15dc49e6b196142ad6106573.16"
     },
     {
       "title": "Chrám U Salvátora, Československý Evangelický Chrám",
       "lat": 50.089043,
       "lng": 14.420586,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f0f1556f6043475fb043ee5f7ddcd598.16"
     },
     {
       "title": "Egizi A Praga",
       "lat": 50.090154,
       "lng": 14.419783,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "56625499135e4b418588b010693baa21.16"
     },
     {
       "title": "Bellevue Palace",
       "lat": 50.08435,
       "lng": 14.413562,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "054e16b7f0b74090be4b781fdd68ffc8.12"
     },
     {
       "title": "Prague",
       "lat": 50.086391,
       "lng": 14.419427,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e31aad33ab16437a93f12d21b6708bd8.12"
     },
     {
       "title": "Trpaslici UNIMA",
       "lat": 50.087865,
       "lng": 14.417634,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "50f660741ff648fda9f932fb10bf626e.16"
     },
     {
       "title": "Hotel Aurus",
       "lat": 50.086084,
       "lng": 14.416867,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3fc04825d6a343839ad6752a9ba7fed9.11"
     },
     {
       "title": "Portal Doorway",
       "lat": 50.089637,
       "lng": 14.420814,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b8c545f9936440d0a15a7066cbf94784.16"
     },
     {
       "title": "Les Signes",
       "lat": 50.088954,
       "lng": 14.4215,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "93c3160b04224b8bab0f22a9ab1c2298.16"
     },
     {
       "title": "1911 Statue",
       "lat": 50.090644,
       "lng": 14.417645,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "01fa9e13adcf42fc95105e45b9272e7b.16"
     },
     {
       "title": "Man and Child",
       "lat": 50.084853,
       "lng": 14.421913,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ebd31e77c0c04b8199c33974725bb0b7.16"
     },
     {
       "title": "Beer Museum",
       "lat": 50.085058,
       "lng": 14.418155,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d508c7b0789c40b8b45116b8a7c162dd.16"
     },
     {
       "title": "Painted Folding Screen",
       "lat": 50.087768,
       "lng": 14.41679,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f4bfffa2e58a4e62b17ddee4b68b126e.16"
     },
     {
       "title": "Erwin",
       "lat": 50.086369,
       "lng": 14.421432,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2629845f262642bd95998a399e1caf37.16"
     },
     {
       "title": "Kostel sv. Havla, Staré Město",
       "lat": 50.085584,
       "lng": 14.422226,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "192ae8ffbbcb4871b747a06a469abefb.12"
     },
     {
       "title": "Magistrát hlavního města Prahy",
       "lat": 50.087072,
       "lng": 14.417804,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "71165c77cb0f4acbb63a4f0fe6307a38.12"
     },
     {
       "title": "Busta Rudolfa Kremličky Praha",
       "lat": 50.089667,
       "lng": 14.419373,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f245829699964be5b2d2ac59d58d1d91.12"
     },
     {
       "title": "Musketeer statue",
       "lat": 50.086422,
       "lng": 14.415084,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "658665d38c384cceb8217ce7564d89d2.16"
     },
     {
       "title": "Audemars Piguet",
       "lat": 50.088682,
       "lng": 14.420589,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6336a698512a408a916d6767ceabfc4f.16"
     },
     {
       "title": "Dravec",
       "lat": 50.086415,
       "lng": 14.422298,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c74df688f2d1406c87eada75dad82241.16"
     },
     {
       "title": "Carrier",
       "lat": 50.088414,
       "lng": 14.421648,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7e38ead1a40346b9b3d5af91d2c38c11.16"
     },
     {
       "title": "Apache",
       "lat": 50.08866,
       "lng": 14.419512,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "83b06651392c4fdeba4b7f80d8d8eb88.16"
     },
     {
       "title": "Dum Jaroslava Jezka",
       "lat": 50.088291,
       "lng": 14.417284,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "929de79c92694529bbea8f5c23e4066a.16"
     },
     {
       "title": "Antonín Dvořák, Rudolfinum",
       "lat": 50.089241,
       "lng": 14.415175,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ab1ae40892b9402ebe9de4ce9de2b268.16"
     },
     {
       "title": "Well of Wisdom",
       "lat": 50.087368,
       "lng": 14.417363,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d00163e11d1a45e4a2262c8211793aba.11"
     },
     {
       "title": "Historic Ornaments",
       "lat": 50.085007,
       "lng": 14.415522,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8323d67e049240169ac2590f6b37bce4.16"
     },
     {
       "title": "Socha anděla bez hlavy",
       "lat": 50.088612,
       "lng": 14.41481,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c607830f6152414e9f415cb7048a33e1.16"
     },
     {
       "title": "Žák",
       "lat": 50.087954,
       "lng": 14.414985,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "26d21ef9540a4176b0b516882d93aa06.16"
     },
     {
       "title": "Městský dům Kaprova",
       "lat": 50.088273,
       "lng": 14.417809,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "05db2b200bb14a099962455b7c922e6c.12"
     },
     {
       "title": "St. Nicholas Church",
       "lat": 50.087942,
       "lng": 14.419876,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c1e0a5d8710344b8b9fb7518c2462207.12"
     },
     {
       "title": "Mariánsky sloup",
       "lat": 50.087354,
       "lng": 14.421306,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ed64a5b3c8fc3d61973a863b3667b116.16"
     },
     {
       "title": "Týnský chrám",
       "lat": 50.087657,
       "lng": 14.421979,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7e6606c27ba845099d91028999d5be06.12"
     },
     {
       "title": "Dark Knight",
       "lat": 50.087306,
       "lng": 14.417656,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "64b85237798b44e18b21fc3ca85120d4.16"
     },
     {
       "title": "Secese",
       "lat": 50.091028,
       "lng": 14.41722,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c7c79ba9a22e458a88b76a7153bede93.16"
     },
     {
       "title": "Hängende Skulptur",
       "lat": 50.08416,
       "lng": 14.418298,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3a1310ee07e7474f8ee3f6c8d061f65f.16"
     },
     {
       "title": "U Modrého Hroznu",
       "lat": 50.085775,
       "lng": 14.418125,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c6ba1babd9274133bc372fc4e627df27.16"
     },
     {
       "title": "Kašpar 1913",
       "lat": 50.090443,
       "lng": 14.421189,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "dc73749bb5484b68a47f3326e6e40afe.16"
     },
     {
       "title": "Antonin Sova",
       "lat": 50.089448,
       "lng": 14.419096,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f1c13ce33a2a43539cecd179991a43a3.16"
     },
     {
       "title": "Harfa",
       "lat": 50.085286,
       "lng": 14.419968,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "29f8da93f57c409bbd51aa608c643571.16"
     },
     {
       "title": "Synagoga",
       "lat": 50.090334,
       "lng": 14.420745,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "031c585f6a14396eabba5024c0ec58c9.16"
     },
     {
       "title": "Popiersie Kogośtam",
       "lat": 50.088246,
       "lng": 14.414306,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1b6e25d6f1194f4eaa2aa875262b11fc.16"
     },
     {
       "title": "Statue De Franz Kafka",
       "lat": 50.090102,
       "lng": 14.420763,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "71d2d16e865f405ea9a22645b6a46e68.12"
     },
     {
       "title": "Religious Picture on the Wall",
       "lat": 50.084181,
       "lng": 14.414198,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3dc0ae1ae14a4beeb117107fa0887816.16"
     },
     {
       "title": "SÚ ČSAV",
       "lat": 50.087314,
       "lng": 14.416711,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "296af2d0747b4cbc8c283b9cb0655f40.16"
     },
     {
       "title": "Two Angels",
       "lat": 50.084632,
       "lng": 14.415498,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "adfecbcee06b4774ab86a59940fef9fc.16"
     },
     {
       "title": "Židovská Obec v Praze",
       "lat": 50.089756,
       "lng": 14.418425,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f7445a1d750a445ebf2772d1cc5381fa.16"
     },
     {
       "title": "Pomníček Věrni zůstanem",
       "lat": 50.090294,
       "lng": 14.418982,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e44552db6a134e0caa16fc2f8d61d7a5.16"
     },
     {
       "title": "Gestempelte Fassade",
       "lat": 50.08434,
       "lng": 14.415637,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f49157e46aee4ca7aaeaabdf32e1acc3.16"
     },
     {
       "title": "Štencův Dům",
       "lat": 50.089458,
       "lng": 14.421398,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2a542b48938b437eb42989bb91401550.11"
     },
     {
       "title": "Iron Gate Passage",
       "lat": 50.085672,
       "lng": 14.41988,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f5ad6559bad448ba88d80df8b01d1e1a.16"
     },
     {
       "title": "Animal Decorations",
       "lat": 50.091173,
       "lng": 14.420223,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bce7ae6a0ec34f959f71950dd9283e1e.16"
     },
     {
       "title": "Nosiči balkónu",
       "lat": 50.0911,
       "lng": 14.422155,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "97311289e0e94221a3d452d1432640c4.16"
     },
     {
       "title": "Emanuel Piňos Hero Memorial",
       "lat": 50.085542,
       "lng": 14.419331,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d427b77f7d9f47e1b1a85361015cf2bd.16"
     },
     {
       "title": "Tenis Door",
       "lat": 50.084572,
       "lng": 14.41931,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8c8b355ab7bb46e58094ba21a947a53c.16"
     },
     {
       "title": "Santa Maria LP 1914",
       "lat": 50.087713,
       "lng": 14.41784,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ea7d1a102f1f43fa8fa5402906ab391f.16"
     },
     {
       "title": "Slovenský Inštitút",
       "lat": 50.08542,
       "lng": 14.419051,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2d27155a1ede4e8a8a6dca8c4e9fa21c.16"
     },
     {
       "title": "Klausová Synagoga",
       "lat": 50.090002,
       "lng": 14.417147,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "013616bf91ba44de87b8c8ecc8252973.16"
     },
     {
       "title": "Pleading Statue",
       "lat": 50.084052,
       "lng": 14.418933,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "db9357c33d3246df85302e154661b8ca.16"
     },
     {
       "title": "Squatters",
       "lat": 50.087521,
       "lng": 14.418403,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "14c0737a64994a3abfd3004dfbab2386.16"
     },
     {
       "title": "Lion",
       "lat": 50.08445,
       "lng": 14.414252,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7efcad0101c74a279fd38a0cab092088.16"
     },
     {
       "title": "Rudolfinum Organ",
       "lat": 50.089987,
       "lng": 14.415446,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d6ec65984a384096a5475aa89a6c92c1.16"
     },
     {
       "title": "Josefov, Praha (Prague), Česká",
       "lat": 50.089241,
       "lng": 14.41936,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bcbdfd6183a64507a2b6bc633cde28af.12"
     },
     {
       "title": "Wall Statue",
       "lat": 50.087137,
       "lng": 14.415489,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "aafd5774c65243889cdf8d89250f9b27.16"
     },
     {
       "title": "Statue of Telephone Booth",
       "lat": 50.086923,
       "lng": 14.417527,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "5a1a86f282f043a9aee2bb1fc91b2988.16"
     },
     {
       "title": "Andrija Mohorovic (1857 - 1936)",
       "lat": 50.086906,
       "lng": 14.416675,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "dc3c9931de4d4dee8194285b77c7f6bb.16"
     },
     {
       "title": "Lvi Hlava",
       "lat": 50.085097,
       "lng": 14.419028,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d97dfe670dcf4ab092e9e8985941ffcb.16"
     },
     {
       "title": "Bohuslav Balbín",
       "lat": 50.086378,
       "lng": 14.415411,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "44da6b3fe5074e14b53355c1a010547f.12"
     },
     {
       "title": "Un Trou Dans La Facade",
       "lat": 50.089811,
       "lng": 14.420697,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3c6aa8ffddff472885c5910ff7f253eb.16"
     },
     {
       "title": "Parent",
       "lat": 50.090129,
       "lng": 14.416337,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "848b81ec9f39468887bb1e5843e1c290.16"
     },
     {
       "title": "Najpierw Rzeźba Potem Masa",
       "lat": 50.08436,
       "lng": 14.41885,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2213108f74444ed5819cc0d50395b729.16"
     },
     {
       "title": "Astronomická věž Klementina",
       "lat": 50.086658,
       "lng": 14.41649,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "69f48352eceb3f79a4de62ed73e443a2.16"
     },
     {
       "title": "Družstvo Pro Stavbu Učitelských Domů V Praze",
       "lat": 50.090992,
       "lng": 14.419492,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "21fb197129584e9eb864a57ac2d08ed6.16"
     },
     {
       "title": "Dva býci",
       "lat": 50.088564,
       "lng": 14.415296,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a2035bab5f5548ac888f39d0d695c635.16"
     },
     {
       "title": "Hany Bany",
       "lat": 50.087912,
       "lng": 14.416161,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0cdd772b53dc4cb88af10f7c98b3b58e.11"
     },
     {
       "title": "Strange Guy",
       "lat": 50.086662,
       "lng": 14.417199,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "33c7dd76da3043c9a828a748573a033e.16"
     },
     {
       "title": "Hammerman And Birdlady",
       "lat": 50.085436,
       "lng": 14.422025,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6019b3ee76644c4da055349f6722d051.16"
     },
     {
       "title": "House on Rytířská St., Prague",
       "lat": 50.085192,
       "lng": 14.422453,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "19697771dbd045389112bcdc773aeb14.12"
     },
     {
       "title": "Bocni Vchod Kostela Sv. Jilji",
       "lat": 50.084876,
       "lng": 14.418688,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "db6855658cc543ba8b444fb3fd6a6598.16"
     },
     {
       "title": "Pražský poledník",
       "lat": 50.087579,
       "lng": 14.421391,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bca345a6cc5749ed859657ccdbfec9f4.16"
     },
     {
       "title": "Ladies on door",
       "lat": 50.084399,
       "lng": 14.415925,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9b325c2a40904c63a021f0c3cfa6fac9.16"
     },
     {
       "title": "U Znaků",
       "lat": 50.089569,
       "lng": 14.420058,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "cae121df19614b4f86451dc6b8690b7a.16"
     },
     {
       "title": "Mansson pekárna",
       "lat": 50.090972,
       "lng": 14.420041,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "387c933fa62e3f5394ef16986cce028f.16"
     },
     {
       "title": "Fasáda s keramikou, Valentinská",
       "lat": 50.088773,
       "lng": 14.416937,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "58600d07a76e493d915c1423be6761ae.16"
     },
     {
       "title": "Dvorec pánů z Kunštátu a Poděbrad, Staré Město",
       "lat": 50.085473,
       "lng": 14.417288,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c93f1362d4504bc1b1665306c17690f9.16"
     },
     {
       "title": "Johannes Kepler",
       "lat": 50.085999,
       "lng": 14.414927,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "79a2079593004fc8af5e78ef8cd862ce.12"
     },
     {
       "title": "Metal Monster",
       "lat": 50.085212,
       "lng": 14.41667,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "04adb1bf68264a34b369a647052158b2.16"
     },
     {
       "title": "Bedřich Kůla Memorial",
       "lat": 50.08745,
       "lng": 14.417976,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "29b8aeb5969a4ab199828aa0dc8da055.16"
     },
     {
       "title": "Life Is Art",
       "lat": 50.084426,
       "lng": 14.414786,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "68e5d19f25214de78a8613bc665f0906.16"
     },
     {
       "title": "Hindsight",
       "lat": 50.087864,
       "lng": 14.420563,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "653325c1744644f5b554d69350669af9.12"
     },
     {
       "title": "Facade rue Jilska - Prague",
       "lat": 50.086325,
       "lng": 14.419007,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6f3a28a30d514eea87bf725f6dfd695a.12"
     },
     {
       "title": "Brána s reliéfy dívek | 1906",
       "lat": 50.090281,
       "lng": 14.421928,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0ba614be046843ca991dc32990034580.16"
     },
     {
       "title": "U Kočků",
       "lat": 50.086062,
       "lng": 14.418942,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d8a1459f3fc64c1a8b4fe9dfc9761af6.16"
     },
     {
       "title": "Zdobená fasáda",
       "lat": 50.085476,
       "lng": 14.419973,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e1f598f5517b4cf88be480363141d07d.16"
     },
     {
       "title": "Zlatý Ježíš",
       "lat": 50.089914,
       "lng": 14.420318,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ac56e16dfd77437d887ad124e9a9674f.16"
     },
     {
       "title": "Pinnion",
       "lat": 50.084646,
       "lng": 14.41834,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "82e4ec4f210d49858baea8503cc14afb.16"
     },
     {
       "title": "Kostel svatého Michaela archanděla Praha",
       "lat": 50.086279,
       "lng": 14.42003,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "103411aa5fa136dca50146c6a2f08e4e.16"
     },
     {
       "title": "Mánesův most",
       "lat": 50.089273,
       "lng": 14.413866,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a27aefa9acc34631937b89ea462fba2e.12"
     },
     {
       "title": "Studna",
       "lat": 50.085384,
       "lng": 14.420621,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f4a55ad6f83d4ad7bce6ef80cd0febd7.16"
     },
     {
       "title": "Hudební ústav",
       "lat": 50.087028,
       "lng": 14.421311,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0e2a71df20244ee99752ebd50e3a694c.16"
     },
     {
       "title": "Antik Maiselova",
       "lat": 50.089477,
       "lng": 14.4183,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2c62cab7e547448199e4ce91d950a389.16"
     },
     {
       "title": "Rabbi Löw 1520 - 1609",
       "lat": 50.086945,
       "lng": 14.417905,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0068ba3179e9441caf4a56eb3889814b.12"
     },
     {
       "title": "I Dzieciatko Na Budynku",
       "lat": 50.08897,
       "lng": 14.417776,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "acc48e60bf014564b9f3807d4d8ae422.16"
     },
     {
       "title": "The Black Star",
       "lat": 50.086293,
       "lng": 14.417115,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d24fdf95af0d402ca1c0c9447598ca80.16"
     },
     {
       "title": "Ladislav Houska Memorial",
       "lat": 50.08589,
       "lng": 14.419064,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0694e1ce3cc44e14a6c5aaff722f6a18.16"
     },
     {
       "title": "Náprstkovo muzeum",
       "lat": 50.08422,
       "lng": 14.416084,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "732011f2775244eca35fc562e68ee1da.16"
     },
     {
       "title": "Stangenpark",
       "lat": 50.0912,
       "lng": 14.418647,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "73838f0cf48a424d8368b124b460e49d.16"
     },
     {
       "title": "La Bauchon",
       "lat": 50.088428,
       "lng": 14.422227,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bfe9b9b75d53405db4370d5aa562fa54.16"
     },
     {
       "title": "Pietà",
       "lat": 50.085568,
       "lng": 14.418184,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a2ecccabbcad427996af08553e35e981.16"
     },
     {
       "title": "Městská knihovna Mariánské náměstí",
       "lat": 50.087337,
       "lng": 14.417307,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c23b6378e2f540e8bb0373bdc11a1650.12"
     },
     {
       "title": "Památník Pavla Tigrida",
       "lat": 50.089951,
       "lng": 14.418061,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b646e3f06a5941dea5c45cb06d0701d6.16"
     },
     {
       "title": "Narodni Knihovna",
       "lat": 50.087024,
       "lng": 14.417238,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ea02bc2d686a41eabdc4941958c31eb5.16"
     },
     {
       "title": "Socha Ženy",
       "lat": 50.088558,
       "lng": 14.414465,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "af27abd0db114a608f7caef56e497de4.16"
     },
     {
       "title": "Here Albert Einstein Played the Violin",
       "lat": 50.087246,
       "lng": 14.42181,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b2e99886685b4c11a68e9f8fdfd413be.12"
     },
     {
       "title": "Two Lovers | by Lea Vivot",
       "lat": 50.087774,
       "lng": 14.414489,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "cdc2691c721d46359b6f614e80715ca3.16"
     },
     {
       "title": "Ugly Man",
       "lat": 50.084092,
       "lng": 14.418344,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9c3e0ce8824b41d8ba56135dc6379286.16"
     },
     {
       "title": "Zabytek Praga",
       "lat": 50.089759,
       "lng": 14.421893,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "aaa50b51af7a48ceb3c308888c125283.16"
     },
     {
       "title": "Kašna s alegorickou sochou Vltavy",
       "lat": 50.086712,
       "lng": 14.417646,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4fa7887cdf584975b5eb61ebeb3df493.16"
     },
     {
       "title": "Fontána",
       "lat": 50.089408,
       "lng": 14.416516,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "45c2a5f24b8c3686a72ba242c3cceeb0.16"
     },
     {
       "title": "Pamatka Padlych Spolupracovniku",
       "lat": 50.086453,
       "lng": 14.415786,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "5006b9f2db2a4baeb34c218b161c0792.16"
     },
     {
       "title": "ČVUT - Fakulta jaderná a fyzikálně inženýrská",
       "lat": 50.091068,
       "lng": 14.416342,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8a580a1ba39945c1ae552b9ae93518a9.16"
     },
     {
       "title": "Ceska Sporitelna",
       "lat": 50.085054,
       "lng": 14.422255,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "857ef7e828c1468390a9d470fd1e3bc8.16"
     },
     {
       "title": "Dům Svobodných zednářů Praha",
       "lat": 50.088694,
       "lng": 14.417762,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3124937316e5432c92d02eef6874af83.16"
     },
     {
       "title": "Golden Thai Girl",
       "lat": 50.087235,
       "lng": 14.422135,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c43beef7869c431c929417d08449d374.16"
     },
     {
       "title": "Four Seasons Hotel",
       "lat": 50.087689,
       "lng": 14.415093,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1ada19d802a84a5b8e485de0d9a2acaa.16"
     },
     {
       "title": "Zuil voor Rudolfium",
       "lat": 50.08958,
       "lng": 14.415056,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "abe79bb9d86145c99c364e7566a7e36a.12"
     },
     {
       "title": "Marina",
       "lat": 50.08934,
       "lng": 14.418799,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ce4cfdc521a3449b8700e231c0287dbf.16"
     },
     {
       "title": "Cechovni Znaky",
       "lat": 50.091209,
       "lng": 14.42124,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c41febc7fe684fd299f8b95482f30ff4.16"
     },
     {
       "title": "Crazy Facade",
       "lat": 50.089805,
       "lng": 14.421031,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2c42468416ad4bc9a160539c3cb9b43a.16"
     },
     {
       "title": "Iosephi Steplinci",
       "lat": 50.086688,
       "lng": 14.416814,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2e0a15d7514c416bbe63fe7ace02e2df.16"
     },
     {
       "title": "Maiselova synagoga",
       "lat": 50.088815,
       "lng": 14.418717,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b032e74535fd4340af8860be5bd4cb6e.16"
     },
     {
       "title": "Studna se lvem",
       "lat": 50.085059,
       "lng": 14.414655,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b7c7b1325f584d49997d183a13995327.16"
     },
     {
       "title": "Uměleckoprůmyslové museum v Praze",
       "lat": 50.089854,
       "lng": 14.416267,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1b5d94bde11b3606b75d692956b381c1.16"
     },
     {
       "title": "Twotailed Lions Holding Crown",
       "lat": 50.086169,
       "lng": 14.419774,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2aa2fcac6f2b4d189a32d62bcf70a230.16"
     },
     {
       "title": "Frog on the wall",
       "lat": 50.08744,
       "lng": 14.419352,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c3de58e296f1343bad5cc2a64a0220b6.16"
     },
     {
       "title": "Gate 436",
       "lat": 50.086703,
       "lng": 14.418688,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fadb1a8746614559aa49c25691bb4c86.16"
     },
     {
       "title": "Chlapec s kvetinami",
       "lat": 50.088552,
       "lng": 14.418471,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ec5bc2c4ae7847329a046b65b0a89163.12"
     },
     {
       "title": "Keplerova Fontana",
       "lat": 50.085609,
       "lng": 14.414845,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9723674258cf41cb92a8c89f54e16e1c.16"
     },
     {
       "title": "Marie a Ježíš",
       "lat": 50.089298,
       "lng": 14.418463,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d4df447e4c624869a93c712aa2fed540.16"
     },
     {
       "title": "Speculum Alchemie",
       "lat": 50.090902,
       "lng": 14.422447,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c88a2f3106084f87852639cf26bad63b.16"
     },
     {
       "title": "Kalich",
       "lat": 50.084066,
       "lng": 14.415592,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0f452919452e42e6b86fb0877cb8aa9a.16"
     },
     {
       "title": "Ornamenty na domě",
       "lat": 50.087897,
       "lng": 14.418536,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "23c05e6688693843b90aff19debe48f3.16"
     },
     {
       "title": "Jan Hus Monument",
       "lat": 50.087714,
       "lng": 14.421179,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3f45fb115df8449686cf6826073ec1f0.12"
     },
     {
       "title": "Iacolius Gallus",
       "lat": 50.084742,
       "lng": 14.414366,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2084b01451e24bdfa512b875816fe514.16"
     },
     {
       "title": "Socha nad bránou",
       "lat": 50.085269,
       "lng": 14.417486,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2ccd0b87851a393f8b03bf61cde180c6.16"
     },
     {
       "title": "Památník obětem masakru na Filozofické fakultě Univerzity Karlovy",
       "lat": 50.089013,
       "lng": 14.415444,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f584bc5b47f6398daac91eac247bb21e.16"
     },
     {
       "title": "Plaque",
       "lat": 50.089982,
       "lng": 14.415045,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0f512ca39bfb446cacbd2862028cee24.16"
     },
     {
       "title": "Rudolf Deyl",
       "lat": 50.085358,
       "lng": 14.414683,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0ad8e7a3fada4d03919fbd40a39b5e98.16"
     },
     {
       "title": "Synagogen Restaurant",
       "lat": 50.089952,
       "lng": 14.418857,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "77cbc621235849618fdef33f5643d6a6.16"
     },
     {
       "title": "Two Watching Statues",
       "lat": 50.087289,
       "lng": 14.416176,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e4f04c24933147f6b9d8cced31479e32.16"
     },
     {
       "title": "Les Trois Statues",
       "lat": 50.084124,
       "lng": 14.414058,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1f3543c8de554e5fa67f05405855d35b.16"
     },
     {
       "title": "Sfinga U Rudolfina",
       "lat": 50.09024,
       "lng": 14.415154,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e396fa2315334c33aad702eb75bef2cf.16"
     },
     {
       "title": "Deer And Hunter",
       "lat": 50.085021,
       "lng": 14.41991,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c918fdfd36524e48b082f7c50c4eb354.16"
     },
     {
       "title": "Kosmická Nástěnná Malba",
       "lat": 50.088338,
       "lng": 14.41861,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "753cb2a7a6de38868bdffde428510e7f.16"
     },
     {
       "title": "Andělíček a děcka",
       "lat": 50.085583,
       "lng": 14.416292,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "862357ee33a8460189b89911c077c5b2.16"
     },
     {
       "title": "History Of Czechoslovakia",
       "lat": 50.084844,
       "lng": 14.414836,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a943583518e14fdabd137016208cba8d.16"
     },
     {
       "title": "Anensky klaster",
       "lat": 50.085069,
       "lng": 14.415845,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9bd47e3a63cc4196896c6fdc5aefe229.16"
     },
     {
       "title": "Krásný dům v Praze",
       "lat": 50.084292,
       "lng": 14.416477,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "68d9c52af85448eb8b8d3498cef069b3.12"
     },
     {
       "title": "Betlémská",
       "lat": 50.084174,
       "lng": 14.417508,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "100a737da6fe46de936d9bf4ec0cbb04.12"
     },
     {
       "title": "Kašna",
       "lat": 50.086648,
       "lng": 14.419546,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bd98ebd4191c492e92409252430ce60c.12"
     },
     {
       "title": "Holzknecht",
       "lat": 50.089055,
       "lng": 14.418167,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8740b888c24745439f62be1b2a3799a4.16"
     },
     {
       "title": "U Zlateho Tygra",
       "lat": 50.085254,
       "lng": 14.418318,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4da0b876eab548d2b2f650f0cb68ccba.16"
     },
     {
       "title": "Woman with Long Hair",
       "lat": 50.090762,
       "lng": 14.419206,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d904aadb271f4a0283df245cd53fe53b.16"
     },
     {
       "title": "Four Rings Sign",
       "lat": 50.084883,
       "lng": 14.416917,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e477e886a9f946be89f86a5464be561c.16"
     },
     {
       "title": "Ozdoba",
       "lat": 50.088743,
       "lng": 14.434348,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1bd0d34cfa2c4ca99eaf4fc0aa1424c5.16"
     },
     {
       "title": "The Pink Palace",
       "lat": 50.087114,
       "lng": 14.4343,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "733c561c42fd4d91b10e62fb789d8f93.16"
     },
     {
       "title": "Český dvouocasý lev a dvě orlice",
       "lat": 50.084879,
       "lng": 14.431684,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e6bdc7cec81834ee8ea03c5c3eea1f48.16"
     },
     {
       "title": "Jeruzalémská synagoga, Nové Město",
       "lat": 50.084689,
       "lng": 14.431897,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fe8c28a32d3e4cd9b1d622642c2386d9.12"
     },
     {
       "title": "Dveře s andělíčky",
       "lat": 50.084756,
       "lng": 14.433241,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fe9fbc3eb0834e00b70f7cc7eb622cb8.16"
     },
     {
       "title": "INRI Jindřišská Ulice",
       "lat": 50.085392,
       "lng": 14.430463,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0733bd55ca944a6bbf7fd579c542a9c1.16"
     },
     {
       "title": "Tablice",
       "lat": 50.084971,
       "lng": 14.430412,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c653e62816ad4b148fd9c4f1cc9e61fb.16"
     },
     {
       "title": "Křest",
       "lat": 50.085207,
       "lng": 14.430849,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "74f85405ea204a2cadb2cbba99a6a798.16"
     },
     {
       "title": "Věrni zůstaneme",
       "lat": 50.084369,
       "lng": 14.429146,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bbcedbf388b94e80b9d0745fa8c92d00.16"
     },
     {
       "title": "MacDo Fresco",
       "lat": 50.079842,
       "lng": 14.430271,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3167534028634cedb305d52ec4007419.16"
     },
     {
       "title": "Zdobená římsa nad oknem",
       "lat": 50.080438,
       "lng": 14.430853,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a0e3c29a10193ddb92380f63a6ee4539.16"
     },
     {
       "title": "Asekurační spolek",
       "lat": 50.085311,
       "lng": 14.430038,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "118a3906f4564887b039c975b798ae08.16"
     },
     {
       "title": "Iron Arrows",
       "lat": 50.080245,
       "lng": 14.430586,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "26299f085d79425384b6f81c3a0d8220.16"
     },
     {
       "title": "Novorenesanční Fasáda",
       "lat": 50.082939,
       "lng": 14.429318,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1c004a33cefa4f01b1121fa603ee2ee8.16"
     },
     {
       "title": "Národní hospodářský ústav",
       "lat": 50.08318,
       "lng": 14.428974,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2fc3295ea6db45fab98355444ba72d92.16"
     },
     {
       "title": "Dívka s vlnitými vlasy",
       "lat": 50.084339,
       "lng": 14.431237,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9f0fcac7541c37e29f178c44d156921c.16"
     },
     {
       "title": "Památce obětí gestapa, Nové Město",
       "lat": 50.081284,
       "lng": 14.431602,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3e3244ffe44843f3b9e1cab0b0113c9c.16"
     },
     {
       "title": "Zdobený Vchod A Prďácká Fasáda",
       "lat": 50.08446,
       "lng": 14.431622,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fc30566f1a5b4d20b40a3462190f15f2.16"
     },
     {
       "title": "Základní kámen Bredovský dvůr",
       "lat": 50.08273,
       "lng": 14.430258,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f20614749bc94eed9139695b40206a4a.16"
     },
     {
       "title": "Divadlo Radka Brzobohatého",
       "lat": 50.081409,
       "lng": 14.429749,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f39e4400a6144a0687ea69fff313881d.16"
     },
     {
       "title": "Ornament dvou grifů",
       "lat": 50.082307,
       "lng": 14.429932,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c46d0ffc4b3a4bb6a9bd6f04e08521f7.16"
     },
     {
       "title": "Svaz českých a moravských výrobních družstev",
       "lat": 50.082588,
       "lng": 14.426515,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "27ee1c226ff73331b7e3a40a41987523.16"
     },
     {
       "title": "The Flow Building",
       "lat": 50.080929,
       "lng": 14.428794,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "17edf5d62abd370682a258b50809be91.16"
     },
     {
       "title": "Palác knih Luxor",
       "lat": 50.08143,
       "lng": 14.428077,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "66e515ccd7a540118e5d547c43bc3769.16"
     },
     {
       "title": "Pamatnik obetem komunismu",
       "lat": 50.080062,
       "lng": 14.429338,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2785930e622c4b7b84b60907c4448566.16"
     },
     {
       "title": "House with Clock Tower",
       "lat": 50.082318,
       "lng": 14.425826,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "60ab46b520b74a7bb595718fd0910928.16"
     },
     {
       "title": "Socha na žlutým baráku",
       "lat": 50.08111,
       "lng": 14.429562,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d38144bd8f904b1f92f3ab09bb43d0ca.16"
     },
     {
       "title": "Blue fish on the house",
       "lat": 50.081385,
       "lng": 14.428219,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "77ecc68e9dc63564b1a37c8f595f6ac7.16"
     },
     {
       "title": "Výtopna Railway Restaurant",
       "lat": 50.080261,
       "lng": 14.428559,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "da8406e3698e3a369d103294f592cb7d.16"
     },
     {
       "title": "Josef Smrkovský Memorial Plaque",
       "lat": 50.080466,
       "lng": 14.428201,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "60a38dbd6b3442bc86ecbf9f0e9e90ce.16"
     },
     {
       "title": "Karel Sokol",
       "lat": 50.08284,
       "lng": 14.43174,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "57cfab69ca214ebf9914dcbd81a26d17.16"
     },
     {
       "title": "U Staré pošty",
       "lat": 50.082511,
       "lng": 14.431317,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8205a28bf0ed462c81675b4284229f09.16"
     },
     {
       "title": "Galerie nadace ABF",
       "lat": 50.082382,
       "lng": 14.427761,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d07d48df3a563483b0e1c846af503744.16"
     },
     {
       "title": "fontána na Václavském Náměstí",
       "lat": 50.0839,
       "lng": 14.423943,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "96f1db2048663c20a434174016ffff8b.16"
     },
     {
       "title": "Grand Hotel Europa",
       "lat": 50.082068,
       "lng": 14.427076,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "af6bbd2a0c9446a18e265b1790044b36.16"
     },
     {
       "title": "Fronton Avec Femme Sculptee",
       "lat": 50.082217,
       "lng": 14.431279,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7a386c34fafa440aac67c68a66fe29b4.16"
     },
     {
       "title": "Zlatá lyra",
       "lat": 50.083795,
       "lng": 14.423038,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "21f268d2ebe04cdeb60868f7b91dcd6b.16"
     },
     {
       "title": "Václavské náměstí - Wenceslas",
       "lat": 50.083568,
       "lng": 14.424415,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4f0ebeb99f0c4a5b88f447dca5fccd1e.12"
     },
     {
       "title": "House on Václavské Square",
       "lat": 50.082732,
       "lng": 14.42603,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "db4b62d326184ee59310f175b06f287f.12"
     },
     {
       "title": "Lev nad oknem",
       "lat": 50.083421,
       "lng": 14.428675,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bb05c95f9e9a35e480fcc2462db4987b.16"
     },
     {
       "title": "Dělník",
       "lat": 50.082813,
       "lng": 14.429552,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fda9650ffcbe49a7b0a8466f22d6360e.16"
     },
     {
       "title": "Velvyslanectví Bosny a Hercegoviny",
       "lat": 50.083482,
       "lng": 14.432306,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9941067d89183bdebe2a80b0105ac06e.16"
     },
     {
       "title": "Dreizack",
       "lat": 50.082731,
       "lng": 14.425276,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8b824a5268ed4b149446be63d01386b6.16"
     },
     {
       "title": "Taras Ševčenko",
       "lat": 50.081796,
       "lng": 14.430754,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "5d6bfaf3608a486eaccd21e2f98c039f.12"
     },
     {
       "title": "Socha Sv. Václava",
       "lat": 50.079798,
       "lng": 14.429718,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8927f77e58a64b91bc54768d4d0a74e7.12"
     },
     {
       "title": "Opičí džungle",
       "lat": 50.083004,
       "lng": 14.43191,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d496b935fb6639008bb0ef0d0699f639.16"
     },
     {
       "title": "Old Man at Bench",
       "lat": 50.081623,
       "lng": 14.42766,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1c2f90831ba04e09a509f9add019a62f.16"
     },
     {
       "title": "Dům módy",
       "lat": 50.080016,
       "lng": 14.428965,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a1580df0e3aa44e3b77bc74ab15940cc.12"
     },
     {
       "title": "Socha na fasádě",
       "lat": 50.083079,
       "lng": 14.430458,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0fc7c5a00a204a20bb1dc0852938fa88.16"
     },
     {
       "title": "Mensworld",
       "lat": 50.083864,
       "lng": 14.424544,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a3546aed7fd34ab1a8eeeecc5b2fc5c7.16"
     },
     {
       "title": "Pět soch na fasádě",
       "lat": 50.083457,
       "lng": 14.430566,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b751301fc0314a84ba058813e823213f.16"
     },
     {
       "title": "Historical building on Venceslas square",
       "lat": 50.080716,
       "lng": 14.427702,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8c65774f97e33715aa73e63b3f959a19.16"
     },
     {
       "title": "Bamboo Garden and Tea Room",
       "lat": 50.083075,
       "lng": 14.425812,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "eb0c0e04f1ff4a7bade85acec5f84c6d.11"
     },
     {
       "title": "Hotel Zlatá Husa",
       "lat": 50.083594,
       "lng": 14.424841,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6a01961a5fc54df8b7efe45fc1f983f9.16"
     },
     {
       "title": "Naked",
       "lat": 50.083555,
       "lng": 14.424068,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "04457216674a46caa4275a5e4ac16e36.16"
     },
     {
       "title": "Dáma použila magické natáčky",
       "lat": 50.082266,
       "lng": 14.426829,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "016e4025f0ca3b2eb629b878c247161b.16"
     },
     {
       "title": "Autoklub České republiky",
       "lat": 50.083689,
       "lng": 14.432481,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "50fc14ab8ad83165a559142fc6957601.16"
     },
     {
       "title": "Dvojice lvů na balkoně",
       "lat": 50.082923,
       "lng": 14.431237,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "665131322c3c44ea952a107bb7a87cce.16"
     },
     {
       "title": "Statues of women on Wenceslas Square",
       "lat": 50.083797,
       "lng": 14.424866,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c851f079ce7e33f5b00f3949b811752b.16"
     },
     {
       "title": "Hlava nade dveřmi",
       "lat": 50.083837,
       "lng": 14.430014,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c373819863334218aca557120a36db61.16"
     },
     {
       "title": "Palác Generali",
       "lat": 50.08265,
       "lng": 14.426095,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "def7c07faeaf4c0b918f91067ab566fc.16"
     },
     {
       "title": "Hotel Jalta, Nové Město",
       "lat": 50.081129,
       "lng": 14.428358,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "72bbfc442da7411281bea9c9ba9a7f8b.16"
     },
     {
       "title": "Alois Oliva",
       "lat": 50.083228,
       "lng": 14.430902,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "44ba638de2da3f8ca0847faea579c3d9.16"
     },
     {
       "title": "Milec Cikán Memorial",
       "lat": 50.083993,
       "lng": 14.430853,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c1be3728e5533ef1a77dbf476729bd4c.16"
     },
     {
       "title": "Stolpersteiny - Stránský, Schleissnerová, Kopeckých",
       "lat": 50.082335,
       "lng": 14.429436,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "974f4f1fc979319baab4d64c70162f5b.16"
     },
     {
       "title": "Plastická výzdoba",
       "lat": 50.083981,
       "lng": 14.423026,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "5375e736b3bd4c82b3f311f68c9372f5.16"
     },
     {
       "title": "Architektonický prvek - Vodorovná Římsa",
       "lat": 50.08054,
       "lng": 14.42952,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "646630491b593420b6647850a6625b9f.16"
     },
     {
       "title": "Měděná vež",
       "lat": 50.083846,
       "lng": 14.430297,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "23994d26460549f0bdd91b25c19a7ca3.16"
     },
     {
       "title": "Wenceslas Square Building",
       "lat": 50.082942,
       "lng": 14.424936,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "21800e82e37e435ca51b7734e0932cf9.16"
     },
     {
       "title": "Piaceta Florentinum",
       "lat": 50.089334,
       "lng": 14.436323,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1e42d16a2be34f05a0c35a8aa4b3f806.16"
     },
     {
       "title": "Florentinum Plaza",
       "lat": 50.089133,
       "lng": 14.435409,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "eb4f44363bef43f39bee0e5929c1fb59.16"
     },
     {
       "title": "Five Watchers",
       "lat": 50.085561,
       "lng": 14.431015,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4107289d0b284052bc5c75017e7c0de7.16"
     },
     {
       "title": "Statue 1874",
       "lat": 50.087172,
       "lng": 14.432176,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0fd5ea7c96b94332867238b0612d2fe3.16"
     },
     {
       "title": "Hybernská 14",
       "lat": 50.08719,
       "lng": 14.43182,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3cbd4bfaa1023a9c83f48094ddc30c6b.16"
     },
     {
       "title": "Greek",
       "lat": 50.086866,
       "lng": 14.43213,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ea0c1512c7364cbb8d60565900c9b3c6.16"
     },
     {
       "title": "Asekurační Spolek Průmyslu Cukrovarnického",
       "lat": 50.085769,
       "lng": 14.431287,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a02b625e25554f47b52eda6be9e75c2d.16"
     },
     {
       "title": "Hlavy Zla",
       "lat": 50.085178,
       "lng": 14.433448,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "921f381d33be44d2899ac604a9987f53.16"
     },
     {
       "title": "Pomník obětem Osvětimi",
       "lat": 50.085571,
       "lng": 14.431592,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "63cfaa7026b431ad943455e5ac319a62.16"
     },
     {
       "title": "Socha s mušketou",
       "lat": 50.08543,
       "lng": 14.43179,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c9f50ca5839e3570980d6fb6f4147145.16"
     },
     {
       "title": "Multiple Beautiful Ornaments",
       "lat": 50.085653,
       "lng": 14.432023,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "992a1176fe5549219af82fcdad6048a4.16"
     },
     {
       "title": "Andílek",
       "lat": 50.086377,
       "lng": 14.432149,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1749a8243b054dbbb0d9ebc9bcc405e5.16"
     },
     {
       "title": "Rudolf a Zděnka Abeles Kleinovi",
       "lat": 50.08603,
       "lng": 14.433714,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a4aa1f01197e4e148791ecc9b04f2ddb.16"
     },
     {
       "title": "Fronton De L Hotel Bosco",
       "lat": 50.086248,
       "lng": 14.43392,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2017e214edbd4d5b8d2ef6576ec577b6.16"
     },
     {
       "title": "Franz Werfel Memorial",
       "lat": 50.088998,
       "lng": 14.432352,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3a534076b70e42c99e9a6501a4cdb0dc.16"
     },
     {
       "title": "Fara u sv. Petra",
       "lat": 50.090933,
       "lng": 14.433876,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "786c7cf5353c4b7792ab5629b151b212.11"
     },
     {
       "title": "Květinové zdobení",
       "lat": 50.08573,
       "lng": 14.433936,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bc993c42af59327897382108fddd89f2.16"
     },
     {
       "title": "Černá Labuť",
       "lat": 50.090063,
       "lng": 14.434385,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "27e07382549e3ad585035d2af29cc406.16"
     },
     {
       "title": "Obličej",
       "lat": 50.090535,
       "lng": 14.4345,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "03259a6767644e5886d2d4b55913f0c1.16"
     },
     {
       "title": "Oběti nacismu",
       "lat": 50.08632,
       "lng": 14.434721,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "26be992bb09f443d9cd1d9c04a1818c9.16"
     },
     {
       "title": "Plastika Zeny",
       "lat": 50.089689,
       "lng": 14.437211,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "75debb55c024447fa7585644c452da04.16"
     },
     {
       "title": "Masaryčka",
       "lat": 50.088491,
       "lng": 14.433768,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "846f756a5bcd3e4ba0371f2042ff4c41.16"
     },
     {
       "title": "Metro B elevator",
       "lat": 50.09033,
       "lng": 14.437374,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1ef1610b8a2f4279ae3286a2991c8bef.16"
     },
     {
       "title": "OC Bílá Labuť",
       "lat": 50.090003,
       "lng": 14.434061,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "cd502dfc0b0c30d8af3ad41b631acd7e.16"
     },
     {
       "title": "Listova pasáž",
       "lat": 50.090843,
       "lng": 14.435819,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9c36f99697653ab9b07b159f6c48acea.16"
     },
     {
       "title": "Divadlo Archa",
       "lat": 50.089712,
       "lng": 14.434064,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "71b35266b82549e8af609feef5288871.16"
     },
     {
       "title": "Plowing",
       "lat": 50.086576,
       "lng": 14.434858,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "65868d966fba4f499787b2187034fb12.16"
     },
     {
       "title": "Kostel sv. Petra",
       "lat": 50.091145,
       "lng": 14.434041,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3616ea93a2574be0a5a6eae1e1fb47c6.16"
     },
     {
       "title": "Apollinaire Statue",
       "lat": 50.089085,
       "lng": 14.434028,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "27d487fa300a4f5f98d784d5e9330758.16"
     },
     {
       "title": "Památník povodní",
       "lat": 50.091232,
       "lng": 14.436317,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "556882fd67304def8cc0554e1872c740.16"
     },
     {
       "title": "Florence House",
       "lat": 50.090639,
       "lng": 14.436687,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3f869d1f21dd42f1abd2d8902afc4fc8.11"
     },
     {
       "title": "Svaz letců RČS",
       "lat": 50.090381,
       "lng": 14.435903,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ec0c270b462e4e40ace409b3a4c4a179.16"
     },
     {
       "title": "Socha naproti Bílé labuti",
       "lat": 50.089973,
       "lng": 14.435393,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d60b88e625454a80ba4589012592b6f2.16"
     },
     {
       "title": "Shadows",
       "lat": 50.084554,
       "lng": 14.430355,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b10dfb5f48224aaea707c6b2d9ee7103.16"
     },
     {
       "title": "U Jana Patočky",
       "lat": 50.084659,
       "lng": 14.430928,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "dbdb59e562733ac095c96003e601b4c3.16"
     },
     {
       "title": "Socha svatého na zdi",
       "lat": 50.088072,
       "lng": 14.426824,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "597e91d50a7340f997510ec492fa38a2.16"
     },
     {
       "title": "Statue",
       "lat": 50.086737,
       "lng": 14.425511,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8afa5d035ed3430bbaca05bb8078fef9.16"
     },
     {
       "title": "Mango's Building",
       "lat": 50.084771,
       "lng": 14.424575,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0e4966487aac478484294c97aa8ed1e3.16"
     },
     {
       "title": "Velká paní",
       "lat": 50.0895,
       "lng": 14.427916,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4df6e17ae2564ec5abd80cce195568fc.16"
     },
     {
       "title": "Ježíš na kříži",
       "lat": 50.088321,
       "lng": 14.425657,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "37a3caff96a042c584bdb57459ff7aeb.16"
     },
     {
       "title": "Svatý František",
       "lat": 50.088688,
       "lng": 14.428944,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fdd3a655fd2c4a21b560820659bff0c0.11"
     },
     {
       "title": "Na Gzymsie",
       "lat": 50.085379,
       "lng": 14.429454,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "416418e15fc347ec999962e1e95bdf0b.16"
     },
     {
       "title": "Jaro",
       "lat": 50.090143,
       "lng": 14.424241,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "22b36839c87840fb956a66cf0d73bda9.16"
     },
     {
       "title": "Bust of Václav Hollar",
       "lat": 50.091053,
       "lng": 14.429523,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "04eb6a1b828e420e9ad276364848b97b.16"
     },
     {
       "title": "Fryderik Chopin House",
       "lat": 50.087075,
       "lng": 14.428843,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "36f099028dfd4b558421f32ce9a4cbdd.16"
     },
     {
       "title": "Ozdobné fresky na historické budově",
       "lat": 50.085253,
       "lng": 14.429661,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "26dbf6a4e7f03e46bfd99a3abdaae92c.16"
     },
     {
       "title": "Odhalene Krasky Zlatnicke",
       "lat": 50.089943,
       "lng": 14.43235,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3c696ac7022f4c3eb758d16da70a1e45.16"
     },
     {
       "title": "Hilton Hotel Mosaic",
       "lat": 50.088541,
       "lng": 14.432222,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f1021fb04c414885bfaf63f320b47c48.16"
     },
     {
       "title": "Vultures",
       "lat": 50.087804,
       "lng": 14.425148,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3e40374a9fb743f59fe64d159abb57be.16"
     },
     {
       "title": "Ernst Mach Busta",
       "lat": 50.086579,
       "lng": 14.424319,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f89ba0ba18f046378a7a5ef3fb87e29f.16"
     },
     {
       "title": "Stolperstein",
       "lat": 50.090573,
       "lng": 14.432018,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7ce42ade3af83b4db9ced11815903f3b.16"
     },
     {
       "title": "Two women looking at each other",
       "lat": 50.087316,
       "lng": 14.426677,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d3a02db6bc0134508a7021b9a03c507f.16"
     },
     {
       "title": "The Vulture",
       "lat": 50.086858,
       "lng": 14.424389,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0cbaa85e822d4933b1b708530f5d824d.16"
     },
     {
       "title": "Cafe Imperial",
       "lat": 50.089793,
       "lng": 14.432772,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "24fb83f273c94897b99b9e2b774d25fc.16"
     },
     {
       "title": "Kaiserliches Wappen",
       "lat": 50.085444,
       "lng": 14.425186,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ae9c54eaf3d047bfb429c2f81266be08.16"
     },
     {
       "title": "Living Building",
       "lat": 50.087671,
       "lng": 14.427356,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bca75eb5146b4f7eae6e844aeff36e3f.16"
     },
     {
       "title": "Domovní znamení - Chodové",
       "lat": 50.085342,
       "lng": 14.42411,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d2fafa8d5c4b4698a0484f3924781db7.12"
     },
     {
       "title": "Pumpa",
       "lat": 50.087849,
       "lng": 14.423558,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a333b1767b61472a8cb961aca2b76be9.16"
     },
     {
       "title": "Hotel Paris",
       "lat": 50.08809,
       "lng": 14.427501,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "dee90a139cf64d66aa3de1ce74e319e5.16"
     },
     {
       "title": "Kolowrat's Palace",
       "lat": 50.086028,
       "lng": 14.424211,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a515db7ec36442ed940b04a366a0d1b3.16"
     },
     {
       "title": "Kolkovna Pilsner Restaurant",
       "lat": 50.084247,
       "lng": 14.425938,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9942ced7fe3a46a8ba4015d6d52a2be2.16"
     },
     {
       "title": "Mariensäule",
       "lat": 50.087576,
       "lng": 14.42289,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b3703e1da05b4e52bad7f2d862741b47.16"
     },
     {
       "title": "Busta v Pasáži",
       "lat": 50.086669,
       "lng": 14.428049,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8eab6a3093cc4713970ddbb4765b46fc.16"
     },
     {
       "title": "Melantrich",
       "lat": 50.089007,
       "lng": 14.42815,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7d4839c626ea4d61ba7aa87058d0f305.16"
     },
     {
       "title": "Kamienica Z Wieżą Przy Ul. Rybnej",
       "lat": 50.089751,
       "lng": 14.426098,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "74182b16cc1e402e8109ce997fc2fb7e.16"
     },
     {
       "title": "Bull",
       "lat": 50.0907,
       "lng": 14.426081,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bf0e51e2bd844eda8dbcd6fd179416a9.16"
     },
     {
       "title": "Bronze Hand",
       "lat": 50.086887,
       "lng": 14.425819,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1429d0bba00f406d97625dee8dce0bad.16"
     },
     {
       "title": "Otevřená mysl Art",
       "lat": 50.091053,
       "lng": 14.432501,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e038c565a30e3bc193060376037ac495.16"
     },
     {
       "title": "Wax Museum",
       "lat": 50.08729,
       "lng": 14.422709,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f854df23d48c4067a5af0f464597fc7a.16"
     },
     {
       "title": "Koruna",
       "lat": 50.084576,
       "lng": 14.424301,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8a798f4a06ff497c81bbb0b0a981faad.16"
     },
     {
       "title": "Prašná Brána",
       "lat": 50.087174,
       "lng": 14.427819,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "80169e3130b349f1be9045c459c66b60.12"
     },
     {
       "title": "Fontány Na Příkopě",
       "lat": 50.085141,
       "lng": 14.424678,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7439e7702a43408aaf80989b2656b2ac.16"
     },
     {
       "title": "Peacock ornament",
       "lat": 50.08716,
       "lng": 14.423115,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "44c6ff1d019936c5b7d4a204f25e2e63.16"
     },
     {
       "title": "Door with classical Women",
       "lat": 50.089969,
       "lng": 14.4289,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "cd913bd35ae83dd4a9f181c35ec28210.16"
     },
     {
       "title": "Tvé Woman",
       "lat": 50.085809,
       "lng": 14.428355,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7eaa6697576748a6ae2beeb4b203231d.16"
     },
     {
       "title": "Hotel Ruche",
       "lat": 50.084219,
       "lng": 14.423319,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "cc0e0fa76b704743802068c49a745a9b.16"
     },
     {
       "title": "Ozdobný balkón",
       "lat": 50.08867,
       "lng": 14.429875,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c1144643f5234c50a57ec93e4de04099.16"
     },
     {
       "title": "Můstek - Bývalý středověký most",
       "lat": 50.084621,
       "lng": 14.423291,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6eba6177896d3168a4af479ed2340a92.16"
     },
     {
       "title": "Socha ženy s dítětem",
       "lat": 50.085171,
       "lng": 14.431552,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c28519b68f763d0f8328e8b32eaadc0b.16"
     },
     {
       "title": "Remembering Milan Mikulecky",
       "lat": 50.089721,
       "lng": 14.423055,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "112c7f79325145af833682d255744c7a.16"
     },
     {
       "title": "Historisches Wohnhaus",
       "lat": 50.090829,
       "lng": 14.427957,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "eada5c8b853a40c19e098737cbd0eddf.16"
     },
     {
       "title": "Freundovi",
       "lat": 50.090677,
       "lng": 14.42735,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7990175839353879ad06a0e675245c58.16"
     },
     {
       "title": "Prager Gedenktafel",
       "lat": 50.089264,
       "lng": 14.42856,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "763c82190e854f6a9696827105e73e4f.16"
     },
     {
       "title": "Koruza Roof",
       "lat": 50.084474,
       "lng": 14.424751,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "aced9135258f4b5391e2b6ce1c84e36b.16"
     },
     {
       "title": "Címeres Ablakdisz",
       "lat": 50.089819,
       "lng": 14.423725,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "10ae30011ef14ebd955da83c739e95e8.16"
     },
     {
       "title": "Information point",
       "lat": 50.089366,
       "lng": 14.425978,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "96aab10555f73af59e9bcccba19c9919.16"
     },
     {
       "title": "Čeští muzikanti",
       "lat": 50.085887,
       "lng": 14.432167,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bc0936f12a0f4f2789068a8a47ee6643.12"
     },
     {
       "title": "Kostel svatého Kříže",
       "lat": 50.085566,
       "lng": 14.425877,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "69a4f016f0ed4dc18f7aecac1ca3ae75.16"
     },
     {
       "title": "Gate Sculptures",
       "lat": 50.087282,
       "lng": 14.430175,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "72edbf86dd3b447ba4a60aa3633fccab.16"
     },
     {
       "title": "Tragende Löwen",
       "lat": 50.087596,
       "lng": 14.42417,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "62fdce65c0a047669fdc9880a9135ade.16"
     },
     {
       "title": "Tynsti Kaprici",
       "lat": 50.088872,
       "lng": 14.424098,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "98ae2d3bd6c94d6dab23fefa5f2d0b80.16"
     },
     {
       "title": "Rudý Jelen",
       "lat": 50.088215,
       "lng": 14.430671,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "29299bb2d87e4b669034a21c3b3852e8.16"
     },
     {
       "title": "Antonín Matějček Memorial",
       "lat": 50.086186,
       "lng": 14.432957,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "65bf72f11e0749c9ac764052e45afa01.16"
     },
     {
       "title": "Palladium",
       "lat": 50.089077,
       "lng": 14.428584,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "331d63dda40a3f889235faaf0fa8ff24.16"
     },
     {
       "title": "Pająk",
       "lat": 50.087253,
       "lng": 14.424663,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "727a67b31cfe462fb96638a2bd091b6e.16"
     },
     {
       "title": "Guardian Lion",
       "lat": 50.089639,
       "lng": 14.425741,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3ca2dbec10004cbbbbe54330141ee0e1.16"
     },
     {
       "title": "Památce Josefa Plundry, Nové Město",
       "lat": 50.08648,
       "lng": 14.429228,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "49744667f45a40159f4d25d9be8c121c.16"
     },
     {
       "title": "Dělník",
       "lat": 50.085374,
       "lng": 14.425566,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8a9ad800e6fa4612a7edff143b174cfa.12"
     },
     {
       "title": "Rudolf Zedník Memorial Plague",
       "lat": 50.086211,
       "lng": 14.429288,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1b252c47038448dba3ac30485b5ffe1b.16"
     },
     {
       "title": "Karel Havlíček Borovský",
       "lat": 50.087799,
       "lng": 14.432435,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "641bd5cdfccd447d8bc525d0860db1df.16"
     },
     {
       "title": "Socha Nil",
       "lat": 50.08597,
       "lng": 14.432741,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "76a4d73aee36343799deee7b41a58911.16"
     },
     {
       "title": "Pražský znak",
       "lat": 50.088104,
       "lng": 14.428349,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7db674444c7e4e1f837df779ce6945e8.16"
     },
     {
       "title": "Old Balcony",
       "lat": 50.089451,
       "lng": 14.423681,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "25f02f3493ac47b4a0e2a67883f5a5cd.16"
     },
     {
       "title": "Der Arme Bauer",
       "lat": 50.088015,
       "lng": 14.422866,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "34e821395a7545df8c7e934e9294f5a8.16"
     },
     {
       "title": "Opletalova ulice",
       "lat": 50.084097,
       "lng": 14.432783,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7b087767db7d3eea8a055e7070046d1d.16"
     },
     {
       "title": "Baby Sculpture",
       "lat": 50.084547,
       "lng": 14.422692,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7b0430b1d9d6465fb3348e08e8e6212a.16"
     },
     {
       "title": "Antique Wall Painting",
       "lat": 50.087092,
       "lng": 14.43361,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2d1609cb87b4425d868186f49e7887fb.16"
     },
     {
       "title": "Krásný Dům",
       "lat": 50.087124,
       "lng": 14.430587,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "5b0353546b54442b91b95603d5fbc381.16"
     },
     {
       "title": "Stemma Del Palazzo",
       "lat": 50.087761,
       "lng": 14.426515,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f603090375b74345ae7571636d41053d.16"
     },
     {
       "title": "Pachta Palace's Fasade",
       "lat": 50.087457,
       "lng": 14.426423,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "88368c604b4d48bcbf22231347921788.16"
     },
     {
       "title": "Marian Column",
       "lat": 50.087222,
       "lng": 14.423611,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8898e986f40a40958a64dc643c730d79.11"
     },
     {
       "title": "Malované okno",
       "lat": 50.087424,
       "lng": 14.429414,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d7d8ca6bebf9430d81c5dd1a4001bfcd.16"
     },
     {
       "title": "U Modré holubice",
       "lat": 50.084427,
       "lng": 14.422923,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b7434d4b3ff137c58523ace9f5659a8e.16"
     },
     {
       "title": "Divadlo Hybernia",
       "lat": 50.087418,
       "lng": 14.428645,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7217056b75b449309364722c3de23092.16"
     },
     {
       "title": "Větrací Šachta Republika",
       "lat": 50.088029,
       "lng": 14.428906,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1b60e3c0b62c4ce3877e1ff3f51c0ab7.16"
     },
     {
       "title": "Casino",
       "lat": 50.084979,
       "lng": 14.42489,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0350aa55ce4340838953b95d0a92af65.16"
     },
     {
       "title": "Old Merchant",
       "lat": 50.087351,
       "lng": 14.427953,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9cbe757d401142abbd3ab628b1f41a46.16"
     },
     {
       "title": "Dům u Černé matky Boží",
       "lat": 50.087213,
       "lng": 14.425674,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "48ca04bd653a43eea68b5df595227ac4.12"
     },
     {
       "title": "Siddharta Caffè",
       "lat": 50.088081,
       "lng": 14.425636,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fd5ff0606cad4256a66606055fcc88ba.16"
     },
     {
       "title": "Divadlo Broadway",
       "lat": 50.086567,
       "lng": 14.427012,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7f8ce7d03cf642888fa5464fae57375e.16"
     },
     {
       "title": "Old Knight",
       "lat": 50.084661,
       "lng": 14.423903,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fbea22b64a1d4bb18c0b28e9f9532fae.16"
     },
     {
       "title": "Blue Lady",
       "lat": 50.089293,
       "lng": 14.428077,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "26d5bb580d3233af9c450c33aafc5bcc.16"
     },
     {
       "title": "Muzeum Komunismu",
       "lat": 50.087913,
       "lng": 14.429828,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b2452e9513c83cd3b4b71e33ba77766d.16"
     },
     {
       "title": "Verni Zustaneme",
       "lat": 50.087122,
       "lng": 14.429243,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e5fd946c660d48e893141a70ea3fb3e4.16"
     },
     {
       "title": "Nekázanka",
       "lat": 50.085093,
       "lng": 14.42789,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2110db4c69e0316b9c9186a7b89395c3.16"
     },
     {
       "title": "Bust",
       "lat": 50.091203,
       "lng": 14.430099,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9858a17b82e941089ff2f9a0f26235b4.16"
     },
     {
       "title": "Rzezba na rogu",
       "lat": 50.087887,
       "lng": 14.42714,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "877495d7187244e08d80e42cfb159531.16"
     },
     {
       "title": "František Stadler - plaketa československého lidumila",
       "lat": 50.08693,
       "lng": 14.423219,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "072fcb3c72013556a1a10081c0fa4da2.16"
     },
     {
       "title": "Kavárenský host",
       "lat": 50.086463,
       "lng": 14.430008,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c381d5fb070a31fa9f6c24abc57833d8.16"
     },
     {
       "title": "Obecní dům, Staré Město",
       "lat": 50.087536,
       "lng": 14.428279,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "55a8595b651043ba98de7988c2790ff8.12"
     },
     {
       "title": "Wallchild",
       "lat": 50.087722,
       "lng": 14.425547,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f1e3651c14f747bd85bf178ce74d3006.16"
     },
     {
       "title": "Angel Of The House",
       "lat": 50.090484,
       "lng": 14.425308,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7609880e81f5475b8878a7048cf45d3c.16"
     },
     {
       "title": "Pan Elegant",
       "lat": 50.087855,
       "lng": 14.428283,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "21b47358e75a48d2b932ecb10ee4700a.16"
     },
     {
       "title": "Rekonstrukce budovy 2018",
       "lat": 50.084959,
       "lng": 14.428349,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a0776c3614cc385d9bfcee2994430795.16"
     },
     {
       "title": "Věrni Zůstaneme",
       "lat": 50.088195,
       "lng": 14.432384,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "5289045428f5470f9b814cce2cd759cf.16"
     },
     {
       "title": "Mother Roxy",
       "lat": 50.090124,
       "lng": 14.424762,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f8210e5f922242519b20bff6724b8f5b.16"
     },
     {
       "title": "Mořská panna",
       "lat": 50.085969,
       "lng": 14.426744,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d26e77b1009c45a9af06b1c1842ff329.12"
     },
     {
       "title": "Josef Mánes, Staré Město",
       "lat": 50.091156,
       "lng": 14.423039,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "83448c380d1c4a2b92b3af9ee76185ac.16"
     },
     {
       "title": "Informační Tabulky Otokar Březina",
       "lat": 50.089031,
       "lng": 14.433583,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "abe10bd67c5e32c7b9b0f995ce5e7455.16"
     },
     {
       "title": "Maria with Jesus",
       "lat": 50.089805,
       "lng": 14.428746,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4df7b69de05847558a3a5d46077ff092.16"
     },
     {
       "title": "Dům U Tří Lip",
       "lat": 50.085274,
       "lng": 14.425295,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bb01ce89904244cda215c83872784f5a.16"
     },
     {
       "title": "Fontána",
       "lat": 50.085547,
       "lng": 14.428554,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fb108517d40a3287bcac6d44f7b5ba1b.16"
     },
     {
       "title": "Handbemalte Fassade",
       "lat": 50.087097,
       "lng": 14.425064,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "20adcc113f8e4d588abe6204dc86be0f.16"
     },
     {
       "title": "Zlatá Koruna palác",
       "lat": 50.084261,
       "lng": 14.423871,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f35a30d3860a42ffaefea6edd81ae135.16"
     },
     {
       "title": "Díszes Homlokzat",
       "lat": 50.088165,
       "lng": 14.427949,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "855967e9147f465d8b9c65de5938425e.16"
     },
     {
       "title": "Dvouhlavy Orel",
       "lat": 50.087196,
       "lng": 14.424048,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "081d59f68d0c4d0e921743e709f941d6.16"
     },
     {
       "title": "Jaroslav Šustr - Lahůdky",
       "lat": 50.090234,
       "lng": 14.427251,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "28a4692401654283bace75216a48598a.16"
     },
     {
       "title": "Prague City Gallery",
       "lat": 50.090051,
       "lng": 14.427801,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "570b98b1cb04448cbfa497cbf5541043.16"
     },
     {
       "title": "Okřídlený Los",
       "lat": 50.087714,
       "lng": 14.430826,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7a8d6914f48049199fcf5ea540028fd7.16"
     },
     {
       "title": "Giddyup",
       "lat": 50.085581,
       "lng": 14.429121,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "302f44ab3c444a679be5ff59eeadbb33.16"
     },
     {
       "title": "Vousáč nad vchodem",
       "lat": 50.09125,
       "lng": 14.433202,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ec77189e7a75408991cc99a265947bc7.16"
     },
     {
       "title": "Hotel Central",
       "lat": 50.087199,
       "lng": 14.430868,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "de991fa6f34044daa44a6db685d0eb68.11"
     },
     {
       "title": "Stolperstein Aschenbrennerová",
       "lat": 50.089307,
       "lng": 14.426304,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0e166cac49284b76a75626d04768ffb8.16"
     },
     {
       "title": "U České Orlice",
       "lat": 50.086683,
       "lng": 14.425129,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "df704b511d1a4590b83259054ebf2d5c.12"
     },
     {
       "title": "Palladium Shopping Center",
       "lat": 50.08883,
       "lng": 14.428724,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a2878a482faa42f4be90b653ed922d33.16"
     },
     {
       "title": "Bubbles",
       "lat": 50.088505,
       "lng": 14.431901,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0605c1fb7f1f4fad9bde5d932145b4b1.16"
     },
     {
       "title": "Relaxing Ladies",
       "lat": 50.088626,
       "lng": 14.427604,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4365bc06588244cab6608580b69c2df8.16"
     },
     {
       "title": "Creepy Guy Statue",
       "lat": 50.085094,
       "lng": 14.422605,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a476d484bdaf4a7ab8005f774ae50f6b.12"
     },
     {
       "title": "Red Woman",
       "lat": 50.087393,
       "lng": 14.424583,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4fcc2fb7eff743908b03759b09491909.16"
     },
     {
       "title": "Eagle and Lions",
       "lat": 50.090549,
       "lng": 14.429999,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7a20e64a82d0431b93fbf5ded0b43945.16"
     },
     {
       "title": "Nové Město (New Town)",
       "lat": 50.084494,
       "lng": 14.423738,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "afa6370382ae4b77a915cb77ab6106d6.12"
     },
     {
       "title": "Kostel svatého Josefa Praha Nové Město",
       "lat": 50.088884,
       "lng": 14.429363,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "569a3cb6aa283d10a478be82e2671508.16"
     },
     {
       "title": "Naháči pod lodžií",
       "lat": 50.090037,
       "lng": 14.428151,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a11a8ce638023be19398ab30004652c2.16"
     },
     {
       "title": "U Dörflerü",
       "lat": 50.084774,
       "lng": 14.424122,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f6fa13d91a7448fda5b7aeea8edbf6b5.16"
     },
     {
       "title": "Atlas At The Balcony",
       "lat": 50.090833,
       "lng": 14.428271,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "24ae823c97574f59921bb4449cdbc74e.16"
     },
     {
       "title": "Blue Light Tower",
       "lat": 50.084958,
       "lng": 14.424195,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1c8937e7c1544c3dba2caca540758890.16"
     },
     {
       "title": "Probost",
       "lat": 50.086275,
       "lng": 14.425482,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a7a77a96592b4336bf0f4b47ac91d915.16"
     },
     {
       "title": "Inner City Skyway",
       "lat": 50.085838,
       "lng": 14.427006,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "496e870af8254ca1ab3eddb3585ef683.16"
     },
     {
       "title": "Dangling Feet Statues",
       "lat": 50.087431,
       "lng": 14.427604,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9108a05f3f5448ccb8cd869c46ad89f5.16"
     },
     {
       "title": "Železná Špička",
       "lat": 50.087557,
       "lng": 14.425277,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ccb76a9fdad14b879b01e3c7519fca27.16"
     },
     {
       "title": "Golden Sun",
       "lat": 50.089695,
       "lng": 14.433259,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c8c319248719478996606bdb45072481.16"
     },
     {
       "title": "Naštvaný Chrlič",
       "lat": 50.084644,
       "lng": 14.425192,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c4cd651e0fd34c448ac01f1408de4fab.16"
     },
     {
       "title": "Zde působila Olga Havlová",
       "lat": 50.085865,
       "lng": 14.429851,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0e4051d9908d3ca08499cf497d6f0c66.16"
     },
     {
       "title": "Pizzeria Pavaon",
       "lat": 50.085651,
       "lng": 14.426373,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "203c4108abff4a3f823ceadd2f0c84d7.16"
     },
     {
       "title": "Face On Rybna 13",
       "lat": 50.089167,
       "lng": 14.425941,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2a3483d6c0514c958f9fb7e9d2d54cba.16"
     },
     {
       "title": "Strom Olgy Havlové",
       "lat": 50.085446,
       "lng": 14.429836,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a278c654831f360b84ae7c6db8d49470.16"
     },
     {
       "title": "Palace Archa",
       "lat": 50.089774,
       "lng": 14.433589,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "12851a94620541aab7a5e114892f51ab.12"
     },
     {
       "title": "Fontána se žlutým kamenem",
       "lat": 50.084536,
       "lng": 14.427911,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "44f6eab959554d489857d556a5049c26.16"
     },
     {
       "title": "Modern Art",
       "lat": 50.086449,
       "lng": 14.424956,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ee671f0e638b4c89a09b19206567a061.16"
     },
     {
       "title": "Collegium Clericorum Regularium",
       "lat": 50.08508,
       "lng": 14.426437,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "cb03f8deda474449a7afad5e2266c43f.16"
     },
     {
       "title": "Burning Car",
       "lat": 50.088738,
       "lng": 14.426579,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "149cacd0913a403385cd05a74c606563.16"
     },
     {
       "title": "Stará Celnice",
       "lat": 50.088193,
       "lng": 14.430304,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c005fdaaff1d43449d50659e78ef7c19.16"
     },
     {
       "title": "Lion Of OZ",
       "lat": 50.084615,
       "lng": 14.427114,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d582bc38b43b426a88b8ed2017402a7c.16"
     },
     {
       "title": "Jindřišská věž",
       "lat": 50.085089,
       "lng": 14.429967,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "5e942ddde66f4eb0af9801b184e9b61f.11"
     },
     {
       "title": "Mořeplavec ve Zlatnické",
       "lat": 50.090301,
       "lng": 14.432193,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a1c6205ee87c445a9fe86fe57e4b8d79.16"
     },
     {
       "title": "Hnízdo",
       "lat": 50.085902,
       "lng": 14.428077,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2374b0823f9a40bea667efccf6277b16.16"
     },
     {
       "title": "Università Carolina",
       "lat": 50.086448,
       "lng": 14.423532,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f300aef6432b4b96bbeb807b4a14bc9c.16"
     },
     {
       "title": "Trumpetista",
       "lat": 50.089023,
       "lng": 14.430286,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "31a3c566757f4cb3a5ed2c8ae1783a37.16"
     },
     {
       "title": "Karel Bendl",
       "lat": 50.091013,
       "lng": 14.429106,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "cf22bc4e83274be4be7156f55b169bb5.16"
     },
     {
       "title": "Manhartský palác",
       "lat": 50.087148,
       "lng": 14.424664,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "5016e847b48d45c9b35433cb24b9a008.12"
     },
     {
       "title": "Child With A Top Hat",
       "lat": 50.089954,
       "lng": 14.426954,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "593781c740d846cdba057f2c5b2b0b0f.16"
     },
     {
       "title": "Panna Maria na Evangelické modlitebně",
       "lat": 50.090068,
       "lng": 14.429327,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1b243496c2e336ea95bd2b4b628e5688.16"
     },
     {
       "title": "Bůh slunce Ra",
       "lat": 50.084744,
       "lng": 14.42854,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "54ec8a5e803c3ad4b795bc62fdebe20e.16"
     },
     {
       "title": "Vodopád Palladium",
       "lat": 50.08902,
       "lng": 14.429783,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f3974e4c5f29445684f08f5a42d276ed.16"
     },
     {
       "title": "Větrací šachta Náměstí republiky",
       "lat": 50.087687,
       "lng": 14.429589,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "55414afd86d34a47bd4ff827a516b04d.16"
     },
     {
       "title": "Balcony Man",
       "lat": 50.08911,
       "lng": 14.423931,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b9c11ae9490d4a04852924b9973b71ae.16"
     },
     {
       "title": "Výhled V Týnské Uličce",
       "lat": 50.087405,
       "lng": 14.423035,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6147bcae1197447190fd8351ca779126.12"
     },
     {
       "title": "Plastika na narozi",
       "lat": 50.091344,
       "lng": 14.417805,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "34580b5a55e84c9a979c98347e9541ab.16"
     },
     {
       "title": "Právnická fakulta Univerzity Karlovy",
       "lat": 50.091702,
       "lng": 14.417471,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "64c6d94533754b80a73c369f0e761405.11"
     },
     {
       "title": "Religious Statues",
       "lat": 50.092015,
       "lng": 14.422078,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c1b9e7313fe1467dbf1e6ac51a06aae3.16"
     },
     {
       "title": "Dalekanium V Petrske",
       "lat": 50.091699,
       "lng": 14.435521,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e29c18de4ba947adb3fdb870b902a125.16"
     },
     {
       "title": "Onyx Cube S Odrazem",
       "lat": 50.092414,
       "lng": 14.433717,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ea21f2275e584a2d8611c0cfc88bfdd4.16"
     },
     {
       "title": "Nemocnice Na Františku",
       "lat": 50.092808,
       "lng": 14.421333,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "928ec0d9eb9548098d414630d9091a54.16"
     },
     {
       "title": "Smutný tučňák",
       "lat": 50.09266,
       "lng": 14.421834,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "c7bb23fa3e8d4f15b5b76f43bf06c7c5.16"
     },
     {
       "title": "Panna s pohárem na hlavě",
       "lat": 50.091622,
       "lng": 14.422075,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4edb865a976b3ffcadcccfb078d4b080.16"
     },
     {
       "title": "Sitting On The Facade",
       "lat": 50.092512,
       "lng": 14.425884,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "db85186fb00744b08b9b052a4f98fa5b.16"
     },
     {
       "title": "Ministerstvo průmyslu a obchodu",
       "lat": 50.093029,
       "lng": 14.425763,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a80367629eae488ebc343ecf495b5aa5.12"
     },
     {
       "title": "Multifunkční stadion",
       "lat": 50.092615,
       "lng": 14.422667,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fb32b38166483f83a0a8881493216133.16"
     },
     {
       "title": "Mural",
       "lat": 50.091871,
       "lng": 14.424187,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b9cfaf155fc848738c5239c07b0af14f.16"
     },
     {
       "title": "Automaticka Telefoni Ustredna Tesnov",
       "lat": 50.091625,
       "lng": 14.435016,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "74a02530570b4bd7b5ce10f93ac1c1c0.16"
     },
     {
       "title": "Stolpersteine Petr Ginz",
       "lat": 50.092321,
       "lng": 14.43598,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "78c5b45a9bbe39a3b912fd8b86556c61.16"
     },
     {
       "title": "Kolár-Ofnerová Stolpersteine",
       "lat": 50.092458,
       "lng": 14.434191,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "496dfcdf151c3b58b3994d827a5c4bbb.16"
     },
     {
       "title": "Kašna",
       "lat": 50.091737,
       "lng": 14.43458,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d1d2f228a2e1424bb6b5cd87281b15cf.16"
     },
     {
       "title": "Hotel a restaurace Opera",
       "lat": 50.09197,
       "lng": 14.436273,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ad276bb51541423694933a8537b5846f.16"
     },
     {
       "title": "Zvonice kostela Sv. Petra",
       "lat": 50.091338,
       "lng": 14.43381,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d9846fa22aee4ec78d5904b333faddfc.11"
     },
     {
       "title": "Jan Půta",
       "lat": 50.092478,
       "lng": 14.435526,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "53d4e26f146b3bcd9abbedd5ddf6b0b5.16"
     },
     {
       "title": "Památník Boje Proti Fašismu",
       "lat": 50.091333,
       "lng": 14.434681,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "58387e537d3e4099aa6505c48bbbf5ab.16"
     },
     {
       "title": "Pamětní dlaždice",
       "lat": 50.092461,
       "lng": 14.434832,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2c48202e67bf4dcfa13524e12ea31c1c.16"
     },
     {
       "title": "\"For King\"",
       "lat": 50.091834,
       "lng": 14.437297,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "72e872cd65093be7997954b857185209.16"
     },
     {
       "title": "Verejne Hriste",
       "lat": 50.092468,
       "lng": 14.422339,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1bd01038e3f24761b7dc72819bc27f53.16"
     },
     {
       "title": "Moorage 5. Vltava",
       "lat": 50.092006,
       "lng": 14.416653,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a1270d8f808046fb878fb04aee84b524.16"
     },
     {
       "title": "Relief Waves",
       "lat": 50.09167,
       "lng": 14.419394,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "0497d5a6ce254946a1891f0407d38429.16"
     },
     {
       "title": "Corner Lady",
       "lat": 50.091286,
       "lng": 14.422103,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7184aedbba8f4ae38367fd60836775fd.16"
     },
     {
       "title": "Halo",
       "lat": 50.09195,
       "lng": 14.421502,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "dcfa756411a04b5fa9f15601e828c0a2.16"
     },
     {
       "title": "Cross-Bearer",
       "lat": 50.091943,
       "lng": 14.420911,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1f656652ebba4d31985e3a96177d6c98.16"
     },
     {
       "title": "kavárna u Čechova mostu",
       "lat": 50.092211,
       "lng": 14.417315,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8bbcca0744d44c8c9dfa2e5a09da2514.12"
     },
     {
       "title": "Intercontinental Gold Sign",
       "lat": 50.091744,
       "lng": 14.418215,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4f05cef330214dc4bc94b09e3a41b6ea.11"
     },
     {
       "title": "The Saint",
       "lat": 50.091939,
       "lng": 14.421209,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4ccfd2a5b40c4d4cb9f71126104c551c.16"
     },
     {
       "title": "Intercontinental Statue",
       "lat": 50.091321,
       "lng": 14.418405,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b819c8545d7347538205041f2c0a5a49.16"
     },
     {
       "title": "Povodně 2002",
       "lat": 50.092789,
       "lng": 14.420772,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "672c11df90c83e6faac292953bf48532.16"
     },
     {
       "title": "Roof Statue",
       "lat": 50.091994,
       "lng": 14.420382,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "86f2a69097964d89a4f79a12118cb49d.16"
     },
     {
       "title": "Statues",
       "lat": 50.092735,
       "lng": 14.43055,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ee0f2c2aeb0c47d29ab06bc4f1a9c9a6.16"
     },
     {
       "title": "Zde se narodil Max Brod",
       "lat": 50.091763,
       "lng": 14.42623,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "9b7803ab49fa4bd890c226c1c901b0a3.16"
     },
     {
       "title": "Park Lannova",
       "lat": 50.092802,
       "lng": 14.428643,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1879a7814cec405a880c8b40817a84cb.16"
     },
     {
       "title": "Svatý Salvátor v Anežském Klášteře",
       "lat": 50.092501,
       "lng": 14.42492,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "22891be282e04da79556ece861dbbfd6.16"
     },
     {
       "title": "Madonna Incoronata",
       "lat": 50.092743,
       "lng": 14.423255,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "22cdfcd7288d4b36a9535ad46bf47c6f.16"
     },
     {
       "title": "Statue",
       "lat": 50.092796,
       "lng": 14.42416,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "292bca9e65534f48804e3402b0f4abae.16"
     },
     {
       "title": "Dr. Augustin Pechlát",
       "lat": 50.091926,
       "lng": 14.427639,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "75fa044798e54a05bec3f36f94b6fa4d.16"
     },
     {
       "title": "Pamětní deska Christiana Dopplera",
       "lat": 50.091311,
       "lng": 14.423147,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "3bf7432a194a4d549639b63b57c972d7.16"
     },
     {
       "title": "Red Thing",
       "lat": 50.092509,
       "lng": 14.424353,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "46ea3e9556664b1aba6ae9a43c397cd7.16"
     },
     {
       "title": "Thing",
       "lat": 50.092746,
       "lng": 14.424575,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "385c1c6739d44000a0f05a12e3d2c56b.16"
     },
     {
       "title": "Hausverzierung",
       "lat": 50.091312,
       "lng": 14.431086,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "03898324805e4ffca9e6e290a15cdfe9.16"
     },
     {
       "title": "MZO 1955",
       "lat": 50.0921,
       "lng": 14.43127,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "1cd09296f59038838db3c8e7d85fb822.16"
     },
     {
       "title": "Stolpersteine - Elsa Wotrubová",
       "lat": 50.092264,
       "lng": 14.432656,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "145036b2730c32a49363c186d96ce175.16"
     },
     {
       "title": "Naked Nymph",
       "lat": 50.09185,
       "lng": 14.427358,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "ef4811d25fb948239cd283ba87d39945.16"
     },
     {
       "title": "Hausmarke",
       "lat": 50.091513,
       "lng": 14.428252,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7eb5efccc8c24409886c8a37ef91115e.12"
     },
     {
       "title": "Skull on body",
       "lat": 50.092313,
       "lng": 14.424771,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "536b922de0d349e0b77b0cc33257e593.16"
     },
     {
       "title": "Reader",
       "lat": 50.092934,
       "lng": 14.425174,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "be69c1b92f4841ec91e1245bbe84cf8c.16"
     },
     {
       "title": "U Červeného Kola",
       "lat": 50.091637,
       "lng": 14.424262,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a336cf742ed6430f91f22165e6de2fab.16"
     },
     {
       "title": "Dvě nymfy",
       "lat": 50.091314,
       "lng": 14.427966,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e159d4caef4841af9139e3569fa91d41.16"
     },
     {
       "title": "Památný Dub letní v Řásnovce",
       "lat": 50.092111,
       "lng": 14.425266,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b435344dacc23b49a1f35c11e0f3bafe.16"
     },
     {
       "title": "Rekonstrukce Štefánikova mostu",
       "lat": 50.093176,
       "lng": 14.427418,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6d339b6581b43f92a06c86e75a953117.16"
     },
     {
       "title": "Zde padl Josef Voříšek",
       "lat": 50.092361,
       "lng": 14.427201,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "58664167c27830efb64eb1cc7a3c146c.16"
     },
     {
       "title": "Composizione Di Statue",
       "lat": 50.092553,
       "lng": 14.423239,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "028cd7e9d001422e8ed3bb67fde5dcc1.16"
     },
     {
       "title": "Jindřich Honzl",
       "lat": 50.092771,
       "lng": 14.431839,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "fca93939b69649f1a7ae1cae98f7130b.16"
     },
     {
       "title": "Republica De Colombia",
       "lat": 50.091959,
       "lng": 14.426191,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "4b4c0b969b4b3d53999f79147c35196b.16"
     },
     {
       "title": "Jan a Marie Sigmundovi",
       "lat": 50.09261,
       "lng": 14.430968,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "8b10820615c548c49ef7dee9a35cc94a.16"
     },
     {
       "title": "Park Lannova",
       "lat": 50.092956,
       "lng": 14.432191,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "89e476e057b847a8bf4632f5c613842f.16"
     },
     {
       "title": "Vladislav Vančura",
       "lat": 50.091632,
       "lng": 14.428626,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "6cd04686c24c4ee58967482e29a541be.16"
     },
     {
       "title": "Colored Cube",
       "lat": 50.093122,
       "lng": 14.430968,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "a5f516cd4f9f4d93aaad4044d6fff0cd.16"
     },
     {
       "title": "Poštovní Muzeum",
       "lat": 50.092261,
       "lng": 14.428647,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "78835428aa523b679d30cd4bfa71e6a7.16"
     },
     {
       "title": "Novomlýnská vodárenská věž",
       "lat": 50.092307,
       "lng": 14.428351,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "e91bd97880d34a138a67d244edb0e17e.16"
     },
     {
       "title": "Relaxing Statue",
       "lat": 50.092976,
       "lng": 14.426661,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7d4e389e1aec41e196bfc45606672531.16"
     },
     {
       "title": "Stoned Aries",
       "lat": 50.092538,
       "lng": 14.425515,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "2bc099af17ea43058897e6db8e8986d3.16"
     },
     {
       "title": "A fresco Dell Aacensione",
       "lat": 50.091684,
       "lng": 14.424959,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bcbbb8fc0b6d43e581bb78b87175bd86.16"
     },
     {
       "title": "Galery",
       "lat": 50.092822,
       "lng": 14.423568,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "81a6e402d36947268fd816810e7087fd.16"
     },
     {
       "title": "Wish well",
       "lat": 50.092242,
       "lng": 14.423499,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "87fdbd7d23be47938ae1a7972e943ef9.16"
     },
     {
       "title": "Dum S Baculatyma Andelickama",
       "lat": 50.091327,
       "lng": 14.431778,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "bab97a026a4a4de688480731519a0049.16"
     },
     {
       "title": "Park Lannova",
       "lat": 50.093284,
       "lng": 14.431674,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "5ea017de1ba8446cb37a68411346816d.16"
     },
     {
       "title": "Afftesco Sull'abazia",
       "lat": 50.092422,
       "lng": 14.429079,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "eba8b5f888224db3ac88d1bfcece67ec.16"
     },
     {
       "title": "Kostel sv. Klimenta",
       "lat": 50.091965,
       "lng": 14.429056,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "f2a8c8ef77b94c24b8a28e4e89ab589b.16"
     },
     {
       "title": "Anděl",
       "lat": 50.092436,
       "lng": 14.428776,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "7c9fdff815c44f50b483c40b9b2ce7ac.11"
     },
     {
       "title": "Svatý v okně",
       "lat": 50.092196,
       "lng": 14.432353,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "b6b9c1387f3043cb95c5263991443662.16"
     },
     {
       "title": "Paladin",
       "lat": 50.092655,
       "lng": 14.426613,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "5b0861a8367846bea4d8097d144bd401.16"
     },
     {
       "title": "Petrske Lavicky",
       "lat": 50.091433,
       "lng": 14.43216,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "d3aa052ca9f143a482fea57234d9ffb5.16"
     },
     {
       "title": "Two Young Male Statues",
       "lat": 50.092557,
       "lng": 14.426181,
-      "ornamentId": "ap1"
+      "ornamentId": "ap1",
+      "guid": "14f3147238d14d1eaf76d60fb55b2ba7.16"
     }
   ]
 }
