@@ -6,6 +6,36 @@ import { t, tChoice, getLocale } from "../i18n/index.js";
 const MS_PER_SECOND = 1000;
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
+interface TimeLocaleOptions {
+    locale: string;
+    hourCycle: 'h12' | 'h23';
+}
+
+/**
+ * Keep local clock conventions without using Chinese day-period text.
+ * Mainland China and the UK use a 24-hour clock; Hong Kong, Taiwan and
+ * the US use a 12-hour clock with Latin AM/PM markers.
+ */
+function getTimeLocaleOptions(locale: string): TimeLocaleOptions {
+    switch (locale) {
+        case 'zh-CN':
+        case 'en-GB':
+            return { locale, hourCycle: 'h23' };
+        case 'zh-HK':
+            return { locale: 'en-HK', hourCycle: 'h12' };
+        case 'zh-TW':
+            return { locale: 'en-TW', hourCycle: 'h12' };
+        case 'en-US':
+            return { locale, hourCycle: 'h12' };
+        default:
+            return { locale, hourCycle: 'h23' };
+    }
+}
+
+function normaliseLatinDayPeriod(value: string): string {
+    return value.replace(/\b(am|pm)\b/gi, (period) => period.toUpperCase());
+}
+
 /**
  * Converts a 13-digit millisecond epoch time string/number to a 10-digit
  * second epoch time string/number by truncating milliseconds. We only up to the second,
@@ -57,28 +87,38 @@ export function formatIsoToLongDate(isoString: string, timeZone?: string, locale
  * Formats an epoch time for local display time.
  */
 export function formatEpochToLocalTime(epochMs: number | string, timeZone: string, locale: string = getLocale()): string {
-    return new Date(Number(epochMs)).toLocaleTimeString(locale, {
+    const timeOptions = getTimeLocaleOptions(locale);
+    const formatted = new Date(Number(epochMs)).toLocaleTimeString(timeOptions.locale, {
         timeZone,
         hour: '2-digit',
         minute: '2-digit',
         second: '2-digit',
         fractionalSecondDigits: 3,
+        hourCycle: timeOptions.hourCycle,
     });
+    return normaliseLatinDayPeriod(formatted);
 }
 
 /**
  * Formats an epoch time for local date and time display.
  */
 export function formatEpochToLocalDateTime(epochMs: number | string, timeZone: string, locale: string = getLocale()): string {
-    return new Date(Number(epochMs)).toLocaleString(locale, {
+    const date = new Date(Number(epochMs));
+    const datePart = date.toLocaleDateString(locale, {
         timeZone,
         year: 'numeric',
         month: 'numeric',
         day: 'numeric',
+    });
+    const timeOptions = getTimeLocaleOptions(locale);
+    const timePart = date.toLocaleTimeString(timeOptions.locale, {
+        timeZone,
         hour: '2-digit',
         minute: '2-digit',
         second: '2-digit',
+        hourCycle: timeOptions.hourCycle,
     });
+    return `${datePart} ${normaliseLatinDayPeriod(timePart)}`;
 }
 
 /**

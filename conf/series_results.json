@@ -1,0 +1,60 @@
+{
+    "schemaVersion": 1,
+    "series": [
+        {
+            "seriesId": "2026-apollo",
+            "source": {
+                "publisher": "Niantic Spatial",
+                "url": "https://ingress.com/news/2026-apollo-results"
+            },
+            "displayScore": {
+                "label": "season-points",
+                "programmeIds": ["xm-anomaly", "first-saturday"],
+                "scores": {
+                    "RES": 455.4,
+                    "ENL": 406.9
+                }
+            },
+            "programmes": [
+                {
+                    "id": "xm-anomaly",
+                    "status": "final",
+                    "updatedAt": "2026-07-18",
+                    "scores": {
+                        "RES": 299.0,
+                        "ENL": 261.0
+                    },
+                    "sites": [
+                        {
+                            "id": "helsinki",
+                            "scores": { "RES": 176.6, "ENL": 103.4 }
+                        },
+                        {
+                            "id": "bogota",
+                            "scores": { "RES": 122.4, "ENL": 157.6 }
+                        }
+                    ]
+                },
+                {
+                    "id": "first-saturday",
+                    "status": "in-progress",
+                    "updatedAt": "2026-07-16",
+                    "scores": {
+                        "RES": 156.4,
+                        "ENL": 145.9
+                    },
+                    "rounds": [
+                        {
+                            "id": "july",
+                            "status": "final",
+                            "participants": { "RES": 1564, "ENL": 1459 },
+                            "scores": { "RES": 156.4, "ENL": 145.9 }
+                        },
+                        { "id": "august", "status": "pending" },
+                        { "id": "september", "status": "pending" }
+                    ]
+                }
+            ]
+        }
+    ]
+}

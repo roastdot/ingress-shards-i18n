@@ -7,6 +7,7 @@ import { DetailsPanelReact } from "./DetailsPanelReact.js";
 import { LanguageSwitcherReact } from "./LanguageSwitcherReact.js";
 import { CreditsMenuReact } from "./CreditsMenuReact.js";
 import { ThemeToggleReact } from "./ThemeToggleReact.js";
+import { SeasonScoreBannerReact } from "./SeasonScoreBannerReact.js";
 
 export function AppChrome(): React.JSX.Element {
     const mode = useSyncExternalStore(subscribeColorMode, getColorMode);
@@ -20,6 +21,7 @@ export function AppChrome(): React.JSX.Element {
                 <ThemeToggleReact />
                 <LanguageSwitcherReact />
             </div>
+            <SeasonScoreBannerReact />
             <div className="react-ui-corner bottom-right">
                 <DetailsPanelReact />
             </div>

@@ -1,12 +1,15 @@
 import seriesMetadataFile from "../../../conf/series_metadata.json" with { type: "json" };
 import seriesGeocodeFile from "../../../gen/series_geocode.json" with { type: "json" };
 import seriesDataFile from "../../../gen/processed_series_data.json" with { type: "json" };
+import seriesResultsFile from "../../../conf/series_results.json" with { type: "json" };
 import { CUSTOM_SERIES_ID } from "../constants.js";
-import type { SeriesMetadata, SeriesGeocode, SeriesSiteData, SiteData } from "../types/domain.js";
+import type { SeriesResult, SeriesMetadata, SeriesGeocode, SeriesSiteData, SiteData } from "../types/domain.js";
 
 const seriesMetadata = seriesMetadataFile as unknown as { series: SeriesMetadata[] };
 const seriesGeocode = seriesGeocodeFile as unknown as Record<string, { sites: Array<{ id: string; [key: string]: unknown }> }>;
 const seriesData = seriesDataFile as unknown as Record<string, SeriesSiteData>;
+const seriesResults = seriesResultsFile as unknown as { series: SeriesResult[] };
+const seriesResultsById = new Map(seriesResults.series.map((result) => [result.seriesId, result]));
 
 interface SeriesCacheEntry {
     metadata: SeriesMetadata;
@@ -83,6 +86,10 @@ export function getSeriesGeocode(seriesId: string): SeriesGeocode | null | undef
 export function getSiteData(seriesId: string, siteId: string): SiteData | undefined {
     const seriesEntry = seriesCache[seriesId];
     return seriesEntry?.data?.[siteId];
+}
+
+export function getSeriesResult(seriesId: string): SeriesResult | null {
+    return seriesResultsById.get(seriesId) ?? null;
 }
 
 export interface CustomProcessedData {

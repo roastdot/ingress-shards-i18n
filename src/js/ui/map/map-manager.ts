@@ -5,19 +5,43 @@ import "leaflet-relief";
 import { IS_TOUCH_SUPPORTED } from "../event-handler.js";
 import { decodeElevation, getTileElevationGrid, hsvToRgb, computeHillshadeIntensity } from "./elevation.js";
 import { getColorMode, subscribeColorMode } from "../react/colorModeStore.js";
+import { t } from "../../i18n/index.js";
 
 // leaflet-providers has no type declarations of its own — `.provider(...)` is
 // a runtime augmentation of L.tileLayer.
 const tileLayerProvider = (L.tileLayer as unknown as { provider: (name: string) => L.TileLayer }).provider;
+const CONFIGURED_MIN_ZOOM = 2;
+const WEB_MERCATOR_TILE_SIZE = 256;
+const WEB_MERCATOR_MAX_LATITUDE = 85.05112878;
+// Leaflet has no latitude-only maxBounds option. A deliberately broad finite
+// longitude range preserves practical horizontal world wrapping while still
+// allowing maxBounds to constrain the non-wrapping vertical axis.
+const VERTICAL_WORLD_BOUNDS: L.LatLngBoundsExpression = [
+    [-WEB_MERCATOR_MAX_LATITUDE, -1_000_000_000],
+    [WEB_MERCATOR_MAX_LATITUDE, 1_000_000_000],
+];
 
 export function initMap(): L.Map {
     const map = L.map("map", {
         worldCopyJump: true,
-        minZoom: 2,
+        minZoom: CONFIGURED_MIN_ZOOM,
         doubleClickZoom: !IS_TOUCH_SUPPORTED,
+        maxBounds: VERTICAL_WORLD_BOUNDS,
+        maxBoundsViscosity: 1,
     }).setView([0, 0], 2);
 
+    // The React details panel owns the bottom-right corner. Keep Leaflet's
+    // attribution visible in the opposite corner instead of allowing the two
+    // independently positioned overlays to cover each other.
+    map.attributionControl.setPosition('bottomleft');
+    map.attributionControl.addAttribution(
+        `<span class="project-credits"><a href="https://github.com/ingress-shards/ingress-shards.github.io" target="_blank" rel="noreferrer">${t('credits.based_on_original')} Ingress Shards Map</a>` +
+        ` · ♥ <a href="https://github.com/Yeggstry" target="_blank" rel="noreferrer">${t('credits.thanks_yeggstry')}</a>` +
+        ` · ♥ <a href="https://github.com/neon-ninja" target="_blank" rel="noreferrer">${t('credits.thanks_nick_young')}</a></span>`,
+    );
+
     createCustomPanes(map);
+    keepMapSizedToViewport(map);
 
     const lightThemeLayer = tileLayerProvider("CartoDB.Positron");
     const darkThemeLayer = tileLayerProvider("CartoDB.DarkMatter");
@@ -27,7 +51,7 @@ export function initMap(): L.Map {
         "CartoDB Dark Matter": darkThemeLayer,
         "ESRI WorldImagery": tileLayerProvider("Esri.WorldImagery"),
         "ESRI WorldTopoMap": tileLayerProvider('Esri.WorldTopoMap'),
-        "Google Hybrid": L.tileLayer("http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}", {
+        "Google Hybrid": L.tileLayer("https://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}", {
             maxZoom: 20,
             subdomains: ["mt0", "mt1", "mt2", "mt3"],
         }),
@@ -210,7 +234,7 @@ export function initMap(): L.Map {
     });
 
     map.on('overlayadd', (e: L.LayersControlEvent) => {
-        if (e.name === "Elevation") {
+        if (e.layer === reliefLayer) {
             legend.addTo(map);
             // Use a short delay to ensure layer state is settled
             setTimeout(() => updateViewRange(true), 50);
@@ -218,7 +242,7 @@ export function initMap(): L.Map {
     });
 
     map.on('overlayremove', (e: L.LayersControlEvent) => {
-        if (e.name === "Elevation") {
+        if (e.layer === reliefLayer) {
             legend.remove();
         }
     });
@@ -232,10 +256,42 @@ export function initMap(): L.Map {
 
     map.on('moveend zoomend', () => updateViewRange());
 
-    const overlays = { "Elevation": reliefLayer };
+    const overlays = { [t('map.elevation')]: reliefLayer };
     L.control.layers(baseMaps, overlays, { position: "topleft" }).addTo(map);
 
     return map;
+}
+
+function keepMapSizedToViewport(map: L.Map): void {
+    const container = map.getContainer();
+    let animationFrame: number | null = null;
+
+    const refreshSize = () => {
+        if (animationFrame !== null) cancelAnimationFrame(animationFrame);
+        animationFrame = requestAnimationFrame(() => {
+            animationFrame = null;
+            map.invalidateSize({ pan: false, debounceMoveend: true });
+
+            // Web Mercator wraps horizontally but not vertically. On a tall
+            // viewport, a fixed low minimum zoom can make the projected world
+            // shorter than the map, exposing empty bands beyond both poles.
+            const requiredWorldScale = (container.clientHeight + 1) / WEB_MERCATOR_TILE_SIZE;
+            const viewportMinZoom = Math.max(CONFIGURED_MIN_ZOOM, Math.ceil(Math.log2(requiredWorldScale)));
+            map.setMinZoom(viewportMinZoom);
+            if (map.getZoom() < viewportMinZoom) map.setZoom(viewportMinZoom);
+            map.panInsideBounds(VERTICAL_WORLD_BOUNDS, { animate: false });
+        });
+    };
+
+    // Leaflet measures its container only during initialisation and ordinary
+    // window resize events. Dynamic/mobile viewports and embedded browsers can
+    // change the rendered container without producing the size Leaflet expects.
+    if (typeof ResizeObserver !== 'undefined') {
+        new ResizeObserver(refreshSize).observe(container);
+    }
+    window.visualViewport?.addEventListener('resize', refreshSize);
+    window.addEventListener('orientationchange', refreshSize);
+    requestAnimationFrame(refreshSize);
 }
 
 function createCustomPanes(map: L.Map): void {

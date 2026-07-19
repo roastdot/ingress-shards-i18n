@@ -12,6 +12,37 @@ export interface Scores {
     [key: string]: number;
 }
 
+export interface SeriesResultProgramme {
+    id: string;
+    status: "in-progress" | "final";
+    updatedAt: string;
+    scores: Pick<Scores, "RES" | "ENL">;
+    sites?: Array<{
+        id: string;
+        scores: Pick<Scores, "RES" | "ENL">;
+    }>;
+    rounds?: Array<{
+        id: string;
+        status: "pending" | "final";
+        participants?: Pick<Scores, "RES" | "ENL">;
+        scores?: Pick<Scores, "RES" | "ENL">;
+    }>;
+}
+
+export interface SeriesResult {
+    seriesId: string;
+    source: {
+        publisher: string;
+        url: string;
+    };
+    displayScore: {
+        label: "season-points";
+        programmeIds: string[];
+        scores: Pick<Scores, "RES" | "ENL">;
+    };
+    programmes: SeriesResultProgramme[];
+}
+
 export interface Portal {
     lat: number;
     lng: number;

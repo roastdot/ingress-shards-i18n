@@ -371,11 +371,11 @@ function createPortalMarkers(portals: PortalsMap, portalHistoryMap: Record<strin
 }
 
 function formatPortalTooltip(portal: any, portalHistory: Array<[any, any[]]>, timeZone: string, targetFaction?: Faction | null): string {
-    const ornamentLabel = ORNAMENT_BRANDS[portal.ornamentId] ? t('blueprints.ornament.' + portal.ornamentId) : `${t('site.ornament_label')}: ${portal.ornamentId}`;
+    const ornamentLabel = ORNAMENT_BRANDS[portal.ornamentId] ? t('blueprints.ornament.' + portal.ornamentId) : `${t('site.ornament_label')} ${portal.ornamentId}`;
     const ornamentHtml = portal.ornamentId ? `<i>${ornamentLabel}</i><br/>` : '';
     const targetHtml = targetFaction ? `<strong><span style="color:${FACTION_COLORS[targetFaction]}">${targetFaction}</span></strong> <i>${t('site.target_portal')}</i><br/>` : '';
     const separator = portalHistory.length > 0 ? '<hr />' : '';
-    let tooltipHtml = `<strong>${portal.title}</strong> <a href="${INGRESS_INTEL_PORTAL_LINK}${portal.lat},${portal.lng}" target="intel_page">${t('site.intel')}</a><br/>${targetHtml}${ornamentHtml}${separator}`;
+    let tooltipHtml = `<strong>${portal.title}</strong> <a class="intel-link" href="${INGRESS_INTEL_PORTAL_LINK}${portal.lat},${portal.lng}" target="intel_page">${t('site.intel')}</a><br/>${targetHtml}${ornamentHtml}${separator}`;
 
     portalHistory.forEach(([shardId, shardHistory], index) => {
         tooltipHtml += `<strong>${t('site.shard_n', { id: shardId })}</strong><br />`;
@@ -386,11 +386,16 @@ function formatPortalTooltip(portal: any, portalHistory: Array<[any, any[]]>, ti
             if (historyItem.reason === HISTORY_REASONS.SPAWN) reasonToDisplay = t('site.reason.spawn');
             else if (historyItem.reason === HISTORY_REASONS.NO_MOVE) reasonToDisplay = t('site.reason.no_move');
             else if (historyItem.reason === HISTORY_REASONS.LINK) reasonToDisplay = t('site.reason.jump');
-            else if (historyItem.reason === HISTORY_REASONS.JUMP) reasonToDisplay = t('site.randomly_teleported');
+            else if (historyItem.reason === HISTORY_REASONS.JUMP) reasonToDisplay = t('site.reason.teleport');
             else if (historyItem.reason === HISTORY_REASONS.DESPAWN) reasonToDisplay = t('site.reason.despawn');
             else reasonToDisplay = historyItem.reason;
 
-            tooltipHtml += `${reasonToDisplay} ${t('site.at')} ${formatEpochToLocalTime(historyItem.moveTime, timeZone)}${teamToDisplay ? ` - <span style="color:${FACTION_COLORS[teamToDisplay]}">${teamToDisplay}</span>` : ""}<br />`;
+            const teamSuffix = teamToDisplay ? ` — <span style="color:${FACTION_COLORS[teamToDisplay]}">${teamToDisplay}</span>` : '';
+            tooltipHtml += `${t('site.portal_history', {
+                reason: reasonToDisplay,
+                time: formatEpochToLocalTime(historyItem.moveTime, timeZone),
+                team: teamSuffix,
+            })}<br />`;
         }
 
         if (index < portalHistory.length - 1) {
@@ -465,12 +470,22 @@ function formatLinkPathTooltip(shardPath: any, shardPathPortals: any[], timeZone
     const sortedLinks = [...shardPath.links].sort((a, b) => a.linkTime - b.linkTime);
     sortedLinks.forEach((link, index) => {
         const linkColor = FACTION_COLORS[link.team] || FACTION_COLORS.NEU;
-        tooltip += `${t('site.linked_at')} ${formatEpochToLocalTime(link.linkTime, timeZone)} ${t('site.by')} <span style="color:${linkColor}">${link.team || "NEU"}</span> <br />`;
+        const teamHtml = `<span style="color:${linkColor}">${link.team || 'NEU'}</span>`;
+        tooltip += `${t('site.link_created', {
+            time: formatEpochToLocalTime(link.linkTime, timeZone),
+            team: teamHtml,
+        })}<br />`;
 
         for (const move of link.moves) {
             const moveTime = formatEpochToLocalTime(move.moveTime, timeZone);
             const portalJumpText = biDirectionalMoves ? (move.origin === portalA.id ? "(A -> B)" : "(B -> A)") : "";
-            tooltip += `<strong>${t('site.shard_n', { id: move.shardId })}</strong> ${t('site.jumped')} ${portalJumpText} ${t('site.at')} ${moveTime} ${t('site.for')} ${move.points} ${tChoice('site.point', move.points)}<br />`;
+            tooltip += `${t('site.shard_scored', {
+                id: move.shardId,
+                route: portalJumpText,
+                time: moveTime,
+                points: move.points,
+                pointLabel: tChoice('site.point', move.points),
+            })}<br />`;
         }
 
         if (index < sortedLinks.length - 1) {
@@ -492,7 +507,7 @@ function formatJumpPathTooltip(shardPath: any, shardPathPortals: any[], timeZone
     const moveTime = formatEpochToLocalTime(jump.moveTime, timeZone);
 
     const tooltip = `<strong>${fromPortal.title} -> ${toPortal.title} (${distanceDisplay})</strong><hr />
-        <strong>${t('site.shard_n', { id: jump.shardId })}</strong> ${t('site.randomly_teleported')} ${t('site.at')} ${moveTime}<br />`;
+        ${t('site.shard_teleported', { id: jump.shardId, time: moveTime })}<br />`;
 
     return { tooltip, coords };
 }
@@ -512,10 +527,10 @@ export function getDetailsPanelContent(seriesId: string, siteId: string, waveId?
 
     if (ZonedDateTime.compare(now, startTime) < 0) {
         const remaining = getTimeRemaining(siteGeocode.date, siteGeocode.timezone);
-        countdownSuffix = ` (${t('site.starts_in')} ${remaining})`;
+        countdownSuffix = ` (${t('site.starts_in_status', { remaining })})`;
     } else if (ZonedDateTime.compare(now, startTime) >= 0 && ZonedDateTime.compare(now, endTime) <= 0) {
         const remaining = getActiveEventRemaining(siteGeocode.date, siteGeocode.timezone, durationMins);
-        countdownSuffix = ` (${t('site.active')}: ${remaining} ${t('site.remaining')})`;
+        countdownSuffix = ` (${t('site.active_status', { remaining })})`;
     }
 
     const ornamentCount = Object.values(siteData.portals || {}).filter(p => p.ornamentId).length;
@@ -526,7 +541,7 @@ export function getDetailsPanelContent(seriesId: string, siteId: string, waveId?
 
     let content = `
         <div style="margin-bottom: 8px">
-            ${t('site.date_label')}: ${formatIsoToShortDate(siteGeocode.date, siteGeocode.timezone)}${countdownSuffix}${ornamentCount > 0 ? `<br/>${t('site.ornaments_label')}: ${ornamentCount}` : ''}
+            ${t('site.date_label')} ${formatIsoToShortDate(siteGeocode.date, siteGeocode.timezone)}${countdownSuffix}${ornamentCount > 0 ? `<br/>${t('site.ornaments_label')} ${ornamentCount}` : ''}
         </div>`;
 
     if (hasShards) {
@@ -631,10 +646,10 @@ function renderSimpleScores(scores: { RES: number; ENL: number; MAC: number }): 
 }
 
 function renderFullScores(scores: { RES: number; ENL: number; MAC: number }): string {
-    let html = `<span style="color:${FACTION_COLORS.RES}">RES: ${scores.RES} </span>
-            <span style="color:${FACTION_COLORS.ENL}">ENL: ${scores.ENL} </span>`;
+    let html = `<span style="color:${FACTION_COLORS.RES}">${t('faction.resistance')}: ${scores.RES} </span>
+            <span style="color:${FACTION_COLORS.ENL}">${t('faction.enlightened')}: ${scores.ENL} </span>`;
     if (scores.MAC > 0) {
-        html += `<span style="color:${FACTION_COLORS.MAC}">MAC: ${scores.MAC}</span>`;
+        html += `<span style="color:${FACTION_COLORS.MAC}">${t('faction.machina')}: ${scores.MAC}</span>`;
     }
     return html;
 }
@@ -657,9 +672,9 @@ function renderTableScores(waves: any[], totalScores: { RES: number; ENL: number
         <thead>
             <tr data-series-id="${seriesId}" data-site-id="${siteNavigationId}">
                 <th style="text-align: center">${t('site.wave')}</th>
-                <th class='faction-RES'>RES</th>
-                <th class='faction-ENL'>ENL</th>
-                ${hasMachinaScores ? `<th class='faction-MAC'>MAC</th>` : ''}
+                <th class='faction-RES'>${t('faction.resistance')}</th>
+                <th class='faction-ENL'>${t('faction.enlightened')}</th>
+                ${hasMachinaScores ? `<th class='faction-MAC'>${t('faction.machina')}</th>` : ''}
             </tr>
         </thead>
         <tbody>`;

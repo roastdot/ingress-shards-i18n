@@ -84,9 +84,10 @@ export function DetailsPanelReact(): React.JSX.Element {
         ? `v${__APP_VERSION__}`
         : __APP_VERSION__;
     const footerHtml = `${content.footer ?? ''}<div class="app-version"><a href="${versionHref}" target="ism-version">${versionLabel}</a></div>`;
+    const hasScoreTable = content.content.includes('ingress-event-scores');
 
     return (
-        <Paper className={`leaflet-details-panel${isCollapsed ? ' collapsed' : ''}`}>
+        <Paper className={`leaflet-details-panel${hasScoreTable ? ' score-details' : ''}${isCollapsed ? ' collapsed' : ''}`}>
             <div className="details-panel-header">
                 <div className="details-panel-flag" style={{ display: content.flagHtml ? 'flex' : 'none' }} dangerouslySetInnerHTML={{ __html: content.flagHtml ?? '' }} />
                 <div className="details-panel-title">

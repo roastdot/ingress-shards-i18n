@@ -15,10 +15,15 @@ let viewDispatchers: ViewDispatchers | null = null;
 let lastHistoryIndex: number = (history.state as RouteHistoryState | null)?.historyIndex || 0;
 
 export let IS_NAVIGATING_BACK = false;
+export let IS_INITIAL_ROUTE_RENDER = true;
 
 export function setViewDispatchers(dispatchers: ViewDispatchers): void {
     viewDispatchers = dispatchers;
-    updateViewFromHash();
+    try {
+        updateViewFromHash();
+    } finally {
+        IS_INITIAL_ROUTE_RENDER = false;
+    }
 }
 
 export function navigate(url: string): void {

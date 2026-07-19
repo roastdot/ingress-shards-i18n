@@ -17,9 +17,10 @@ The original MIT copyright and permission notice is retained in
 
 ## Series View
 
-Displays the sites of shard events for a particular series.
+Displays all event sites for a selected series, including official season
+points, event-type markers and faction results where available.
 
-[<img src="docs/assets/shard-series.png">](https://roastdot.github.io/ingress-shards.github.io/)
+[<img src="docs/assets/apollo-series-overview.png" alt="Apollo season overview showing event sites and season points">](https://roastdot.github.io/ingress-shards.github.io/)
 
 ## Site View
 
@@ -44,6 +45,7 @@ In order to ensure that new data is included on the shard map, the following con
 
 -   For a new series, add a new entry in _conf/series_metadata.json_. See other entries for example properties available.
     -   Is it preferable to use the same series ID as Niantic use i.e. 2025-plusbeta for the +Beta series.
+-   When Niantic publishes official season points, add or update the matching entry in _conf/series_results.json_. Keep each scoring programme (for example, `xm-anomaly` and `first-saturday`) separate and record its source URL, status and update date. `displayScore` defines the season points shown above the map and records which programmes contribute to them. Never calculate season points from shard and link counts in individual site data.
 -   For new shard jump data, enter it in the relevant series folder in _data_. For example, the +Beta series files are located in _data/2025-plusbeta_.
     -   The jump files with a prefix of 'shard-jump-times-' will be automatically parsed and shards will be matched to the site (and date) within the series.
 
@@ -110,5 +112,6 @@ Ingress names and faction marks belong to their respective trademark owners.
 The configuration of the shards are available at the following locations:
 
 -   [Series metadata](https://roastdot.github.io/ingress-shards.github.io/public/conf/series_metadata.json)
+-   [Official series results](https://roastdot.github.io/ingress-shards.github.io/public/conf/series_results.json)
 -   [Series geocode](https://roastdot.github.io/ingress-shards.github.io/public/conf/series_geocode.json)
 -   [Map version](https://roastdot.github.io/ingress-shards.github.io/public/conf/version.json) (used to check for configuration updates)

@@ -36,6 +36,7 @@
        must stay constant across themes. Neon yellow reads fine on the dark
        glass background but is nearly illegible on light, hence the split. */
     --color-accent: #ffd633;
+    --intel-link: #ffd633;
 }
 
 /* ============================================================
@@ -59,14 +60,27 @@
     --shadow-glass: 0 10px 28px rgba(15, 23, 42, 0.18), 0 1px 3px rgba(15, 23, 42, 0.12);
     --page-bg: #f8fafc;
     --color-accent: #9a5b00; /* dark amber — legible on a light background */
+    --intel-link: #9a5b00;
 }
 
 html,
-body,
-#map {
+body {
     height: 100%;
     width: 100%;
     margin: 0;
+    padding: 0;
+    background: var(--page-bg);
+    overflow: hidden;
+}
+
+#map {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
     background: var(--page-bg);
 }
 
@@ -246,6 +260,10 @@ a:hover {
     opacity: 1;
 }
 
+.leaflet-control-attribution .project-credits {
+    white-space: normal;
+}
+
 /* ============================================================
    Details Panel (bottom-right) — dark glass card
    ============================================================ */
@@ -266,6 +284,14 @@ a:hover {
     color: var(--text-primary);
     scrollbar-width: thin;
     scrollbar-color: var(--scrollbar-thumb) transparent;
+    box-sizing: border-box;
+}
+
+/* A percentage-width table has a very large intrinsic width inside a
+   fit-content parent. Give score views a deliberate desktop card width so the
+   table stays aligned without stretching the details panel across the map. */
+.leaflet-details-panel.score-details {
+    width: min(360px, calc(100vw - 32px));
 }
 
 .leaflet-details-panel::-webkit-scrollbar {
@@ -561,24 +587,41 @@ a:hover {
    ============================================================ */
 table.ingress-event-scores {
     border-collapse: collapse;
+    table-layout: fixed;
     width: 100%;
-    margin: 6px 0;
+    margin: 10px 0;
     font-size: 13px;
+    font-variant-numeric: tabular-nums;
 }
 
 table.ingress-event-scores td,
 table.ingress-event-scores th {
-    min-width: 40px;
-    text-align: right;
-    padding: 4px 8px;
+    width: 33.333%;
+    min-width: 0;
+    text-align: center;
+    padding: 6px 5px;
 }
 
 table.ingress-event-scores thead th {
-    text-align: right;
+    text-align: center;
     color: var(--text-secondary);
     font-weight: 600;
     border-bottom: 1px solid var(--divider);
-    padding-bottom: 6px;
+    background: var(--surface-hover);
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+table.ingress-event-scores thead th.faction-RES {
+    color: var(--color-res);
+}
+
+table.ingress-event-scores thead th.faction-ENL {
+    color: var(--color-enl);
+}
+
+table.ingress-event-scores thead th.faction-MAC {
+    color: var(--color-mac);
 }
 
 table.ingress-event-scores tbody td,
@@ -589,6 +632,10 @@ table.ingress-event-scores tbody th {
 
 table.ingress-event-scores tbody th {
     color: var(--text-secondary);
+    text-align: center;
+}
+
+table.ingress-event-scores tbody td {
     text-align: center;
 }
 
@@ -614,6 +661,11 @@ table.ingress-event-scores tr.highlight:hover {
 table.ingress-event-scores tfoot {
     font-weight: bold;
     color: var(--text-primary);
+}
+
+table.ingress-event-scores tfoot th,
+table.ingress-event-scores tfoot td {
+    text-align: center;
 }
 
 table.ingress-event-scores tfoot tr {
@@ -650,8 +702,18 @@ table.ingress-event-scores tfoot td {
     color: var(--text-secondary);
 }
 
-.leaflet-tooltip a {
-    color: var(--color-accent);
+.leaflet-container .leaflet-tooltip a.intel-link,
+.leaflet-container .leaflet-tooltip a.intel-link:link,
+.leaflet-container .leaflet-tooltip a.intel-link:visited,
+.leaflet-container .leaflet-tooltip a.intel-link:hover,
+.leaflet-container .leaflet-tooltip a.intel-link:focus,
+.leaflet-container .leaflet-tooltip a.intel-link:active {
+    color: var(--intel-link);
+}
+
+.leaflet-container .leaflet-tooltip a.intel-link:hover,
+.leaflet-container .leaflet-tooltip a.intel-link:focus-visible {
+    text-decoration: underline;
 }
 
 .leaflet-tooltip hr {
@@ -729,28 +791,25 @@ hr.tooltip-sub-divider {
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-sm);
     box-shadow: var(--shadow-glass);
-    padding: 4px 8px;
+    padding: 0;
 }
 
-.leaflet-language-switcher select {
-    border: none;
-    background: transparent;
-    font-size: 13px;
+.leaflet-language-switcher .MuiIconButton-root {
+    width: 40px;
+    height: 40px;
     color: var(--text-primary);
-    cursor: pointer;
-    outline: none;
-    padding: 2px 4px;
-    transition: color 0.15s ease;
 }
 
-.leaflet-language-switcher select:hover,
-.leaflet-language-switcher select:focus {
+.leaflet-language-switcher .MuiIconButton-root:hover,
+.leaflet-language-switcher .MuiIconButton-root:focus-visible {
     color: var(--color-accent);
 }
 
-.leaflet-language-switcher select option {
-    background: var(--glass-bg-solid);
-    color: var(--text-primary);
+.language-menu-paper {
+    margin-left: -8px;
+    max-width: calc(100vw - 24px);
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg-solid) !important;
 }
 
 /* ============================================================
@@ -783,11 +842,120 @@ hr.tooltip-sub-divider {
 .react-ui-corner.top-right {
     top: 0;
     right: 0;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.react-ui-corner.top-right > .MuiPaper-root {
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    background: var(--glass-bg);
+    box-shadow: var(--shadow-glass);
+}
+
+.react-ui-corner.top-right > .MuiPaper-root .MuiIconButton-root {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    border-radius: calc(var(--radius-sm) - 1px);
+}
+
+.react-ui-corner.top-right > .MuiPaper-root .MuiTouchRipple-root,
+.react-ui-corner.top-right > .MuiPaper-root .MuiTouchRipple-ripple,
+.react-ui-corner.top-right > .MuiPaper-root .MuiTouchRipple-child {
+    border-radius: calc(var(--radius-sm) - 1px);
 }
 
 .react-ui-corner.bottom-right {
-    bottom: 0;
+    bottom: 24px;
     right: 0;
+}
+
+.season-score-banner {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    z-index: 1001;
+    pointer-events: auto;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: max-content;
+    max-width: calc(100vw - 180px);
+    padding: 7px 12px;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--radius-md) !important;
+    background: var(--glass-bg) !important;
+    box-shadow: var(--shadow-glass) !important;
+    color: var(--text-primary) !important;
+    text-align: center;
+    text-decoration: none;
+}
+
+.season-score-heading {
+    color: var(--text-secondary);
+    font-size: 10px;
+    line-height: 1.25;
+    white-space: nowrap;
+}
+
+.season-score-heading strong {
+    color: var(--text-primary);
+}
+
+.season-score-values {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0;
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+.season-score-faction {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    min-width: 0;
+}
+
+.season-score-faction:first-child {
+    justify-content: flex-end;
+}
+
+.season-score-faction:last-child {
+    justify-content: flex-start;
+}
+
+.season-score-faction img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.season-score-faction strong {
+    font-family: var(--font-mono);
+    font-size: 15px;
+}
+
+.season-score-separator {
+    color: var(--text-muted);
+}
+
+.season-score-source {
+    color: var(--text-muted);
+    font-size: 10px;
 }
 
 /* MUI renders this menu in a portal, outside #react-ui-root. Keep it visually
@@ -815,6 +983,29 @@ hr.tooltip-sub-divider {
         max-width: calc(100vw - 32px);
     }
 
+    .season-score-banner {
+        top: 10px;
+        min-width: 0;
+        width: auto;
+        max-width: calc(100vw - 180px);
+        padding: 6px 9px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3px 8px;
+    }
+
+    .season-score-heading {
+        font-size: 9px;
+    }
+
+    .season-score-values {
+        gap: 8px;
+    }
+
+    .season-score-source {
+        display: none;
+    }
+
     .credits-menu-paper .MuiMenuItem-root {
         padding: 8px 12px;
     }
@@ -828,6 +1019,12 @@ hr.tooltip-sub-divider {
         max-height: 60vh;
         padding: 10px;
         font-size: 13px;
+    }
+
+    /* The attribution can wrap to two lines on phones. Reserve its bottom row
+       instead of letting the collapsed/expanded details card cover it. */
+    .react-ui-corner.bottom-right {
+        bottom: max(42px, env(safe-area-inset-bottom));
     }
 
     .details-panel-content {
@@ -847,9 +1044,6 @@ hr.tooltip-sub-divider {
         font-size: 16px;
     }
 
-    .leaflet-language-switcher select {
-        font-size: 14px;
-    }
 }
 
 /* ============================================================
@@ -872,16 +1066,116 @@ hr.tooltip-sub-divider {
     display: block;
 }
 
-.faction-logo-marker {
+.event-composite-marker {
     background: transparent;
     border: 0;
 }
 
-.faction-logo-marker img {
+.event-marker-symbol {
+    position: relative;
     display: block;
-    width: 44px;
-    height: 44px;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.75));
+    width: 50px;
+    height: 54px;
+}
+
+.event-marker-primary {
+    position: absolute;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+}
+
+.event-composite-anomaly .event-marker-primary {
+    top: 0;
+    left: 9px;
+    width: 32px;
+    height: 49px;
+}
+
+.event-composite-shard .event-marker-primary {
+    top: 6px;
+    left: 5px;
+    width: 30px;
+    height: 32px;
+    filter: invert(1) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+}
+
+.event-marker-type-label {
+    position: absolute;
+    top: 13px;
+    left: 34px;
+    display: block;
+    width: max-content;
+    max-width: 120px;
+    overflow: hidden;
+    padding: 2px 5px;
+    border: 1px solid var(--glass-border);
+    border-radius: 4px;
+    background: var(--glass-bg-solid);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.65);
+    color: var(--text-primary);
+    font-size: 9px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.event-winner-badge {
+    position: absolute;
+    right: -1px;
+    bottom: 0;
+    display: grid;
+    place-items: center;
+    width: 19px;
+    height: 19px;
+    border: 1px solid var(--glass-border);
+    border-radius: 5px;
+    background: var(--glass-bg-solid);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.75);
+}
+
+.event-winner-badge img {
+    display: block;
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+}
+
+/* Event lifecycle is encoded independently from event type and faction:
+   upcoming remains legible, active gets a restrained signal glow, and only
+   past events without results are treated as unavailable. */
+.event-composite-marker.is-phase-upcoming .event-marker-symbol {
+    opacity: 0.78;
+}
+
+.event-composite-anomaly.is-phase-upcoming .event-marker-primary {
+    filter: grayscale(0.45) saturate(0.55) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+}
+
+.event-composite-shard.is-phase-upcoming .event-marker-primary {
+    filter: invert(1) saturate(0.35) opacity(0.82) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+}
+
+.event-composite-marker.is-phase-nodata .event-marker-symbol {
+    opacity: 0.48;
+    filter: grayscale(1);
+}
+
+.event-composite-marker.is-phase-active .event-marker-symbol {
+    animation: active-event-signal 1.8s ease-in-out infinite;
+}
+
+@keyframes active-event-signal {
+    0%, 100% { filter: drop-shadow(0 0 2px rgba(255, 204, 0, 0.3)); }
+    50% { filter: drop-shadow(0 0 7px rgba(255, 204, 0, 0.72)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .event-composite-marker.is-phase-active .event-marker-symbol {
+        animation: none;
+        filter: drop-shadow(0 0 4px rgba(255, 204, 0, 0.55));
+    }
 }
 
 .marker-radar-beam {

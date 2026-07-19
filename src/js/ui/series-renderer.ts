@@ -1,5 +1,5 @@
 import * as L from "leaflet";
-import { EVENT_BRANDS } from "../constants.js";
+import { CUSTOM_SERIES_ID, EVENT_BRANDS } from "../constants.js";
 import { t, tChoice } from "../i18n/index.js";
 import { addEventInteraction } from "./event-handler.js";
 import { navigate } from "../router.js";
@@ -11,9 +11,10 @@ import * as ZonedDateTime from "temporal-polyfill/fns/zoneddatetime";
 import * as Now from "temporal-polyfill/fns/now";
 import * as Duration from "temporal-polyfill/fns/duration";
 import { getEventDuration } from "../shared/event-helpers.js";
-import { TACTICAL_MARKER_SVG } from "./marker-template.js";
 import enlightenedLogoUrl from "../../images/faction-enlightened.svg";
 import resistanceLogoUrl from "../../images/faction-resistance.svg";
+import anomalyLogoUrl from "../../images/xm-anomaly.webp";
+import shardLogoUrl from "../../images/shard.svg";
 import type { SiteGeocodeEntry, SiteData } from "../types/domain.js";
 
 interface SeriesLayer extends L.FeatureGroup {
@@ -26,6 +27,14 @@ interface SiteMarker extends L.Marker {
 }
 
 const seriesLayerCache = new Map<string, SeriesLayer>();
+const eventLogoUrls: Record<string, string> = {
+    ANOMALY: anomalyLogoUrl,
+};
+
+export function getLocalizedSeriesName(seriesId: string, fallback?: string): string {
+    if (seriesId === CUSTOM_SERIES_ID) return t('custom.series_name');
+    return fallback || seriesId;
+}
 
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -83,14 +92,8 @@ function renderSeriesLayer(seriesId: string): SeriesLayer {
             // Active phase: Event is happening now
             phaseClass = 'is-phase-active';
         } else if (ZonedDateTime.compare(now, startTime) < 0) {
-            // Future sites
-            if (hasOrnaments) {
-                // Discovery phase: Future and information available
-                phaseClass = 'is-phase-discovery';
-            } else {
-                // No data: Future and no information
-                phaseClass = 'is-phase-nodata';
-            }
+            // Scheduled sites should look pending, not disabled or cancelled.
+            phaseClass = 'is-phase-upcoming';
         } else {
             // Past sites with no outcome data yet
             phaseClass = 'is-phase-nodata';
@@ -101,18 +104,19 @@ function renderSeriesLayer(seriesId: string): SeriesLayer {
             : outcome === 'ENL'
                 ? enlightenedLogoUrl
                 : null;
+        const eventLogoUrl = eventLogoUrls[site.eventType] || shardLogoUrl;
+        const isAnomalyMarker = site.eventType === 'ANOMALY';
+        const eventTypeLabel = t('blueprints.event.' + site.eventType);
+        const winnerBadgeHtml = factionLogoUrl
+            ? `<span class="event-winner-badge faction-${outcome}" title="${t(`faction.${outcome === 'RES' ? 'resistance' : 'enlightened'}`)}"><img src="${factionLogoUrl}" alt="${outcome}" /></span>`
+            : '';
         const markerOptions: L.MarkerOptions = {
             icon: L.divIcon({
-                className: `${factionLogoUrl ? 'faction-logo-marker' : 'marker-radar-container'} ${phaseClass}`,
-                iconSize: factionLogoUrl ? [44, 44] : [25, 41],
-                iconAnchor: factionLogoUrl ? [22, 22] : [12, 41],
-                tooltipAnchor: factionLogoUrl ? [22, -22] : [13, -28],
-                html: factionLogoUrl
-                    ? `<img src="${factionLogoUrl}" alt="${outcome}" />`
-                    : `
-                    ${phaseClass.includes('phase-active') || phaseClass.includes('phase-discovery') ? '<div class="marker-radar-beam"></div>' : ''}
-                    ${TACTICAL_MARKER_SVG}
-                `
+                className: `event-composite-marker ${isAnomalyMarker ? 'event-composite-anomaly' : 'event-composite-shard'} ${phaseClass}`,
+                iconSize: isAnomalyMarker ? [50, 54] : [42, 46],
+                iconAnchor: isAnomalyMarker ? [25, 52] : [21, 44],
+                tooltipAnchor: isAnomalyMarker ? [25, -40] : [21, -32],
+                html: `<span class="event-marker-symbol"><img class="event-marker-primary" src="${eventLogoUrl}" alt="${eventTypeLabel}" />${isAnomalyMarker ? '' : `<span class="event-marker-type-label">${eventTypeLabel}</span>`}${winnerBadgeHtml}</span>`,
             })
         };
 
@@ -133,15 +137,15 @@ function renderSeriesLayer(seriesId: string): SeriesLayer {
 
         let siteTooltip = '';
         if (activeRemaining) {
-            siteTooltip += `<strong>${t('series.site_active')}</strong> - ${activeRemaining} ${t('series.remaining')}<hr />`;
+            siteTooltip += `<strong>${t('series.active_status', { remaining: activeRemaining })}</strong><hr />`;
         } else if (isComplete && isWithinCompletionGrace && !hasFragments) {
-            siteTooltip += `<strong>${t('series.site_complete')}</strong> - <em>${t('series.compiling_telemetry')}</em><hr />`;
+            siteTooltip += `<strong>${t('series.complete_status')}</strong><hr />`;
         }
 
         siteTooltip += `
             ${flagHtml} <strong>${site.name}</strong><br />
-            ${t('series.date_label')}: ${formatIsoToShortDate(site.date, site.timezone)}${timeRemainingText}<br />
-            ${t('series.type_label')}: ${t('blueprints.event.' + site.eventType)}<br />`;
+            ${t('series.date_label')} ${formatIsoToShortDate(site.date, site.timezone)}${timeRemainingText}<br />
+            ${t('series.type_label')} ${t('blueprints.event.' + site.eventType)}<br />`;
 
         if (siteData) {
             const scoresText = getScoresText({ seriesId, siteId: site.id, type: 'full' });
@@ -201,7 +205,10 @@ export function getSeriesControl(): L.Control.Layers {
     const controlLayers: Record<string, L.Layer> = {};
     for (const [seriesId, layer] of seriesLayerCache.entries()) {
         const metadata = getSeriesMetadata(seriesId);
-        const seriesLabel = metadata?.year ? `${metadata.year}: ${metadata.name}` : metadata?.name || seriesId;
+        const seriesName = getLocalizedSeriesName(seriesId, metadata?.name);
+        const seriesLabel = metadata?.year
+            ? t('series.control_label', { year: metadata.year, name: seriesName })
+            : seriesName;
         controlLayers[seriesLabel] = layer;
     }
     return L.control.layers(controlLayers, {}, { collapsed: true, position: "topleft" });
@@ -217,9 +224,10 @@ export interface DetailsPanelContent {
 export function getDetailsPanelContent(seriesId: string): DetailsPanelContent {
     const metadata = getSeriesMetadata(seriesId);
     const geocode = getSeriesGeocode(seriesId);
+    const seriesName = getLocalizedSeriesName(seriesId, metadata?.name);
 
     if (!metadata || !geocode || !geocode.sites) {
-        return { title: metadata?.name ? `${metadata.name} ${t('series.season_suffix')}` : t('details.title'), content: `<p><em>${t('series.season_info_unavailable')}</em></p>` };
+        return { title: metadata?.name ? `${seriesName} ${t('series.season_suffix')}` : t('details.title'), content: `<p><em>${t('series.season_info_unavailable')}</em></p>` };
     }
 
     const sites = Object.values(geocode.sites);
@@ -234,7 +242,7 @@ export function getDetailsPanelContent(seriesId: string): DetailsPanelContent {
 
     let content = '';
     if (metadata.year) {
-        content += `${t('series.year_label')}: ${metadata.year}<br />`;
+        content += `${t('series.year_label')} ${metadata.year}<br />`;
     }
     if (metadata.overviewUrl) {
         content += `<a href="${metadata.overviewUrl}" target="_blank">${t('series.season_overview')}</a><br /><br />`;
@@ -278,7 +286,7 @@ export function getDetailsPanelContent(seriesId: string): DetailsPanelContent {
     });
 
     return {
-        title: `${metadata.name} ${t('series.season_suffix')}`,
+        title: `${seriesName} ${t('series.season_suffix')}`,
         flagHtml: '',
         content,
         footer: sites.length > 0 ? t('series.select_site_prompt') : t('series.no_sites'),

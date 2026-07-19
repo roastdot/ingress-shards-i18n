@@ -1,12 +1,13 @@
 import type * as L from "leaflet";
-import { IS_NAVIGATING_BACK, navigate, setViewDispatchers } from "../router.js";
-import { getSeriesLayer, getDetailsPanelContent as getSeriesDetailsContent, setupMarkerHover, getSeriesControl, initSeriesLayers } from "./series-renderer.js";
+import { IS_INITIAL_ROUTE_RENDER, IS_NAVIGATING_BACK, navigate, setViewDispatchers } from "../router.js";
+import { getSeriesLayer, getDetailsPanelContent as getSeriesDetailsContent, setupMarkerHover, getSeriesControl, initSeriesLayers, getLocalizedSeriesName } from "./series-renderer.js";
 import { getSiteLayers, getDetailsPanelContent as getSiteDetailsContent, updateAllPolylineStyles, setActiveSiteLayer, getSiteControl } from "./site-renderer.js";
 import { updateDetailsPanel } from "./react/detailsPanelStore.js";
 import { handleCustomFile, getDetailsPanelContent as getCustomDetailsContent } from "./custom-file-handler.js";
-import { getDefaultSeriesId, getSeriesMetadata, getSeriesGeocode } from "../data/data-store.js";
+import { getDefaultSeriesId, getSeriesMetadata, getSeriesGeocode, getSeriesResult } from "../data/data-store.js";
 import { CUSTOM_SERIES_ID } from "../constants.js";
 import { t } from "../i18n/index.js";
+import { updateSeasonScore } from "./react/seasonScoreStore.js";
 
 let IS_MAP_INTERACTION_ACTIVE = false;
 
@@ -25,6 +26,7 @@ interface MapLayer extends L.Layer {
 const mapDispatchers = {
     displaySeriesDetails: (seriesId: string) => {
         if (!map) return;
+        updateSeasonScoreBanner(seriesId);
         cleanupLayers({ seriesId });
 
         const seriesLayer = getSeriesLayer(seriesId);
@@ -33,7 +35,7 @@ const mapDispatchers = {
         }
 
         const metadata = getSeriesMetadata(seriesId);
-        document.title = t('ui.title_series', { name: metadata?.name });
+        document.title = t('ui.title_series', { name: getLocalizedSeriesName(seriesId, metadata?.name) });
 
         let detailsPanelContent = getSeriesDetailsContent(seriesId);
         if (seriesId === CUSTOM_SERIES_ID) {
@@ -55,6 +57,7 @@ const mapDispatchers = {
     },
     displaySiteDetails: (seriesId: string, siteNavigationId: string) => {
         if (!map) return;
+        updateSeasonScoreBanner(seriesId);
         const siteId = seriesId + "-" + siteNavigationId;
         cleanupLayers({ siteId });
 
@@ -114,6 +117,7 @@ const mapDispatchers = {
     },
     displayWaveDetails: (seriesId: string, siteNavigationId: string, waveId: string) => {
         if (!map) return;
+        updateSeasonScoreBanner(seriesId);
 
         const siteId = seriesId + "-" + siteNavigationId;
         cleanupLayers({ siteId, waveId });
@@ -176,6 +180,14 @@ const mapDispatchers = {
         if (defaultSeriesId) navigate(`#/${defaultSeriesId}`);
     },
 };
+
+function updateSeasonScoreBanner(seriesId: string): void {
+    const result = getSeriesResult(seriesId);
+    const metadata = getSeriesMetadata(seriesId);
+    updateSeasonScore(result && metadata
+        ? { seriesName: metadata.name, displayScore: result.displayScore, sourceUrl: result.source.url }
+        : null);
+}
 
 export function initController(mapInstance: L.Map): void {
     map = mapInstance;
@@ -302,7 +314,10 @@ function cleanupLayers(target: { seriesId?: string; siteId?: string; waveId?: st
 
 function performMapMoveAction(flyAction: () => void, viewAction: () => void): void {
     const isSwipeBackGesture = IS_NAVIGATING_BACK && IS_MAP_INTERACTION_ACTIVE;
-    const shouldAnimate = !isSwipeBackGesture;
+    // During initial route restoration, viewport sizing and min-zoom work can
+    // interrupt Leaflet's fly animation and leave the camera at the default
+    // world view. Set the restored route synchronously; animate later actions.
+    const shouldAnimate = !IS_INITIAL_ROUTE_RENDER && !isSwipeBackGesture;
 
     const viewMethod = shouldAnimate ? flyAction : viewAction;
     viewMethod();

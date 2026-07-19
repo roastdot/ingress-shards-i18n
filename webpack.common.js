@@ -62,7 +62,7 @@ export default (env, { appVersion }) => {
                     },
                 },
                 {
-                    test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                    test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
                     include: [
                         resolvePackage('flag-icon-css')
                     ],
@@ -75,7 +75,7 @@ export default (env, { appVersion }) => {
                     },
                 },
                 {
-                    test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                    test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
                     exclude: [
                         resolvePackage('flag-icon-css'),
                         /abaddon1_shard\.png$/,
@@ -87,7 +87,7 @@ export default (env, { appVersion }) => {
                     },
                 },
                 {
-                    test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                    test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
                     include: [
                         resolvePackage('leaflet')
                     ],
@@ -109,7 +109,7 @@ export default (env, { appVersion }) => {
                 template: './index.html',
                 favicon: './src/images/abaddon1_shard.png',
                 meta: {
-                    viewport: 'width=device-width, initial-scale=1',
+                    viewport: 'width=device-width, initial-scale=1, viewport-fit=cover',
                     'og:description': 'Interactive map of shard data from Ingress events',
                     'og:title': { property: 'og:title', content: 'Ingress Shards Map' },
                 }
@@ -137,6 +137,10 @@ export default (env, { appVersion }) => {
                             metadata.version = appVersion;
                             return JSON.stringify(metadata, null, 2);
                         },
+                    },
+                    {
+                        from: path.resolve(__dirname, 'conf/series_results.json'),
+                        to: 'public/conf/',
                     },
                     {
                         from: path.resolve(__dirname, 'gen/series_geocode.json'),
