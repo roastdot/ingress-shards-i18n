@@ -46,6 +46,10 @@
    toggle, which stamps data-theme="light" on <html>.
    ============================================================ */
 :root[data-theme="light"] {
+    /* Faction geometry keeps its canonical map colour; text uses darker,
+       lower-saturation variants for contrast and less glare on white UI. */
+    --color-res: #0067b8;
+    --color-enl: #087a2f;
     --glass-bg: #ffffff;
     --glass-bg-solid: #ffffff;
     --glass-border: #cbd5e1;
@@ -708,7 +712,7 @@ table.ingress-event-scores tfoot td {
 .leaflet-container .leaflet-tooltip a.intel-link:hover,
 .leaflet-container .leaflet-tooltip a.intel-link:focus,
 .leaflet-container .leaflet-tooltip a.intel-link:active {
-    color: var(--intel-link);
+    color: var(--intel-link) !important;
 }
 
 .leaflet-container .leaflet-tooltip a.intel-link:hover,
