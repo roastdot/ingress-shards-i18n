@@ -90,6 +90,9 @@ Cloudflare automatically injects `CF_PAGES_BRANCH` and
 in the details panel, for example `main@d115305`. `APP_VERSION` can still be set
 explicitly when a custom version label is required.
 
+Cloudflare builds emit root-relative asset URLs (`/main.bundle.js`). Regular
+non-Cloudflare production builds retain the GitHub Pages project subpath.
+
 The build runs the geocoder, processes and validates the source data, performs
 the statistics pass, and then bundles the React/TypeScript application with
 Webpack.

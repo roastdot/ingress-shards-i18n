@@ -19,10 +19,14 @@ export default (env) => {
         ? `${process.env.CF_PAGES_BRANCH || 'cloudflare'}@${process.env.CF_PAGES_COMMIT_SHA.slice(0, 7)}`
         : '';
     const appVersion = process.env.APP_VERSION || cloudflareVersion || gitVersion || packageJson.version;
+    // Cloudflare Pages serves this project at the domain root. GitHub Pages
+    // serves the repository as a project subpath, so retain that path only for
+    // non-Cloudflare production builds.
+    const publicPath = process.env.CF_PAGES ? '/' : REPO_NAME;
     return merge(common(env, { appVersion }), {
         mode: 'production',
         output: {
-            publicPath: REPO_NAME,
+            publicPath,
         }
     });
 };
