@@ -20,14 +20,15 @@ The original MIT copyright and permission notice is retained in
 Displays all event sites for a selected series, including official season
 points, event-type markers and faction results where available.
 
-[<img src="docs/assets/apollo-series-overview.png" alt="Apollo season overview showing event sites and season points">]
+<img src="docs/assets/apollo-series-overview.png" alt="Apollo season overview showing event sites and season points">
 
 ## Site View
 
 Displays Portal, Shard, Link and faction-score details for an individual event
 site. Multi-wave events can be filtered to inspect a specific wave.
 
-[<img src="docs/assets/apollo-site-view.png" alt="Apollo XM Anomaly site view for Helsinki">]
+<img src="docs/assets/apollo-site-view.png" alt="Apollo XM Anomaly site view for Helsinki">]
+
 
 ## Localisation
 
@@ -35,7 +36,7 @@ The interface supports English (UK), English (US), Simplified Chinese,
 Traditional Chinese (Hong Kong) and Traditional Chinese (Taiwan). Official
 Ingress event names remain untranslated when no official localisation exists.
 
-[<img src="docs/assets/apollo-i18n-zh-hk.png" alt="Apollo site view in Traditional Chinese for Hong Kong">]
+<img src="docs/assets/apollo-i18n-zh-hk.png" alt="Apollo site view in Traditional Chinese for Hong Kong">
 
 ## Assumptions made
 
