@@ -478,10 +478,10 @@ function formatLinkPathTooltip(shardPath: any, shardPathPortals: any[], timeZone
 
         for (const move of link.moves) {
             const moveTime = formatEpochToLocalTime(move.moveTime, timeZone);
-            const portalJumpText = biDirectionalMoves ? (move.origin === portalA.id ? "(A -> B)" : "(B -> A)") : "";
+            const portalJumpText = biDirectionalMoves ? (move.origin === portalA.id ? "A → B" : "B → A") : "";
             tooltip += `${t('site.shard_scored', {
                 id: move.shardId,
-                route: portalJumpText,
+                route: portalJumpText ? t('site.route_detail', { route: portalJumpText }) : '',
                 time: moveTime,
                 points: move.points,
                 pointLabel: tChoice('site.point', move.points),
