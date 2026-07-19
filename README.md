@@ -24,9 +24,18 @@ points, event-type markers and faction results where available.
 
 ## Site View
 
-Displays the detail of an individual shard site. Sites with multiple shards can be filtered on a per wave basis.
+Displays Portal, Shard, Link and faction-score details for an individual event
+site. Multi-wave events can be filtered to inspect a specific wave.
 
-[<img src="docs/assets/shard-site.png">](https://roastdot.github.io/ingress-shards.github.io/)
+[<img src="docs/assets/apollo-site-view.png" alt="Apollo XM Anomaly site view for Helsinki">](https://roastdot.github.io/ingress-shards.github.io/)
+
+## Localisation
+
+The interface supports English (UK), English (US), Simplified Chinese,
+Traditional Chinese (Hong Kong) and Traditional Chinese (Taiwan). Official
+Ingress event names remain untranslated when no official localisation exists.
+
+[<img src="docs/assets/apollo-i18n-zh-hk.png" alt="Apollo site view in Traditional Chinese for Hong Kong">](https://roastdot.github.io/ingress-shards.github.io/)
 
 ## Assumptions made
 
