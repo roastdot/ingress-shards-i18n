@@ -1,0 +1,174 @@
+{
+  "siteId": "2026-apollo-bogota",
+  "partial": true,
+  "provenance": "Reconstructed from explicitly scored destinations in the historical shard score table; unvisited targets are unavailable.",
+  "confirmedTargetObservations": 17,
+  "expectedTargetObservations": 72,
+  "artifact": [
+    {
+      "id": "targetres",
+      "name": "Target RES",
+      "target": [
+        {
+          "portalInfo": {
+            "title": "Fuentes De Agua",
+            "latE6": 4676064,
+            "lngE6": -74056452
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1784401320000
+        },
+        {
+          "portalInfo": {
+            "title": "Juega Siempre Graffitti",
+            "latE6": 4675016,
+            "lngE6": -74052917
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1784401320000
+        },
+        {
+          "portalInfo": {
+            "title": "La Cara Triste De Mi Negro",
+            "latE6": 4674772,
+            "lngE6": -74053054
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1784401320000
+        },
+        {
+          "portalInfo": {
+            "title": "Street Art Bicicleto",
+            "latE6": 4666780,
+            "lngE6": -74055053
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1784403120000
+        },
+        {
+          "portalInfo": {
+            "title": "Academia Colombiana De Jurisprudencia",
+            "latE6": 4666159,
+            "lngE6": -74050087
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1784404920000
+        },
+        {
+          "portalInfo": {
+            "title": "Universidad Central",
+            "latE6": 4662043,
+            "lngE6": -74059423
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1784404920000
+        },
+        {
+          "portalInfo": {
+            "title": "Hotel B3 Virrey",
+            "latE6": 4673598,
+            "lngE6": -74053498
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1784406720000
+        },
+        {
+          "portalInfo": {
+            "title": "Graffiti Pizzarra",
+            "latE6": 4669584,
+            "lngE6": -74054685
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1784406720000
+        },
+        {
+          "portalInfo": {
+            "title": "El Angel De La Naturaleza",
+            "latE6": 4660753,
+            "lngE6": -74055283
+          },
+          "targetAlignment": "RESISTANCE",
+          "observedAt": 1784406720000
+        }
+      ]
+    },
+    {
+      "id": "targetenl",
+      "name": "Target ENL",
+      "target": [
+        {
+          "portalInfo": {
+            "title": "Parque de mascotas Sierras del Este",
+            "latE6": 4643158,
+            "lngE6": -74054453
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1784401320000
+        },
+        {
+          "portalInfo": {
+            "title": "Iglesia De Los Caballeros De La Virgen",
+            "latE6": 4660764,
+            "lngE6": -74058369
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1784403120000
+        },
+        {
+          "portalInfo": {
+            "title": "Renacer",
+            "latE6": 4670189,
+            "lngE6": -74055110
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1784403120000
+        },
+        {
+          "portalInfo": {
+            "title": "Fuente Sin Agua Andino",
+            "latE6": 4665970,
+            "lngE6": -74053023
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1784403120000
+        },
+        {
+          "portalInfo": {
+            "title": "Escultura Publicis Group",
+            "latE6": 4676158,
+            "lngE6": -74056245
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1784404920000
+        },
+        {
+          "portalInfo": {
+            "title": "Logo Pedagógica Calle 73",
+            "latE6": 4658543,
+            "lngE6": -74058933
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1784404920000
+        },
+        {
+          "portalInfo": {
+            "title": "Iglesia De Los Caballeros De La Virgen",
+            "latE6": 4660764,
+            "lngE6": -74058369
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1784406720000
+        },
+        {
+          "portalInfo": {
+            "title": "Fish And Love",
+            "latE6": 4664428,
+            "lngE6": -74053718
+          },
+          "targetAlignment": "ENLIGHTENED",
+          "observedAt": 1784408520000
+        }
+      ]
+    }
+  ]
+}
