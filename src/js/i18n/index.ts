@@ -47,7 +47,7 @@ const dictionaries: Record<string, Record<string, string>> = {
     'faction.resistance': 'Resistance',
     'faction.enlightened': 'Enlightened',
     'faction.machina': 'Machina',
-    'score.season_points': 'Season points',
+    'score.current_score': 'Current score',
     'score.official_results': 'View official results',
 
     'map.osm': 'OpenStreetMap',
@@ -160,7 +160,7 @@ const dictionaries: Record<string, Record<string, string>> = {
     'faction.resistance': '反抗军',
     'faction.enlightened': '启蒙军',
     'faction.machina': 'Machina',
-    'score.season_points': '赛季积分',
+    'score.current_score': '当前总分',
     'score.official_results': '查看官方赛果',
 
     'map.osm': '开放街图',
@@ -270,7 +270,7 @@ const dictionaries: Record<string, Record<string, string>> = {
     'faction.resistance': '反抗軍',
     'faction.enlightened': '啟蒙軍',
     'faction.machina': 'Machina',
-    'score.season_points': '賽季積分',
+    'score.current_score': '目前總分',
     'score.official_results': '查看官方賽果',
 
     'map.osm': '開放街圖',
@@ -380,7 +380,7 @@ const dictionaries: Record<string, Record<string, string>> = {
     'faction.resistance': '反抗軍',
     'faction.enlightened': '啟蒙軍',
     'faction.machina': 'Machina',
-    'score.season_points': '賽季積分',
+    'score.current_score': '目前總分',
     'score.official_results': '查看官方賽果',
 
     'map.osm': '開放街圖',

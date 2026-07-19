@@ -16,13 +16,13 @@ export function SeasonScoreBannerReact(): React.JSX.Element | null {
             href={state.sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`${state.seriesName} ${t('score.season_points')} — ${t('score.official_results')}`}
+            aria-label={`${state.seriesName} ${t('score.current_score')} — ${t('score.official_results')}`}
             title={t('score.official_results')}
         >
             <div className="season-score-heading">
                 <strong>{state.seriesName}</strong>
                 <span aria-hidden="true"> · </span>
-                <span>{t('score.season_points')}</span>
+                <span>{t('score.current_score')}</span>
             </div>
             <div className="season-score-values">
                 <span className="season-score-faction faction-RES" aria-label={t('faction.resistance')}>
