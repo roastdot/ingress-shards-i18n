@@ -3,17 +3,27 @@
     <head>
         <base target="_top" />
         <meta charset="utf-8" />
-        <meta property="og:image" content="https://ingress-shards.github.io/images/shard-site.png" />
+        <meta property="og:image" content="https://roastdot.github.io/ingress-shards.github.io/images/shard-site.png" />
         <title>Ingress Shards Map</title>
+        <script>
+            // Set the theme attribute before first paint to avoid a flash of
+            // the wrong theme. Mirrors colorModeStore.ts's own fallback chain
+            // (stored preference -> prefers-color-scheme -> dark default).
+            (function () {
+                try {
+                    var stored = localStorage.getItem('ism-color-mode');
+                    var mode = stored === 'light' || stored === 'dark'
+                        ? stored
+                        : (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+                    document.documentElement.setAttribute('data-theme', mode);
+                } catch (e) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+            })();
+        </script>
     </head>
     <body>
         <div id="map"></div>
-        <a
-            class="github-fork-ribbon"
-            href="https://github.com/ingress-shards/ingress-shards.github.io"
-            data-ribbon="Fork me on GitHub"
-            title="Fork me on GitHub"
-            >Fork me on GitHub</a
-        >
+        <div id="react-ui-root"></div>
     </body>
 </html>

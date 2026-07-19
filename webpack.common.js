@@ -14,7 +14,7 @@ export const packageJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'p
 
 export default (env, { appVersion }) => {
     return {
-        entry: './src/js/index.js',
+        entry: './src/js/index.tsx',
         cache: {
             type: 'filesystem',
             buildDependencies: {
@@ -23,6 +23,18 @@ export default (env, { appVersion }) => {
         },
         module: {
             rules: [
+                {
+                    // esbuild-loader strips types only (no type-checking) — `npm run typecheck`
+                    // (tsc --noEmit) is the source of truth for correctness. Using esbuild here
+                    // instead of ts-loader because ts-loader's compiler-API usage isn't yet
+                    // compatible with TypeScript 7.
+                    test: /\.tsx?$/,
+                    loader: 'esbuild-loader',
+                    options: {
+                        target: 'es2022',
+                    },
+                    exclude: /node_modules/,
+                },
                 {
                     test: /\.css$/,
                     include: [
@@ -163,6 +175,10 @@ export default (env, { appVersion }) => {
             }
         ],
         resolve: {
+            extensions: ['.tsx', '.ts', '.js'],
+            extensionAlias: {
+                '.js': ['.ts', '.tsx', '.js'],
+            },
             alias: {
                 'leaflet.motion': fileURLToPath(import.meta.resolve('leaflet.motion/dist/leaflet.motion.min.js')),
             }

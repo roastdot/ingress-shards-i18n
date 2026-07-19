@@ -1,65 +1,293 @@
+/* ============================================================
+   Ingress Shards Map — Dark Glassmorphism Design System
+   Matches CartoDB Dark Matter tiles + Ingress neon aesthetic.
+   ============================================================ */
+
+:root {
+    /* Faction colors — used by markers AND score table */
+    --color-res: #0088ff;
+    --color-enl: #03dc03;
+    --color-neu: #ff6600;
+    --color-signal: #ffcc00;
+    --color-nodata: #777777;
+    --color-tie: #AF00FF;
+    --color-mac: #ff0028;
+
+    /* Dark glass design tokens */
+    --glass-bg: #0d1117;
+    --glass-bg-solid: #0d1117;
+    --glass-border: rgba(255, 204, 0, 0.18);
+    --glass-border-strong: rgba(255, 204, 0, 0.35);
+    --glass-blur: blur(14px) saturate(1.2);
+    --text-primary: #e8edf2;
+    --text-secondary: #9aa7b5;
+    --text-muted: #6b7885;
+    --surface-hover: rgba(255, 204, 0, 0.06);
+    --surface-input: #161b22;
+    --divider: rgba(255, 255, 255, 0.1);
+    --scrollbar-thumb: rgba(255, 204, 0, 0.24);
+    --radius-md: 10px;
+    --radius-sm: 6px;
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 204, 0, 0.05);
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+    --page-bg: #0d1117;
+    /* UI accent for links/hover/focus highlights — distinct from --color-signal,
+       which is a game-data color (shard signal paths, marker pin state) and
+       must stay constant across themes. Neon yellow reads fine on the dark
+       glass background but is nearly illegible on light, hence the split. */
+    --color-accent: #ffd633;
+}
+
+/* ============================================================
+   Light theme — same faction colors, inverted glass/surface tokens.
+   Dark is the default (matches the site's original aesthetic and the
+   CartoDB Dark Matter base map); this is opted into via the theme
+   toggle, which stamps data-theme="light" on <html>.
+   ============================================================ */
+:root[data-theme="light"] {
+    --glass-bg: #ffffff;
+    --glass-bg-solid: #ffffff;
+    --glass-border: #cbd5e1;
+    --glass-border-strong: #94a3b8;
+    --text-primary: #1a1f27;
+    --text-secondary: #334155;
+    --text-muted: #526173;
+    --surface-hover: #f1f5f9;
+    --surface-input: #f8fafc;
+    --divider: #e2e8f0;
+    --scrollbar-thumb: #94a3b8;
+    --shadow-glass: 0 10px 28px rgba(15, 23, 42, 0.18), 0 1px 3px rgba(15, 23, 42, 0.12);
+    --page-bg: #f8fafc;
+    --color-accent: #9a5b00; /* dark amber — legible on a light background */
+}
+
 html,
 body,
 #map {
     height: 100%;
     width: 100%;
     margin: 0;
+    background: var(--page-bg);
 }
 
-.ingress-series-control .leaflet-control-layers-toggle {
+body {
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ============================================================
+   Links — signal yellow, neon hover
+   ============================================================ */
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+/* ============================================================
+   Custom series / wave control icons (keep existing icons)
+   ============================================================ */
+/* !important below because Leaflet renders this toggle as an <a> tag, and
+   `.leaflet-control-layers a { background: transparent !important; }`
+   (further down) is a shorthand that otherwise resets background-image to
+   none — same for the generic .leaflet-bar a color rule and this icon's
+   filter needing to survive it. Selectors repeat `.leaflet-control-layers`
+   alongside the ingress-* class (3 classes' worth of specificity) so they
+   reliably outrank the generic .leaflet-control-layers .leaflet-control-layers-toggle
+   fallback below, regardless of source order. */
+.leaflet-control-layers.ingress-series-control .leaflet-control-layers-toggle,
+.leaflet-control-layers.ingress-wave-control .leaflet-control-layers-toggle {
     width: 44px;
     height: 44px;
-
-    background-image: url('../images/ingress-icon.svg');
-
-    background-size: 32px 32px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: transparent;
+    background-size: 32px 32px !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-color: transparent !important;
+    position: relative;
 }
 
-.ingress-wave-control .leaflet-control-layers-toggle {
-    width: 44px;
-    height: 44px;
-
-    background-image: url('../images/shard.svg');
-
-    background-size: 32px 32px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: transparent;
+.leaflet-control-layers.ingress-series-control .leaflet-control-layers-toggle::before,
+.leaflet-control-layers.ingress-wave-control .leaflet-control-layers-toggle::before,
+.leaflet-control-layers:not(.ingress-series-control):not(.ingress-wave-control) .leaflet-control-layers-toggle::before {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    background-color: var(--text-primary);
+    -webkit-mask: var(--control-icon) center / contain no-repeat;
+    mask: var(--control-icon) center / contain no-repeat;
 }
 
-.github-fork-ribbon:before {
-    background-color: #333;
+.leaflet-control-layers.ingress-series-control .leaflet-control-layers-toggle {
+    --control-icon: url('../images/ingress-icon.svg');
 }
 
-hr.tooltip-sub-divider {
-    width: 80%;
+.leaflet-control-layers.ingress-wave-control .leaflet-control-layers-toggle {
+    --control-icon: url('../images/shard.svg');
 }
 
-/* Custom Leaflet Details Panel Styling */
+/* ============================================================
+   Leaflet controls override — dark glass
+   (zoom bar, layers panel, attribution)
+   ============================================================ */
+.leaflet-bar,
+.leaflet-control-layers,
+.leaflet-control-zoom,
+.leaflet-control-layers-expanded {
+    background: var(--glass-bg) !important;
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: var(--shadow-glass) !important;
+    color: var(--text-primary);
+}
+
+.leaflet-bar a,
+.leaflet-control-zoom a,
+.leaflet-control-layers a {
+    color: var(--text-primary) !important;
+    background: transparent !important;
+    border-bottom: 1px solid var(--divider) !important;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.leaflet-bar a:hover,
+.leaflet-control-zoom a:hover,
+.leaflet-control-layers a:hover {
+    background: var(--surface-hover) !important;
+    color: var(--color-accent) !important;
+}
+
+.leaflet-bar a:first-child,
+.leaflet-control-zoom-in {
+    border-top-left-radius: var(--radius-md) !important;
+    border-top-right-radius: var(--radius-md) !important;
+}
+
+.leaflet-bar a:last-child,
+.leaflet-control-zoom-out {
+    border-bottom-left-radius: var(--radius-md) !important;
+    border-bottom-right-radius: var(--radius-md) !important;
+    border-bottom: none !important;
+}
+
+/* Layers panel label rows */
+.leaflet-control-layers-expanded {
+    padding: 12px 14px !important;
+    min-width: 160px;
+}
+
+.leaflet-control-layers-expanded label {
+    color: var(--text-primary);
+    font-size: 13px;
+    margin: 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+.leaflet-control-layers-expanded label:hover {
+    color: var(--color-accent);
+}
+
+.leaflet-control-layers-expanded input[type="checkbox"] {
+    accent-color: var(--color-accent);
+}
+
+/* Base map/overlay switcher (OSM/CartoDB/ESRI/Elevation) — the ingress-series-
+   control and ingress-wave-control rules above override this with their own
+   icons via higher selector specificity. Selector here is deliberately
+   `.leaflet-control-layers .leaflet-control-layers-toggle` (not just the
+   single class) so it outweighs the `.leaflet-control-layers a { background:
+   transparent !important }` shorthand reset above, which otherwise wins on
+   specificity since this element is itself an <a>. */
+.leaflet-control-layers .leaflet-control-layers-toggle {
+    --control-icon: url('../images/layers-icon.svg');
+    position: relative;
+    background-color: var(--glass-bg-solid) !important;
+    border-radius: var(--radius-sm) !important;
+    background-image: none !important;
+    background-size: 26px 26px !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.leaflet-control-layers-separator {
+    border-top: 1px solid var(--divider) !important;
+    margin: 6px 0 !important;
+}
+
+/* Attribution — dim it */
+.leaflet-control-attribution {
+    background: var(--glass-bg) !important;
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--radius-sm) !important;
+    color: var(--text-muted) !important;
+    opacity: 0.7;
+    font-size: 11px !important;
+    padding: 2px 8px !important;
+}
+
+.leaflet-control-attribution a {
+    color: var(--text-secondary) !important;
+}
+
+.leaflet-control-attribution a:hover {
+    color: var(--color-accent) !important;
+    opacity: 1;
+}
+
+/* ============================================================
+   Details Panel (bottom-right) — dark glass card
+   ============================================================ */
 .leaflet-details-panel {
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
-    border-radius: 5px;
-    padding: 10px;
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+    box-shadow: var(--shadow-glass);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
     margin: 10px;
     width: fit-content;
     max-width: 90vw;
     max-height: 80vh;
     overflow-y: auto;
     font-size: 14px;
-    color: #333;
+    color: var(--text-primary);
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+.leaflet-details-panel::-webkit-scrollbar {
+    width: 8px;
+}
+
+.leaflet-details-panel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.leaflet-details-panel::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 4px;
 }
 
 .details-panel-header {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 5px;
-    margin-bottom: 8px;
+    border-bottom: 1px solid var(--divider);
+    padding-bottom: 8px;
+    margin-bottom: 10px;
     transition: border-bottom 0.3s ease-in-out, padding-bottom 0.3s ease-in-out, margin-bottom 0.3s ease-in-out;
 }
 
@@ -69,6 +297,15 @@ hr.tooltip-sub-divider {
     padding: 0 10px;
     display: flex;
     align-items: center;
+}
+
+.details-panel-header .details-panel-title h4 {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    color: var(--text-primary);
+    font-weight: 600;
+    line-height: 1.25;
 }
 
 .details-panel-flag {
@@ -84,13 +321,8 @@ hr.tooltip-sub-divider {
     width: auto;
     aspect-ratio: 4/3;
     background-size: cover;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
-}
-
-.details-panel-header .details-panel-title h4 {
-    margin: 0;
-    text-align: center;
-    width: 100%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
 }
 
 .details-panel-toggle {
@@ -103,6 +335,12 @@ hr.tooltip-sub-divider {
     flex-shrink: 0;
     display: flex;
     align-items: center;
+    color: var(--text-secondary);
+    transition: color 0.15s ease;
+}
+
+.details-panel-toggle:hover {
+    color: var(--color-accent);
 }
 
 .details-panel-content {
@@ -110,16 +348,40 @@ hr.tooltip-sub-divider {
     height: auto;
     overflow-y: scroll;
     scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) transparent;
     padding-right: 10px;
     transition: max-height 0.3s ease-in-out;
+    color: var(--text-primary);
+}
+
+.details-panel-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.details-panel-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.details-panel-content::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 4px;
 }
 
 .details-panel-content h4 {
     margin: 0;
+    color: var(--text-primary);
 }
 
 .details-panel-content span {
     font-weight: bold;
+}
+
+.details-panel-content em {
+    color: var(--text-secondary);
+}
+
+.details-panel-content strong {
+    color: var(--text-primary);
 }
 
 .details-panel-footer {
@@ -127,18 +389,20 @@ hr.tooltip-sub-divider {
     flex-direction: column;
     justify-content: space-between;
     font-style: italic;
-    border-top: 1px solid #ccc;
-    padding-top: 5px;
-    margin-top: 8px;
+    border-top: 1px solid var(--divider);
+    padding-top: 8px;
+    margin-top: 10px;
     overflow: hidden;
+    color: var(--text-muted);
     transition: max-height 0.3s ease-in-out, margin 0.3s ease-in-out, padding 0.3s ease-in-out, border 0.3s ease-in-out;
 }
 
 .app-version {
     font-size: 0.75rem;
-    color: #666;
-    font-family: monospace;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
     align-self: flex-end;
+    margin-top: 4px;
 }
 
 .app-version a {
@@ -147,9 +411,11 @@ hr.tooltip-sub-divider {
 }
 
 .app-version a:hover {
+    color: var(--color-accent);
     text-decoration: underline;
 }
 
+/* Collapsed state */
 .leaflet-details-panel.collapsed .details-panel-header {
     border: 0;
     padding: 0;
@@ -159,8 +425,7 @@ hr.tooltip-sub-divider {
 
 .leaflet-details-panel.collapsed .details-panel-content {
     max-height: 0px;
-    transition:
-        max-height 0.3s ease-in-out;
+    transition: max-height 0.3s ease-in-out;
 }
 
 .leaflet-details-panel.collapsed .details-panel-footer {
@@ -171,16 +436,29 @@ hr.tooltip-sub-divider {
     transition: max-height 0.3s ease-in-out, margin 0.3s ease-in-out, padding 0.3s ease-in-out, border 0.3s ease-in-out;
 }
 
+/* ============================================================
+   Group headers + nav buttons (series site list)
+   ============================================================ */
 .group-header {
     display: flex;
     align-items: center;
     cursor: pointer;
     user-select: none;
+    color: var(--text-secondary);
+    font-size: 0.95em;
+    padding: 4px 2px;
+    border-radius: var(--radius-sm);
+    transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.group-header:hover {
+    color: var(--color-accent);
 }
 
 .group-header .toggle-icon {
-    margin-right: 5px;
+    margin-right: 6px;
     line-height: 1;
+    color: var(--color-accent);
     transition: transform 0.3s ease-in-out;
 }
 
@@ -199,81 +477,384 @@ hr.tooltip-sub-divider {
     margin-top: 0;
 }
 
+.nav-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    border-left: 2px solid transparent;
+    color: var(--text-primary);
+    padding: 5px 8px;
+    margin: 2px 0;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-item:hover:not(:disabled) {
+    background: var(--surface-hover);
+    border-left: 2px solid var(--color-accent);
+    color: var(--text-primary);
+}
+
+.nav-item:disabled {
+    color: var(--text-muted);
+    cursor: default;
+    opacity: 0.6;
+}
+
+.nav-item:disabled:hover {
+    background: transparent;
+    border-left-color: transparent;
+}
+
+:root[data-theme="light"] .nav-item:disabled {
+    color: #64748b;
+    opacity: 0.82;
+}
+
+/* ============================================================
+   Search input — dark themed
+   ============================================================ */
 .site-search-input {
     width: 100%;
     box-sizing: border-box;
-    padding: 4px 8px;
-    margin-bottom: 8px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    padding: 6px 10px;
+    margin-bottom: 10px;
+    background: var(--surface-input);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
     font-size: 13px;
+    color: var(--text-primary);
     outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.site-search-input::placeholder {
+    color: var(--text-muted);
 }
 
 .site-search-input:focus {
-    border-color: var(--color-signal, #ffcc00);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.12);
 }
 
+/* ============================================================
+   Faction color classes (used by score table + tooltips)
+   ============================================================ */
 .faction-RES {
-    color: #0088FF;
+    color: var(--color-res);
 }
 
 .faction-ENL {
-    color: #03DC03;
+    color: var(--color-enl);
 }
 
 .faction-MAC {
-    color: #FF0028;
+    color: var(--color-mac);
 }
 
+/* ============================================================
+   Score table — faction colors, mono numbers, hover
+   ============================================================ */
 table.ingress-event-scores {
     border-collapse: collapse;
+    width: 100%;
+    margin: 6px 0;
+    font-size: 13px;
 }
 
 table.ingress-event-scores td,
 table.ingress-event-scores th {
     min-width: 40px;
     text-align: right;
-    padding: 0 5px;
+    padding: 4px 8px;
 }
 
 table.ingress-event-scores thead th {
     text-align: right;
+    color: var(--text-secondary);
+    font-weight: 600;
+    border-bottom: 1px solid var(--divider);
+    padding-bottom: 6px;
+}
+
+table.ingress-event-scores tbody td,
+table.ingress-event-scores tbody th {
+    font-family: var(--font-mono);
+    font-weight: 500;
+}
+
+table.ingress-event-scores tbody th {
+    color: var(--text-secondary);
+    text-align: center;
 }
 
 table.ingress-event-scores tr[data-site-id] {
     cursor: pointer;
+    transition: background-color 0.15s ease;
 }
 
 table.ingress-event-scores tr[data-site-id]:hover {
-    background-color: rgba(255, 204, 0, 0.05);
+    background-color: var(--surface-hover);
 }
 
 table.ingress-event-scores tr.highlight {
-    background-color: rgba(255, 204, 0, 0.05) !important;
-    box-shadow: inset 0 0 0 2px var(--color-signal);
+    background-color: rgba(255, 204, 0, 0.08) !important;
+    box-shadow: inset 0 0 0 1px var(--color-accent);
     transition: background-color 0.2s ease-out, box-shadow 0.2s ease-out;
 }
 
 table.ingress-event-scores tr.highlight:hover {
-    background-color: rgba(255, 204, 0, 0.1) !important;
+    background-color: rgba(255, 204, 0, 0.14) !important;
 }
 
 table.ingress-event-scores tfoot {
     font-weight: bold;
+    color: var(--text-primary);
 }
 
-/* Team Color Variables */
-:root {
-    --color-res: #0088ff;
-    --color-enl: #03dc03;
-    --color-neu: #ff6600;
-    --color-signal: #ffcc00;
-    --color-nodata: #777777;
-    --color-tie: #AF00FF;
+table.ingress-event-scores tfoot tr {
+    border-top: 1px solid var(--divider);
 }
 
-/* Marker Radar Sweep Animation */
+table.ingress-event-scores tfoot th,
+table.ingress-event-scores tfoot td {
+    padding-top: 6px;
+    font-family: var(--font-mono);
+}
+
+/* ============================================================
+   Tooltips — dark glass with faction-colored accents
+   ============================================================ */
+.leaflet-tooltip {
+    background: var(--glass-bg) !important;
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--radius-sm) !important;
+    box-shadow: var(--shadow-glass) !important;
+    color: var(--text-primary) !important;
+    padding: 8px 12px !important;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.leaflet-tooltip strong {
+    color: var(--text-primary);
+}
+
+.leaflet-tooltip em {
+    color: var(--text-secondary);
+}
+
+.leaflet-tooltip a {
+    color: var(--color-accent);
+}
+
+.leaflet-tooltip hr {
+    border-color: var(--divider);
+    margin: 6px 0;
+}
+
+hr.tooltip-sub-divider {
+    width: 80%;
+    border-color: var(--divider);
+}
+
+/* Tooltip arrow — match dark bg */
+.leaflet-tooltip-top:before {
+    border-top-color: var(--glass-bg-solid) !important;
+}
+
+.leaflet-tooltip-bottom:before {
+    border-bottom-color: var(--glass-bg-solid) !important;
+}
+
+.leaflet-tooltip-left:before {
+    border-left-color: var(--glass-bg-solid) !important;
+}
+
+.leaflet-tooltip-right:before {
+    border-right-color: var(--glass-bg-solid) !important;
+}
+
+/* Popups (portal click) — match dark glass */
+.leaflet-popup-content-wrapper {
+    background: var(--glass-bg) !important;
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: var(--shadow-glass) !important;
+    color: var(--text-primary) !important;
+}
+
+.leaflet-popup-content {
+    color: var(--text-primary);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.leaflet-popup-content strong {
+    color: var(--text-primary);
+}
+
+.leaflet-popup-content em {
+    color: var(--text-secondary);
+}
+
+.leaflet-popup-tip {
+    background: var(--glass-bg-solid) !important;
+    border: 1px solid var(--glass-border) !important;
+}
+
+.leaflet-popup-close-button {
+    color: var(--text-secondary) !important;
+}
+
+.leaflet-popup-close-button:hover {
+    color: var(--color-accent) !important;
+}
+
+/* ============================================================
+   Language switcher (top-right) — dark glass
+   ============================================================ */
+.leaflet-language-switcher {
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-glass);
+    padding: 4px 8px;
+}
+
+.leaflet-language-switcher select {
+    border: none;
+    background: transparent;
+    font-size: 13px;
+    color: var(--text-primary);
+    cursor: pointer;
+    outline: none;
+    padding: 2px 4px;
+    transition: color 0.15s ease;
+}
+
+.leaflet-language-switcher select:hover,
+.leaflet-language-switcher select:focus {
+    color: var(--color-accent);
+}
+
+.leaflet-language-switcher select option {
+    background: var(--glass-bg-solid);
+    color: var(--text-primary);
+}
+
+/* ============================================================
+   React UI chrome mount point — the details panel, language
+   switcher and credits menu are React/MUI components layered on
+   top of the Leaflet map; this replaces Leaflet's own control
+   corner positioning (`.leaflet-top`/`.leaflet-bottom` etc.) for
+   just those three.
+   ============================================================ */
+#react-ui-root {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.react-ui-corner {
+    position: absolute;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px;
+}
+
+.react-ui-corner > * {
+    pointer-events: auto;
+}
+
+.react-ui-corner.top-right {
+    top: 0;
+    right: 0;
+}
+
+.react-ui-corner.bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+/* MUI renders this menu in a portal, outside #react-ui-root. Keep it visually
+   separate from the top toolbar and prevent translated labels from turning it
+   into a near-full-width overlay on narrow screens. */
+.credits-menu-paper {
+    margin-top: 8px;
+    max-width: min(360px, calc(100vw - 32px));
+}
+
+.credits-menu-paper .MuiMenuItem-root {
+    min-height: 44px;
+    white-space: normal;
+}
+
+.credits-menu-paper .MuiListItemText-primary {
+    line-height: 1.35;
+}
+
+/* ============================================================
+   Responsive — mobile
+   ============================================================ */
+@media (max-width: 600px) {
+    .credits-menu-paper {
+        max-width: calc(100vw - 32px);
+    }
+
+    .credits-menu-paper .MuiMenuItem-root {
+        padding: 8px 12px;
+    }
+
+    .credits-menu-paper .MuiListItemIcon-root {
+        min-width: 36px;
+    }
+
+    .leaflet-details-panel {
+        max-width: 85vw;
+        max-height: 60vh;
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .details-panel-content {
+        max-height: 30vh;
+    }
+
+    .leaflet-control-layers-expanded {
+        min-width: 140px;
+        padding: 10px !important;
+    }
+
+    .leaflet-bar a,
+    .leaflet-control-zoom a {
+        min-width: 36px;
+        min-height: 36px;
+        line-height: 36px;
+        font-size: 16px;
+    }
+
+    .leaflet-language-switcher select {
+        font-size: 14px;
+    }
+}
+
+/* ============================================================
+   Marker Radar Sweep Animation (unchanged — map canvas)
+   ============================================================ */
 @keyframes marker-radar-sweep {
     from {
         transform: translate(-50%, -50%) rotate(0deg);
@@ -289,6 +870,18 @@ table.ingress-event-scores tfoot {
     width: 25px;
     height: 41px;
     display: block;
+}
+
+.faction-logo-marker {
+    background: transparent;
+    border: 0;
+}
+
+.faction-logo-marker img {
+    display: block;
+    width: 44px;
+    height: 44px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.75));
 }
 
 .marker-radar-beam {
@@ -359,22 +952,4 @@ table.ingress-event-scores tfoot {
 .outcome-none {
     --pin-color: var(--color-neu);
     --pin-inner-color: #fff;
-}
-
-/* Language Switcher Control */
-.leaflet-language-switcher {
-    background: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-    padding: 4px 6px;
-}
-
-.leaflet-language-switcher select {
-    border: none;
-    background: transparent;
-    font-size: 13px;
-    cursor: pointer;
-    outline: none;
-    padding: 2px 4px;
 }

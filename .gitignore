@@ -5,6 +5,12 @@ cache.sqlite
 
 /gen
 /dist
+/.wrangler
+/.playwright-mcp
+/.sisyphus
+/.DS_Store
+/.tmp-*.mjs
+/current-ui-*.png
 
 # Act secrets
 .secrets
