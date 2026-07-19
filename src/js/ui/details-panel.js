@@ -1,9 +1,10 @@
 import * as L from "leaflet";
+import { t } from "../i18n/index.js";
 
 L.Control.DetailsPanel = L.Control.extend({
     options: {
         position: 'bottomright',
-        title: 'Details',
+        title: t('details.title'),
     },
 
     onAdd: function () {
@@ -20,7 +21,7 @@ L.Control.DetailsPanel = L.Control.extend({
         this._toggleButton.innerHTML = '➖';
 
         this._content = L.DomUtil.create('div', 'details-panel-content', this._container);
-        this._content.innerHTML = 'Select a series or site to view details.';
+        this._content.innerHTML = t('details.placeholder');
 
         this._footer = L.DomUtil.create('div', 'details-panel-footer', this._container);
 
@@ -58,8 +59,8 @@ L.Control.DetailsPanel = L.Control.extend({
 
     clear: function () {
         this.update({
-            title: 'Details',
-            content: 'Select a series or site to view details.',
+            title: t('details.title'),
+            content: t('details.placeholder'),
         });
     }
 });
@@ -81,5 +82,39 @@ function setupGroupToggles(containerElement) {
                 header.classList.toggle('open');
             }
         }
+    });
+
+    // ponytail: event delegation on the content container — show/hide DOM, no re-render
+    containerElement.addEventListener('input', (e) => {
+        if (!e.target.classList || !e.target.classList.contains('site-search-input')) return;
+
+        const query = e.target.value.toLowerCase().trim();
+        const groups = containerElement.querySelectorAll('.group-header.group-toggle');
+
+        groups.forEach(group => {
+            const list = group.nextElementSibling;
+            if (!list || !list.classList.contains('group-list')) return;
+
+            const buttons = list.querySelectorAll('.nav-item');
+            let hasMatch = false;
+
+            buttons.forEach(btn => {
+                const text = btn.textContent.toLowerCase();
+                const matches = !query || text.includes(query);
+                btn.style.display = matches ? '' : 'none';
+                if (matches) hasMatch = true;
+            });
+
+            group.style.display = hasMatch ? '' : 'none';
+            list.style.display = hasMatch ? '' : 'none';
+
+            if (query) {
+                list.classList.remove('collapsed-group');
+                group.classList.add('open');
+            } else {
+                list.classList.add('collapsed-group');
+                group.classList.remove('open');
+            }
+        });
     });
 }

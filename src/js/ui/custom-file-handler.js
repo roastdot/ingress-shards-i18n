@@ -2,6 +2,7 @@ import { CUSTOM_SERIES_ID } from "../constants.js";
 import { addCustomData } from "../data/data-store.js";
 import { navigate } from "../router.js";
 import { updateCustomSeriesLayer } from "./series-renderer.js";
+import { t } from "../i18n/index.js";
 
 export async function handleCustomFile(event) {
     var files = event.target.files;
@@ -52,7 +53,7 @@ export function getDetailsPanelContent() {
     let content = `<input id="${CUSTOM_SERIES_ID}-file-input" class="series" type="file" accept="application/json" />`;
 
     return {
-        title: `Custom Season Details`,
+        title: t('custom.season_details'),
         content,
     };
 }

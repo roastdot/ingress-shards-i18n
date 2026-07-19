@@ -2,9 +2,11 @@ import { IS_NAVIGATING_BACK, navigate, setViewDispatchers } from "../router.js";
 import { getSeriesLayer, getDetailsPanelContent as getSeriesDetailsContent, setupMarkerHover, getSeriesControl, initSeriesLayers } from "./series-renderer.js";
 import { getSiteLayers, getDetailsPanelContent as getSiteDetailsContent, updateAllPolylineStyles, setActiveSiteLayer, getSiteControl } from "./site-renderer.js";
 import { detailsPanelControl } from "./details-panel.js";
+import { languageSwitcherControl } from "./language-switcher.js";
 import { handleCustomFile, getDetailsPanelContent as getCustomDetailsContent } from "./custom-file-handler.js";
 import { getDefaultSeriesId, getSeriesMetadata, getSeriesGeocode } from "../data/data-store.js";
 import { CUSTOM_SERIES_ID } from "../constants.js";
+import { t } from "../i18n/index.js";
 
 let IS_MAP_INTERACTION_ACTIVE = false;
 
@@ -23,7 +25,7 @@ const mapDispatchers = {
         }
 
         const metadata = getSeriesMetadata(seriesId);
-        document.title = `${metadata?.name} Season | Ingress Shards Map`;
+        document.title = t('ui.title_series', { name: metadata?.name });
 
         let detailsPanelContent = getSeriesDetailsContent(seriesId);
         if (seriesId === CUSTOM_SERIES_ID) {
@@ -75,7 +77,7 @@ const mapDispatchers = {
         const seriesName = seriesMetadata?.name;
         const siteGeocode = getSeriesGeocode(seriesId)?.sites?.[siteId];
         const siteName = siteGeocode?.name;
-        document.title = `${seriesName}: ${siteName} | Ingress Shards Map`;
+        document.title = t('ui.title_site', { name: seriesName, site: siteName });
         detailsPanel.update(getSiteDetailsContent(seriesId, siteId));
 
         // Calculate bounds accurately: merge shards (all) and ornaments if present
@@ -135,7 +137,7 @@ const mapDispatchers = {
         const seriesName = seriesMetadata?.name;
         const siteGeocode = getSeriesGeocode(seriesId)?.sites?.[siteId];
         const siteName = siteGeocode?.name;
-        document.title = `${seriesName}: ${siteName} | Ingress Shards Map`;
+        document.title = t('ui.title_site', { name: seriesName, site: siteName });
         detailsPanel.update(getSiteDetailsContent(seriesId, siteId, waveId));
 
         let siteBounds = null;
@@ -181,6 +183,9 @@ export function initController(mapInstance) {
     const controlContainer = seriesControlPanel.getContainer();
     controlContainer.classList.add('ingress-series-control');
     controlContainer.setAttribute('tabindex', '-1');
+
+    const langSwitcher = languageSwitcherControl({ position: 'topright' });
+    map.addControl(langSwitcher);
 
     setViewDispatchers(mapDispatchers);
     setupEventListeners(map);

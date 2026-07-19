@@ -5,9 +5,11 @@ import "../assets/main.css";
 import { initMap } from "./ui/map/map-manager.js";
 import { initDataStore } from "./data/data-store.js";
 import { initController } from "./ui/ui-controller.js";
+import { initI18n } from "./i18n/index.js";
 
 async function initApplication() {
     try {
+        initI18n();
         const map = initMap();
         await initDataStore();
         initController(map);

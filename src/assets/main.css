@@ -199,6 +199,21 @@ hr.tooltip-sub-divider {
     margin-top: 0;
 }
 
+.site-search-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4px 8px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 13px;
+    outline: none;
+}
+
+.site-search-input:focus {
+    border-color: var(--color-signal, #ffcc00);
+}
+
 .faction-RES {
     color: #0088FF;
 }
@@ -344,4 +359,22 @@ table.ingress-event-scores tfoot {
 .outcome-none {
     --pin-color: var(--color-neu);
     --pin-inner-color: #fff;
+}
+
+/* Language Switcher Control */
+.leaflet-language-switcher {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    padding: 4px 6px;
+}
+
+.leaflet-language-switcher select {
+    border: none;
+    background: transparent;
+    font-size: 13px;
+    cursor: pointer;
+    outline: none;
+    padding: 2px 4px;
 }

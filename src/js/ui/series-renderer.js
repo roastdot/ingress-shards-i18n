@@ -1,5 +1,6 @@
 import * as L from "leaflet";
 import { EVENT_BRANDS } from "../constants.js";
+import { t, tChoice } from "../i18n/index.js";
 import { addEventInteraction } from "./event-handler.js";
 import { navigate } from "../router.js";
 import { getScoresText } from "./site-renderer.js";
@@ -113,15 +114,15 @@ function renderSeriesLayer(seriesId) {
 
         let siteTooltip = '';
         if (activeRemaining) {
-            siteTooltip += `<strong>Site Active</strong> - ${activeRemaining} remaining<hr />`;
+            siteTooltip += `<strong>${t('series.site_active')}</strong> - ${activeRemaining} ${t('series.remaining')}<hr />`;
         } else if (isComplete && isWithinCompletionGrace && !hasFragments) {
-            siteTooltip += `<strong>Site Complete</strong> - <em>compiling XM telemetry.</em><hr />`;
+            siteTooltip += `<strong>${t('series.site_complete')}</strong> - <em>${t('series.compiling_telemetry')}</em><hr />`;
         }
 
         siteTooltip += `
             ${flagHtml} <strong>${site.name}</strong><br />
-            Date: ${formatIsoToShortDate(site.date, site.timezone)}${timeRemainingText}<br />
-            Type: ${EVENT_BRANDS[site.eventType].label}<br />`;
+            ${t('series.date_label')}: ${formatIsoToShortDate(site.date, site.timezone)}${timeRemainingText}<br />
+            ${t('series.type_label')}: ${t('blueprints.event.' + site.eventType)}<br />`;
 
         if (siteData) {
             const scoresText = getScoresText({ seriesId, siteId: site.id, type: 'full' });
@@ -129,12 +130,12 @@ function renderSeriesLayer(seriesId) {
                 siteTooltip += scoresText;
             } else if (hasOrnaments) {
                 const count = Object.values(siteData.portals || {}).filter(portal => portal.ornamentId).length;
-                siteTooltip += `<em>${count} ornamented portal${count === 1 ? '' : 's'}</em>`;
+                siteTooltip += `<em>${tChoice('series.ornamented_portals', count)}</em>`;
             }
             const siteUrl = `#/${seriesId}/${site.id.replace(seriesId + "-", "")}`;
             addEventInteraction(siteMarker, 'click', () => { navigate(siteUrl); });
         } else if (ZonedDateTime.compare(startTime, now) < 0) {
-            siteTooltip += `<em>No data available</em>`;
+            siteTooltip += `<em>${t('series.no_data')}</em>`;
         }
         siteMarker.bindTooltip(siteTooltip, { permanent: false, direction: 'auto' });
         siteMarker.addTo(seriesLayer);
@@ -191,7 +192,7 @@ export function getDetailsPanelContent(seriesId) {
     const geocode = getSeriesGeocode(seriesId);
 
     if (!metadata || !geocode || !geocode.sites) {
-        return { title: metadata?.name ? `${metadata.name} Season` : 'Details', content: '<p><em>Season information not available.</em></p>' };
+        return { title: metadata?.name ? `${metadata.name} ${t('series.season_suffix')}` : t('details.title'), content: `<p><em>${t('series.season_info_unavailable')}</em></p>` };
     }
 
     const sites = Object.values(geocode.sites);
@@ -206,13 +207,14 @@ export function getDetailsPanelContent(seriesId) {
 
     let content = '';
     if (metadata.year) {
-        content += `Year: ${metadata.year}<br />`;
+        content += `${t('series.year_label')}: ${metadata.year}<br />`;
     }
     if (metadata.overviewUrl) {
-        content += `<a href="${metadata.overviewUrl}" target="_blank">Season Overview</a><br /><br />`;
+        content += `<a href="${metadata.overviewUrl}" target="_blank">${t('series.season_overview')}</a><br /><br />`;
     }
 
     content += `<div class="series-sites-list">`;
+    content += `<input type="search" class="site-search-input" placeholder="${t('series.search_placeholder')}" />`;
 
     typeOrder.forEach(eventType => {
         if (sitesByEventType[eventType]) {
@@ -220,7 +222,7 @@ export function getDetailsPanelContent(seriesId) {
 
             content += `<h4 class="group-header group-toggle">
                     <span class="toggle-icon">▶</span>
-                    ${sitesOfEventType.length} ${EVENT_BRANDS[eventType].label} Sites</h4>`;
+                    ${t('series.event_sites_count', { count: sitesOfEventType.length, event: t('blueprints.event.' + eventType) })}</h4>`;
             content += `<div class="group-list collapsed-group">`;
 
             sitesOfEventType.forEach(site => {
@@ -249,10 +251,10 @@ export function getDetailsPanelContent(seriesId) {
     });
 
     return {
-        title: `${metadata.name} Season`,
+        title: `${metadata.name} ${t('series.season_suffix')}`,
         flagHtml: '',
         content,
-        footer: sites.length > 0 ? 'Select a specific site for details.' : 'No Sites found.',
+        footer: sites.length > 0 ? t('series.select_site_prompt') : t('series.no_sites'),
     };
 }
 

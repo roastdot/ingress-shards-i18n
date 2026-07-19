@@ -1,9 +1,7 @@
 import * as ZonedDateTime from "temporal-polyfill/fns/zoneddatetime";
 import * as Now from "temporal-polyfill/fns/now";
 import * as Duration from "temporal-polyfill/fns/duration";
-
-// Default locale, safely checking for navigator object which only exists in browsers.
-const DEFAULT_LOCALE = typeof navigator !== 'undefined' ? navigator.language : 'en-GB';
+import { t, tChoice, getLocale } from "../i18n/index.js";
 
 const MS_PER_SECOND = 1000;
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
@@ -31,16 +29,34 @@ export function formatEpochToSerializationString(epochTimeMs) {
 /**
  * Formats the serialized ISO 8601 string (YYYY-MM-DDTHH:mm:ss) into a locale-specific short date string (e.g., 3/15/2023).
  */
-export function formatIsoToShortDate(isoString, timeZone, locale = DEFAULT_LOCALE) {
+export function formatIsoToShortDate(isoString, timeZone, locale = getLocale()) {
     const zdt = ZonedDateTime.fromString(isoString);
     const epochMillis = ZonedDateTime.epochMilliseconds(zdt);
     return new Date(epochMillis).toLocaleDateString(locale, { timeZone: ZonedDateTime.timeZoneId(zdt), dateStyle: 'short' });
 }
 
 /**
+ * Formats the serialized ISO 8601 string into a locale-specific medium date string (e.g., 15 Mar 2023).
+ */
+export function formatIsoToMediumDate(isoString, timeZone, locale = getLocale()) {
+    const zdt = ZonedDateTime.fromString(isoString);
+    const epochMillis = ZonedDateTime.epochMilliseconds(zdt);
+    return new Date(epochMillis).toLocaleDateString(locale, { timeZone: ZonedDateTime.timeZoneId(zdt), dateStyle: 'medium' });
+}
+
+/**
+ * Formats the serialized ISO 8601 string into a locale-specific long date string (e.g., 15 March 2023).
+ */
+export function formatIsoToLongDate(isoString, timeZone, locale = getLocale()) {
+    const zdt = ZonedDateTime.fromString(isoString);
+    const epochMillis = ZonedDateTime.epochMilliseconds(zdt);
+    return new Date(epochMillis).toLocaleDateString(locale, { timeZone: ZonedDateTime.timeZoneId(zdt), dateStyle: 'long' });
+}
+
+/**
  * Formats an epoch time for local display time.
  */
-export function formatEpochToLocalTime(epochMs, timeZone, locale = DEFAULT_LOCALE) {
+export function formatEpochToLocalTime(epochMs, timeZone, locale = getLocale()) {
     return new Date(Number(epochMs)).toLocaleTimeString(locale, {
         timeZone,
         hour: '2-digit',
@@ -53,7 +69,7 @@ export function formatEpochToLocalTime(epochMs, timeZone, locale = DEFAULT_LOCAL
 /**
  * Formats an epoch time for local date and time display.
  */
-export function formatEpochToLocalDateTime(epochMs, timeZone, locale = DEFAULT_LOCALE) {
+export function formatEpochToLocalDateTime(epochMs, timeZone, locale = getLocale()) {
     return new Date(Number(epochMs)).toLocaleString(locale, {
         timeZone,
         year: 'numeric',
@@ -120,20 +136,20 @@ export function getTimeRemaining(siteDateIso, siteTimezone) {
 
     if (totalDays >= 1) {
         const days = Math.floor(totalDays);
-        return `${days} day${days === 1 ? '' : 's'}`;
+        return `${days} ${tChoice('dates.day', days)}`;
     }
 
     if (totalHours >= 1) {
         const hours = Math.floor(totalHours);
-        return `${hours} hour${hours === 1 ? '' : 's'}`;
+        return `${hours} ${tChoice('dates.hour', hours)}`;
     }
 
     if (totalMinutes >= 1) {
         const minutes = Math.floor(totalMinutes);
-        return `${minutes} minute${minutes === 1 ? '' : 's'}`;
+        return `${minutes} ${tChoice('dates.minute', minutes)}`;
     }
 
-    return 'less than a minute';
+    return t('dates.less_than_minute');
 }
 
 /**
@@ -157,8 +173,8 @@ export function getActiveEventRemaining(siteDateIso, siteTimezone, durationMins)
     const minutes = Math.floor(diff.minutes || 0);
 
     const parts = [];
-    if (hours > 0) parts.push(`${hours} hour${hours === 1 ? '' : 's'}`);
-    if (minutes > 0 || parts.length === 0) parts.push(`${minutes} minute${minutes === 1 ? '' : 's'}`);
+    if (hours > 0) parts.push(`${hours} ${tChoice('dates.hour', hours)}`);
+    if (minutes > 0 || parts.length === 0) parts.push(`${minutes} ${tChoice('dates.minute', minutes)}`);
 
     return parts.join(' ');
 }
