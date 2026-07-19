@@ -20,14 +20,14 @@ The original MIT copyright and permission notice is retained in
 Displays all event sites for a selected series, including official season
 points, event-type markers and faction results where available.
 
-[<img src="docs/assets/apollo-series-overview.png" alt="Apollo season overview showing event sites and season points">](https://roastdot.github.io/ingress-shards.github.io/)
+[<img src="docs/assets/apollo-series-overview.png" alt="Apollo season overview showing event sites and season points">](https://shards.ingress.observer/#/2026-apollo)
 
 ## Site View
 
 Displays Portal, Shard, Link and faction-score details for an individual event
 site. Multi-wave events can be filtered to inspect a specific wave.
 
-[<img src="docs/assets/apollo-site-view.png" alt="Apollo XM Anomaly site view for Helsinki">](https://roastdot.github.io/ingress-shards.github.io/)
+[<img src="docs/assets/apollo-site-view.png" alt="Apollo XM Anomaly site view for Helsinki">](https://shards.ingress.observer/#/2026-apollo/helsinki/wave-5)
 
 ## Localisation
 
@@ -35,7 +35,7 @@ The interface supports English (UK), English (US), Simplified Chinese,
 Traditional Chinese (Hong Kong) and Traditional Chinese (Taiwan). Official
 Ingress event names remain untranslated when no official localisation exists.
 
-[<img src="docs/assets/apollo-i18n-zh-hk.png" alt="Apollo site view in Traditional Chinese for Hong Kong">](https://roastdot.github.io/ingress-shards.github.io/)
+[<img src="docs/assets/apollo-i18n-zh-hk.png" alt="Apollo site view in Traditional Chinese for Hong Kong">](https://shards.ingress.observer/#/2026-apollo/helsinki/wave-5)
 
 ## Assumptions made
 
@@ -120,7 +120,7 @@ Ingress names and faction marks belong to their respective trademark owners.
 
 The configuration of the shards are available at the following locations:
 
--   [Series metadata](https://roastdot.github.io/ingress-shards.github.io/public/conf/series_metadata.json)
--   [Official series results](https://roastdot.github.io/ingress-shards.github.io/public/conf/series_results.json)
--   [Series geocode](https://roastdot.github.io/ingress-shards.github.io/public/conf/series_geocode.json)
--   [Map version](https://roastdot.github.io/ingress-shards.github.io/public/conf/version.json) (used to check for configuration updates)
+-   [Series metadata](https://shards.ingress.observer/public/conf/series_metadata.json)
+-   [Official series results](https://shards.ingress.observer/public/conf/series_results.json)
+-   [Series geocode](https://shards.ingress.observer/public/conf/series_geocode.json)
+-   [Map version](https://shards.ingress.observer/public/conf/version.json) (used to check for configuration updates)
