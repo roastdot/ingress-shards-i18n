@@ -27,8 +27,7 @@ points, event-type markers and faction results where available.
 Displays Portal, Shard, Link and faction-score details for an individual event
 site. Multi-wave events can be filtered to inspect a specific wave.
 
-<img src="docs/assets/apollo-site-view.png" alt="Apollo XM Anomaly site view for Helsinki">]
-
+<img src="docs/assets/apollo-site-view.png" alt="Apollo XM Anomaly site view for Helsinki">
 
 ## Localisation
 
