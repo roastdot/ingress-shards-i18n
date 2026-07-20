@@ -65,27 +65,89 @@ export function getTileElevationGrid(tile: CanvasImageSource, ctx: CanvasRenderi
 }
 
 const tileCache = new Map<string, Uint8ClampedArray>();
+const tileRequests = new Map<string, Promise<Uint8ClampedArray | null>>();
+const MAX_CACHED_TERRAIN_TILES = 128;
+
+function cacheTile(key: string, data: Uint8ClampedArray): void {
+    tileCache.set(key, data);
+    if (tileCache.size <= MAX_CACHED_TERRAIN_TILES) return;
+    const oldestKey = tileCache.keys().next().value as string | undefined;
+    if (oldestKey) tileCache.delete(oldestKey);
+}
 
 async function getTileData(z: number, x: number, y: number): Promise<Uint8ClampedArray | null> {
     const key = `${z}/${x}/${y}`;
     if (tileCache.has(key)) return tileCache.get(key)!;
+    const inFlight = tileRequests.get(key);
+    if (inFlight) return inFlight;
 
-    const url = `https://elevation-tiles-prod.s3.amazonaws.com/terrarium/${z}/${x}/${y}.png`;
-    try {
-        const response = await fetch(url);
-        if (!response.ok) return null;
-        const blob = await response.blob();
-        const img = await createImageBitmap(blob);
-        const canvas = document.createElement('canvas');
-        canvas.width = 256; canvas.height = 256;
-        const ctx = canvas.getContext('2d', { willReadFrequently: true })!;
-        ctx.drawImage(img, 0, 0);
-        const data = ctx.getImageData(0, 0, 256, 256).data;
-        tileCache.set(key, data);
-        return data;
-    } catch {
-        return null;
+    const request = (async () => {
+        const url = `https://elevation-tiles-prod.s3.amazonaws.com/terrarium/${z}/${x}/${y}.png`;
+        try {
+            const response = await fetch(url);
+            if (!response.ok) return null;
+            const blob = await response.blob();
+            const img = await createImageBitmap(blob);
+            const canvas = document.createElement('canvas');
+            canvas.width = 256; canvas.height = 256;
+            const ctx = canvas.getContext('2d', { willReadFrequently: true })!;
+            try {
+                ctx.drawImage(img, 0, 0);
+            } finally {
+                img.close();
+            }
+            const data = ctx.getImageData(0, 0, 256, 256).data;
+            cacheTile(key, data);
+            return data;
+        } catch {
+            return null;
+        } finally {
+            tileRequests.delete(key);
+        }
+    })();
+    tileRequests.set(key, request);
+    return request;
+}
+
+/**
+ * Loads one Cesium heightmap tile from the same Terrarium pyramid used by the
+ * 2D relief layer. Requests beyond the source's maximum zoom sample the
+ * corresponding portion of its z15 parent so Cesium can keep refining without
+ * flattening the terrain.
+ */
+export async function getTerrariumHeightmap(
+    z: number,
+    x: number,
+    y: number,
+    width: number,
+    height: number,
+): Promise<Float32Array> {
+    const sourceZ = Math.min(15, z);
+    const scale = 2 ** (z - sourceZ);
+    const sourceX = Math.floor(x / scale);
+    const sourceY = Math.floor(y / scale);
+    const offsetX = x - sourceX * scale;
+    const offsetY = y - sourceY * scale;
+    const tileData = await getTileData(sourceZ, sourceX, sourceY);
+    const result = new Float32Array(width * height);
+    if (!tileData) throw new Error(`Unable to load terrain tile ${sourceZ}/${sourceX}/${sourceY}`);
+
+    for (let row = 0; row < height; row++) {
+        for (let column = 0; column < width; column++) {
+            const u = (offsetX + column / Math.max(1, width - 1)) / scale;
+            const v = (offsetY + row / Math.max(1, height - 1)) / scale;
+            const pixelX = Math.min(255, Math.max(0, Math.round(u * 255)));
+            const pixelY = Math.min(255, Math.max(0, Math.round(v * 255)));
+            const index = (pixelY * 256 + pixelX) * 4;
+            result[row * width + column] = decodeElevation(
+                tileData[index],
+                tileData[index + 1],
+                tileData[index + 2],
+                tileData[index + 3],
+            ) ?? 0;
+        }
     }
+    return result;
 }
 
 /**

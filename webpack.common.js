@@ -9,6 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const resolvePackage = (pkg) => path.dirname(fileURLToPath(import.meta.resolve(`${pkg}/package.json`)));
+const cesiumBuild = path.join(resolvePackage('cesium'), 'Build', 'Cesium');
 
 export const packageJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'package.json'), 'utf-8'));
 
@@ -104,6 +105,9 @@ export default (env, { appVersion }) => {
         plugins: [
             new webpack.DefinePlugin({
                 __APP_VERSION__: JSON.stringify(appVersion),
+                // A relative URL works both at localhost and under the GitHub
+                // Pages repository sub-path used by the production build.
+                CESIUM_BASE_URL: JSON.stringify('cesiumStatic/'),
             }),
             new HtmlWebpackPlugin({
                 template: './index.html',
@@ -116,6 +120,10 @@ export default (env, { appVersion }) => {
             }),
             new CopyWebpackPlugin({
                 patterns: [
+                    ...['Workers', 'ThirdParty', 'Assets', 'Widgets'].map(asset => ({
+                        from: path.join(cesiumBuild, asset),
+                        to: path.join('cesiumStatic', asset),
+                    })),
                     {
                         from: path.join(resolvePackage('leaflet'), 'dist', 'images'),
                         to: 'images/markers',

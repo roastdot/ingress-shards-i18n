@@ -529,6 +529,16 @@ a:hover {
     color: var(--text-primary);
 }
 
+.nav-item-informational {
+    color: var(--text-secondary);
+}
+
+.nav-item-status {
+    color: var(--text-muted);
+    font-size: 11px;
+    white-space: nowrap;
+}
+
 .nav-item:disabled {
     color: var(--text-muted);
     cursor: default;
@@ -1250,4 +1260,109 @@ hr.tooltip-sub-divider {
 .outcome-none {
     --pin-color: var(--color-neu);
     --pin-inner-color: #fff;
+}
+
+/* ============================================================
+   CesiumJS 3D view — hidden until toggled from the 2D map
+   ============================================================ */
+#map3d {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    z-index: 900;
+    background: var(--page-bg);
+    display: none;
+}
+
+#map3d.map3d-active {
+    display: block;
+}
+
+/* The 2D↔3D toggle buttons match the surrounding 44px glass controls. */
+.leaflet-bar a.map-view-toggle-button {
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.map-view-exit-ctrl {
+    position: absolute;
+    top: max(10px, env(safe-area-inset-top));
+    left: max(10px, env(safe-area-inset-left));
+    z-index: 5;
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-glass);
+}
+
+#map3d .map-view-exit-ctrl button.map-view-toggle-button {
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--text-primary);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+#map3d .map-view-exit-ctrl button.map-view-toggle-button:hover {
+    background: var(--surface-hover);
+    color: var(--color-accent);
+}
+
+.map3d-popup {
+    position: absolute;
+    z-index: 6;
+    width: max-content;
+    max-width: min(320px, calc(100vw - 32px));
+    max-height: min(360px, calc(100vh - 32px));
+    overflow: auto;
+    transform: translate(-50%, calc(-100% - 12px));
+    padding: 12px 30px 12px 12px;
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-glass);
+    color: var(--text-primary);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.map3d-popup-close {
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--text-secondary);
+    font: 20px/24px sans-serif;
+    cursor: pointer;
+}
+
+.map3d-popup-close:hover {
+    color: var(--text-primary);
+}
+
+#map3d .cesium-widget-credits {
+    right: 8px;
+    bottom: 4px;
 }

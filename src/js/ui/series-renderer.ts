@@ -24,6 +24,10 @@ interface SeriesLayer extends L.FeatureGroup {
 
 interface SiteMarker extends L.Marker {
     _siteId?: string;
+    _map3dImageUrl?: string;
+    _map3dAccentColor?: string;
+    _map3dLabel?: string;
+    _map3dNavigate?: boolean;
 }
 
 const seriesLayerCache = new Map<string, SeriesLayer>();
@@ -123,10 +127,21 @@ function renderSeriesLayer(seriesId: string): SeriesLayer {
         const latLng = L.latLng(site.lat, site.lng);
         const siteMarker: SiteMarker = L.marker(latLng, markerOptions);
         siteMarker._siteId = site.id;
+        siteMarker._map3dImageUrl = eventLogoUrl;
+        siteMarker._map3dLabel = site.name;
+        siteMarker._map3dAccentColor = outcome === 'RES'
+            ? '#0088ff'
+            : outcome === 'ENL'
+                ? '#00d840'
+                : phaseClass === 'is-phase-active'
+                    ? '#ff2ea6'
+                    : '#a9b4c0';
 
         const flagHtml = site.country_code ? getFlagTooltipHtml(site.country_code.toLowerCase()) : '';
         const remainingTime = getTimeRemaining(site.date, site.timezone);
-        const timeRemainingText = remainingTime ? ` (${remainingTime})` : '';
+        const isUpcoming = ZonedDateTime.compare(now, startTime) < 0;
+        siteMarker._map3dNavigate = Boolean(siteData) && !isUpcoming;
+        const timeRemainingText = remainingTime && !isUpcoming ? ` (${remainingTime})` : '';
 
         const eventDuration = getEventDuration(site, seriesId);
         const endTime = ZonedDateTime.add(startTime, Duration.fromFields({ minutes: eventDuration }));
@@ -138,6 +153,8 @@ function renderSeriesLayer(seriesId: string): SeriesLayer {
         let siteTooltip = '';
         if (activeRemaining) {
             siteTooltip += `<strong>${t('series.active_status', { remaining: activeRemaining })}</strong><hr />`;
+        } else if (isUpcoming && remainingTime) {
+            siteTooltip += `<strong>${t('series.upcoming_status', { remaining: remainingTime })}</strong><hr />`;
         } else if (isComplete && isWithinCompletionGrace && !hasFragments) {
             siteTooltip += `<strong>${t('series.complete_status')}</strong><hr />`;
         }
@@ -155,12 +172,17 @@ function renderSeriesLayer(seriesId: string): SeriesLayer {
                 const count = Object.values(siteData.portals || {}).filter(portal => portal.ornamentId).length;
                 siteTooltip += `<em>${tChoice('series.ornamented_portals', count)}</em>`;
             }
-            const siteUrl = `#/${seriesId}/${site.id.replace(seriesId + "-", "")}`;
-            addEventInteraction(siteMarker, 'click', () => { navigate(siteUrl); });
+            if (!isUpcoming) {
+                const siteUrl = `#/${seriesId}/${site.id.replace(seriesId + "-", "")}`;
+                addEventInteraction(siteMarker, 'click', () => { navigate(siteUrl); });
+            }
         } else if (ZonedDateTime.compare(startTime, now) < 0) {
             siteTooltip += `<em>${t('series.no_data')}</em>`;
         }
         siteMarker.bindTooltip(siteTooltip, { permanent: false, direction: 'auto' });
+        if (!siteData || isUpcoming) {
+            siteMarker.bindPopup(siteTooltip, { closeButton: false, autoClose: true });
+        }
         siteMarker.addTo(seriesLayer);
     }
     return seriesLayer;
@@ -263,6 +285,11 @@ export function getDetailsPanelContent(seriesId: string): DetailsPanelContent {
             sitesOfEventType.forEach(site => {
                 const flag = site.country_code ? getFlagTooltipHtml(site.country_code.toLowerCase()) : '';
                 const siteUrl = `#/${metadata.id}/${site.id.replace(metadata.id + "-", "")}`;
+                const siteData = getSiteData(metadata.id, site.id);
+                const startTime = ZonedDateTime.fromString(site.date);
+                const now = Now.zonedDateTimeISO(site.timezone);
+                const isUpcoming = ZonedDateTime.compare(now, startTime) < 0;
+                const canNavigate = Boolean(siteData) && !isUpcoming;
 
                 const scoresText = getScoresText({
                     seriesId: metadata.id,
@@ -270,16 +297,20 @@ export function getDetailsPanelContent(seriesId: string): DetailsPanelContent {
                     type: 'simple',
                     timezone: site.timezone
                 });
+                const informationalStatus = isUpcoming
+                    ? t('series.upcoming_city', { date: formatIsoToShortDate(site.date, site.timezone) })
+                    : !scoresText
+                        ? t('series.no_data')
+                        : '';
                 content += `
                         <button
-                                class="nav-item"
-                                data-route="${siteUrl}"
+                                class="nav-item${canNavigate ? '' : ' nav-item-informational'}"
+                                ${canNavigate ? `data-route="${siteUrl}"` : ''}
                                 data-site-id="${site.id}"
-                                id="${site.id}"
-                                ${!scoresText ? 'disabled="disabled"' : ''}>
+                                id="${site.id}">
                             ${flag} ${site.name}
                         </button>
-                        ${scoresText && ` ${scoresText}`}<br />`;
+                        ${scoresText && !isUpcoming ? ` ${scoresText}` : `<span class="nav-item-status">${informationalStatus}</span>`}<br />`;
             });
         }
         content += `</div> `;
@@ -317,6 +348,9 @@ export function setupMarkerHover(seriesLayer: SeriesLayer | undefined): void {
         if (targetMarker) {
             button.addEventListener('mouseover', () => { targetMarker.openTooltip(); });
             button.addEventListener('mouseout', () => { targetMarker.closeTooltip(); });
+            if (!button.dataset.route) {
+                button.addEventListener('click', () => { targetMarker.openPopup(); });
+            }
         }
     });
 }

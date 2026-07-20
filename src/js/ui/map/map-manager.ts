@@ -258,8 +258,46 @@ export function initMap(): L.Map {
 
     const overlays = { [t('map.elevation')]: reliefLayer };
     L.control.layers(baseMaps, overlays, { position: "topleft" }).addTo(map);
+    map.addControl(createView3DToggle(map));
 
     return map;
+}
+
+function createView3DToggle(map: L.Map): L.Control {
+    const View3DToggle = L.Control.extend({
+        options: { position: 'topleft' },
+        onAdd: () => {
+            const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+            const button = L.DomUtil.create('a', 'map-view-toggle-button', container);
+            button.href = '#';
+            button.textContent = '3D';
+            button.title = t('map.view_3d');
+            button.setAttribute('role', 'button');
+            button.setAttribute('aria-label', t('map.view_3d'));
+            L.DomEvent.on(button, 'click', async (event: Event) => {
+                L.DomEvent.preventDefault(event);
+                L.DomEvent.stopPropagation(event);
+                if (button.getAttribute('aria-busy') === 'true') return;
+                button.setAttribute('aria-busy', 'true');
+                button.title = t('map.view_3d');
+                button.setAttribute('aria-label', t('map.view_3d'));
+                // Lazily loaded so CesiumJS stays out of the main bundle
+                // until someone actually opens the 3D view.
+                try {
+                    const { show3DView } = await import('./map-3d.js');
+                    show3DView(map);
+                } catch (error) {
+                    console.error('Unable to load the 3D map', error);
+                    button.title = t('map.view_3d_error');
+                    button.setAttribute('aria-label', t('map.view_3d_error'));
+                } finally {
+                    button.removeAttribute('aria-busy');
+                }
+            });
+            return container;
+        },
+    });
+    return new View3DToggle();
 }
 
 function keepMapSizedToViewport(map: L.Map): void {

@@ -32,6 +32,7 @@
         "prepare:data": "npm run mkdir:gen && npm run geocode && npm run data:process && npm run data:validate && npm run data:statistics",
         "validate": "npm run clean && npm run build",
         "typecheck": "tsc --noEmit",
+        "test:3d": "tsx --test tests/map-3d.test.ts",
         "preview": "tsx scripts/preview-ci-artifact.ts"
     },
     "devDependencies": {
@@ -63,6 +64,7 @@
         "@emotion/styled": "^11.14.1",
         "@mui/icons-material": "^9.2.0",
         "@mui/material": "^9.2.0",
+        "cesium": "^1.143.0",
         "copy-webpack-plugin": "^14.0.0",
         "flag-icon-css": "^4.1.7",
         "leaflet": "^1.9.4",
