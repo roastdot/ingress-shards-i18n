@@ -2,7 +2,7 @@
 
 Interactive map of historic Ingress Shard and XM Anomaly data. The application
 uses React, TypeScript and Material UI, with Leaflet for the 2D map and CesiumJS
-for terrain and globe views.
+for perspective city and globe views.
 
 The map includes:
 
@@ -10,7 +10,7 @@ The map includes:
 -   Season and city views with Portal Ornaments, Target Portals, faction scores,
     Shard movements and links.
 -   Per-wave filtering for multi-wave events.
--   A CesiumJS 3D globe and terrain view with elevated curved links and animated
+-   A CesiumJS 3D globe and city view with elevated curved links and animated
     Shards.
 -   English, Simplified Chinese and Traditional Chinese localisation.
 -   Independent light and dark themes with matching CartoDB base layers.
@@ -35,15 +35,15 @@ Displays Portal, Shard, Link and faction-score details for an individual event
 city. Multi-wave events can be filtered to inspect a single wave while keeping
 the full score table visible.
 
-![Helsinki Wave 5 with Portals, Shards, links and faction scores](docs/assets/site-wave-2d.jpg)
+![Helsinki Wave 2 with Portals, Shards, links and faction scores](docs/assets/site-wave-2d.jpg)
 
 ## CesiumJS 3D view
 
-Switch to the CesiumJS view for a globe-scale season overview or a terrain-aware
+Switch to the CesiumJS view for a globe-scale season overview or a perspective
 city view. City labels and event artwork stay readable on the visible hemisphere;
 at city scale, links rise smoothly above the map and meet their Portals while
-Shard movement and Target artwork follow the terrain. Season and wave controls
-remain available without returning to 2D.
+Shard movement and Target artwork stay aligned with the map surface. Season and
+wave controls remain available without returning to 2D.
 
 The 3D presentation was inspired by
 [homanw104/iitc-next](https://github.com/homanw104/iitc-next) and its
@@ -51,7 +51,7 @@ The 3D presentation was inspired by
 
 ![CesiumJS season globe with the 3D season picker](docs/assets/series-overview-3d.jpg)
 
-![CesiumJS terrain view with curved links, Shards, Targets and the wave picker](docs/assets/site-terrain-3d.jpg)
+![CesiumJS city view with curved links, Shards, Targets and the wave picker](docs/assets/site-terrain-3d.jpg)
 
 ## Themes
 
@@ -131,7 +131,8 @@ Cloudflare automatically injects `CF_PAGES_BRANCH` and
 in the details panel, for example `main@d115305`. `APP_VERSION` can still be set
 explicitly when a custom version label is required.
 
-Cloudflare builds emit root-relative asset URLs (`/main.bundle.js`). Regular
+Cloudflare builds emit root-relative, content-hashed asset URLs (for example,
+`/main.88090dbc.js`). Regular
 non-Cloudflare production builds retain the GitHub Pages project subpath.
 
 The build runs the geocoder, processes and validates the source data, performs
