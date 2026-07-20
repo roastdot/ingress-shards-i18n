@@ -1,12 +1,17 @@
 # Ingress Shards Map
 
-Interactive React and Leaflet map of Ingress Shard data. The application is
-written in TypeScript and uses Material UI for its responsive interface.
+Interactive map of historic Ingress Shard and XM Anomaly data. The application
+uses React, TypeScript and Material UI, with Leaflet for the 2D map and CesiumJS
+for terrain and globe views.
 
 The map includes:
 
 -   Shard jump JSON retrieved from the [Ingress Intel](https://intel.ingress.com/) site.
--   Series, site, Portal Ornament, Target Portal, score and Shard movement views.
+-   Season and city views with Portal Ornaments, Target Portals, faction scores,
+    Shard movements and links.
+-   Per-wave filtering for multi-wave events.
+-   A CesiumJS 3D globe and terrain view with elevated curved links and animated
+    Shards.
 -   English, Simplified Chinese and Traditional Chinese localisation.
 -   Independent light and dark themes with matching CartoDB base layers.
 
@@ -15,19 +20,44 @@ This is a fork of [ingress-shards/ingress-shards.github.io](https://github.com/i
 The original MIT copyright and permission notice is retained in
 [LICENSE](LICENSE).
 
-## Series View
+## Season overview
 
 Displays all event sites for a selected series, including official season
-points, event-type markers and faction results where available.
+points, event-type artwork, upcoming dates and faction results where available.
+The season picker can switch between the archived event series or load custom
+data.
 
-<img src="docs/assets/apollo-series-overview.png" alt="Apollo season overview showing event sites and season points">
+![Apollo season overview in the 2D map](docs/assets/series-overview-2d.jpg)
 
-## Site View
+## City and wave view
 
 Displays Portal, Shard, Link and faction-score details for an individual event
-site. Multi-wave events can be filtered to inspect a specific wave.
+city. Multi-wave events can be filtered to inspect a single wave while keeping
+the full score table visible.
 
-<img src="docs/assets/apollo-site-view.png" alt="Apollo XM Anomaly site view for Helsinki">
+![Helsinki Wave 5 with Portals, Shards, links and faction scores](docs/assets/site-wave-2d.jpg)
+
+## CesiumJS 3D view
+
+Switch to the CesiumJS view for a globe-scale season overview or a terrain-aware
+city view. City labels and event artwork stay readable on the visible hemisphere;
+at city scale, links rise smoothly above the map and meet their Portals while
+Shard movement and Target artwork follow the terrain. Season and wave controls
+remain available without returning to 2D.
+
+The 3D presentation was inspired by
+[homanw104/iitc-next](https://github.com/homanw104/iitc-next) and its
+[r/Ingress introduction](https://www.reddit.com/r/Ingress/comments/1ty6av5/i_made_a_new_iitc/).
+
+![CesiumJS season globe with the 3D season picker](docs/assets/series-overview-3d.jpg)
+
+![CesiumJS terrain view with curved links, Shards, Targets and the wave picker](docs/assets/site-terrain-3d.jpg)
+
+## Themes
+
+Both 2D and 3D views follow the independent light and dark interface themes.
+
+![Helsinki event map in the light theme](docs/assets/site-light-theme.jpg)
 
 ## Localisation
 
@@ -35,7 +65,7 @@ The interface supports English (UK), English (US), Simplified Chinese,
 Traditional Chinese (Hong Kong) and Traditional Chinese (Taiwan). Official
 Ingress event names remain untranslated when no official localisation exists.
 
-<img src="docs/assets/apollo-i18n-zh-hk.png" alt="Apollo site view in Traditional Chinese for Hong Kong">
+![Apollo site view in Traditional Chinese for Hong Kong](docs/assets/localisation-zh-hk.jpg)
 
 ## Assumptions made
 
