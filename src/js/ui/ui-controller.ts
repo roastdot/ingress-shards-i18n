@@ -8,6 +8,7 @@ import { getDefaultSeriesId, getSeriesMetadata, getSeriesGeocode, getSeriesResul
 import { CUSTOM_SERIES_ID } from "../constants.js";
 import { t } from "../i18n/index.js";
 import { updateSeasonScore } from "./react/seasonScoreStore.js";
+import { restartShardMotionAfterMapMove } from "./map/shard-motion.js";
 
 let IS_MAP_INTERACTION_ACTIVE = false;
 
@@ -106,14 +107,8 @@ const mapDispatchers = {
         if (siteBounds && siteBounds.isValid()) {
             const flyAction = () => { map!.flyToBounds(siteBounds!, { duration: 1 }); }
             const viewAction = () => { (map!.fitBounds as (bounds: L.LatLngBounds, extraArg: number, options: L.FitBoundsOptions) => void)(siteBounds!, 2, { duration: 0 }); }
-            performMapMoveAction(flyAction, viewAction);
+            restartShardMotionAfterMapMove(map, () => performMapMoveAction(flyAction, viewAction));
         }
-
-        map.once('moveend', (event: L.LeafletEvent) => {
-            (event.target as L.Map).eachLayer(shardLayer => {
-                (shardLayer as MapLayer).startShardMotion?.();
-            })
-        });
     },
     displayWaveDetails: (seriesId: string, siteNavigationId: string, waveId: string) => {
         if (!map) return;
@@ -166,14 +161,8 @@ const mapDispatchers = {
         if (siteBounds && siteBounds.isValid()) {
             const flyAction = () => { map!.flyToBounds(siteBounds!, { duration: 1 }); }
             const viewAction = () => { (map!.fitBounds as (bounds: L.LatLngBounds, extraArg: number, options: L.FitBoundsOptions) => void)(siteBounds!, 2, { duration: 0 }); }
-            performMapMoveAction(flyAction, viewAction);
+            restartShardMotionAfterMapMove(map, () => performMapMoveAction(flyAction, viewAction));
         }
-
-        map.once('moveend', (event: L.LeafletEvent) => {
-            (event.target as L.Map).eachLayer(shardLayer => {
-                (shardLayer as MapLayer).startShardMotion?.();
-            })
-        });
     },
     showDefaultView: () => {
         const defaultSeriesId = getDefaultSeriesId();

@@ -24,50 +24,76 @@ test("curved links meet both portal elevations without overshooting", async () =
 
     const renderer = readFileSync(new URL("../src/js/ui/map/map-3d.ts", import.meta.url), "utf8");
     assert.match(renderer, /Cartesian3\.fromDegrees/);
-    assert.match(renderer, /getElevationForLatLng/);
     assert.match(renderer, /getLinkArcOffsetMeters/);
     assert.match(renderer, /arcType:\s*ArcType\.NONE/);
     assert.doesNotMatch(renderer, /PolylineDashMaterialProperty/);
     assert.match(renderer, /camera\.lookAt\(target, offset\)/);
 });
 
-test("3D renderer is CesiumJS with local static assets and custom terrain", () => {
+test("3D renderer uses stable Cesium ellipsoid terrain and hashed production assets", () => {
     const renderer = readFileSync(new URL("../src/js/ui/map/map-3d.ts", import.meta.url), "utf8");
     const webpack = readFileSync(new URL("../webpack.common.js", import.meta.url), "utf8");
+    const productionWebpack = readFileSync(new URL("../webpack.prod.js", import.meta.url), "utf8");
 
     assert.match(renderer, /from ["']cesium["']/);
-    assert.match(renderer, /CustomHeightmapTerrainProvider/);
+    assert.match(renderer, /EllipsoidTerrainProvider/);
+    assert.doesNotMatch(renderer, /CustomHeightmapTerrainProvider|getTerrariumHeightmap|getElevationForLatLng/);
     assert.match(renderer, /UrlTemplateImageryProvider/);
     assert.doesNotMatch(renderer, /maplibre|deck\.gl|map3d-link-overlay/i);
     assert.match(webpack, /CESIUM_BASE_URL/);
     for (const asset of ["Workers", "ThirdParty", "Assets", "Widgets"]) {
         assert.match(webpack, new RegExp(`Build.*Cesium.*${asset}`, "s"));
     }
+    assert.match(productionWebpack, /filename:\s*["']\[name\]\.\[contenthash:8\]\.js["']/);
 });
 
-test("coarse 3D terrain stays flat while city tiles cold-load", async () => {
-    const { getTerrariumHeightmap } = await import("../src/js/ui/map/elevation.js");
-    const originalFetch = globalThis.fetch;
-    let terrainRequests = 0;
-    globalThis.fetch = async () => {
-        terrainRequests++;
-        throw new Error("coarse terrain must not hit the network");
+test("3D view mode survives refresh without changing the active route", async () => {
+    const {
+        is3DViewRequested,
+        update3DViewUrl,
+    } = await import("../src/js/ui/map/map-view-state.js");
+
+    const overview = update3DViewUrl("https://example.test/?lang=zh-HK#/2026-apollo", true);
+    const city = update3DViewUrl("https://example.test/#/2026-apollo/helsinki/wave-5", true);
+    assert.equal(overview, "/?lang=zh-HK&view=3d#/2026-apollo");
+    assert.equal(city, "/?view=3d#/2026-apollo/helsinki/wave-5");
+    assert.equal(is3DViewRequested("?view=3d"), true);
+    assert.equal(is3DViewRequested("?view=2d"), false);
+    assert.equal(
+        update3DViewUrl(`https://example.test${city}`, false),
+        "/#/2026-apollo/helsinki/wave-5",
+    );
+
+    const index = readFileSync(new URL("../src/js/index.tsx", import.meta.url), "utf8");
+    const manager = readFileSync(new URL("../src/js/ui/map/map-manager.ts", import.meta.url), "utf8");
+    const renderer = readFileSync(new URL("../src/js/ui/map/map-3d.ts", import.meta.url), "utf8");
+    assert.match(index, /restoreRequested3DView\(map\)/);
+    assert.match(manager, /set3DViewRequested\(true\)/);
+    assert.match(renderer, /set3DViewRequested\(false\)/);
+});
+
+test("2D shard motion restarts after a synchronous refresh move", async () => {
+    const { restartShardMotionAfterMapMove } = await import("../src/js/ui/map/shard-motion.js");
+    let moveEnd: ((event: { target: unknown }) => void) | undefined;
+    let starts = 0;
+    const layers = [
+        { startShardMotion: () => { starts++; } },
+        {},
+    ];
+    const map = {
+        once: (event: string, listener: (event: { target: unknown }) => void) => {
+            assert.equal(event, "moveend");
+            moveEnd = listener;
+        },
+        eachLayer: (visitor: (layer: unknown) => void) => layers.forEach(visitor),
     };
 
-    try {
-        const heightmap = await getTerrariumHeightmap(0, 0, 0, 32, 32);
-        assert.equal(terrainRequests, 0);
-        assert.equal(heightmap.length, 32 * 32);
-        assert.ok(heightmap.every(height => height === 0));
-    } finally {
-        globalThis.fetch = originalFetch;
-    }
-});
+    restartShardMotionAfterMapMove(map, () => {
+        assert.ok(moveEnd, "moveend must be registered before a synchronous fitBounds");
+        moveEnd({ target: map });
+    });
 
-test("3D terrain does not render tile skirts through the city view", () => {
-    const renderer = readFileSync(new URL("../src/js/ui/map/map-3d.ts", import.meta.url), "utf8");
-
-    assert.match(renderer, /scene\.globe\.showSkirts\s*=\s*false/);
+    assert.equal(starts, 1);
 });
 
 test("3D shard icons finish ground-clamped at their destination portal", () => {
@@ -76,7 +102,6 @@ test("3D shard icons finish ground-clamped at their destination portal", () => {
     assert.match(source, /createShardEntity/);
     assert.match(source, /motionShardEntities/);
     assert.match(source, /HeightReference\.CLAMP_TO_GROUND/);
-    assert.match(source, /point\.groundHeight/);
     assert.match(source, /progress\s*>=\s*1/);
     assert.match(source, /shardIconUrl/);
 });

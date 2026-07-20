@@ -6,6 +6,7 @@ import { IS_TOUCH_SUPPORTED } from "../event-handler.js";
 import { decodeElevation, getTileElevationGrid, hsvToRgb, computeHillshadeIntensity } from "./elevation.js";
 import { getColorMode, subscribeColorMode } from "../react/colorModeStore.js";
 import { t } from "../../i18n/index.js";
+import { is3DViewRequested, set3DViewRequested } from "./map-view-state.js";
 
 // leaflet-providers has no type declarations of its own — `.provider(...)` is
 // a runtime augmentation of L.tileLayer.
@@ -284,8 +285,8 @@ function createView3DToggle(map: L.Map): L.Control {
                 // Lazily loaded so CesiumJS stays out of the main bundle
                 // until someone actually opens the 3D view.
                 try {
-                    const { show3DView } = await import('./map-3d.js');
-                    show3DView(map);
+                    await activate3DView(map);
+                    set3DViewRequested(true);
                 } catch (error) {
                     console.error('Unable to load the 3D map', error);
                     button.title = t('map.view_3d_error');
@@ -298,6 +299,20 @@ function createView3DToggle(map: L.Map): L.Control {
         },
     });
     return new View3DToggle();
+}
+
+async function activate3DView(map: L.Map): Promise<void> {
+    const { show3DView } = await import('./map-3d.js');
+    show3DView(map);
+}
+
+export async function restoreRequested3DView(map: L.Map): Promise<void> {
+    if (!is3DViewRequested()) return;
+    try {
+        await activate3DView(map);
+    } catch (error) {
+        console.error('Unable to restore the 3D map', error);
+    }
 }
 
 function keepMapSizedToViewport(map: L.Map): void {

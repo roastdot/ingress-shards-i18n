@@ -8,7 +8,6 @@ import {
     ConstantProperty,
     ConstantPositionProperty,
     CallbackProperty,
-    CustomHeightmapTerrainProvider,
     Ellipsoid,
     EllipsoidTerrainProvider,
     Entity,
@@ -26,7 +25,6 @@ import {
     UrlTemplateImageryProvider,
     VerticalOrigin,
     Viewer,
-    WebMercatorTilingScheme,
 } from "cesium";
 import "cesium/Build/Cesium/Widgets/widgets.css";
 import { getColorMode, subscribeColorMode } from "../react/colorModeStore.js";
@@ -34,15 +32,14 @@ import { t } from "../../i18n/index.js";
 import { getAllSeriesIds, getSeriesMetadata } from "../../data/data-store.js";
 import { navigate } from "../../router.js";
 import { getSiteLayers } from "../site-renderer.js";
-import { getElevationForLatLng, getTerrariumHeightmap } from "./elevation.js";
 import {
     getLinkArcOffsetMeters,
     getSeriesGlobeCenter,
     interpolateLongitude,
 } from "./map-3d-geometry.js";
 import shardIconUrl from "../../../images/abaddon1_shard.png";
+import { set3DViewRequested } from "./map-view-state.js";
 
-const TERRAIN_SAMPLES = 32;
 const PATH_SAMPLE_INTERVAL_METERS = 75;
 const MIN_SAMPLES_PER_SEGMENT = 24;
 const MAX_SAMPLES_PER_SEGMENT = 48;
@@ -70,7 +67,6 @@ interface RoutePoint {
     lng: number;
     lat: number;
     arcHeight: number;
-    groundHeight?: number;
 }
 
 interface ShardAnimation {
@@ -78,22 +74,6 @@ interface ShardAnimation {
     cumulative: number[];
     totalDistance: number;
     duration: number;
-}
-
-function createTerrainProvider(): CustomHeightmapTerrainProvider {
-    return new CustomHeightmapTerrainProvider({
-        width: TERRAIN_SAMPLES,
-        height: TERRAIN_SAMPLES,
-        tilingScheme: new WebMercatorTilingScheme(),
-        credit: "Terrain © Mapzen/AWS",
-        callback: (x, y, level) => getTerrariumHeightmap(
-            level,
-            x,
-            y,
-            TERRAIN_SAMPLES,
-            TERRAIN_SAMPLES,
-        ),
-    });
 }
 
 function createImageryProvider(mode: "light" | "dark"): UrlTemplateImageryProvider {
@@ -110,7 +90,7 @@ function createImageryProvider(mode: "light" | "dark"): UrlTemplateImageryProvid
 class View3D {
     private readonly leafletMap: L.Map;
     private readonly container: HTMLDivElement;
-    private readonly siteTerrainProvider = createTerrainProvider();
+    private readonly siteTerrainProvider = new EllipsoidTerrainProvider();
     private readonly overviewTerrainProvider = new EllipsoidTerrainProvider();
     private viewer: Viewer | null = null;
     private clickHandler: ScreenSpaceEventHandler | null = null;
@@ -176,6 +156,7 @@ class View3D {
         this.container.classList.remove("map3d-active");
         this.leafletMap.getContainer().style.visibility = "";
         this.leafletMap.invalidateSize();
+        set3DViewRequested(false);
     }
 
     private createViewer(): void {
@@ -198,11 +179,6 @@ class View3D {
 
         const scene = this.viewer.scene;
         scene.globe.depthTestAgainstTerrain = true;
-        // Heightmap skirts hide LOD seams by extending every tile hundreds of
-        // metres downward. At the shallow city camera angle those extensions
-        // become visible as black spikes, so prefer tiny transient seams while
-        // neighbouring tiles refine over large false geometry.
-        scene.globe.showSkirts = false;
         scene.globe.showGroundAtmosphere = true;
         scene.screenSpaceCameraController.minimumZoomDistance = 20;
         scene.backgroundColor = getColorMode() === "dark"
@@ -662,13 +638,12 @@ class View3D {
         const latLngs = flattenLatLngs(polyline.getLatLngs());
         if (latLngs.length < 2) return;
         const route = sampleRoute(latLngs);
-        const elevations = await Promise.all(route.map(point => getElevationForLatLng(point.lat, point.lng)));
         if (!this.viewer || generation !== this.mirrorGeneration || !this.active) return;
 
-        const positions = route.map((point, index) => Cartesian3.fromDegrees(
+        const positions = route.map(point => Cartesian3.fromDegrees(
             point.lng,
             point.lat,
-            (elevations[index] ?? 0) + point.arcHeight,
+            point.arcHeight,
         ));
         const options = polyline.options;
         const color = colorFromCss(options.color ?? "#3388ff", options.opacity ?? 1);
@@ -708,13 +683,10 @@ class View3D {
 
     private async startShardAnimations(animations: ShardAnimation[], generation: number): Promise<void> {
         if (!this.viewer || animations.length === 0) return;
-        await Promise.all(animations.flatMap(animation => animation.points.map(async point => {
-            point.groundHeight = (await getElevationForLatLng(point.lat, point.lng)) ?? 0;
-        })));
         if (!this.viewer || !this.active || generation !== this.mirrorGeneration) return;
         this.motionShardEntities = animations.map(animation => {
             const first = animation.points[0];
-            return this.createShardEntity(first.lng, first.lat, (first.groundHeight ?? 0) + first.arcHeight);
+            return this.createShardEntity(first.lng, first.lat, first.arcHeight);
         });
 
         this.shardAnimationTimer = setTimeout(() => {
@@ -742,7 +714,7 @@ class View3D {
                             Cartesian3.fromDegrees(
                                 point.lng,
                                 point.lat,
-                                (point.groundHeight ?? 0) + point.arcHeight,
+                                point.arcHeight,
                             ),
                         );
                     }
@@ -843,8 +815,6 @@ function pointAlongPath(animation: ShardAnimation, progress: number): RoutePoint
         lng: interpolateLongitude(from.lng, to.lng, ratio),
         lat: from.lat + (to.lat - from.lat) * ratio,
         arcHeight: from.arcHeight + (to.arcHeight - from.arcHeight) * ratio,
-        groundHeight: (from.groundHeight ?? 0)
-            + ((to.groundHeight ?? 0) - (from.groundHeight ?? 0)) * ratio,
     };
 }
 

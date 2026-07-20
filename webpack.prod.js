@@ -26,6 +26,7 @@ export default (env) => {
     return merge(common(env, { appVersion }), {
         mode: 'production',
         output: {
+            filename: '[name].[contenthash:8].js',
             publicPath,
         }
     });
