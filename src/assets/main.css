@@ -706,17 +706,17 @@ table.ingress-event-scores tfoot td {
     color: var(--text-secondary);
 }
 
-.leaflet-container .leaflet-tooltip a.intel-link,
-.leaflet-container .leaflet-tooltip a.intel-link:link,
-.leaflet-container .leaflet-tooltip a.intel-link:visited,
-.leaflet-container .leaflet-tooltip a.intel-link:hover,
-.leaflet-container .leaflet-tooltip a.intel-link:focus,
-.leaflet-container .leaflet-tooltip a.intel-link:active {
+.leaflet-container a.intel-link,
+.leaflet-container a.intel-link:link,
+.leaflet-container a.intel-link:visited,
+.leaflet-container a.intel-link:hover,
+.leaflet-container a.intel-link:focus,
+.leaflet-container a.intel-link:active {
     color: var(--intel-link) !important;
 }
 
-.leaflet-container .leaflet-tooltip a.intel-link:hover,
-.leaflet-container .leaflet-tooltip a.intel-link:focus-visible {
+.leaflet-container a.intel-link:hover,
+.leaflet-container a.intel-link:focus-visible {
     text-decoration: underline;
 }
 
