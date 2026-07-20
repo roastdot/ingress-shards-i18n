@@ -67,6 +67,12 @@ export function getTileElevationGrid(tile: CanvasImageSource, ctx: CanvasRenderi
 const tileCache = new Map<string, Uint8ClampedArray>();
 const tileRequests = new Map<string, Promise<Uint8ClampedArray | null>>();
 const MAX_CACHED_TERRAIN_TILES = 128;
+// At a city-scale camera distance, Cesium can render the skirts of coarse
+// world terrain before the local tiles arrive. Those kilometre-scale height
+// ranges surround the camera and appear as tall vertical spikes on a cold
+// cache. Keep the world pyramid flat until tiles are local enough to provide
+// useful terrain detail; Cesium then refines into real elevation normally.
+const MIN_REAL_TERRAIN_LEVEL = 12;
 
 function cacheTile(key: string, data: Uint8ClampedArray): void {
     tileCache.set(key, data);
@@ -122,6 +128,8 @@ export async function getTerrariumHeightmap(
     width: number,
     height: number,
 ): Promise<Float32Array> {
+    if (z < MIN_REAL_TERRAIN_LEVEL) return new Float32Array(width * height);
+
     const sourceZ = Math.min(15, z);
     const scale = 2 ** (z - sourceZ);
     const sourceX = Math.floor(x / scale);

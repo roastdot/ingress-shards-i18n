@@ -45,6 +45,25 @@ test("3D renderer is CesiumJS with local static assets and custom terrain", () =
     }
 });
 
+test("coarse 3D terrain stays flat while city tiles cold-load", async () => {
+    const { getTerrariumHeightmap } = await import("../src/js/ui/map/elevation.js");
+    const originalFetch = globalThis.fetch;
+    let terrainRequests = 0;
+    globalThis.fetch = async () => {
+        terrainRequests++;
+        throw new Error("coarse terrain must not hit the network");
+    };
+
+    try {
+        const heightmap = await getTerrariumHeightmap(0, 0, 0, 32, 32);
+        assert.equal(terrainRequests, 0);
+        assert.equal(heightmap.length, 32 * 32);
+        assert.ok(heightmap.every(height => height === 0));
+    } finally {
+        globalThis.fetch = originalFetch;
+    }
+});
+
 test("3D shard icons finish ground-clamped at their destination portal", () => {
     const source = readFileSync(new URL("../src/js/ui/map/map-3d.ts", import.meta.url), "utf8");
 
