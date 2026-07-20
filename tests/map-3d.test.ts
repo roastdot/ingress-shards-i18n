@@ -64,6 +64,12 @@ test("coarse 3D terrain stays flat while city tiles cold-load", async () => {
     }
 });
 
+test("3D terrain does not render tile skirts through the city view", () => {
+    const renderer = readFileSync(new URL("../src/js/ui/map/map-3d.ts", import.meta.url), "utf8");
+
+    assert.match(renderer, /scene\.globe\.showSkirts\s*=\s*false/);
+});
+
 test("3D shard icons finish ground-clamped at their destination portal", () => {
     const source = readFileSync(new URL("../src/js/ui/map/map-3d.ts", import.meta.url), "utf8");
 

@@ -198,6 +198,11 @@ class View3D {
 
         const scene = this.viewer.scene;
         scene.globe.depthTestAgainstTerrain = true;
+        // Heightmap skirts hide LOD seams by extending every tile hundreds of
+        // metres downward. At the shallow city camera angle those extensions
+        // become visible as black spikes, so prefer tiny transient seams while
+        // neighbouring tiles refine over large false geometry.
+        scene.globe.showSkirts = false;
         scene.globe.showGroundAtmosphere = true;
         scene.screenSpaceCameraController.minimumZoomDistance = 20;
         scene.backgroundColor = getColorMode() === "dark"
