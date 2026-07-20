@@ -28,6 +28,8 @@ interface SiteMarker extends L.Marker {
     _map3dAccentColor?: string;
     _map3dLabel?: string;
     _map3dNavigate?: boolean;
+    _map3dBadge?: string;
+    _map3dWinnerImageUrl?: string;
 }
 
 const seriesLayerCache = new Map<string, SeriesLayer>();
@@ -129,6 +131,8 @@ function renderSeriesLayer(seriesId: string): SeriesLayer {
         siteMarker._siteId = site.id;
         siteMarker._map3dImageUrl = eventLogoUrl;
         siteMarker._map3dLabel = site.name;
+        siteMarker._map3dBadge = isAnomalyMarker ? '' : eventTypeLabel;
+        siteMarker._map3dWinnerImageUrl = factionLogoUrl ?? undefined;
         siteMarker._map3dAccentColor = outcome === 'RES'
             ? '#0088ff'
             : outcome === 'ENL'

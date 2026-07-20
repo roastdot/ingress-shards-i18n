@@ -60,6 +60,7 @@ const dictionaries: Record<string, Record<string, string>> = {
     'map.view_3d': '3D view (terrain & globe)',
     'map.view_2d': 'Back to 2D map',
     'map.view_3d_error': 'Unable to load 3D view. Click to retry.',
+    'map.select_series': 'Season',
 
     'series.active_status': 'Event active — {remaining} remaining',
     'series.upcoming_status': 'Event has not started — {remaining} remaining',
@@ -178,6 +179,7 @@ const dictionaries: Record<string, Record<string, string>> = {
     'map.view_3d': '3D 视图（地形与地球）',
     'map.view_2d': '返回 2D 地图',
     'map.view_3d_error': '无法加载 3D 视图。点击重试。',
+    'map.select_series': '赛季',
 
     'series.active_status': '活动进行中，剩余 {remaining}',
     'series.upcoming_status': '活动尚未开始，距离开始还有 {remaining}',
@@ -293,6 +295,7 @@ const dictionaries: Record<string, Record<string, string>> = {
     'map.view_3d': '3D 檢視（地形與地球）',
     'map.view_2d': '返回 2D 地圖',
     'map.view_3d_error': '無法載入 3D 檢視。點擊重試。',
+    'map.select_series': '賽季',
 
     'series.active_status': '活動進行中，剩餘 {remaining}',
     'series.upcoming_status': '活動尚未開始，距離開始尚有 {remaining}',
@@ -408,6 +411,7 @@ const dictionaries: Record<string, Record<string, string>> = {
     'map.view_3d': '3D 檢視（地形與地球）',
     'map.view_2d': '返回 2D 地圖',
     'map.view_3d_error': '無法載入 3D 檢視。點按重試。',
+    'map.select_series': '賽季',
 
     'series.active_status': '活動進行中，剩餘 {remaining}',
     'series.upcoming_status': '活動尚未開始，距離開始還有 {remaining}',

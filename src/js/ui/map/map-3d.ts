@@ -7,7 +7,9 @@ import {
     Color,
     ConstantProperty,
     ConstantPositionProperty,
+    CallbackProperty,
     CustomHeightmapTerrainProvider,
+    Ellipsoid,
     EllipsoidTerrainProvider,
     Entity,
     HeightReference,
@@ -29,6 +31,9 @@ import {
 import "cesium/Build/Cesium/Widgets/widgets.css";
 import { getColorMode, subscribeColorMode } from "../react/colorModeStore.js";
 import { t } from "../../i18n/index.js";
+import { getAllSeriesIds, getSeriesMetadata } from "../../data/data-store.js";
+import { navigate } from "../../router.js";
+import { getSiteLayers } from "../site-renderer.js";
 import { getElevationForLatLng, getTerrariumHeightmap } from "./elevation.js";
 import {
     getLinkArcOffsetMeters,
@@ -57,6 +62,8 @@ interface MirrorMarker extends L.Marker {
     _map3dAccentColor?: string;
     _map3dLabel?: string;
     _map3dNavigate?: boolean;
+    _map3dBadge?: string;
+    _map3dWinnerImageUrl?: string;
 }
 
 interface RoutePoint {
@@ -108,6 +115,14 @@ class View3D {
     private viewer: Viewer | null = null;
     private clickHandler: ScreenSpaceEventHandler | null = null;
     private exitControl: HTMLDivElement | null = null;
+    private controlHost: HTMLDivElement | null = null;
+    private seasonToggle: HTMLButtonElement | null = null;
+    private seasonMenu: HTMLDivElement | null = null;
+    private readonly seasonButtons = new Map<string, HTMLButtonElement>();
+    private waveControl: HTMLDivElement | null = null;
+    private waveMenu: HTMLDivElement | null = null;
+    private waveToggle: HTMLButtonElement | null = null;
+    private currentWaveSiteKey = "";
     private popup: HTMLDivElement | null = null;
     private readonly popupHtmlByEntityId = new Map<string, string>();
     private readonly clickActionByEntityId = new Map<string, () => void>();
@@ -116,6 +131,7 @@ class View3D {
     private shardAnimationTimer: ReturnType<typeof setTimeout> | null = null;
     private remirrorTimer: ReturnType<typeof setTimeout> | null = null;
     private mirrorGeneration = 0;
+    private seriesOverviewActive = false;
     private active = false;
     private nextEntityId = 0;
     private readonly handleLeafletLayerChange = () => this.scheduleRemirror();
@@ -142,6 +158,7 @@ class View3D {
         if (!this.viewer) this.createViewer();
         this.viewer?.resize();
         this.syncCameraFromLeaflet(false);
+        this.syncRouteControls();
         void this.mirrorLeafletLayers();
 
         this.leafletMap.on("layeradd layerremove", this.handleLeafletLayerChange);
@@ -188,6 +205,7 @@ class View3D {
             : Color.fromCssColorString("#b8d8ef");
 
         this.createExitControl();
+        this.createControlHost();
         this.clickHandler = new ScreenSpaceEventHandler(scene.canvas);
         this.clickHandler.setInputAction((movement: { position: Cartesian2 }) => {
             const picked = scene.pick(movement.position) as { id?: Entity } | undefined;
@@ -224,6 +242,134 @@ class View3D {
         button.addEventListener("click", () => this.hide());
         this.exitControl.appendChild(button);
         this.container.appendChild(this.exitControl);
+    }
+
+    private createControlHost(): void {
+        this.controlHost = document.createElement("div");
+        this.controlHost.className = "map3d-leaflet-controls";
+        this.seasonToggle = document.createElement("button");
+        this.seasonToggle.type = "button";
+        this.seasonToggle.className = "map3d-season-toggle";
+        this.seasonToggle.title = t("map.select_series");
+        this.seasonToggle.setAttribute("aria-label", t("map.select_series"));
+        this.seasonToggle.setAttribute("aria-expanded", "false");
+        this.seasonToggle.addEventListener("click", () => {
+            this.waveControl?.classList.remove("is-open");
+            this.waveToggle?.setAttribute("aria-expanded", "false");
+            const open = this.controlHost?.classList.toggle("is-season-open") ?? false;
+            this.seasonToggle?.setAttribute("aria-expanded", String(open));
+        });
+        this.seasonMenu = document.createElement("div");
+        this.seasonMenu.className = "map3d-season-menu";
+        this.seasonMenu.setAttribute("role", "radiogroup");
+        this.seasonMenu.setAttribute("aria-label", t("map.select_series"));
+        for (const seriesId of getAllSeriesIds()) {
+            const metadata = getSeriesMetadata(seriesId);
+            const option = document.createElement("button");
+            option.type = "button";
+            option.className = "map3d-season-option";
+            option.setAttribute("role", "radio");
+            option.setAttribute("aria-checked", "false");
+            option.textContent = metadata?.year
+                ? `${metadata.year} · ${metadata.name}`
+                : metadata?.name ?? seriesId;
+            option.addEventListener("click", () => {
+                navigate(`#/${seriesId}`);
+                this.controlHost?.classList.remove("is-season-open");
+                this.seasonToggle?.setAttribute("aria-expanded", "false");
+            });
+            this.seasonButtons.set(seriesId, option);
+            this.seasonMenu.appendChild(option);
+        }
+        this.controlHost.append(this.seasonToggle, this.seasonMenu);
+        this.createWaveControl();
+        this.container.appendChild(this.controlHost);
+    }
+
+    private createWaveControl(): void {
+        if (!this.controlHost) return;
+        this.waveControl = document.createElement("div");
+        this.waveControl.className = "map3d-wave-control";
+        this.waveToggle = document.createElement("button");
+        this.waveToggle.type = "button";
+        this.waveToggle.className = "map3d-wave-toggle";
+        this.waveToggle.title = t("site.all_waves");
+        this.waveToggle.setAttribute("aria-label", t("site.all_waves"));
+        this.waveToggle.setAttribute("aria-expanded", "false");
+        this.waveToggle.addEventListener("click", () => {
+            this.controlHost?.classList.remove("is-season-open");
+            this.seasonToggle?.setAttribute("aria-expanded", "false");
+            const open = this.waveControl?.classList.toggle("is-open") ?? false;
+            this.waveToggle?.setAttribute("aria-expanded", String(open));
+        });
+        this.waveMenu = document.createElement("div");
+        this.waveMenu.className = "map3d-wave-menu";
+        this.waveMenu.setAttribute("role", "radiogroup");
+        this.waveMenu.setAttribute("aria-label", t("site.all_waves"));
+        this.waveControl.append(this.waveToggle, this.waveMenu);
+        this.controlHost.appendChild(this.waveControl);
+    }
+
+    private syncSeasonControl(): void {
+        const seriesId = window.location.hash.split("/")[1];
+        for (const [buttonSeriesId, button] of this.seasonButtons) {
+            const active = buttonSeriesId === seriesId;
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-checked", String(active));
+        }
+    }
+
+    private syncWaveControl(): void {
+        if (!this.waveControl || !this.waveMenu) return;
+        const [, seriesId, siteNavigationId, waveId] = window.location.hash.split("/");
+        if (!seriesId || !siteNavigationId) {
+            this.waveControl.classList.remove("has-waves", "is-open");
+            this.waveToggle?.setAttribute("aria-expanded", "false");
+            this.currentWaveSiteKey = "";
+            return;
+        }
+        const siteId = `${seriesId}-${siteNavigationId}`;
+        const waveLayers = (getSiteLayers(seriesId, siteId) ?? []).filter(layer => (
+            !layer.isOverlay && !layer.hideFromControl
+        ));
+        if (waveLayers.length < 2) {
+            this.waveControl.classList.remove("has-waves", "is-open");
+            this.waveToggle?.setAttribute("aria-expanded", "false");
+            this.currentWaveSiteKey = "";
+            return;
+        }
+        const routeKey = `${seriesId}/${siteNavigationId}`;
+        if (this.currentWaveSiteKey !== routeKey) {
+            this.currentWaveSiteKey = routeKey;
+            this.waveMenu.replaceChildren();
+            for (const waveLayer of waveLayers) {
+                const option = document.createElement("button");
+                option.type = "button";
+                option.className = "map3d-wave-option";
+                option.setAttribute("role", "radio");
+                option.dataset.waveId = waveLayer.id;
+                option.textContent = waveLayer.label;
+                option.addEventListener("click", () => {
+                    const suffix = waveLayer.id === "all" ? "" : `/${waveLayer.id}`;
+                    navigate(`#/${seriesId}/${siteNavigationId}${suffix}`);
+                    this.waveControl?.classList.remove("is-open");
+                    this.waveToggle?.setAttribute("aria-expanded", "false");
+                });
+                this.waveMenu.appendChild(option);
+            }
+        }
+        this.waveControl.classList.add("has-waves");
+        const activeWaveId = waveId || "all";
+        this.waveMenu.querySelectorAll<HTMLButtonElement>(".map3d-wave-option").forEach(button => {
+            const active = button.dataset.waveId === activeWaveId;
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-checked", String(active));
+        });
+    }
+
+    private syncRouteControls(): void {
+        this.syncSeasonControl();
+        this.syncWaveControl();
     }
 
     private openPopup(position: Cartesian2, html: string): void {
@@ -300,13 +446,16 @@ class View3D {
     }
 
     private followLeafletCamera(): void {
-        if (this.active) this.syncCameraFromLeaflet(true);
+        if (this.active && !this.seriesOverviewActive) this.syncCameraFromLeaflet(true);
     }
 
     private scheduleRemirror(): void {
         if (!this.active) return;
         if (this.remirrorTimer) clearTimeout(this.remirrorTimer);
-        this.remirrorTimer = setTimeout(() => void this.mirrorLeafletLayers(), 150);
+        this.remirrorTimer = setTimeout(() => {
+            this.syncRouteControls();
+            void this.mirrorLeafletLayers();
+        }, 150);
     }
 
     private clearMirroredLayers(): void {
@@ -358,9 +507,11 @@ class View3D {
 
         void this.startShardAnimations(animations, generation);
         if (seriesLocations.length > 0) {
+            this.seriesOverviewActive = true;
             this.viewer.terrainProvider = this.overviewTerrainProvider;
             this.showSeriesGlobe(seriesLocations);
         } else {
+            this.seriesOverviewActive = false;
             this.viewer.terrainProvider = this.siteTerrainProvider;
         }
         await Promise.all(linkJobs);
@@ -388,11 +539,29 @@ class View3D {
         if (!image) return null;
         const size = normalizePoint(iconOptions.iconSize) ?? [40, 40];
         const location = marker.getLatLng();
+        const markerPosition = Cartesian3.fromDegrees(location.lng, location.lat);
         const terrainAligned = marker.options.pane === "targetPane";
         const seriesMarker = isSeriesMarker(marker);
+        const seriesBadge = (marker as MirrorMarker)._map3dBadge ?? "";
         const seriesPin = seriesMarker
-            ? createSeriesPinImage(image, (marker as MirrorMarker)._map3dAccentColor ?? "#a9b4c0")
+            ? createSeriesMarkerImage(
+                image,
+                (marker as MirrorMarker)._map3dAccentColor ?? "#a9b4c0",
+                seriesBadge,
+                (marker as MirrorMarker)._map3dWinnerImageUrl,
+            )
             : null;
+        const surfaceNormal = seriesMarker
+            ? Ellipsoid.WGS84.geodeticSurfaceNormal(markerPosition, new Cartesian3())
+            : undefined;
+        const toCamera = new Cartesian3();
+        const visibleOnCurrentHemisphere = seriesMarker
+            ? new CallbackProperty(() => {
+                if (!this.viewer || !surfaceNormal) return false;
+                Cartesian3.subtract(this.viewer.camera.positionWC, markerPosition, toCamera);
+                return Cartesian3.dot(surfaceNormal, toCamera) > 0;
+            }, false)
+            : undefined;
         let entity: Entity;
 
         if (terrainAligned) {
@@ -413,30 +582,37 @@ class View3D {
         } else {
             entity = this.viewer.entities.add({
                 id: this.entityId("marker"),
-                position: Cartesian3.fromDegrees(location.lng, location.lat),
+                position: markerPosition,
                 billboard: {
+                    show: visibleOnCurrentHemisphere,
                     image: seriesPin?.initial ?? image,
-                    width: seriesMarker ? 46 : size[0],
-                    height: seriesMarker ? 60 : size[1],
+                    width: seriesMarker ? seriesPin?.width : size[0],
+                    height: seriesMarker ? seriesPin?.height : size[1],
                     color: Color.WHITE.withAlpha(marker.options.opacity ?? 1),
                     horizontalOrigin: HorizontalOrigin.CENTER,
                     verticalOrigin: seriesMarker ? VerticalOrigin.BOTTOM : VerticalOrigin.CENTER,
                     heightReference: HeightReference.CLAMP_TO_GROUND,
                     scaleByDistance: seriesMarker
-                        ? new NearFarScalar(500_000, 1, 20_000_000, 0.9)
+                        ? new NearFarScalar(500_000, 1, 20_000_000, seriesBadge ? 0.58 : 0.9)
                         : undefined,
                     disableDepthTestDistance: Number.POSITIVE_INFINITY,
                 },
                 label: seriesMarker ? {
+                    show: visibleOnCurrentHemisphere,
                     text: (marker as MirrorMarker)._map3dLabel ?? "",
                     font: "600 13px sans-serif",
                     fillColor: Color.WHITE,
                     outlineColor: Color.BLACK,
                     outlineWidth: 4,
                     style: LabelStyle.FILL_AND_OUTLINE,
-                    pixelOffset: new Cartesian2(0, 18),
+                    pixelOffset: new Cartesian2(0, 20),
                     heightReference: HeightReference.CLAMP_TO_GROUND,
-                    scaleByDistance: new NearFarScalar(500_000, 1, 20_000_000, 0.9),
+                    scaleByDistance: new NearFarScalar(
+                        500_000,
+                        1,
+                        20_000_000,
+                        seriesBadge ? 0.62 : 0.9,
+                    ),
                     disableDepthTestDistance: Number.POSITIVE_INFINITY,
                 } : undefined,
             });
@@ -685,75 +861,99 @@ function isSeriesMarker(marker: L.Marker): boolean {
     return marker.options.icon?.options.className?.includes("event-composite-marker") ?? false;
 }
 
-function createSeriesPinImage(imageUrl: string, accentColor: string): { initial: string; ready: Promise<string> } {
+function createSeriesMarkerImage(
+    imageUrl: string,
+    accentColor: string,
+    badge: string,
+    winnerImageUrl?: string,
+): { initial: string; ready: Promise<string>; width: number; height: number } {
     const canvas = document.createElement("canvas");
-    canvas.width = 96;
-    canvas.height = 128;
+    const logicalWidth = badge ? 100 : 60;
+    const markerWidth = badge ? 90 : 54;
+    const markerHeight = 72;
+    canvas.width = logicalWidth * 2;
+    canvas.height = 160;
     const context = canvas.getContext("2d")!;
 
-    const draw = (image?: HTMLImageElement) => {
+    const draw = (image?: HTMLImageElement, winnerImage?: HTMLImageElement) => {
         context.clearRect(0, 0, canvas.width, canvas.height);
         context.save();
         context.scale(2, 2);
         context.shadowColor = "rgba(0, 0, 0, 0.8)";
-        context.shadowBlur = 5;
+        context.shadowBlur = 4;
         context.shadowOffsetY = 2;
-        context.beginPath();
-        context.moveTo(24, 62);
-        context.bezierCurveTo(21, 55, 4, 43, 4, 23);
-        context.bezierCurveTo(4, 11, 13, 3, 24, 3);
-        context.bezierCurveTo(35, 3, 44, 11, 44, 23);
-        context.bezierCurveTo(44, 43, 27, 55, 24, 62);
-        context.closePath();
-        context.fillStyle = "rgba(5, 12, 22, 0.94)";
-        context.fill();
-        context.shadowColor = "transparent";
-        context.lineWidth = 2;
-        context.strokeStyle = accentColor;
-        context.stroke();
-
-        context.beginPath();
-        context.arc(24, 23, 16.5, 0, Math.PI * 2);
-        context.fillStyle = "rgba(0, 0, 0, 0.76)";
-        context.fill();
-        context.lineWidth = 1;
-        context.strokeStyle = "rgba(255, 255, 255, 0.72)";
-        context.stroke();
-
         if (image) {
-            const sourceSize = Math.min(image.naturalWidth, image.naturalHeight);
-            const sourceX = (image.naturalWidth - sourceSize) / 2;
-            const sourceY = image.naturalHeight > image.naturalWidth
-                ? (image.naturalHeight - sourceSize) * 0.68
-                : (image.naturalHeight - sourceSize) / 2;
-            context.save();
-            context.beginPath();
-            context.arc(24, 23, 15, 0, Math.PI * 2);
-            context.clip();
-            context.drawImage(image, sourceX, sourceY, sourceSize, sourceSize, 9, 8, 30, 30);
-            context.restore();
+            const maxWidth = 50;
+            const maxHeight = badge ? 54 : 70;
+            const scale = Math.min(maxWidth / image.naturalWidth, maxHeight / image.naturalHeight);
+            const width = image.naturalWidth * scale;
+            const height = image.naturalHeight * scale;
+            const imageCenterY = badge ? 31 : 38;
+            const imageX = logicalWidth / 2 - width / 2;
+            const imageY = imageCenterY - height / 2;
+            context.drawImage(image, imageX, imageY, width, height);
+            if (badge) {
+                context.globalCompositeOperation = "source-in";
+                context.fillStyle = accentColor === "#a9b4c0" ? "#e8f4ff" : accentColor;
+                context.fillRect(imageX, imageY, width, height);
+                context.globalCompositeOperation = "source-over";
+            }
         } else {
             context.fillStyle = "#ffffff";
             context.font = "700 12px sans-serif";
             context.textAlign = "center";
             context.textBaseline = "middle";
-            context.fillText("XM", 24, 23);
+            context.fillText("XM", logicalWidth / 2, 34);
+        }
+        context.shadowColor = "transparent";
+
+        if (badge) {
+            context.beginPath();
+            context.roundRect(2, 63, logicalWidth - 4, 12, 6);
+            context.fillStyle = accentColor;
+            context.fill();
+            context.fillStyle = "#ffffff";
+            const fontSize = Math.max(6.5, Math.min(9, 72 / Math.max(1, badge.length) + 3));
+            context.font = `700 ${fontSize}px sans-serif`;
+            context.textAlign = "center";
+            context.textBaseline = "middle";
+            context.fillText(badge, logicalWidth / 2, 69.5, logicalWidth - 10);
+        }
+
+        if (winnerImage) {
+            context.beginPath();
+            const winnerCenterX = logicalWidth - 11;
+            context.arc(winnerCenterX, 67, 10, 0, Math.PI * 2);
+            context.fillStyle = "rgba(5, 12, 22, 0.96)";
+            context.fill();
+            context.lineWidth = 2;
+            context.strokeStyle = accentColor;
+            context.stroke();
+            const scale = Math.min(15 / winnerImage.naturalWidth, 15 / winnerImage.naturalHeight);
+            const width = winnerImage.naturalWidth * scale;
+            const height = winnerImage.naturalHeight * scale;
+            context.drawImage(winnerImage, winnerCenterX - width / 2, 67 - height / 2, width, height);
         }
         context.restore();
     };
 
     draw();
     const initial = canvas.toDataURL("image/png");
-    const ready = new Promise<string>(resolve => {
+    const loadImage = (url?: string): Promise<HTMLImageElement | undefined> => new Promise(resolve => {
+        if (!url) {
+            resolve(undefined);
+            return;
+        }
         const image = new Image();
-        image.onload = () => {
-            draw(image);
-            resolve(canvas.toDataURL("image/png"));
-        };
-        image.onerror = () => resolve(initial);
-        image.src = imageUrl;
+        image.onload = () => resolve(image);
+        image.onerror = () => resolve(undefined);
+        image.src = url;
     });
-    return { initial, ready };
+    const ready = Promise.all([loadImage(imageUrl), loadImage(winnerImageUrl)]).then(([image, winnerImage]) => {
+        draw(image, winnerImage);
+        return canvas.toDataURL("image/png");
+    });
+    return { initial, ready, width: markerWidth, height: markerHeight };
 }
 
 function rectangleAround(lng: number, lat: number, widthMeters: number, heightMeters: number): Rectangle {

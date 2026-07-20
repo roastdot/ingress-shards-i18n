@@ -65,20 +65,33 @@ test("3D target images align with the terrain plane", () => {
     assert.match(source, /heightReference:\s*HeightReference\.CLAMP_TO_GROUND/);
 });
 
-test("series overview markers remain visible and navigable in 3D", () => {
+test("series overview markers use event artwork, controls, and hemisphere culling", () => {
     const source = readFileSync(new URL("../src/js/ui/map/map-3d.ts", import.meta.url), "utf8");
     const seriesRenderer = readFileSync(new URL("../src/js/ui/series-renderer.ts", import.meta.url), "utf8");
 
     assert.match(source, /event-composite-marker/);
     assert.match(source, /_map3dImageUrl/);
-    assert.match(source, /createSeriesPinImage/);
+    assert.match(source, /createSeriesMarkerImage/);
     assert.match(source, /_map3dAccentColor/);
     assert.match(source, /_map3dLabel/);
     assert.match(source, /_map3dNavigate/);
+    assert.match(source, /_map3dWinnerImageUrl/);
+    assert.match(source, /CallbackProperty/);
+    assert.match(source, /Cartesian3\.dot\(surfaceNormal, toCamera\)\s*>\s*0/);
+    assert.match(source, /map3d-leaflet-controls/);
+    assert.match(source, /map3d-season-toggle/);
+    assert.match(source, /map3d-season-option/);
+    assert.match(source, /map3d-wave-toggle/);
+    assert.match(source, /map3d-wave-option/);
+    assert.match(source, /getAllSeriesIds/);
+    assert.match(source, /getSiteLayers/);
+    assert.match(source, /navigate\(`#\/\$\{seriesId\}`\)/);
     assert.match(source, /LabelStyle\.FILL_AND_OUTLINE/);
     assert.match(source, /SERIES_GLOBE_CAMERA_HEIGHT_METERS/);
     assert.match(source, /getSeriesGlobeCenter/);
     assert.match(seriesRenderer, /siteMarker\._map3dImageUrl\s*=\s*eventLogoUrl/);
+    assert.match(seriesRenderer, /siteMarker\._map3dBadge\s*=\s*isAnomalyMarker\s*\?\s*''\s*:\s*eventTypeLabel/);
+    assert.match(seriesRenderer, /siteMarker\._map3dWinnerImageUrl\s*=\s*factionLogoUrl/);
     assert.match(seriesRenderer, /siteMarker\._map3dNavigate\s*=\s*Boolean\(siteData\)\s*&&\s*!isUpcoming/);
     assert.doesNotMatch(source, /marker\.listens\(["']click["']\)/);
     assert.match(source, /marker\.fire\(["']click["']\)/);

@@ -1305,6 +1305,212 @@ hr.tooltip-sub-divider {
     box-shadow: var(--shadow-glass);
 }
 
+.map3d-leaflet-controls {
+    position: absolute;
+    top: max(66px, calc(env(safe-area-inset-top) + 66px));
+    left: max(10px, env(safe-area-inset-left));
+    z-index: 6;
+    width: 44px;
+    height: 44px;
+}
+
+.map3d-season-toggle {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+    box-shadow: var(--shadow-glass);
+    cursor: pointer;
+    position: relative;
+}
+
+.map3d-season-toggle::before {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    background: var(--text-primary);
+    -webkit-mask: url('../images/ingress-icon.svg') center / contain no-repeat;
+    mask: url('../images/ingress-icon.svg') center / contain no-repeat;
+}
+
+.map3d-season-toggle:hover::before,
+.map3d-leaflet-controls.is-season-open .map3d-season-toggle::before {
+    background: var(--color-accent);
+}
+
+.map3d-season-menu {
+    position: absolute;
+    top: 0;
+    left: 52px;
+    display: none;
+    width: min(245px, calc(100vw - 76px));
+    max-height: min(420px, calc(100vh - 90px));
+    overflow: auto;
+    padding: 12px 14px;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+    box-shadow: var(--shadow-glass);
+}
+
+.map3d-leaflet-controls.is-season-open .map3d-season-menu {
+    display: block;
+}
+
+.map3d-season-option {
+    display: block;
+    width: 100%;
+    padding: 4px 4px 4px 20px;
+    border: 0;
+    background: transparent;
+    color: var(--text-primary);
+    font: 600 12px/1.2 sans-serif;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+}
+
+.map3d-season-option::before {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 50%;
+    width: 9px;
+    height: 9px;
+    transform: translateY(-50%);
+    border: 1px solid var(--text-muted);
+    border-radius: 50%;
+}
+
+.map3d-season-option:hover,
+.map3d-season-option.is-active {
+    color: var(--color-accent);
+    background: transparent;
+}
+
+.map3d-season-option.is-active::before {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+    box-shadow: inset 0 0 0 2px var(--glass-bg-solid);
+}
+
+.map3d-season-toggle:focus,
+.map3d-season-option:focus,
+.map3d-wave-toggle:focus,
+.map3d-wave-option:focus {
+    outline: none;
+}
+
+.map3d-season-toggle:focus-visible,
+.map3d-wave-toggle:focus-visible,
+.map3d-season-option:focus-visible,
+.map3d-wave-option:focus-visible {
+    box-shadow: 0 0 0 2px var(--color-accent), var(--shadow-glass);
+}
+
+.map3d-wave-control {
+    position: absolute;
+    top: 52px;
+    left: 0;
+    display: none;
+}
+
+.map3d-wave-control.has-waves {
+    display: block;
+}
+
+.map3d-wave-toggle {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+    box-shadow: var(--shadow-glass);
+    cursor: pointer;
+    position: relative;
+}
+
+.map3d-wave-toggle::before {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    background: var(--text-primary);
+    -webkit-mask: url('../images/shard.svg') center / contain no-repeat;
+    mask: url('../images/shard.svg') center / contain no-repeat;
+}
+
+.map3d-wave-toggle:hover::before,
+.map3d-wave-control.is-open .map3d-wave-toggle::before {
+    background: var(--color-accent);
+}
+
+.map3d-wave-menu {
+    position: absolute;
+    top: 0;
+    left: 52px;
+    display: none;
+    width: 180px;
+    max-height: min(420px, calc(100vh - 142px));
+    overflow: auto;
+    padding: 12px 14px;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+    box-shadow: var(--shadow-glass);
+}
+
+.map3d-wave-control.is-open .map3d-wave-menu {
+    display: block;
+}
+
+.map3d-wave-option {
+    display: block;
+    width: 100%;
+    padding: 4px 4px 4px 20px;
+    border: 0;
+    background: transparent;
+    color: var(--text-primary);
+    font: 600 12px/1.2 sans-serif;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+}
+
+.map3d-wave-option::before {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 50%;
+    width: 9px;
+    height: 9px;
+    transform: translateY(-50%);
+    border: 1px solid var(--text-muted);
+    border-radius: 50%;
+}
+
+.map3d-wave-option:hover,
+.map3d-wave-option.is-active {
+    color: var(--color-accent);
+    background: transparent;
+}
+
+.map3d-wave-option.is-active::before {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+    box-shadow: inset 0 0 0 2px var(--glass-bg-solid);
+}
+
 #map3d .map-view-exit-ctrl button.map-view-toggle-button {
     width: 44px;
     height: 44px;
