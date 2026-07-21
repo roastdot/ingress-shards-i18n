@@ -139,20 +139,36 @@ test("3D portal rings drape over terrain instead of using a planar or screen-fac
     assert.match(portalRenderer, /clampToGround:\s*true/);
     assert.match(portalRenderer, /arcType:\s*ArcType\.GEODESIC/);
     assert.doesNotMatch(portalRenderer, /arcType:\s*ArcType\.NONE/);
-    assert.doesNotMatch(portalRenderer, /point:/);
     assert.doesNotMatch(portalRenderer, /ellipse:/);
 });
 
-test("series overview labels remain legible after distance scaling", () => {
+test("3D portals include a generous invisible center hit target", () => {
     const source = readFileSync(new URL("../src/js/ui/map/map-3d.ts", import.meta.url), "utf8");
-    const labelRenderer = source.slice(
-        source.indexOf("label: seriesMarker"),
-        source.indexOf("} : undefined", source.indexOf("label: seriesMarker")),
+    const portalRenderer = source.slice(
+        source.indexOf("private mirrorCircleMarker"),
+        source.indexOf("private mirrorPolyline"),
     );
 
-    assert.match(labelRenderer, /font:\s*["']600 16px/);
-    assert.match(labelRenderer, /outlineWidth:\s*2/);
-    assert.doesNotMatch(labelRenderer, /outlineWidth:\s*4/);
+    assert.match(portalRenderer, /point:/);
+    assert.match(portalRenderer, /pixelSize:\s*PORTAL_HIT_SIZE_PIXELS/);
+    assert.match(portalRenderer, /heightReference:\s*HeightReference\.CLAMP_TO_GROUND/);
+    assert.match(portalRenderer, /disableDepthTestDistance:\s*Number\.POSITIVE_INFINITY/);
+});
+
+test("interactive 3D entities show a pointer cursor on hover", () => {
+    const source = readFileSync(new URL("../src/js/ui/map/map-3d.ts", import.meta.url), "utf8");
+
+    assert.match(source, /ScreenSpaceEventType\.MOUSE_MOVE/);
+    assert.match(source, /style\.cursor\s*=\s*interactive\s*\?\s*["']pointer["']\s*:\s*["']["']/);
+});
+
+test("series overview labels are rasterized into marker art instead of Cesium glyph atlases", () => {
+    const source = readFileSync(new URL("../src/js/ui/map/map-3d.ts", import.meta.url), "utf8");
+
+    assert.doesNotMatch(source, /label:\s*seriesMarker/);
+    assert.match(source, /createSeriesMarkerImage\([\s\S]*?_map3dLabel/);
+    assert.match(source, /context\.strokeText\(label/);
+    assert.match(source, /context\.fillText\(label/);
 });
 
 test("series overview markers use event artwork, controls, and hemisphere culling", () => {
@@ -176,7 +192,7 @@ test("series overview markers use event artwork, controls, and hemisphere cullin
     assert.match(source, /getAllSeriesIds/);
     assert.match(source, /getSiteLayers/);
     assert.match(source, /navigate\(`#\/\$\{seriesId\}`\)/);
-    assert.match(source, /LabelStyle\.FILL_AND_OUTLINE/);
+    assert.doesNotMatch(source, /LabelStyle\.FILL_AND_OUTLINE/);
     assert.match(source, /SERIES_GLOBE_CAMERA_HEIGHT_METERS/);
     assert.match(source, /getSeriesGlobeCenter/);
     assert.match(seriesRenderer, /siteMarker\._map3dImageUrl\s*=\s*eventLogoUrl/);

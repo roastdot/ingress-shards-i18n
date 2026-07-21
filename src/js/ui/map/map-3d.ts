@@ -18,7 +18,6 @@ import {
     HorizontalOrigin,
     ImageMaterialProperty,
     Ion,
-    LabelStyle,
     Math as CesiumMath,
     Matrix4,
     NearFarScalar,
@@ -59,6 +58,7 @@ const MAX_SAMPLES_PER_SEGMENT = 48;
 const SHARD_ANIMATION_START_DELAY_MS = 1100;
 const TARGET_SIZE_METERS = 32;
 const TARGET_TERRAIN_OFFSET_METERS = 1.5;
+const PORTAL_HIT_SIZE_PIXELS = 30;
 const SERIES_GLOBE_CAMERA_HEIGHT_METERS = 12_000_000;
 
 interface MotionPolyline extends L.Polyline {
@@ -229,6 +229,15 @@ class View3D {
             if (html) this.openPopup(movement.position, html);
             else this.closePopup();
         }, ScreenSpaceEventType.LEFT_CLICK);
+        this.clickHandler.setInputAction((movement: { endPosition: Cartesian2 }) => {
+            const picked = scene.pick(movement.endPosition) as { id?: Entity } | undefined;
+            const entity = picked?.id;
+            const interactive = Boolean(entity && (
+                this.popupHtmlByEntityId.has(entity.id)
+                || this.clickActionByEntityId.has(entity.id)
+            ));
+            scene.canvas.style.cursor = interactive ? "pointer" : "";
+        }, ScreenSpaceEventType.MOUSE_MOVE);
     }
 
     private replaceImagery(): void {
@@ -581,6 +590,7 @@ class View3D {
                 (marker as MirrorMarker)._map3dAccentColor ?? "#a9b4c0",
                 seriesBadge,
                 (marker as MirrorMarker)._map3dWinnerImageUrl,
+                (marker as MirrorMarker)._map3dLabel ?? "",
             )
             : null;
         const surfaceNormal = seriesMarker
@@ -630,24 +640,6 @@ class View3D {
                         : undefined,
                     disableDepthTestDistance: Number.POSITIVE_INFINITY,
                 },
-                label: seriesMarker ? {
-                    show: visibleOnCurrentHemisphere,
-                    text: (marker as MirrorMarker)._map3dLabel ?? "",
-                    font: "600 16px sans-serif",
-                    fillColor: Color.WHITE,
-                    outlineColor: Color.BLACK,
-                    outlineWidth: 2,
-                    style: LabelStyle.FILL_AND_OUTLINE,
-                    pixelOffset: new Cartesian2(0, 20),
-                    heightReference: HeightReference.CLAMP_TO_GROUND,
-                    scaleByDistance: new NearFarScalar(
-                        500_000,
-                        1,
-                        20_000_000,
-                        seriesBadge ? 0.62 : 0.9,
-                    ),
-                    disableDepthTestDistance: Number.POSITIVE_INFINITY,
-                } : undefined,
             });
         }
         const canNavigate = seriesMarker && Boolean((marker as MirrorMarker)._map3dNavigate);
@@ -671,6 +663,13 @@ class View3D {
         const outline = colorFromCss(options.color ?? "#3388ff", options.opacity ?? 1);
         const entity = this.viewer.entities.add({
             id: this.entityId("portal"),
+            position: Cartesian3.fromDegrees(location.lng, location.lat),
+            point: {
+                pixelSize: PORTAL_HIT_SIZE_PIXELS,
+                color: Color.WHITE.withAlpha(0.01),
+                heightReference: HeightReference.CLAMP_TO_GROUND,
+                disableDepthTestDistance: Number.POSITIVE_INFINITY,
+            },
             polyline: {
                 positions: getTerrainRingCoordinates(
                     location.lng,
@@ -921,13 +920,20 @@ function createSeriesMarkerImage(
     accentColor: string,
     badge: string,
     winnerImageUrl?: string,
+    label = "",
 ): { initial: string; ready: Promise<string>; width: number; height: number } {
     const canvas = document.createElement("canvas");
-    const logicalWidth = badge ? 100 : 60;
-    const markerWidth = badge ? 90 : 54;
-    const markerHeight = 72;
+    const measurementContext = canvas.getContext("2d")!;
+    measurementContext.font = "600 16px sans-serif";
+    const labelWidth = label ? Math.ceil(measurementContext.measureText(label).width) + 12 : 0;
+    const markerLogicalWidth = badge ? 100 : 60;
+    const logicalWidth = Math.max(markerLogicalWidth, labelWidth);
+    const markerLeft = (logicalWidth - markerLogicalWidth) / 2;
+    const logicalHeight = label ? 104 : 80;
+    const markerWidth = logicalWidth;
+    const markerHeight = logicalHeight;
     canvas.width = logicalWidth * 2;
-    canvas.height = 160;
+    canvas.height = logicalHeight * 2;
     const context = canvas.getContext("2d")!;
 
     const draw = (image?: HTMLImageElement, winnerImage?: HTMLImageElement) => {
@@ -964,7 +970,7 @@ function createSeriesMarkerImage(
 
         if (badge) {
             context.beginPath();
-            context.roundRect(2, 63, logicalWidth - 4, 12, 6);
+            context.roundRect(markerLeft + 2, 63, markerLogicalWidth - 4, 12, 6);
             context.fillStyle = accentColor;
             context.fill();
             context.fillStyle = "#ffffff";
@@ -972,12 +978,12 @@ function createSeriesMarkerImage(
             context.font = `700 ${fontSize}px sans-serif`;
             context.textAlign = "center";
             context.textBaseline = "middle";
-            context.fillText(badge, logicalWidth / 2, 69.5, logicalWidth - 10);
+            context.fillText(badge, logicalWidth / 2, 69.5, markerLogicalWidth - 10);
         }
 
         if (winnerImage) {
             context.beginPath();
-            const winnerCenterX = logicalWidth - 11;
+            const winnerCenterX = logicalWidth / 2 + markerLogicalWidth / 2 - 11;
             context.arc(winnerCenterX, 67, 10, 0, Math.PI * 2);
             context.fillStyle = "rgba(5, 12, 22, 0.96)";
             context.fill();
@@ -988,6 +994,18 @@ function createSeriesMarkerImage(
             const width = winnerImage.naturalWidth * scale;
             const height = winnerImage.naturalHeight * scale;
             context.drawImage(winnerImage, winnerCenterX - width / 2, 67 - height / 2, width, height);
+        }
+        if (label) {
+            context.shadowColor = "transparent";
+            context.font = "600 16px sans-serif";
+            context.textAlign = "center";
+            context.textBaseline = "middle";
+            context.lineWidth = 3;
+            context.lineJoin = "round";
+            context.strokeStyle = "rgba(0, 0, 0, 0.92)";
+            context.fillStyle = "#ffffff";
+            context.strokeText(label, logicalWidth / 2, 93, logicalWidth - 8);
+            context.fillText(label, logicalWidth / 2, 93, logicalWidth - 8);
         }
         context.restore();
     };
