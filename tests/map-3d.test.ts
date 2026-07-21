@@ -105,14 +105,25 @@ test("2D shard motion restarts after a synchronous refresh move", async () => {
     assert.equal(starts, 1);
 });
 
-test("3D shard icons finish ground-clamped at their destination portal", () => {
+test("3D shards use a terrain-aware crystal model instead of a billboard alone", async () => {
     const source = readFileSync(new URL("../src/js/ui/map/map-3d.ts", import.meta.url), "utf8");
+    const { SHARD_MODEL_URI, SHARD_MODEL_GROUND_OFFSET_METERS } = await import(
+        "../src/js/ui/map/map-3d-shard-model.js"
+    );
 
     assert.match(source, /createShardEntity/);
     assert.match(source, /motionShardEntities/);
-    assert.match(source, /HeightReference\.CLAMP_TO_GROUND/);
+    assert.match(source, /model:/);
+    assert.match(source, /uri:\s*SHARD_MODEL_URI/);
+    assert.match(source, /silhouetteColor/);
+    assert.match(source, /distanceDisplayCondition:\s*new DistanceDisplayCondition/);
+    assert.match(source, /groundHeight\s*\+\s*point\.arcHeight\s*\+\s*SHARD_MODEL_GROUND_OFFSET_METERS/);
+    assert.match(source, /staticShards/);
+    assert.match(source, /staticShardOffset/);
     assert.match(source, /progress\s*>=\s*1/);
     assert.match(source, /shardIconUrl/);
+    assert.equal(SHARD_MODEL_GROUND_OFFSET_METERS, 3);
+    assert.match(SHARD_MODEL_URI, /^data:model\/gltf\+json;base64,/);
 });
 
 test("3D target images stay just above the terrain instead of z-fighting with it", () => {

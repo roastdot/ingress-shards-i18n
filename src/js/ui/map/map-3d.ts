@@ -10,6 +10,7 @@ import {
     ConstantPositionProperty,
     CallbackProperty,
     createWorldTerrainAsync,
+    DistanceDisplayCondition,
     Ellipsoid,
     EllipsoidTerrainProvider,
     Entity,
@@ -51,11 +52,18 @@ import {
     type GroundedTerrainRoutePoint,
     type TerrainRoutePoint,
 } from "./map-3d-terrain.js";
+import {
+    SHARD_MODEL_GROUND_OFFSET_METERS,
+    SHARD_MODEL_SCALE,
+    SHARD_MODEL_URI,
+} from "./map-3d-shard-model.js";
 
 const PATH_SAMPLE_INTERVAL_METERS = 75;
 const MIN_SAMPLES_PER_SEGMENT = 24;
 const MAX_SAMPLES_PER_SEGMENT = 48;
 const SHARD_ANIMATION_START_DELAY_MS = 1100;
+const SHARD_LOGO_SIZE_PIXELS = 14;
+const SHARD_LOGO_MIN_DISTANCE_METERS = 900;
 const TARGET_SIZE_METERS = 32;
 const TARGET_TERRAIN_OFFSET_METERS = 1.5;
 const PORTAL_HIT_SIZE_PIXELS = 30;
@@ -502,6 +510,7 @@ class View3D {
         const generation = this.mirrorGeneration;
         const links: Array<{ layer: L.Polyline; route: RoutePoint[] }> = [];
         const animations: ShardAnimation[] = [];
+        const staticShards: Array<{ marker: L.Marker; route: RoutePoint[] }> = [];
         const seriesLocations: L.LatLng[] = [];
 
         this.leafletMap.eachLayer(layer => {
@@ -509,8 +518,10 @@ class View3D {
                 if ("showMarker" in layer.options) return;
                 if (layer.options.pane === "shardPane") {
                     const position = layer.getLatLng();
-                    const entity = this.createShardEntity(position.lng, position.lat);
-                    this.registerPopup(entity, getBoundPopupHtml(layer));
+                    staticShards.push({
+                        marker: layer,
+                        route: [{ lng: position.lng, lat: position.lat, arcHeight: 0 }],
+                    });
                     return;
                 }
                 const entity = this.mirrorMarker(layer);
@@ -547,6 +558,7 @@ class View3D {
         const groundedRoutes = await this.groundRoutes([
             ...links.map(link => link.route),
             ...animations.map(animation => animation.points),
+            ...staticShards.map(shard => shard.route),
         ]);
         if (!this.viewer || !this.active || generation !== this.mirrorGeneration) return;
 
@@ -555,6 +567,16 @@ class View3D {
             ...animation,
             points: groundedRoutes[links.length + index],
         }));
+        const staticShardOffset = links.length + animations.length;
+        staticShards.forEach((shard, index) => {
+            const point = groundedRoutes[staticShardOffset + index][0];
+            const entity = this.createShardEntity(
+                point.lng,
+                point.lat,
+                point.groundHeight + point.arcHeight,
+            );
+            this.registerPopup(entity, getBoundPopupHtml(shard.marker));
+        });
         this.startShardAnimations(groundedAnimations, generation);
     }
 
@@ -711,20 +733,33 @@ class View3D {
         this.registerPopup(entity, getBoundPopupHtml(polyline));
     }
 
-    private createShardEntity(lng: number, lat: number, absoluteHeight?: number): Entity {
+    private createShardEntity(lng: number, lat: number, absoluteHeight: number): Entity {
         if (!this.viewer) throw new Error("Cannot create a shard before the Cesium viewer exists");
         return this.viewer.entities.add({
             id: this.entityId("shard"),
-            position: Cartesian3.fromDegrees(lng, lat, absoluteHeight ?? 0),
+            position: Cartesian3.fromDegrees(
+                lng,
+                lat,
+                absoluteHeight + SHARD_MODEL_GROUND_OFFSET_METERS,
+            ),
+            model: {
+                uri: SHARD_MODEL_URI,
+                scale: SHARD_MODEL_SCALE,
+                silhouetteColor: colorFromCss("#ff4fbd", 0.9),
+                silhouetteSize: 1.5,
+                runAnimations: false,
+            },
             billboard: {
                 image: shardIconUrl,
-                width: 24,
-                height: 24,
+                width: SHARD_LOGO_SIZE_PIXELS,
+                height: SHARD_LOGO_SIZE_PIXELS,
                 horizontalOrigin: HorizontalOrigin.CENTER,
                 verticalOrigin: VerticalOrigin.CENTER,
-                heightReference: absoluteHeight === undefined
-                    ? HeightReference.CLAMP_TO_GROUND
-                    : HeightReference.NONE,
+                heightReference: HeightReference.NONE,
+                distanceDisplayCondition: new DistanceDisplayCondition(
+                    SHARD_LOGO_MIN_DISTANCE_METERS,
+                    Number.POSITIVE_INFINITY,
+                ),
                 disableDepthTestDistance: Number.POSITIVE_INFINITY,
             },
         });
@@ -752,17 +787,18 @@ class View3D {
                     const shardEntity = this.motionShardEntities[index];
                     if (progress >= 1) {
                         shardEntity.position = new ConstantPositionProperty(
-                            Cartesian3.fromDegrees(point.lng, point.lat),
+                            Cartesian3.fromDegrees(
+                                point.lng,
+                                point.lat,
+                                point.groundHeight + point.arcHeight + SHARD_MODEL_GROUND_OFFSET_METERS,
+                            ),
                         );
-                        if (shardEntity.billboard) {
-                            shardEntity.billboard.heightReference = new ConstantProperty(HeightReference.CLAMP_TO_GROUND);
-                        }
                     } else {
                         shardEntity.position = new ConstantPositionProperty(
                             Cartesian3.fromDegrees(
                                 point.lng,
                                 point.lat,
-                                point.groundHeight + point.arcHeight,
+                                point.groundHeight + point.arcHeight + SHARD_MODEL_GROUND_OFFSET_METERS,
                             ),
                         );
                     }
