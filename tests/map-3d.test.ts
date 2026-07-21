@@ -115,15 +115,29 @@ test("3D shards use a terrain-aware crystal model instead of a billboard alone",
     assert.match(source, /motionShardEntities/);
     assert.match(source, /model:/);
     assert.match(source, /uri:\s*SHARD_MODEL_URI/);
-    assert.match(source, /silhouetteColor/);
+    assert.doesNotMatch(source, /silhouetteColor/);
     assert.match(source, /distanceDisplayCondition:\s*new DistanceDisplayCondition/);
     assert.match(source, /groundHeight\s*\+\s*point\.arcHeight\s*\+\s*SHARD_MODEL_GROUND_OFFSET_METERS/);
     assert.match(source, /staticShards/);
     assert.match(source, /staticShardOffset/);
     assert.match(source, /progress\s*>=\s*1/);
     assert.match(source, /shardIconUrl/);
-    assert.equal(SHARD_MODEL_GROUND_OFFSET_METERS, 3);
     assert.match(SHARD_MODEL_URI, /^data:model\/gltf\+json;base64,/);
+    const encodedModel = SHARD_MODEL_URI.split(",")[1];
+    const gltf = JSON.parse(Buffer.from(encodedModel, "base64").toString("utf8"));
+    assert.equal(SHARD_MODEL_GROUND_OFFSET_METERS, 11);
+    assert.ok(gltf.meshes[0].primitives.length >= 3);
+    assert.ok(gltf.materials.some((material: { name?: string }) => material.name === "Faceted crystal"));
+    assert.ok(gltf.materials.some((material: { name?: string }) => material.name === "XM beam outer"));
+    assert.ok(gltf.materials.some((material: { name?: string }) => material.name === "XM beam core"));
+    assert.deepEqual(gltf.extensionsUsed, ["KHR_materials_unlit"]);
+    assert.deepEqual(gltf.accessors[0].max, [0.85, 0.45, 0.85]);
+    assert.deepEqual(gltf.accessors[3].min, [-0.85, -0.95, -0.85]);
+    assert.deepEqual(gltf.accessors[6].min, [-0.13, -2.2, -0.13]);
+    assert.ok(
+        gltf.materials[0].pbrMetallicRoughness.baseColorFactor[0]
+        < gltf.materials[1].pbrMetallicRoughness.baseColorFactor[0],
+    );
 });
 
 test("3D target images stay just above the terrain instead of z-fighting with it", () => {

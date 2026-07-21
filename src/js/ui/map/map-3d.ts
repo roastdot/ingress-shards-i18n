@@ -745,8 +745,6 @@ class View3D {
             model: {
                 uri: SHARD_MODEL_URI,
                 scale: SHARD_MODEL_SCALE,
-                silhouetteColor: colorFromCss("#ff4fbd", 0.9),
-                silhouetteSize: 1.5,
                 runAnimations: false,
             },
             billboard: {
