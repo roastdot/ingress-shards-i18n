@@ -1,8 +1,8 @@
 const MIN_LINK_ARC_METERS = 30;
 const MAX_LINK_ARC_METERS = 250;
 const LINK_ARC_DISTANCE_RATIO = 0.08;
-const MAX_TERRAIN_RING_RADIUS_METERS = 24;
 const EARTH_RADIUS_METERS = 6_378_137;
+export const PORTAL_CONTROL_RADIUS_METERS = 20;
 
 /**
  * Vertical offset for one portal-to-portal hop.
@@ -26,16 +26,6 @@ export function interpolateLongitude(from: number, to: number, progress: number)
     const t = Math.max(0, Math.min(1, progress));
     const delta = ((to - from + 540) % 360) - 180;
     return ((from + delta * t + 540) % 360) - 180;
-}
-
-/** Converts Leaflet's screen-pixel marker radius to a bounded 3D world radius. */
-export function leafletRadiusToTerrainMeters(
-    radiusPixels: number,
-    latitude: number,
-    zoom: number,
-): number {
-    const metersPerPixel = 156_543.03392 * Math.cos(latitude * Math.PI / 180) / (2 ** zoom);
-    return Math.max(0.5, Math.min(MAX_TERRAIN_RING_RADIUS_METERS, radiusPixels * metersPerPixel));
 }
 
 /** Builds a closed geodesic ring that Cesium can drape over terrain. */

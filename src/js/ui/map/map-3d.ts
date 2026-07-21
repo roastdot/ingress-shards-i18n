@@ -39,10 +39,10 @@ import { navigate } from "../../router.js";
 import { getSiteLayers } from "../site-renderer.js";
 import {
     getLinkArcOffsetMeters,
+    PORTAL_CONTROL_RADIUS_METERS,
     getSeriesGlobeCenter,
     getTerrainRingCoordinates,
     interpolateLongitude,
-    leafletRadiusToTerrainMeters,
 } from "./map-3d-geometry.js";
 import shardIconUrl from "../../../images/abaddon1_shard.png";
 import { set3DViewRequested } from "./map-view-state.js";
@@ -57,7 +57,8 @@ const PATH_SAMPLE_INTERVAL_METERS = 75;
 const MIN_SAMPLES_PER_SEGMENT = 24;
 const MAX_SAMPLES_PER_SEGMENT = 48;
 const SHARD_ANIMATION_START_DELAY_MS = 1100;
-const TARGET_SIZE_METERS = 72;
+const TARGET_SIZE_METERS = 32;
+const TARGET_TERRAIN_OFFSET_METERS = 1.5;
 const SERIES_GLOBE_CAMERA_HEIGHT_METERS = 12_000_000;
 
 interface MotionPolyline extends L.Polyline {
@@ -607,8 +608,8 @@ class View3D {
                         transparent: true,
                         color: Color.WHITE.withAlpha(marker.options.opacity ?? 1),
                     }),
-                    height: 0,
-                    heightReference: HeightReference.CLAMP_TO_GROUND,
+                    height: TARGET_TERRAIN_OFFSET_METERS,
+                    heightReference: HeightReference.RELATIVE_TO_GROUND,
                 },
             });
         } else {
@@ -632,10 +633,10 @@ class View3D {
                 label: seriesMarker ? {
                     show: visibleOnCurrentHemisphere,
                     text: (marker as MirrorMarker)._map3dLabel ?? "",
-                    font: "600 13px sans-serif",
+                    font: "600 16px sans-serif",
                     fillColor: Color.WHITE,
                     outlineColor: Color.BLACK,
-                    outlineWidth: 4,
+                    outlineWidth: 2,
                     style: LabelStyle.FILL_AND_OUTLINE,
                     pixelOffset: new Cartesian2(0, 20),
                     heightReference: HeightReference.CLAMP_TO_GROUND,
@@ -668,22 +669,19 @@ class View3D {
         const location = circle.getLatLng();
         const options = circle.options;
         const outline = colorFromCss(options.color ?? "#3388ff", options.opacity ?? 1);
-        const radiusMeters = leafletRadiusToTerrainMeters(
-            options.radius ?? 10,
-            location.lat,
-            this.leafletMap.getZoom(),
-        );
         const entity = this.viewer.entities.add({
             id: this.entityId("portal"),
             polyline: {
                 positions: getTerrainRingCoordinates(
                     location.lng,
                     location.lat,
-                    radiusMeters,
+                    PORTAL_CONTROL_RADIUS_METERS,
                 ).map(point => Cartesian3.fromDegrees(point.lng, point.lat)),
                 width: Math.max(2, options.weight ?? 3),
                 material: outline,
-                arcType: ArcType.NONE,
+                // Ground polylines only accept GEODESIC or RHUMB. NONE makes
+                // Cesium stop the entire render loop while creating geometry.
+                arcType: ArcType.GEODESIC,
                 clampToGround: true,
             },
         });

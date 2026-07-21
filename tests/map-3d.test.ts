@@ -5,10 +5,10 @@ import { test } from "node:test";
 test("curved links meet both portal elevations without overshooting", async () => {
     const {
         getLinkArcOffsetMeters,
+        PORTAL_CONTROL_RADIUS_METERS,
         getSeriesGlobeCenter,
         getTerrainRingCoordinates,
         interpolateLongitude,
-        leafletRadiusToTerrainMeters,
     } = await import("../src/js/ui/map/map-3d-geometry.js");
 
     assert.equal(getLinkArcOffsetMeters(0, 2_000), 0);
@@ -23,8 +23,7 @@ test("curved links meet both portal elevations without overshooting", async () =
         getSeriesGlobeCenter([{ lat: 20, lng: 170 }, { lat: 40, lng: -170 }]).map(Math.round),
         [180, 30],
     );
-    assert.ok(leafletRadiusToTerrainMeters(10, 60, 20) < 1);
-    assert.equal(leafletRadiusToTerrainMeters(10, 0, 1), 24);
+    assert.equal(PORTAL_CONTROL_RADIUS_METERS, 20);
     const ring = getTerrainRingCoordinates(24.94, 60.17, 4, 32);
     assert.equal(ring.length, 33);
     assert.deepEqual(ring[0], ring[ring.length - 1]);
@@ -116,14 +115,16 @@ test("3D shard icons finish ground-clamped at their destination portal", () => {
     assert.match(source, /shardIconUrl/);
 });
 
-test("3D target images align with the terrain plane", () => {
+test("3D target images stay just above the terrain instead of z-fighting with it", () => {
     const source = readFileSync(new URL("../src/js/ui/map/map-3d.ts", import.meta.url), "utf8");
 
     assert.match(source, /marker\.options\.pane\s*===\s*["']targetPane["']/);
     assert.match(source, /ImageMaterialProperty/);
     assert.match(source, /rectangle:/);
-    assert.match(source, /height:\s*0/);
-    assert.match(source, /heightReference:\s*HeightReference\.CLAMP_TO_GROUND/);
+    assert.match(source, /const TARGET_SIZE_METERS = 32/);
+    assert.match(source, /const TARGET_TERRAIN_OFFSET_METERS = 1\.5/);
+    assert.match(source, /height:\s*TARGET_TERRAIN_OFFSET_METERS/);
+    assert.match(source, /heightReference:\s*HeightReference\.RELATIVE_TO_GROUND/);
 });
 
 test("3D portal rings drape over terrain instead of using a planar or screen-facing shape", () => {
@@ -136,8 +137,22 @@ test("3D portal rings drape over terrain instead of using a planar or screen-fac
     assert.match(portalRenderer, /polyline:/);
     assert.match(portalRenderer, /getTerrainRingCoordinates/);
     assert.match(portalRenderer, /clampToGround:\s*true/);
+    assert.match(portalRenderer, /arcType:\s*ArcType\.GEODESIC/);
+    assert.doesNotMatch(portalRenderer, /arcType:\s*ArcType\.NONE/);
     assert.doesNotMatch(portalRenderer, /point:/);
     assert.doesNotMatch(portalRenderer, /ellipse:/);
+});
+
+test("series overview labels remain legible after distance scaling", () => {
+    const source = readFileSync(new URL("../src/js/ui/map/map-3d.ts", import.meta.url), "utf8");
+    const labelRenderer = source.slice(
+        source.indexOf("label: seriesMarker"),
+        source.indexOf("} : undefined", source.indexOf("label: seriesMarker")),
+    );
+
+    assert.match(labelRenderer, /font:\s*["']600 16px/);
+    assert.match(labelRenderer, /outlineWidth:\s*2/);
+    assert.doesNotMatch(labelRenderer, /outlineWidth:\s*4/);
 });
 
 test("series overview markers use event artwork, controls, and hemisphere culling", () => {
