@@ -6,7 +6,9 @@ test("curved links meet both portal elevations without overshooting", async () =
     const {
         getLinkArcOffsetMeters,
         getSeriesGlobeCenter,
+        getTerrainRingCoordinates,
         interpolateLongitude,
+        leafletRadiusToTerrainMeters,
     } = await import("../src/js/ui/map/map-3d-geometry.js");
 
     assert.equal(getLinkArcOffsetMeters(0, 2_000), 0);
@@ -21,6 +23,11 @@ test("curved links meet both portal elevations without overshooting", async () =
         getSeriesGlobeCenter([{ lat: 20, lng: 170 }, { lat: 40, lng: -170 }]).map(Math.round),
         [180, 30],
     );
+    assert.ok(leafletRadiusToTerrainMeters(10, 60, 20) < 1);
+    assert.equal(leafletRadiusToTerrainMeters(10, 0, 1), 24);
+    const ring = getTerrainRingCoordinates(24.94, 60.17, 4, 32);
+    assert.equal(ring.length, 33);
+    assert.deepEqual(ring[0], ring[ring.length - 1]);
 
     const renderer = readFileSync(new URL("../src/js/ui/map/map-3d.ts", import.meta.url), "utf8");
     assert.match(renderer, /Cartesian3\.fromDegrees/);
@@ -30,13 +37,16 @@ test("curved links meet both portal elevations without overshooting", async () =
     assert.match(renderer, /camera\.lookAt\(target, offset\)/);
 });
 
-test("3D renderer uses stable Cesium ellipsoid terrain and hashed production assets", () => {
+test("3D renderer uses Cesium World Terrain with an ellipsoid fallback", () => {
     const renderer = readFileSync(new URL("../src/js/ui/map/map-3d.ts", import.meta.url), "utf8");
     const webpack = readFileSync(new URL("../webpack.common.js", import.meta.url), "utf8");
     const productionWebpack = readFileSync(new URL("../webpack.prod.js", import.meta.url), "utf8");
 
     assert.match(renderer, /from ["']cesium["']/);
     assert.match(renderer, /EllipsoidTerrainProvider/);
+    assert.match(renderer, /createWorldTerrainAsync/);
+    assert.match(renderer, /resolveTerrainProvider/);
+    assert.match(renderer, /__CESIUM_ION_TOKEN__/);
     assert.doesNotMatch(renderer, /CustomHeightmapTerrainProvider|getTerrariumHeightmap|getElevationForLatLng/);
     assert.match(renderer, /UrlTemplateImageryProvider/);
     assert.doesNotMatch(renderer, /maplibre|deck\.gl|map3d-link-overlay/i);
@@ -112,7 +122,22 @@ test("3D target images align with the terrain plane", () => {
     assert.match(source, /marker\.options\.pane\s*===\s*["']targetPane["']/);
     assert.match(source, /ImageMaterialProperty/);
     assert.match(source, /rectangle:/);
+    assert.match(source, /height:\s*0/);
     assert.match(source, /heightReference:\s*HeightReference\.CLAMP_TO_GROUND/);
+});
+
+test("3D portal rings drape over terrain instead of using a planar or screen-facing shape", () => {
+    const source = readFileSync(new URL("../src/js/ui/map/map-3d.ts", import.meta.url), "utf8");
+    const portalRenderer = source.slice(
+        source.indexOf("private mirrorCircleMarker"),
+        source.indexOf("private mirrorPolyline"),
+    );
+
+    assert.match(portalRenderer, /polyline:/);
+    assert.match(portalRenderer, /getTerrainRingCoordinates/);
+    assert.match(portalRenderer, /clampToGround:\s*true/);
+    assert.doesNotMatch(portalRenderer, /point:/);
+    assert.doesNotMatch(portalRenderer, /ellipse:/);
 });
 
 test("series overview markers use event artwork, controls, and hemisphere culling", () => {

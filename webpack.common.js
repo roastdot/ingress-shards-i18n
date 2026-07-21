@@ -105,6 +105,10 @@ export default (env, { appVersion }) => {
         plugins: [
             new webpack.DefinePlugin({
                 __APP_VERSION__: JSON.stringify(appVersion),
+                // Cesium ion documents assets:read tokens as safe for public
+                // clients. Restrict the production token to this app's domain
+                // and World Terrain asset in the ion dashboard.
+                __CESIUM_ION_TOKEN__: JSON.stringify(process.env.CESIUM_ION_TOKEN || ''),
                 // A relative URL works both at localhost and under the GitHub
                 // Pages repository sub-path used by the production build.
                 CESIUM_BASE_URL: JSON.stringify('cesiumStatic/'),

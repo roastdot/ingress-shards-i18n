@@ -126,6 +126,12 @@ Configure the Pages project with:
 | Build output directory | `dist` |
 | Root directory | `/` |
 
+Set `CESIUM_ION_TOKEN` as a Cloudflare Pages build variable to enable Cesium
+World Terrain. Use a dedicated public token with only `assets:read`, restrict it
+to the World Terrain asset, and allow requests only from the production domain.
+If the token is absent or terrain initialization fails, the 3D city view falls
+back to the WGS84 ellipsoid instead of failing to render.
+
 Cloudflare automatically injects `CF_PAGES_BRANCH` and
 `CF_PAGES_COMMIT_SHA`. Production builds use these values for the version shown
 in the details panel, for example `main@d115305`. `APP_VERSION` can still be set

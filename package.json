@@ -32,7 +32,7 @@
         "prepare:data": "npm run mkdir:gen && npm run geocode && npm run data:process && npm run data:validate && npm run data:statistics",
         "validate": "npm run clean && npm run build",
         "typecheck": "tsc --noEmit",
-        "test:3d": "tsx --test tests/map-3d.test.ts",
+        "test:3d": "tsx --test tests/map-3d.test.ts tests/map-3d-terrain.test.ts",
         "preview": "tsx scripts/preview-ci-artifact.ts"
     },
     "devDependencies": {

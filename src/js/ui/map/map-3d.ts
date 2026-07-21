@@ -4,10 +4,12 @@ import {
     BoundingSphere,
     Cartesian2,
     Cartesian3,
+    Cartographic,
     Color,
     ConstantProperty,
     ConstantPositionProperty,
     CallbackProperty,
+    createWorldTerrainAsync,
     Ellipsoid,
     EllipsoidTerrainProvider,
     Entity,
@@ -15,16 +17,19 @@ import {
     HeadingPitchRange,
     HorizontalOrigin,
     ImageMaterialProperty,
+    Ion,
     LabelStyle,
     Math as CesiumMath,
     Matrix4,
     NearFarScalar,
     Rectangle,
+    sampleTerrainMostDetailed,
     ScreenSpaceEventHandler,
     ScreenSpaceEventType,
     UrlTemplateImageryProvider,
     VerticalOrigin,
     Viewer,
+    type TerrainProvider,
 } from "cesium";
 import "cesium/Build/Cesium/Widgets/widgets.css";
 import { getColorMode, subscribeColorMode } from "../react/colorModeStore.js";
@@ -35,10 +40,18 @@ import { getSiteLayers } from "../site-renderer.js";
 import {
     getLinkArcOffsetMeters,
     getSeriesGlobeCenter,
+    getTerrainRingCoordinates,
     interpolateLongitude,
+    leafletRadiusToTerrainMeters,
 } from "./map-3d-geometry.js";
 import shardIconUrl from "../../../images/abaddon1_shard.png";
 import { set3DViewRequested } from "./map-view-state.js";
+import {
+    resolveTerrainProvider,
+    sampleRoutesTerrain,
+    type GroundedTerrainRoutePoint,
+    type TerrainRoutePoint,
+} from "./map-3d-terrain.js";
 
 const PATH_SAMPLE_INTERVAL_METERS = 75;
 const MIN_SAMPLES_PER_SEGMENT = 24;
@@ -63,17 +76,17 @@ interface MirrorMarker extends L.Marker {
     _map3dWinnerImageUrl?: string;
 }
 
-interface RoutePoint {
-    lng: number;
-    lat: number;
-    arcHeight: number;
-}
+type RoutePoint = TerrainRoutePoint;
 
 interface ShardAnimation {
     points: RoutePoint[];
     cumulative: number[];
     totalDistance: number;
     duration: number;
+}
+
+interface GroundedShardAnimation extends Omit<ShardAnimation, "points"> {
+    points: GroundedTerrainRoutePoint[];
 }
 
 function createImageryProvider(mode: "light" | "dark"): UrlTemplateImageryProvider {
@@ -90,8 +103,9 @@ function createImageryProvider(mode: "light" | "dark"): UrlTemplateImageryProvid
 class View3D {
     private readonly leafletMap: L.Map;
     private readonly container: HTMLDivElement;
-    private readonly siteTerrainProvider = new EllipsoidTerrainProvider();
     private readonly overviewTerrainProvider = new EllipsoidTerrainProvider();
+    private siteTerrainProvider: TerrainProvider = this.overviewTerrainProvider;
+    private readonly siteTerrainProviderReady: Promise<TerrainProvider>;
     private viewer: Viewer | null = null;
     private clickHandler: ScreenSpaceEventHandler | null = null;
     private exitControl: HTMLDivElement | null = null;
@@ -122,6 +136,19 @@ class View3D {
         this.container = document.createElement("div");
         this.container.id = "map3d";
         document.body.appendChild(this.container);
+        this.siteTerrainProviderReady = resolveTerrainProvider<TerrainProvider>(__CESIUM_ION_TOKEN__, {
+            configureToken: token => { Ion.defaultAccessToken = token; },
+            createWorldTerrain: () => createWorldTerrainAsync({
+                requestVertexNormals: true,
+            }),
+            createFallbackTerrain: () => this.overviewTerrainProvider,
+            onError: error => console.warn("Unable to load Cesium World Terrain; using a flat globe", error),
+        });
+        void this.siteTerrainProviderReady.then(provider => {
+            this.siteTerrainProvider = provider;
+            if (!this.viewer || !this.active || this.seriesOverviewActive) return;
+            this.viewer.terrainProvider = provider;
+        });
 
         subscribeColorMode(() => {
             if (!this.viewer) return;
@@ -138,6 +165,7 @@ class View3D {
         if (!this.viewer) this.createViewer();
         this.viewer?.resize();
         this.syncCameraFromLeaflet(false);
+        void this.syncCameraFromLeafletTerrain(false);
         this.syncRouteControls();
         void this.mirrorLeafletLayers();
 
@@ -382,7 +410,7 @@ class View3D {
         this.popup = null;
     }
 
-    private syncCameraFromLeaflet(animate: boolean): void {
+    private syncCameraFromLeaflet(animate: boolean, groundHeight = 0): void {
         if (!this.viewer) return;
         const center = this.leafletMap.getCenter();
         const height = leafletZoomToCameraHeight(
@@ -390,7 +418,7 @@ class View3D {
             center.lat,
             this.container.clientHeight,
         );
-        const target = Cartesian3.fromDegrees(center.lng, center.lat);
+        const target = Cartesian3.fromDegrees(center.lng, center.lat, groundHeight);
         const offset = new HeadingPitchRange(
             0,
             this.leafletMap.getZoom() >= 8
@@ -408,6 +436,16 @@ class View3D {
             this.viewer.camera.lookAt(target, offset);
             this.viewer.camera.lookAtTransform(Matrix4.IDENTITY);
         }
+    }
+
+    private async syncCameraFromLeafletTerrain(animate: boolean): Promise<void> {
+        const center = this.leafletMap.getCenter();
+        const [route] = await this.groundRoutes([[
+            { lng: center.lng, lat: center.lat, arcHeight: 0 },
+        ]]);
+        if (!this.viewer || !this.active || this.seriesOverviewActive) return;
+        if (!this.leafletMap.getCenter().equals(center)) return;
+        this.syncCameraFromLeaflet(animate, route[0]?.groundHeight ?? 0);
     }
 
     private syncLeafletFromCamera(): void {
@@ -452,7 +490,7 @@ class View3D {
         if (!this.viewer || !this.active) return;
         this.clearMirroredLayers();
         const generation = this.mirrorGeneration;
-        const linkJobs: Promise<void>[] = [];
+        const links: Array<{ layer: L.Polyline; route: RoutePoint[] }> = [];
         const animations: ShardAnimation[] = [];
         const seriesLocations: L.LatLng[] = [];
 
@@ -482,11 +520,11 @@ class View3D {
                     if (animation) animations.push(animation);
                     return;
                 }
-                linkJobs.push(this.mirrorPolyline(layer, generation));
+                const latLngs = flattenLatLngs(layer.getLatLngs());
+                if (latLngs.length >= 2) links.push({ layer, route: sampleRoute(latLngs) });
             }
         });
 
-        void this.startShardAnimations(animations, generation);
         if (seriesLocations.length > 0) {
             this.seriesOverviewActive = true;
             this.viewer.terrainProvider = this.overviewTerrainProvider;
@@ -495,7 +533,19 @@ class View3D {
             this.seriesOverviewActive = false;
             this.viewer.terrainProvider = this.siteTerrainProvider;
         }
-        await Promise.all(linkJobs);
+
+        const groundedRoutes = await this.groundRoutes([
+            ...links.map(link => link.route),
+            ...animations.map(animation => animation.points),
+        ]);
+        if (!this.viewer || !this.active || generation !== this.mirrorGeneration) return;
+
+        links.forEach((link, index) => this.mirrorPolyline(link.layer, groundedRoutes[index]));
+        const groundedAnimations = animations.map((animation, index): GroundedShardAnimation => ({
+            ...animation,
+            points: groundedRoutes[links.length + index],
+        }));
+        this.startShardAnimations(groundedAnimations, generation);
     }
 
     private showSeriesGlobe(locations: L.LatLng[]): void {
@@ -557,6 +607,7 @@ class View3D {
                         transparent: true,
                         color: Color.WHITE.withAlpha(marker.options.opacity ?? 1),
                     }),
+                    height: 0,
                     heightReference: HeightReference.CLAMP_TO_GROUND,
                 },
             });
@@ -616,34 +667,35 @@ class View3D {
         if (!this.viewer) return;
         const location = circle.getLatLng();
         const options = circle.options;
-        const fill = colorFromCss(options.fillColor ?? options.color ?? "#3388ff", options.fillOpacity ?? 0.2);
         const outline = colorFromCss(options.color ?? "#3388ff", options.opacity ?? 1);
+        const radiusMeters = leafletRadiusToTerrainMeters(
+            options.radius ?? 10,
+            location.lat,
+            this.leafletMap.getZoom(),
+        );
         const entity = this.viewer.entities.add({
             id: this.entityId("portal"),
-            position: Cartesian3.fromDegrees(location.lng, location.lat),
-            point: {
-                pixelSize: (options.radius ?? 10) * 2,
-                color: fill,
-                outlineColor: outline,
-                outlineWidth: options.weight ?? 3,
-                heightReference: HeightReference.CLAMP_TO_GROUND,
-                disableDepthTestDistance: Number.POSITIVE_INFINITY,
+            polyline: {
+                positions: getTerrainRingCoordinates(
+                    location.lng,
+                    location.lat,
+                    radiusMeters,
+                ).map(point => Cartesian3.fromDegrees(point.lng, point.lat)),
+                width: Math.max(2, options.weight ?? 3),
+                material: outline,
+                arcType: ArcType.NONE,
+                clampToGround: true,
             },
         });
         this.registerPopup(entity, getBoundPopupHtml(circle));
     }
 
-    private async mirrorPolyline(polyline: L.Polyline, generation: number): Promise<void> {
+    private mirrorPolyline(polyline: L.Polyline, route: GroundedTerrainRoutePoint[]): void {
         if (!this.viewer) return;
-        const latLngs = flattenLatLngs(polyline.getLatLngs());
-        if (latLngs.length < 2) return;
-        const route = sampleRoute(latLngs);
-        if (!this.viewer || generation !== this.mirrorGeneration || !this.active) return;
-
         const positions = route.map(point => Cartesian3.fromDegrees(
             point.lng,
             point.lat,
-            point.arcHeight,
+            point.groundHeight + point.arcHeight,
         ));
         const options = polyline.options;
         const color = colorFromCss(options.color ?? "#3388ff", options.opacity ?? 1);
@@ -681,12 +733,11 @@ class View3D {
         });
     }
 
-    private async startShardAnimations(animations: ShardAnimation[], generation: number): Promise<void> {
+    private startShardAnimations(animations: GroundedShardAnimation[], generation: number): void {
         if (!this.viewer || animations.length === 0) return;
-        if (!this.viewer || !this.active || generation !== this.mirrorGeneration) return;
         this.motionShardEntities = animations.map(animation => {
             const first = animation.points[0];
-            return this.createShardEntity(first.lng, first.lat, first.arcHeight);
+            return this.createShardEntity(first.lng, first.lat, first.groundHeight + first.arcHeight);
         });
 
         this.shardAnimationTimer = setTimeout(() => {
@@ -714,7 +765,7 @@ class View3D {
                             Cartesian3.fromDegrees(
                                 point.lng,
                                 point.lat,
-                                point.arcHeight,
+                                point.groundHeight + point.arcHeight,
                             ),
                         );
                     }
@@ -723,6 +774,36 @@ class View3D {
             };
             tick();
         }, SHARD_ANIMATION_START_DELAY_MS);
+    }
+
+    private async groundRoutes(
+        routes: ReadonlyArray<ReadonlyArray<RoutePoint>>,
+    ): Promise<GroundedTerrainRoutePoint[][]> {
+        if (routes.length === 0) return [];
+        await this.siteTerrainProviderReady;
+        const terrainProvider = this.siteTerrainProvider;
+        if (terrainProvider === this.overviewTerrainProvider) {
+            return sampleRoutesTerrain(routes, async () => []);
+        }
+
+        return sampleRoutesTerrain(
+            routes,
+            async locations => {
+                const positions = locations.map(location => Cartographic.fromDegrees(
+                    location.lng,
+                    location.lat,
+                ));
+                const sampled = await sampleTerrainMostDetailed(terrainProvider, positions, true);
+                return sampled.map(position => position.height);
+            },
+            error => {
+                console.warn("Unable to sample Cesium World Terrain; using a flat globe", error);
+                this.siteTerrainProvider = this.overviewTerrainProvider;
+                if (this.viewer && !this.seriesOverviewActive) {
+                    this.viewer.terrainProvider = this.overviewTerrainProvider;
+                }
+            },
+        );
     }
 
     private stopShardAnimations(): void {
@@ -798,7 +879,7 @@ function buildShardAnimation(motionLayer: MotionPolyline): ShardAnimation | null
     };
 }
 
-function pointAlongPath(animation: ShardAnimation, progress: number): RoutePoint {
+function pointAlongPath(animation: GroundedShardAnimation, progress: number): GroundedTerrainRoutePoint {
     const { points, cumulative, totalDistance } = animation;
     if (progress <= 0 || totalDistance === 0) return points[0];
     if (progress >= 1) return points[points.length - 1];
@@ -815,6 +896,7 @@ function pointAlongPath(animation: ShardAnimation, progress: number): RoutePoint
         lng: interpolateLongitude(from.lng, to.lng, ratio),
         lat: from.lat + (to.lat - from.lat) * ratio,
         arcHeight: from.arcHeight + (to.arcHeight - from.arcHeight) * ratio,
+        groundHeight: from.groundHeight + (to.groundHeight - from.groundHeight) * ratio,
     };
 }
 

@@ -27,6 +27,7 @@ declare module "*.svg" {
 declare module "*.css";
 
 declare const __APP_VERSION__: string;
+declare const __CESIUM_ION_TOKEN__: string;
 
 // Minimal ambient shape for the one dedicated-worker entry point in this
 // project — deliberately not pulling in the full "webworker" lib, which
