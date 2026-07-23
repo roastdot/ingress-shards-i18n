@@ -889,6 +889,51 @@ hr.tooltip-sub-divider {
     border-radius: calc(var(--radius-sm) - 1px);
 }
 
+.react-ui-corner.top-right > .MuiPaper-root.animation-controls {
+    display: flex;
+    width: 164px;
+    min-width: 164px;
+    grid-template-columns: repeat(4, 40px);
+}
+
+.react-ui-corner.top-right > .MuiPaper-root.animation-controls .MuiIconButton-root {
+    flex: 0 0 40px;
+}
+
+.react-ui-corner.top-right > .MuiPaper-root.animation-controls .MuiIconButton-root + .MuiIconButton-root {
+    border-left: 1px solid var(--divider);
+    border-radius: 0;
+}
+
+.react-ui-corner.top-right > .MuiPaper-root.animation-controls .MuiIconButton-root:first-child {
+    border-radius: calc(var(--radius-sm) - 1px) 0 0 calc(var(--radius-sm) - 1px);
+}
+
+.react-ui-corner.top-right > .MuiPaper-root.animation-controls .MuiIconButton-root:last-child {
+    border-radius: 0 calc(var(--radius-sm) - 1px) calc(var(--radius-sm) - 1px) 0;
+}
+
+.animation-controls .MuiIconButton-root.is-active {
+    color: var(--color-accent);
+    background: var(--surface-hover);
+}
+
+.animation-speed-label {
+    font: 700 12px/1 var(--font-mono);
+}
+
+.animation-speed-menu-paper {
+    min-width: 72px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg-solid) !important;
+}
+
+.animation-speed-menu-paper .MuiMenuItem-root {
+    min-height: 36px;
+    justify-content: center;
+    font-family: var(--font-mono);
+}
+
 .react-ui-corner.bottom-right {
     bottom: 24px;
     right: 0;
@@ -993,6 +1038,35 @@ hr.tooltip-sub-divider {
    Responsive — mobile
    ============================================================ */
 @media (max-width: 600px) {
+    .react-ui-corner.top-right > .MuiPaper-root.animation-controls {
+        display: grid;
+        width: 84px;
+        min-width: 84px;
+        height: 84px;
+        min-height: 84px;
+        grid-template-columns: repeat(2, 40px);
+        grid-template-rows: repeat(2, 40px);
+    }
+
+    .react-ui-corner.top-right > .MuiPaper-root.animation-controls .MuiIconButton-root {
+        border-radius: 0;
+    }
+
+    .react-ui-corner.top-right > .MuiPaper-root.animation-controls .MuiIconButton-root:nth-child(2) {
+        border-radius: 0 calc(var(--radius-sm) - 1px) 0 0;
+    }
+
+    .react-ui-corner.top-right > .MuiPaper-root.animation-controls .MuiIconButton-root:nth-child(3) {
+        border-top: 1px solid var(--divider);
+        border-left: none;
+        border-radius: 0 0 0 calc(var(--radius-sm) - 1px);
+    }
+
+    .react-ui-corner.top-right > .MuiPaper-root.animation-controls .MuiIconButton-root:nth-child(4) {
+        border-top: 1px solid var(--divider);
+        border-radius: 0 0 calc(var(--radius-sm) - 1px) 0;
+    }
+
     .credits-menu-paper {
         max-width: calc(100vw - 32px);
     }
@@ -1001,7 +1075,7 @@ hr.tooltip-sub-divider {
         top: 10px;
         min-width: 0;
         width: auto;
-        max-width: calc(100vw - 180px);
+        max-width: calc(100vw - 200px);
         padding: 6px 9px;
         flex-wrap: wrap;
         justify-content: center;

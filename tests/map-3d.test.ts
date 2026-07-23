@@ -105,6 +105,48 @@ test("2D shard motion restarts after a synchronous refresh move", async () => {
     assert.equal(starts, 1);
 });
 
+test("animation controls preserve one-shot playback while supporting pause and loop", async () => {
+    const controls = await import("../src/js/ui/react/animationControlStore.js");
+
+    assert.deepEqual(controls.getAnimationControlState(), {
+        available: false,
+        playback: "ended",
+        loop: false,
+        speed: 1,
+        linkSelectionEnabled: false,
+        selectedLinkKey: null,
+        commandVersion: 0,
+    });
+
+    controls.setAnimationAvailable(true);
+    assert.equal(controls.getAnimationControlState().playback, "playing");
+
+    controls.toggleAnimationPlayback();
+    assert.equal(controls.getAnimationControlState().playback, "paused");
+    assert.equal(controls.getAnimationControlState().commandVersion, 1);
+
+    controls.toggleAnimationLoop();
+    assert.equal(controls.getAnimationControlState().loop, true);
+    assert.equal(controls.getAnimationControlState().commandVersion, 2);
+
+    controls.toggleAnimationPlayback();
+    controls.setAnimationSpeed(2);
+    assert.equal(controls.getAnimationControlState().speed, 2);
+
+    controls.toggleAnimationLinkSelection();
+    controls.selectAnimationLink("101-202");
+    assert.equal(controls.getAnimationControlState().selectedLinkKey, "101-202");
+    assert.equal(controls.getAnimationControlState().playback, "playing");
+
+    controls.toggleAnimationLinkSelection();
+    assert.equal(controls.getAnimationControlState().linkSelectionEnabled, false);
+    assert.equal(controls.getAnimationControlState().selectedLinkKey, null);
+
+    controls.reportAnimationPlayback("ended");
+    assert.equal(controls.getAnimationControlState().playback, "ended");
+    assert.equal(controls.getAnimationControlState().commandVersion, 7);
+});
+
 test("3D shards use a terrain-aware crystal model instead of a billboard alone", async () => {
     const source = readFileSync(new URL("../src/js/ui/map/map-3d.ts", import.meta.url), "utf8");
     const { SHARD_MODEL_URI, SHARD_MODEL_GROUND_OFFSET_METERS } = await import(

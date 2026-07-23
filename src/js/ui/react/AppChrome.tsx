@@ -8,6 +8,7 @@ import { LanguageSwitcherReact } from "./LanguageSwitcherReact.js";
 import { CreditsMenuReact } from "./CreditsMenuReact.js";
 import { ThemeToggleReact } from "./ThemeToggleReact.js";
 import { SeasonScoreBannerReact } from "./SeasonScoreBannerReact.js";
+import { AnimationControlsReact } from "./AnimationControlsReact.js";
 
 export function AppChrome(): React.JSX.Element {
     const mode = useSyncExternalStore(subscribeColorMode, getColorMode);
@@ -17,6 +18,7 @@ export function AppChrome(): React.JSX.Element {
         <ThemeProvider theme={theme}>
             <CssBaseline enableColorScheme />
             <div className="react-ui-corner top-right">
+                <AnimationControlsReact />
                 <CreditsMenuReact />
                 <ThemeToggleReact />
                 <LanguageSwitcherReact />

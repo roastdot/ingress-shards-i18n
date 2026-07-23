@@ -12,6 +12,8 @@ The map includes:
 -   Per-wave filtering for multi-wave events.
 -   A CesiumJS 3D globe and city view with elevated curved links and animated
     Shards.
+-   Shared 2D and 3D animation controls for playback, looping, speed and
+    per-link filtering.
 -   English, Simplified Chinese and Traditional Chinese localisation.
 -   Independent light and dark themes with matching CartoDB base layers.
 
@@ -36,6 +38,21 @@ city. Multi-wave events can be filtered to inspect a single wave while keeping
 the full score table visible.
 
 ![Helsinki Wave 2 with Portals, Shards, links and faction scores](docs/assets/site-wave-2d.jpg)
+
+## Shard animation controls
+
+City views provide the same animation controls in 2D and 3D:
+
+-   Play or pause Shard movement.
+-   Turn continuous looping on or off.
+-   Choose 0.5×, 1×, 2× or 4× playback speed.
+-   Select the link button, then click a map link to animate only Shards whose
+    route traverses it. Select the button again to restore all links.
+
+The controls only appear when the current city or wave contains animated Shard
+routes. Looping and link filtering are off by default.
+
+![Helsinki with looping, 2x speed and per-link Shard animation enabled](docs/assets/animation-controls-2d.png)
 
 ## CesiumJS 3D view
 
@@ -93,15 +110,13 @@ In order to ensure that new data is included on the shard map, the following con
 Requirements:
 
 -   A current Node.js LTS release
--   Python 3
--   Python packages from `requirements.txt`
+-   [uv](https://docs.astral.sh/uv/)
 
 Install dependencies and start the development server:
 
 ```sh
-python -m pip install --prefer-binary -r requirements.txt
 npm install
-npm start
+uv run --with-requirements requirements.txt npm start
 ```
 
 Useful checks:

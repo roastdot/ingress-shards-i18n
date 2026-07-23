@@ -33,6 +33,12 @@ import {
 } from "cesium";
 import "cesium/Build/Cesium/Widgets/widgets.css";
 import { getColorMode, subscribeColorMode } from "../react/colorModeStore.js";
+import {
+    getAnimationControlState,
+    reportAnimationPlayback,
+    selectAnimationLink,
+    subscribeAnimationControls,
+} from "../react/animationControlStore.js";
 import { t } from "../../i18n/index.js";
 import { getAllSeriesIds, getSeriesMetadata } from "../../data/data-store.js";
 import { navigate } from "../../router.js";
@@ -73,6 +79,12 @@ interface MotionPolyline extends L.Polyline {
     motionStart?: () => void;
     _linePoints?: L.LatLng[];
     motionOptions?: { duration?: number };
+    baseMotionDuration?: number;
+    shardPaths?: string[];
+}
+
+interface SelectablePolyline extends L.Polyline {
+    _shardPathKey?: string;
 }
 
 interface MirrorMarker extends L.Marker {
@@ -92,6 +104,7 @@ interface ShardAnimation {
     cumulative: number[];
     totalDistance: number;
     duration: number;
+    linkKeys: string[];
 }
 
 interface GroundedShardAnimation extends Omit<ShardAnimation, "points"> {
@@ -129,9 +142,17 @@ class View3D {
     private popup: HTMLDivElement | null = null;
     private readonly popupHtmlByEntityId = new Map<string, string>();
     private readonly clickActionByEntityId = new Map<string, () => void>();
+    private readonly linkKeyByEntityId = new Map<string, string>();
+    private readonly linkEntities: Array<{ entity: Entity; linkKey: string; baseWidth: number }> = [];
     private motionShardEntities: Entity[] = [];
+    private shardAnimations: GroundedShardAnimation[] = [];
     private shardAnimationFrame: number | null = null;
     private shardAnimationTimer: ReturnType<typeof setTimeout> | null = null;
+    private shardAnimationElapsed = 0;
+    private shardAnimationLastTickAt = 0;
+    private shardAnimationGeneration = 0;
+    private activeSelectedLinkKey: string | null = null;
+    private animationCommandVersion = getAnimationControlState().commandVersion;
     private remirrorTimer: ReturnType<typeof setTimeout> | null = null;
     private mirrorGeneration = 0;
     private seriesOverviewActive = false;
@@ -163,6 +184,22 @@ class View3D {
             if (!this.viewer) return;
             this.replaceImagery();
         });
+        subscribeAnimationControls(() => {
+            const state = getAnimationControlState();
+            if (state.commandVersion === this.animationCommandVersion) return;
+            this.animationCommandVersion = state.commandVersion;
+            if (!this.active) return;
+
+            if (state.selectedLinkKey !== this.activeSelectedLinkKey) {
+                this.applyShardAnimationSelection();
+                return;
+            }
+            if (state.playback === 'paused') {
+                this.pauseShardAnimations();
+            } else if (state.playback === 'playing') {
+                this.resumeShardAnimations();
+            }
+        });
     }
 
     show(): void {
@@ -186,6 +223,7 @@ class View3D {
         if (!this.active) return;
         this.active = false;
         this.stopShardAnimations();
+        if (getAnimationControlState().available) reportAnimationPlayback('ended');
         this.closePopup();
         this.leafletMap.off("layeradd layerremove", this.handleLeafletLayerChange);
         this.leafletMap.off("moveend", this.handleLeafletMoveEnd);
@@ -228,6 +266,12 @@ class View3D {
         this.clickHandler.setInputAction((movement: { position: Cartesian2 }) => {
             const picked = scene.pick(movement.position) as { id?: Entity } | undefined;
             const entity = picked?.id;
+            const linkKey = entity ? this.linkKeyByEntityId.get(entity.id) : undefined;
+            if (linkKey && getAnimationControlState().linkSelectionEnabled) {
+                selectAnimationLink(linkKey);
+                this.closePopup();
+                return;
+            }
             const clickAction = entity ? this.clickActionByEntityId.get(entity.id) : undefined;
             if (clickAction) {
                 clickAction();
@@ -501,6 +545,8 @@ class View3D {
         this.closePopup();
         this.popupHtmlByEntityId.clear();
         this.clickActionByEntityId.clear();
+        this.linkKeyByEntityId.clear();
+        this.linkEntities.length = 0;
         this.viewer?.entities.removeAll();
     }
 
@@ -731,6 +777,15 @@ class View3D {
             },
         });
         this.registerPopup(entity, getBoundPopupHtml(polyline));
+        const linkKey = (polyline as SelectablePolyline)._shardPathKey;
+        if (linkKey) {
+            this.linkKeyByEntityId.set(entity.id, linkKey);
+            this.linkEntities.push({
+                entity,
+                linkKey,
+                baseWidth: Math.max(2, options.weight ?? 3),
+            });
+        }
     }
 
     private createShardEntity(lng: number, lat: number, absoluteHeight: number): Entity {
@@ -765,46 +820,111 @@ class View3D {
 
     private startShardAnimations(animations: GroundedShardAnimation[], generation: number): void {
         if (!this.viewer || animations.length === 0) return;
+        this.stopShardAnimations();
+        this.shardAnimations = animations;
+        this.shardAnimationGeneration = generation;
+        this.shardAnimationElapsed = 0;
         this.motionShardEntities = animations.map(animation => {
             const first = animation.points[0];
             return this.createShardEntity(first.lng, first.lat, first.groundHeight + first.arcHeight);
         });
+        this.applyShardAnimationSelection(false);
 
+        if (getAnimationControlState().playback === 'paused') return;
+        reportAnimationPlayback('playing');
         this.shardAnimationTimer = setTimeout(() => {
-            if (!this.viewer || !this.active) return;
-            const startTime = performance.now();
-            const tick = () => {
-                const elapsed = performance.now() - startTime;
-                let allDone = true;
-                animations.forEach((animation, index) => {
-                    const progress = animation.duration > 0
-                        ? Math.min(1, elapsed / animation.duration)
-                        : 1;
-                    if (progress < 1) allDone = false;
-                    const point = pointAlongPath(animation, progress);
-                    const shardEntity = this.motionShardEntities[index];
-                    if (progress >= 1) {
-                        shardEntity.position = new ConstantPositionProperty(
-                            Cartesian3.fromDegrees(
-                                point.lng,
-                                point.lat,
-                                point.groundHeight + point.arcHeight + SHARD_MODEL_GROUND_OFFSET_METERS,
-                            ),
-                        );
-                    } else {
-                        shardEntity.position = new ConstantPositionProperty(
-                            Cartesian3.fromDegrees(
-                                point.lng,
-                                point.lat,
-                                point.groundHeight + point.arcHeight + SHARD_MODEL_GROUND_OFFSET_METERS,
-                            ),
-                        );
-                    }
-                });
-                this.shardAnimationFrame = allDone ? null : requestAnimationFrame(tick);
-            };
-            tick();
+            this.shardAnimationTimer = null;
+            this.resumeShardAnimations();
         }, SHARD_ANIMATION_START_DELAY_MS);
+    }
+
+    private resumeShardAnimations(): void {
+        if (
+            !this.viewer ||
+            !this.active ||
+            this.shardAnimations.length === 0 ||
+            this.shardAnimationTimer ||
+            this.shardAnimationFrame !== null ||
+            getAnimationControlState().playback !== 'playing'
+        ) return;
+
+        const longestDuration = Math.max(...this.shardAnimations.map(animation => animation.duration));
+        if (this.shardAnimationElapsed >= longestDuration) this.shardAnimationElapsed = 0;
+        this.shardAnimationLastTickAt = performance.now();
+        const generation = this.shardAnimationGeneration;
+
+        const tick = () => {
+            if (
+                !this.viewer ||
+                !this.active ||
+                generation !== this.mirrorGeneration ||
+                getAnimationControlState().playback !== 'playing'
+            ) {
+                this.shardAnimationFrame = null;
+                return;
+            }
+
+            const now = performance.now();
+            this.shardAnimationElapsed += (now - this.shardAnimationLastTickAt) * getAnimationControlState().speed;
+            this.shardAnimationLastTickAt = now;
+            let allDone = true;
+            const selectedLinkKey = getAnimationControlState().selectedLinkKey;
+            this.shardAnimations.forEach((animation, index) => {
+                if (selectedLinkKey && !animation.linkKeys.includes(selectedLinkKey)) return;
+                const progress = animation.duration > 0
+                    ? Math.min(1, this.shardAnimationElapsed / animation.duration)
+                    : 1;
+                if (progress < 1) allDone = false;
+                const point = pointAlongPath(animation, progress);
+                const shardEntity = this.motionShardEntities[index];
+                shardEntity.position = new ConstantPositionProperty(
+                    Cartesian3.fromDegrees(
+                        point.lng,
+                        point.lat,
+                        point.groundHeight + point.arcHeight + SHARD_MODEL_GROUND_OFFSET_METERS,
+                    ),
+                );
+            });
+
+            if (allDone && getAnimationControlState().loop) {
+                this.shardAnimationElapsed = 0;
+                this.shardAnimationLastTickAt = performance.now();
+                this.shardAnimationFrame = requestAnimationFrame(tick);
+            } else if (allDone) {
+                this.shardAnimationFrame = null;
+                reportAnimationPlayback('ended');
+            } else {
+                this.shardAnimationFrame = requestAnimationFrame(tick);
+            }
+        };
+        tick();
+    }
+
+    private applyShardAnimationSelection(restart = true): void {
+        const selectedLinkKey = getAnimationControlState().selectedLinkKey;
+        this.activeSelectedLinkKey = selectedLinkKey;
+        this.motionShardEntities.forEach((entity, index) => {
+            entity.show = !selectedLinkKey || this.shardAnimations[index]?.linkKeys.includes(selectedLinkKey);
+        });
+        this.linkEntities.forEach(({ entity, linkKey, baseWidth }) => {
+            if (!entity.polyline) return;
+            const selected = !selectedLinkKey || linkKey === selectedLinkKey;
+            entity.polyline.width = new ConstantProperty(
+                selectedLinkKey && selected ? Math.max(6, baseWidth + 2) : baseWidth,
+            );
+        });
+
+        if (!restart) return;
+        this.pauseShardAnimations();
+        this.shardAnimationElapsed = 0;
+        if (getAnimationControlState().playback === 'playing') this.resumeShardAnimations();
+    }
+
+    private pauseShardAnimations(): void {
+        if (this.shardAnimationTimer) clearTimeout(this.shardAnimationTimer);
+        this.shardAnimationTimer = null;
+        if (this.shardAnimationFrame !== null) cancelAnimationFrame(this.shardAnimationFrame);
+        this.shardAnimationFrame = null;
     }
 
     private async groundRoutes(
@@ -838,11 +958,12 @@ class View3D {
     }
 
     private stopShardAnimations(): void {
-        if (this.shardAnimationTimer) clearTimeout(this.shardAnimationTimer);
-        this.shardAnimationTimer = null;
-        if (this.shardAnimationFrame !== null) cancelAnimationFrame(this.shardAnimationFrame);
-        this.shardAnimationFrame = null;
+        this.pauseShardAnimations();
         this.motionShardEntities = [];
+        this.shardAnimations = [];
+        this.shardAnimationElapsed = 0;
+        this.shardAnimationLastTickAt = 0;
+        this.activeSelectedLinkKey = null;
     }
 
     private registerPopup(entity: Entity, html: string | null): void {
@@ -906,7 +1027,10 @@ function buildShardAnimation(motionLayer: MotionPolyline): ShardAnimation | null
         points,
         cumulative,
         totalDistance: cumulative[cumulative.length - 1],
-        duration: motionLayer.motionOptions?.duration ?? (motionLayer._linePoints.length - 1) * 1000,
+        duration: motionLayer.baseMotionDuration
+            ?? motionLayer.motionOptions?.duration
+            ?? (motionLayer._linePoints.length - 1) * 1000,
+        linkKeys: motionLayer.shardPaths ?? [],
     };
 }
 

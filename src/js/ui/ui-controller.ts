@@ -9,12 +9,21 @@ import { CUSTOM_SERIES_ID } from "../constants.js";
 import { t } from "../i18n/index.js";
 import { updateSeasonScore } from "./react/seasonScoreStore.js";
 import { restartShardMotionAfterMapMove } from "./map/shard-motion.js";
+import {
+    getAnimationControlState,
+    reportAnimationPlayback,
+    setAnimationAvailable,
+    subscribeAnimationControls,
+    type AnimationPlaybackState,
+} from "./react/animationControlStore.js";
 
 let IS_MAP_INTERACTION_ACTIVE = false;
 
 let map: L.Map | null = null;
 let waveControlPanel: L.Control.Layers | null = null;
 let isOrnamentVisible = false;
+let activeMotionLayer: MapLayer | null = null;
+let animationCommandVersion = getAnimationControlState().commandVersion;
 
 interface MapLayer extends L.Layer {
     _layerType?: string;
@@ -22,6 +31,41 @@ interface MapLayer extends L.Layer {
     _siteId?: string;
     _waveId?: string;
     startShardMotion?: () => void;
+    shardMotionPaths?: L.Layer[];
+    setShardMotionPlaying?: (playing: boolean) => void;
+    setShardMotionLoop?: (loop: boolean) => void;
+    setShardMotionSpeed?: (speed: number) => void;
+    setShardMotionLink?: (linkKey: string | null) => void;
+}
+
+function is2DMapVisible(): boolean {
+    return map?.getContainer().style.visibility !== 'hidden';
+}
+
+function handleShardMotionState(event: L.LeafletEvent & { playback?: AnimationPlaybackState }): void {
+    if (is2DMapVisible() && event.playback) reportAnimationPlayback(event.playback);
+}
+
+function activateMotionLayer(layer: L.Layer): void {
+    activeMotionLayer?.off('shardmotionstatechange', handleShardMotionState);
+    activeMotionLayer = layer as MapLayer;
+    activeMotionLayer.on('shardmotionstatechange', handleShardMotionState);
+
+    const hasMotion = (activeMotionLayer.shardMotionPaths?.length ?? 0) > 0;
+    setAnimationAvailable(hasMotion);
+    if (!hasMotion) return;
+
+    const state = getAnimationControlState();
+    activeMotionLayer.setShardMotionLoop?.(state.loop);
+    activeMotionLayer.setShardMotionSpeed?.(state.speed);
+    activeMotionLayer.setShardMotionLink?.(state.selectedLinkKey);
+    if (state.playback === 'paused') activeMotionLayer.setShardMotionPlaying?.(false);
+}
+
+function deactivateMotionLayer(): void {
+    activeMotionLayer?.off('shardmotionstatechange', handleShardMotionState);
+    activeMotionLayer = null;
+    setAnimationAvailable(false);
 }
 
 const mapDispatchers = {
@@ -69,6 +113,7 @@ const mapDispatchers = {
         if (defaultLayerDetails) {
             map.addLayer(defaultLayerDetails.layer);
             setActiveSiteLayer(defaultLayerDetails.layer);
+            activateMotionLayer(defaultLayerDetails.layer);
         }
 
         const ornamentLayerDetails = siteLayers.find(l => l.id === "ornaments");
@@ -124,6 +169,7 @@ const mapDispatchers = {
         if (waveLayerDetails) {
             map.addLayer(waveLayerDetails.layer);
             setActiveSiteLayer(waveLayerDetails.layer);
+            activateMotionLayer(waveLayerDetails.layer);
         }
 
         const ornamentLayerDetails = siteLayers.find(l => l.id === "ornaments");
@@ -190,6 +236,21 @@ export function initController(mapInstance: L.Map): void {
 
     setViewDispatchers(mapDispatchers);
     setupEventListeners(map);
+    subscribeAnimationControls(() => {
+        const state = getAnimationControlState();
+        if (state.commandVersion === animationCommandVersion) return;
+        animationCommandVersion = state.commandVersion;
+        if (!activeMotionLayer || !is2DMapVisible()) return;
+
+        activeMotionLayer.setShardMotionLoop?.(state.loop);
+        activeMotionLayer.setShardMotionSpeed?.(state.speed);
+        activeMotionLayer.setShardMotionLink?.(state.selectedLinkKey);
+        if (state.playback === 'playing') {
+            activeMotionLayer.setShardMotionPlaying?.(true);
+        } else if (state.playback === 'paused') {
+            activeMotionLayer.setShardMotionPlaying?.(false);
+        }
+    });
 }
 
 function setupEventListeners(map: L.Map): void {
@@ -269,6 +330,8 @@ function setupEventListeners(map: L.Map): void {
 
 function cleanupLayers(target: { seriesId?: string; siteId?: string; waveId?: string }): void {
     if (!map) return;
+    deactivateMotionLayer();
+    setActiveSiteLayer(null);
     map.eachLayer(layer => {
         const mapLayer = layer as MapLayer;
         switch (mapLayer._layerType) {
@@ -298,7 +361,6 @@ function cleanupLayers(target: { seriesId?: string; siteId?: string; waveId?: st
         map.removeControl(waveControlPanel);
     }
     waveControlPanel = null;
-    setActiveSiteLayer(null);
 }
 
 function performMapMoveAction(flyAction: () => void, viewAction: () => void): void {

@@ -12,6 +12,7 @@ import * as Now from "temporal-polyfill/fns/now";
 import * as Duration from "temporal-polyfill/fns/duration";
 import type { PortalsMap, Faction, SiteData } from "../types/domain.js";
 import type { DetailsPanelContent } from "./series-renderer.js";
+import { getAnimationControlState, selectAnimationLink } from "./react/animationControlStore.js";
 
 const shardIcon = L.icon({
     iconUrl: shardIconUrl,
@@ -199,23 +200,142 @@ function renderShardLayer({ seriesId, siteId, shardData, portals, timezone, laye
     const shardMotionPaths = createShardMotionPaths(shardMotionData);
 
     shardLayer.shardMotionPaths = [];
+    shardLayer.shardMotionState = 'idle';
+    shardLayer.shardMotionLoop = false;
+    shardLayer.selectedMotionLinkKey = null;
+    const completedMotionPaths = new Set<any>();
+    let loopFrame: number | null = null;
+
+    const getPlayableMotionPaths = () => shardLayer.selectedMotionLinkKey
+        ? shardLayer.shardMotionPaths.filter((path: any) => path.shardPaths.includes(shardLayer.selectedMotionLinkKey))
+        : shardLayer.shardMotionPaths;
+
+    const publishMotionState = (state: 'playing' | 'paused' | 'ended') => {
+        shardLayer.shardMotionState = state;
+        shardLayer.fire('shardmotionstatechange', { playback: state });
+    };
+
+    const cancelPendingLoop = () => {
+        if (loopFrame !== null) cancelAnimationFrame(loopFrame);
+        loopFrame = null;
+    };
+
+    const playAllMotionPaths = () => {
+        cancelPendingLoop();
+        completedMotionPaths.clear();
+        publishMotionState('playing');
+        const playableMotionPaths = getPlayableMotionPaths();
+        shardLayer.shardMotionPaths.forEach((shardPathPoly: any) => {
+            if (playableMotionPaths.includes(shardPathPoly)) return;
+            shardPathPoly.motionPause();
+            const marker = shardPathPoly.getMarker?.();
+            if (marker && shardPathPoly._linePoints?.[0]) marker.setLatLng(shardPathPoly._linePoints[0]);
+            if (marker && shardLayer._map?.hasLayer(marker)) shardLayer._map.removeLayer(marker);
+            shardPathPoly.setLatLngs([]);
+        });
+        playableMotionPaths.forEach((shardPathPoly: any) => {
+            shardPathPoly.motionStart();
+        });
+    };
+
     shardMotionPaths.forEach((shardPathPoly: any) => {
         shardPathPoly.addTo(shardLayer);
         shardLayer.shardMotionPaths.push(shardPathPoly);
+        shardPathPoly.on('motion-started', () => {
+            completedMotionPaths.delete(shardPathPoly);
+            if (shardLayer.shardMotionState !== 'playing') publishMotionState('playing');
+        });
+        shardPathPoly.on('motion-ended', () => {
+            completedMotionPaths.add(shardPathPoly);
+            const playableMotionPaths = getPlayableMotionPaths();
+            if (!playableMotionPaths.every((path: any) => completedMotionPaths.has(path))) return;
+
+            if (shardLayer.shardMotionLoop && shardLayer._map && shardLayer.shardMotionState !== 'paused') {
+                loopFrame = requestAnimationFrame(() => {
+                    loopFrame = null;
+                    if (shardLayer._map && shardLayer.shardMotionLoop && shardLayer.shardMotionState !== 'paused') {
+                        playAllMotionPaths();
+                    }
+                });
+                return;
+            }
+            publishMotionState('ended');
+        });
 
         for (const shardPath of shardPathPoly.shardPaths) {
             const path = shardPathsMap.get(shardPath);
             if (path) (path as any).shardPathPoly = shardPathPoly;
             path?.on("mouseover", function () {
+                const state = getAnimationControlState();
+                if (state.playback === 'paused') return;
+                if (state.selectedLinkKey && state.selectedLinkKey !== shardPath) return;
                 shardPathPoly.motionStart();
             });
         }
     });
+    shardPathsMap.forEach((path, shardPathKey) => {
+        path.on("click", function () {
+            if (getAnimationControlState().linkSelectionEnabled) selectAnimationLink(shardPathKey);
+        });
+    });
 
     shardLayer.startShardMotion = function () {
+        if (this.shardMotionState === 'paused' || this.shardMotionState === 'playing') return;
+        playAllMotionPaths();
+    };
+
+    shardLayer.setShardMotionPlaying = function (playing: boolean) {
+        cancelPendingLoop();
+        if (!playing) {
+            this.shardMotionPaths.forEach((shardPathPoly: any) => shardPathPoly.motionPause());
+            publishMotionState('paused');
+            return;
+        }
+
+        if (this.shardMotionState === 'paused') {
+            publishMotionState('playing');
+            this.shardMotionPaths.forEach((shardPathPoly: any) => {
+                if (!completedMotionPaths.has(shardPathPoly)) shardPathPoly.motionResume();
+            });
+            return;
+        }
+
+        if (this.shardMotionState !== 'playing') playAllMotionPaths();
+    };
+
+    shardLayer.setShardMotionLoop = function (loop: boolean) {
+        this.shardMotionLoop = loop;
+        if (!loop) cancelPendingLoop();
+    };
+
+    shardLayer.setShardMotionSpeed = function (speed: number) {
         this.shardMotionPaths.forEach((shardPathPoly: any) => {
-            shardPathPoly.motionStart();
+            shardPathPoly.motionDuration(shardPathPoly.baseMotionDuration / speed);
         });
+    };
+
+    shardLayer.setShardMotionLink = function (linkKey: string | null) {
+        if (this.selectedMotionLinkKey === linkKey) return;
+        const wasPaused = this.shardMotionState === 'paused';
+        this.selectedMotionLinkKey = linkKey;
+        completedMotionPaths.clear();
+        this.shardMotionPaths.forEach((shardPathPoly: any) => {
+            shardPathPoly.motionPause();
+            const marker = shardPathPoly.getMarker?.();
+            if (marker && shardPathPoly._linePoints?.[0]) marker.setLatLng(shardPathPoly._linePoints[0]);
+            if (marker && this._map?.hasLayer(marker)) this._map.removeLayer(marker);
+            shardPathPoly.setLatLngs([]);
+        });
+        shardPathsMap.forEach((path, pathKey) => {
+            const isSelected = !linkKey || pathKey === linkKey;
+            path.setStyle({
+                opacity: isSelected ? 1 : 0.2,
+                weight: linkKey && isSelected ? 6 : 3,
+            });
+            if (linkKey && isSelected) path.bringToFront();
+        });
+        this.shardMotionState = wasPaused ? 'paused' : 'idle';
+        if (!wasPaused) playAllMotionPaths();
     };
 
     const { portalMarkers, staticShardMarkers } = createPortalMarkers(portals, portalHistoryMap, timezone, layerType === 'wave' ? safeShardData.targets : null);
@@ -247,6 +367,7 @@ function createShardPathLayers(shardPaths: Record<string, any>, portalsMap: Port
 
         const shardPathDetails = renderShardPath(shardPath, shardPathPortals, timezone);
         if (shardPathDetails) {
+            (shardPathDetails as any)._shardPathKey = shardPathKey;
             shardPathsMap.set(shardPathKey, shardPathDetails);
         }
     }
@@ -303,13 +424,14 @@ function processShardData(shards: any[], portalsMap: PortalsMap): { portalHistor
 
 function createShardMotionPaths(shardMotionData: Array<{ coords: L.LatLng[]; shardPaths: string[] }>): any[] {
     return shardMotionData.map(({ coords, shardPaths }) => {
+        const baseMotionDuration = shardPaths.length * 1000;
         const shardPathPoly: any = (L as any).motion.polyline(
             coords,
             {
                 color: "transparent",
                 interactive: false,
             },
-            { auto: false, duration: shardPaths.length * 1000 },
+            { auto: false, duration: baseMotionDuration },
             {
                 showMarker: true,
                 removeOnEnd: false,
@@ -319,6 +441,7 @@ function createShardMotionPaths(shardMotionData: Array<{ coords: L.LatLng[]; sha
             }
         );
         shardPathPoly.shardPaths = shardPaths;
+        shardPathPoly.baseMotionDuration = baseMotionDuration;
         return shardPathPoly;
     });
 }
